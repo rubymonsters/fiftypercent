@@ -15,14 +15,14 @@
       main_url: 'https://www.telemedicus.info/soko14/',
       contact_url: 'vorstand@telemedicus.info',
       speaker_list_url: 'https://www.telemedicus.info/soko14/#speaker',
-      woman: '1',
-      total: '15',
+      woman: 1,
+      total: 15,
       category: 'Konferenz',
       reporter: 'Anne',
       reporter_url: 'https://twitter.com/annalist'
       })
 
-6.times do
+[10, 20, 25, 30, 20, 40, 35].each do |percent_woman|
   Event.create({
     title: 'nr-jahreskonferenz 2014',
     subtitle: 'You’ll Never Walk Alone',
@@ -33,8 +33,8 @@
     main_url: 'http://netzwerkrecherche.org/wordpress/nr14/',
     contact_url: '',
     speaker_list_url: 'http://netzwerkrecherche.org/wordpress/nr14/referenten/',
-    woman: '73',
-    total: '215',
+    woman: percent_woman,
+    total: 100,
     category: 'Konferenz',
     reporter: 'yetzt',
     reporter_url: '@yetzt'
@@ -51,8 +51,8 @@ end
       #main_url: '',
       #contact_url: '',
       #speaker_list_url: '',
-      #woman: '',
-      #total: '',
+      #woman: ,
+      #total: ,
       #category: '',
       #reporter: '',
       #reporter_url: ''
