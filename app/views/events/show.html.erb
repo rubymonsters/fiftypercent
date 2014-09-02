@@ -1,0 +1,48 @@
+<dl class="dl-horizontal">
+  <dt>Titel der Konferenz</dt>
+  <dd><%= @event.title %></dd>
+  <% if @event.subtitle %>
+    <dt>Motto der Konferenz</dt>
+    <dd><%= @event.subtitle %></dd>
+  <% end %>
+  <dt>Datum</dt>
+  <dd><%= @event.date.strftime("%d %B %Y um %H:%M Uhr") %></dd>
+  <dt>Ort</dt>
+  <dd><%= @event.city + " in " + @event.country %></dd>
+  <% if @event.description %>
+    <dt>Beschreibung</dt>
+    <dd><%= @event.description %></dd>
+  <% end %>
+  <dt>Webseite</dt>
+  <dd><%= link_to @event.main_url, @event.main_url %></dd>
+  <dt>Link zur Speakerliste</dt>
+  <dd><%= link_to @event.speaker_list_url, @event.speaker_list_url %></dd>
+  <dt>Kontakt zur Veranstaltung</dt>
+  <dd><%= mail_to @event.contact_url, @event.contact_url %></dd>
+  <dt>Anzahl der Speaker</dt>
+  <dd><%= @event.total.to_s + " Sprecher, davon " + @event.woman.to_s + " Frauen" %></dd>
+  <dt>Prozentzahl der Männer</dt>
+  <dd><%= @event.male%>% Männer</dd>
+  <br>
+  <dt>Gezählt von</dt>
+  <dd><%= @event.reporter %></dd>
+  <dd><%= link_to @event.reporter_url, @event.reporter_url %></dd>
+</dl>
+<div id="myfirstchart" style="height: 250px;" </div>
+<script>
+
+  Morris.Donut({
+    element: 'myfirstchart',
+    data: [
+      {label: "Männer", value: <%= @event.total - @event.woman %> },
+      {label: "Frauen", value: <%= @event.woman %>},
+    ],
+    backgroundColor: '#ccc',
+    labelColor: '#060',
+    colors: [
+      '#0BA462',
+      '#39B580'
+    ]
+  });
+
+</script>
