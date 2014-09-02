@@ -15,3 +15,5 @@
 //= require_tree .
 
 //= require bootstrap-sprockets
+//= require raphael
+//= require morris
