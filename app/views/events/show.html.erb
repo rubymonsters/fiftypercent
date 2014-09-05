@@ -15,10 +15,14 @@
   <% end %>
   <dt>Webseite</dt>
   <dd><%= link_to @event.main_url, @event.main_url %></dd>
-  <dt>Link zur Speakerliste</dt>
-  <dd><%= link_to @event.speaker_list_url, @event.speaker_list_url %></dd>
-  <dt>Kontakt zur Veranstaltung</dt>
-  <dd><%= mail_to @event.contact_url, @event.contact_url %></dd>
+  <% if @event.speaker_list_url %>
+    <dt>Link zur Speakerliste</dt>
+    <dd><%= link_to @event.speaker_list_url, @event.speaker_list_url %></dd>
+  <% end %>
+  <% if @event.contact_url %>
+    <dt>Kontakt zur Veranstaltung</dt>
+    <dd><%= mail_to @event.contact_url, @event.contact_url %></dd>
+  <% end %>
   <dt>Anzahl der Speaker</dt>
   <dd><%= @event.total.to_s + " Sprecher, davon " + @event.woman.to_s + " Frauen" %></dd>
   <dt>Prozentzahl der Männer</dt>
@@ -26,11 +30,14 @@
   <br>
   <dt>Gezählt von</dt>
   <dd><%= @event.reporter %></dd>
-  <dd><%= link_to @event.reporter_url, @event.reporter_url %></dd>
+  <% if @event.reporter_url %>
+    <dd><%= link_to @event.reporter_url, @event.reporter_url %></dd>
+  <% end %>
 </dl>
 
 <%= render "donut", event: @event %>
 
+<%= link_to 'Destroy', @event, method: :delete, data: { confirm: 'Are you sure?' } %></td> |
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
 
