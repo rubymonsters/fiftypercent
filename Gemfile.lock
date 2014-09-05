@@ -30,6 +30,7 @@ GEM
     arel (5.0.1.20140414130214)
     bootstrap-sass (3.2.0.0)
       sass (~> 3.2)
+    bootstrap_form (2.1.1)
     builder (3.2.2)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -117,6 +118,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass (~> 3.2.0)
+  bootstrap_form
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
   jquery-rails
