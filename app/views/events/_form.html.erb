@@ -1,0 +1,69 @@
+<%= form_for(@event) do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :subtitle %><br>
+    <%= f.text_field :subtitle %>
+  </div>
+  <div class="field">
+    <%= f.label :date%><br>
+    <%= f.date_select :date%>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :country %><br>
+    <%= f.text_field :country %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :main_url%><br>
+    <%= f.text_field :main_url%>
+  </div>
+  <div class="field">
+    <%= f.label :speaker_list_url%><br>
+    <%= f.text_field :speaker_list_url%>
+  </div>
+  <div class="field">
+    <%= f.label :contact_url%><br>
+    <%= f.text_field :contact_url%>
+  </div>
+  <div class="field">
+    <%= f.label :woman%><br>
+    <%= f.text_field :woman%>
+  </div>
+  <div class="field">
+    <%= f.label :total%><br>
+    <%= f.text_field :total%>
+  </div>
+  <div class="field">
+    <%= f.label :reporter%><br>
+    <%= f.text_field :reporter%>
+  </div>
+  <div class="field">
+    <%= f.label :reporter_url%><br>
+    <%= f.text_field :reporter_url%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

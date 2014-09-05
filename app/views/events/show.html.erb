@@ -28,21 +28,11 @@
   <dd><%= @event.reporter %></dd>
   <dd><%= link_to @event.reporter_url, @event.reporter_url %></dd>
 </dl>
-<div id="myfirstchart" style="height: 250px;" </div>
-<script>
 
-  Morris.Donut({
-    element: 'myfirstchart',
-    data: [
-      {label: "Männer", value: <%= @event.total - @event.woman %> },
-      {label: "Frauen", value: <%= @event.woman %>},
-    ],
-    backgroundColor: '#ccc',
-    labelColor: '#060',
-    colors: [
-      '#0BA462',
-      '#39B580'
-    ]
-  });
+<%= render "donut", event: @event %>
 
-</script>
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
+
+
+
