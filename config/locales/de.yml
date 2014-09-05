@@ -1,0 +1,22 @@
+de:
+  helpers:
+    label:
+      event:
+        title: 'Titel der Konferenz'
+        subtitle: 'Motto'
+        date: 'Datum'
+        city: 'In welcher Stadt findet die Konferenz statt?'
+        country: 'In welchem Land liegt das?'
+        description: 'Was für eine Konferenzt ist das?'
+        main_url: 'Wie lautet die URL der Konferenz?'
+        speaker_list_url: 'Hast Du den genauen link zu den Speakern?'
+        contact_url: 'Wie kann man die Konferenz kontaktieren?'
+        woman: 'Wieviel Frauen reden/diskutieren/etc?'
+        total: 'Wieviel sind es insgesamt?'
+        reporter: 'Wie heißt Du?'
+        reporter_url: 'Wie kann man Dich errreichen?'
+
+    placeholder:
+      event:
+        reporter_url: 'Kontaktdaten'
+
