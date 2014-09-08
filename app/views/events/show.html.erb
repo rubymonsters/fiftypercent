@@ -33,6 +33,8 @@
   <% if @event.reporter_url %>
     <dd><%= link_to @event.reporter_url, @event.reporter_url %></dd>
   <% end %>
+  <dt>Tags</dt>
+  <dd><%= @event.topic_list %>
 </dl>
 
 <%= render "donut", event: @event %>
