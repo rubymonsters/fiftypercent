@@ -3,6 +3,7 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+    @tags = ActsAsTaggableOn::Tag.all
   end
 
   def show

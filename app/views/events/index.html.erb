@@ -1,11 +1,20 @@
-<% @events.each do |event| %>
-  <h3>
-  <%= event.title %></h3>
-  <p>
-    <%= event.male %>% Männer
-  </p>
-  <%= link_to "Anzeigen", event %>
-  <br>
-<% end %>
+<div class="row">
+  <div class="col-md-8">
+    <% @events.each do |event| %>
+      <h3>
+      <%= event.title %></h3>
+      <p>
+        <%= event.male %>% Männer
+      </p>
+      <%= link_to "Anzeigen", event %>
+      <br>
+    <% end %>
 
-<%= link_to 'Neue Veranstaltung', new_event_path %>
+    <%= link_to 'Neue Veranstaltung', new_event_path %>
+  </div>
+  <div class="col-md-4">
+    <% @tags.each do |tag| %>
+      <%= tag.name %>
+    <% end  %>
+  </div>
+</div>
