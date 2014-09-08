@@ -16,4 +16,5 @@
 /tmp
 
 .DS_Store
+database.yml
 .rake_tasks
