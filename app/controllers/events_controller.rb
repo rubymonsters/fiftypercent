@@ -3,12 +3,15 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
-    @events = Event.all
+    if params[:tag].present?
+      @events = Event.tagged_with(params[:tag])
+    else
+      @events = Event.all
+    end
     @tags = ActsAsTaggableOn::Tag.all
   end
 
   def show
-    @event = Event.find(params[:id])
   end
 
   def new
@@ -16,7 +19,6 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @event = Event.find(params[:id])
   end
 
   def create
@@ -62,8 +64,12 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:title, :subtitle, :date, :city, :country, :description, :main_url, :speaker_list_url, :contact_url, :woman, :total, :reporter, :reporter_url, :topic_list )
+      params.require(:event).permit(:title, :subtitle, :date, :city, :country, :description, :main_url, :speaker_list_url, :contact_url, :woman, :total, :reporter, :reporter_url, :tag_list )
     end
+
+  def tag_cloud
+    @tags = Event.tag_counts_on(:tags)
+  end
 
   protected
 

@@ -6,16 +6,22 @@
       <p>
         <%= event.male %>% Männer
       </p>
+
       <%= render "donut", event: event %>
+
       <%= link_to "Anzeigen", event %>
       <br>
     <% end %>
 
     <%= link_to 'Neue Veranstaltung', new_event_path %>
   </div>
+
   <div class="col-md-4">
-    <% @tags.each do |tag| %>
-      <%= tag.name %>
-    <% end  %>
+  <div id="tag_cloud">
+    <% tag_cloud Event.tag_counts, %w[s m l] do |tag, css_class| %>
+      <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+    <% end %>
+</div>
+
   </div>
 </div>

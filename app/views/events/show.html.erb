@@ -34,7 +34,7 @@
     <dd><%= link_to @event.reporter_url, @event.reporter_url %></dd>
   <% end %>
   <dt>Tags</dt>
-  <dd><%= @event.topic_list %>
+  <dd><%= raw @event.tag_list.map { |t| link_to t, tag_path(t) }.join(' | ') %></dd>
 </dl>
 
 <%= render "donut", event: @event %>
