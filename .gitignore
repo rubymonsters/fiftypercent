@@ -19,3 +19,5 @@
 database.yml
 secrets.yml
 .rake_tasks
+
+public/assets
