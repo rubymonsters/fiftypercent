@@ -2,14 +2,14 @@
   <div class="col-md-8">
     <% @events.each do |event| %>
       <h3>
-      <%= event.title %></h3>
+        <%= link_to event.title, event %>
+      </h3>
       <p>
         <%= event.male %>% Männer
       </p>
 
       <%= render "donut", event: event %>
 
-      <%= link_to "Anzeigen", event %>
       <br>
     <% end %>
 
@@ -17,11 +17,10 @@
   </div>
 
   <div class="col-md-4">
-  <div id="tag_cloud">
-    <% tag_cloud Event.tag_counts, %w[s m l] do |tag, css_class| %>
-      <%= link_to tag.name, tag_path(tag.name), class: css_class %>
-    <% end %>
-</div>
-
+    <div id="tag_cloud">
+      <% tag_cloud Event.tag_counts, %w[s m l] do |tag, css_class| %>
+        <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+      <% end %>
+    </div>
   </div>
 </div>
