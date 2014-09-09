@@ -17,4 +17,5 @@
 
 .DS_Store
 database.yml
+secrets.yml
 .rake_tasks

@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_action :authenticate, only: [:create, :update, :destroy]
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -62,6 +63,14 @@ class EventsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
       params.require(:event).permit(:title, :subtitle, :date, :city, :country, :description, :main_url, :speaker_list_url, :contact_url, :woman, :total, :reporter, :reporter_url, :topic_list )
+    end
+
+  protected
+
+    def authenticate
+      authenticate_or_request_with_http_basic do |username, password|
+        username == "anne" && password == "kaffeekanne"
+      end
     end
 
 end
