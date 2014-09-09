@@ -1,8 +1,8 @@
-<div id="myfirstchart" style="height: 250px;" </div>
+<div id="myfirstchart-<%= event.id %>" style="height: 250px;"> </div>
 <script>
 
   Morris.Donut({
-    element: 'myfirstchart',
+    element: 'myfirstchart-<%= event.id %>',
     data: [
       {label: "Männer", value: <%= event.total - event.woman %> },
       {label: "Frauen", value: <%= event.woman %>},

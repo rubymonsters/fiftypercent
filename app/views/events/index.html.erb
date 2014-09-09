@@ -6,6 +6,7 @@
       <p>
         <%= event.male %>% Männer
       </p>
+      <%= render "donut", event: event %>
       <%= link_to "Anzeigen", event %>
       <br>
     <% end %>
