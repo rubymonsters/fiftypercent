@@ -50,3 +50,4 @@ gem 'capistrano-bundler'
 
 gem 'execjs'
 gem 'therubyracer'
+gem 'bcrypt', '~> 3.1.7'

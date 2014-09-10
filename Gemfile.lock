@@ -30,6 +30,7 @@ GEM
     acts-as-taggable-on (3.4.1)
       activerecord (>= 3.2, < 5)
     arel (5.0.1.20140414130214)
+    bcrypt (3.1.7)
     bootstrap-sass (3.2.0.0)
       sass (~> 3.2)
     bootstrap_form (2.1.1)
@@ -146,6 +147,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on
+  bcrypt (~> 3.1.7)
   bootstrap-sass (~> 3.2.0)
   bootstrap_form
   capistrano (~> 3.2.0)

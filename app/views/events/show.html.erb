@@ -39,9 +39,11 @@
 
 <%= render "donut", event: @event %>
 
-<%= link_to 'Destroy', @event, method: :delete, data: { confirm: 'Are you sure?' } %></td> |
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+  <% if current_user %>
+    <%= link_to 'Destroy', @event, method: :delete, data: { confirm: 'Are you sure?' } %></td> |
+    <%= link_to 'Edit', edit_event_path(@event) %> |
+    <%= link_to 'Back', events_path %>
+  <% end %>
 
 
 
