@@ -1,0 +1,164 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require morris
+ *= require rails_bootstrap_forms
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+/*overwritting bootstrap standards*/
+
+$background-color: #DCDEDE;
+$article-bright: #FFF;
+$article-dark: #F7F7F7;
+$dark-grey: #444444;
+$bright-grey: #ABB0B3;
+$text-grey: #777;
+
+@font-face {
+  font-family: 'Open Sans';
+  src:font-url('OpenSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TitilliumWeb Bold';
+  src:font-url('TitilliumWeb-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  padding-top: 130px;
+  background-color: $background-color;
+  color: $text-grey;
+  font-family: 'Open Sans', sans-serif;
+}
+
+ol, ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}
+
+#content {
+}
+
+#content .bold{
+  padding-bottom: 20px;
+  font-weight: 700;
+}
+
+.navbar {
+  background-color: $dark-grey;
+  min-height: 100px;
+  padding-top: 30px;
+  color: $background-color;
+  /*background: url('micro.png') no-repeat center center fixed;*/
+  /*background-size: cover;*/
+}
+
+.navbar .navbar-brand{
+  font-size: 72px;
+  font-family: 'TitilliumWeb Bold';
+  text-transform: uppercase;
+  color: $background-color;
+}
+
+.navbar a{
+  color: $background-color;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: $background-color;
+}
+
+.container {
+}
+
+article {
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.1);
+}
+
+article h1 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+article h1 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+article.bright{
+  background-color: $article-bright;
+}
+
+article.dark{
+  background-color: $article-dark;
+}
+
+.date {
+  color: $bright-grey;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.date span {
+  color: $bright-grey;
+}
+
+#sidebar {
+  min-height: 150px;
+  padding: 20px;
+  background-color: $dark-grey;
+}
+
+#sidebar a{
+  color: white;
+}
+
+#sidebar h1 {
+  font-size: 16px;
+  text-transform: uppercase;
+  color: $bright-grey;
+  letter-spacing: 1px;
+}
+
+aside.widget {
+  padding-bottom: 60px;
+  color: white;
+}
+
+hr {
+}
+
+a  {
+  color: #333538;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  }
