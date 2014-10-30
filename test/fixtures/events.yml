@@ -1,33 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyText
-  subtitle: MyText
+car_show:
+  title: Carshow 3000
+  subtitle: the super car-show
   date: 2014-08-30 21:49:51
-  city: MyString
-  country_code: MyString
-  description: MyText
-  main_url: MyString
-  contact_url: MyString
-  speaker_list_url: MyString
-  woman: 1
-  total: 1
-  category: MyString
-  reporter: MyString
-  reporter_url: MyString
+  city: Hamburg
+  country_code: DE
+  description: It is such a super car show!
+  main_url: http://www.heise.de
+  speaker_list_url: http://www.heise.de
+  woman: 2
+  total: 8
+  reporter: Horst
+  reporter_url: '@horst'
 
-two:
-  title: MyText
-  subtitle: MyText
-  date: 2014-08-30 21:49:51
-  city: MyString
-  country_code: MyString
-  description: MyText
-  main_url: MyString
-  contact_url: MyString
-  speaker_list_url: MyString
-  woman: 1
-  total: 1
-  category: MyString
-  reporter: MyString
-  reporter_url: MyString
