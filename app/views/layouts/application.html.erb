@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
   <title>Fiftypercent</title>
 
   <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -14,19 +14,31 @@
 <body>
   <% if current_user %>
     Logged in as <%= current_user.email %>.
-    <%= link_to "Log out", log_out_path %>
+    <%= link_to 'Log out', log_out_path %>
     <%= link_to 'Neue Veranstaltung', new_event_path %>
   <% end %>
 </div>
 
 <% flash.each do |name, msg| %>
-  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+  <%= content_tag :div, msg, id: 'flash_#{name}' %>
 <% end %>
 
-<div class="container">
-  <%= yield %>
-</div>
+<%= render 'shared/menu' %>
 
+<div class='container' id='content'>
+  <div class='row'>
+    <div class='col-md-8'>
+      <%= yield %>
+    </div>
+
+    <div class='col-md-4' id='sidebar'>
+      <div id='tag_cloud'>
+        <%= render 'shared/sidebar' %>
+      </div>
+    </div>
+
+  </div>
+</div>
 
 </body>
 </html>
