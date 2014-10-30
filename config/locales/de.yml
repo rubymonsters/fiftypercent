@@ -6,7 +6,7 @@ de:
         subtitle: 'Motto'
         date: 'Datum'
         city: 'In welcher Stadt findet die Konferenz statt?'
-        country: 'In welchem Land liegt das?'
+        country_code: 'In welchem Land liegt das?'
         description: 'Was für eine Konferenzt ist das?'
         main_url: 'Wie lautet die URL der Konferenz?'
         speaker_list_url: 'Hast Du den genauen link zu den Speakern?'

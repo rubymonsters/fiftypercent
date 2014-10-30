@@ -8,7 +8,7 @@
   <dt>Datum</dt>
   <dd><%= @event.date.strftime("%d %B %Y um %H:%M Uhr") %></dd>
   <dt>Ort</dt>
-  <dd><%= @event.city + " in " + @event.country %></dd>
+  <dd><%= @event.city + " in " + @event.country_name %></dd>
   <% if @event.description %>
     <dt>Beschreibung</dt>
     <dd><%= @event.description %></dd>

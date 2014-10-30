@@ -53,6 +53,11 @@ GEM
       execjs
     coffee-script-source (1.8.0)
     colorize (0.7.3)
+    countries (0.9.3)
+      currencies (~> 0.4.2)
+    country_select (2.1.0)
+      countries (~> 0.9, >= 0.9.3)
+    currencies (0.4.2)
     erubis (2.7.0)
     execjs (2.2.1)
     hike (1.2.3)
@@ -154,6 +159,7 @@ DEPENDENCIES
   capistrano-bundler
   capistrano-rails (~> 1.1.0)
   coffee-rails (~> 4.0.0)
+  country_select (~> 2.1.0)
   execjs
   jbuilder (~> 2.0)
   jquery-rails
