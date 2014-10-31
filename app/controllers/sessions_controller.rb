@@ -19,6 +19,7 @@ class SessionsController < ApplicationController
   end
 
 
+  # TODO: what is this one used for? Or is it just because "cut&paste" from users conroller
  private
     # Use callbacks to share common setup or constraints between actions.
     def set_session

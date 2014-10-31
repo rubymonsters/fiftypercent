@@ -4,6 +4,7 @@ horst:
   email: horst@mail.com
   password_hash: $2a$10$mgRHSpemiQOtin9wqFhxy.HaXKHTAwdgO49o4FAtEMubAOH6w6t7a
   password_salt: $2a$10$mgRHSpemiQOtin9wqFhxy.
+  # password is: "geheim"
 
 two:
   email: MyString
