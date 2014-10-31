@@ -1,48 +1,58 @@
-<aside class="widget">
-  <%= link_to new_event_path, class: 'btn btn-sidebar' do %>
-    <span class="glyphicon glyphicon-plus-sign"></span>
-    Neue Veranstaltung eintragen
-  <% end %>
-  <h1>
-    tags:
-  </h1>
-  <hr>
-  <% tag_cloud Event.tag_counts, %w[s m l] do |tag, css_class| %>
-    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
-  <% end %>
-</aside>
+<% if params[:controller] == 'events' and %w(index show).include?(params[:action])  %>
+<div class='col-md-4' id='sidebar'>
+  <aside class="widget">
+    <%= link_to new_event_path, class: 'btn btn-sidebar' do %>
+      <span class="glyphicon glyphicon-plus-sign"></span>
+      Neue Veranstaltung eintragen
+    <% end %>
+    <h1>
+      tags:
+    </h1>
+    <hr>
+    <div id='tag_cloud'>
+      <% tag_cloud Event.tag_counts, %w[s m l] do |tag, css_class| %>
+        <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+      <% end %>
+    </div>
+  </aside>
 
-<aside class="widget">
-  <h1>
-    Statistik:
-  </h1>
-  <hr>
-  <p>
-    Bisher gezählt: <%= Event.count %> Veranstaltungen.<br>
-    <%= total = Event.pluck(:total).sum %> Vortragende insgesamt, davon
-    <%= woman = Event.pluck(:woman).sum %> Frauen.<br>
-    Das sind <%= number_with_precision((woman.to_f / total.to_f) * 100, precision: 2)  %> Prozent.<br>
-  </p>
-</aside>
+  <aside class="widget">
+    <h1>
+      Statistik:
+    </h1>
+    <hr>
+    <p>
+      Bisher gezählt: <%= Event.count %> Veranstaltungen.<br>
+      <%= total = Event.pluck(:total).sum %> Vortragende insgesamt, davon
+      <%= woman = Event.pluck(:woman).sum %> Frauen.<br>
+      Das sind <%= number_with_precision((woman.to_f / total.to_f) * 100, precision: 2)  %> Prozent.<br>
+    </p>
+  </aside>
 
-<aside class="widget">
-  <h1>
-    <a name="why"></a>Warum?
-  </h1>
-  <hr>
-  50 Prozent sind die Hälfte. Frauen sind in etwa die Hälfte aller Menschen, aber selten die Hälfte auf Podien, am Mikro, bei Talk-Shows oder Konferenzen. "50 Prozent" dokumentiert, wieviele Frauen* es tatsächlich sind.
+  <aside class="widget">
+    <h1>
+      <a name="why"></a>Warum?
+    </h1>
+    <hr>
+    50 Prozent sind die Hälfte. Frauen sind in etwa die Hälfte aller Menschen, aber selten die Hälfte auf Podien, am Mikro, bei Talk-Shows oder Konferenzen. "50 Prozent" dokumentiert, wieviele Frauen* es tatsächlich sind.
 
-  Außerdem gibt es hier Datenbanken mit Rednerinnen, Beispiele und Methoden, die dabei helfen, das eigene Event gleichmäßiger zu besetzen und Ähnliche Projekte.
+    Außerdem gibt es hier Datenbanken mit Rednerinnen, Beispiele und Methoden, die dabei helfen, das eigene Event gleichmäßiger zu besetzen und Ähnliche Projekte.
 
-  (* Mit 'Frauen' sind alle gemeint, die sich selbst als eine sehen)
-</aside>
+    (* Mit 'Frauen' sind alle gemeint, die sich selbst als eine sehen)
+  </aside>
 
-<aside class="widget">
-  <h1>
-    <a name="join"></a>Mitmachen
-  </h1>
-  <hr>
-  Alle, die gern Frauen* und Männer bei Events zählen, sind herzlich eingeladen, die Ergebnisse per Mail an 50prozent at riseup dot net zu schicken. Gern mit: Titel, URL, Angaben zu den Veranstaltenden (samt Kontakt, falls vorhanden), Datum, Ort, Thema und ob die Zählerin bzw. der Zähler als solche genannt werden dürfen.
+  <aside class="widget">
+    <h1>
+      <a name="join"></a>Mitmachen
+    </h1>
+    <hr>
+    Alle, die gern Frauen* und Männer bei Events zählen, sind herzlich eingeladen, die Ergebnisse per Mail an 50prozent at riseup dot net zu schicken. Gern mit: Titel, URL, Angaben zu den Veranstaltenden (samt Kontakt, falls vorhanden), Datum, Ort, Thema und ob die Zählerin bzw. der Zähler als solche genannt werden dürfen.
 
-  Es kann auch per Twitter gezählt werden: einfach die Gesamtzahl der Redner/Rednerinnen, Zahl der Frauen, URL und den Hashtag #50prozent in einen Tweet.
-</aside>
+    Es kann auch per Twitter gezählt werden: einfach die Gesamtzahl der Redner/Rednerinnen, Zahl der Frauen, URL und den Hashtag #50prozent in einen Tweet.
+  </aside>
+</div>
+<% else %>
+  <div class='col-md-4'>
+    &nbsp;
+  </div>
+<% end %>

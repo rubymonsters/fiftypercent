@@ -1,6 +1,5 @@
 class Admin::BaseController < ApplicationController
   before_filter :authenticate_user
-  before_filter -> { I18n.locale = 'en' }
   layout 'admin'
   # force_ssl if: :use_ssl?
 
