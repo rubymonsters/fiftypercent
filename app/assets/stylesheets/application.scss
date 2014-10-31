@@ -146,10 +146,6 @@ article.dark{
   background-color: $dark-grey;
 }
 
-#sidebar a{
-  color: white;
-}
-
 #sidebar h1 {
   font-size: 16px;
   text-transform: uppercase;
@@ -172,4 +168,18 @@ a  {
 
 a:hover {
   text-decoration: none;
+}
+
+.btn-sidebar {
+  background-color: $dark-grey;
+  color: $bright-grey;
+  border-color: $bright-grey;
+  &:hover{
+    color: $dark-grey;
+    background-color: $bright-grey;
+  }
+}
+
+.glyphicon {
+  margin-right: 4px;
 }
