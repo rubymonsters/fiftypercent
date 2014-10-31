@@ -17,15 +17,18 @@
     <%= link_to 'Log out', log_out_path %>
     <%= link_to 'Neue Veranstaltung', new_event_path %>
   <% end %>
-</div>
 
-<% flash.each do |name, msg| %>
-  <%= content_tag :div, msg, id: 'flash_#{name}' %>
-<% end %>
 
 <%= render 'shared/menu' %>
 
 <div class='container' id='content'>
+
+  <div class='row'>
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: "flash flash_#{name} panel panel-primary col-md-8" %>
+    <% end %>
+  </div>
+
   <div class='row'>
     <div class='col-md-8'>
       <%= yield %>
