@@ -14,3 +14,17 @@ car_show:
   reporter: Horst
   reporter_url: '@horst'
 
+cebit:
+  title: CeBit
+  subtitle: die grosse Computer-Messe
+  date: 2014-09-30 21:49:51
+  city: Hannover
+  country_code: DE
+  description: All about computers
+  main_url: http://www.cebit.de
+  speaker_list_url: http://www.cebit.de/speakers.html
+  woman: 20
+  total: 80
+  reporter: Horst
+  reporter_url: '@horst'
+
