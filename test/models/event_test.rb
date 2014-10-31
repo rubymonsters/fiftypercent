@@ -5,8 +5,12 @@ class EventTest < ActiveSupport::TestCase
   test "events know their country name" do
     assert_equal events(:car_show).country_name, 'Deutschland'
   end
-  
+
   test "a new event has the right name" do
     assert_equal Event.new(country_code: 'FR').country_name, 'Frankreich'
+  end
+
+  test "should not save an event without a title" do
+    assert_not Event.new.save
   end
 end
