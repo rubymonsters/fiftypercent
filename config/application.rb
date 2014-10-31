@@ -23,5 +23,8 @@ module Fiftypercent
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
     ActsAsTaggableOn.remove_unused_tags = true
+
+    # throttle requests to prevent mass event posting
+    config.middleware.use Rack::Attack
   end
 end
