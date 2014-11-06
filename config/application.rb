@@ -26,5 +26,8 @@ module Fiftypercent
 
     # throttle requests to prevent mass event posting
     config.middleware.use Rack::Attack
+
+    # set to false if you want to see asset-requests in development-logs
+    # config.quiet_assets = false
   end
 end

@@ -83,6 +83,8 @@ GEM
     net-ssh (2.9.1)
     pg (0.17.1)
     polyglot (0.3.5)
+    quiet_assets (1.0.2)
+      railties (>= 3.1, < 5.0)
     rack (1.5.2)
     rack-attack (4.2.0)
       rack
@@ -167,6 +169,7 @@ DEPENDENCIES
   jquery-rails
   morrisjs-rails
   pg
+  quiet_assets
   rack-attack (~> 4.2.0)
   rails (= 4.1.5)
   rails-i18n

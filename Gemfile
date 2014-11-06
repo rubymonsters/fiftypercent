@@ -54,3 +54,5 @@ gem 'therubyracer'
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'rack-attack', '~> 4.2.0'
+
+gem 'quiet_assets', group: :development
