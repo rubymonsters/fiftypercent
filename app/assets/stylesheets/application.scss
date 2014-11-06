@@ -11,22 +11,21 @@
  * file per style scope.
  *
  *= require_self
- *= require_tree .
  *= require morris
  *= require rails_bootstrap_forms
  */
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+@import "variables";
+@import "events";
+@import "small_screens";
+
 
 
 /*overwritting bootstrap standards*/
 
-$background-color: #DCDEDE;
-$article-bright: #FFF;
-$article-dark: #F7F7F7;
-$dark-grey: #444444;
-$bright-grey: #ABB0B3;
-$text-grey: #777;
 
 @font-face {
   font-family: 'Open Sans';

@@ -1,0 +1,27 @@
+#tag_cloud {
+  line-height: 1.6em;
+
+  .s { font-size: 0.8em; }
+  .m { font-size: 1.2em; }
+  .l { font-size: 1.8em; }
+}
+
+form.new_event {
+  margin-top: 2em;
+  margin-bottom: 3em;
+  .form-group {
+    margin-bottom: 2em;
+  }
+  fieldset {
+    margin-bottom: 3em;
+  }
+  legend {
+    color: $background-color;
+    background-color: $text-grey;
+    padding: 2px 6px;
+  }
+  #event_woman, #event_total {
+    width: 80px;
+  }
+
+}

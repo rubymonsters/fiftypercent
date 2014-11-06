@@ -1,35 +1,51 @@
 <%= bootstrap_form_for(@event) do |f| %>
+    <fieldset>
+      <legend>Was?</legend>
+      <%= f.text_field :title %>
+      <%= f.text_area :subtitle %>
+      <%= f.text_area :description %>
+      <%= f.url_field :main_url %>
+    </fieldset>
 
-    <%= f.text_field :title %>
+    <fieldset>
+      <legend>Wann und wo?</legend>
+      <%= f.date_select :date %>
+      <%= f.text_field :city %>
+      <div class="form-group">
+        <%= label_tag 'In welchem Land liegt das?' %>
+        <%= country_select :event, :country_code, {priority_countries: %w(DE AU CH FR NL GB US)}, {class: 'form-control'} %>
+        <span class="help-block"><%= t('activerecord.help.event.country_code') %></span>
+      </div>
+    </fieldset>
 
-    <%= f.text_area :subtitle %>
+    <fieldset>
+      <legend>Wer?</legend>
+      <%= f.text_area :organizers %>
+      <%= f.text_area :contact_url %>
+    </fieldset>
 
-    <%= f.date_select :date %>
+    <fieldset>
+      <legend>Themen</legend>
+      <%= f.text_field :tag_list %>
+    </fieldset>
 
-    <%= f.text_field :city %>
+    <fieldset>
+      <legend>Sprecher_innen</legend>
+      <%= f.url_field :speaker_list_url %>
+      <%= f.number_field :woman, wrapper: { class: 'col-sm-4'} %>
+      <%= f.number_field :total %>
+    </fieldset>
 
-    <div class="form-group">
-      <%= label_tag 'In welchem Land liegt das?' %>
-      <%= country_select :event, :country_code, {priority_countries: ["GB", "FR", "DE"]}, {class: 'form-control'} %>
-    </div>
+    <fieldset>
+      <legend>Und Du?</legend>
+      <%= f.text_field :reporter %>
+      <%= f.text_field :reporter_url %>
+    </fieldset>
 
-    <%= f.text_area :description %>
+    <fieldset>
+      <legend>Schließlich</legend>
+      <%= f.text_area :internal_user_info %>
+    </fieldset>
 
-    <%= f.text_field :tag_list %>
-
-    <%= f.url_field :main_url %>
-
-    <%= f.url_field :speaker_list_url %>
-
-    <%= f.email_field :contact_url %>
-
-    <%= f.number_field :woman %>
-
-    <%= f.number_field :total %>
-
-    <%= f.text_field :reporter %>
-
-    <%= f.text_field :reporter_url %>
-
-    <%= f.submit 'Anlegen' %>
+    <%= f.submit 'Speichern', class: "btn btn-success" %>
 <% end %>

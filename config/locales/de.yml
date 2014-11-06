@@ -4,19 +4,53 @@ de:
       event:
         title: 'Titel der Konferenz'
         subtitle: 'Motto'
+        description: 'Was für eine Konferenzt ist das?'
+        main_url: 'Wie lautet die URL der Konferenz?'
+
         date: 'Datum'
         city: 'In welcher Stadt findet die Konferenz statt?'
         country_code: 'In welchem Land liegt das?'
-        description: 'Was für eine Konferenzt ist das?'
-        main_url: 'Wie lautet die URL der Konferenz?'
-        speaker_list_url: 'Hast Du den genauen link zu den Speakern?'
+
+        organizers: 'Veranstalter'
         contact_url: 'Wie kann man die Konferenz kontaktieren?'
+
+        tag_list: "Tag-Liste"
+
+        speaker_list_url: 'Hast Du den genauen link zu den Speakern?'
         woman: 'Wieviel Frauen reden/diskutieren/etc?'
-        total: 'Wieviel sind es insgesamt?'
+        total: 'Wieviel Teilnehmer_innen sind es insgesamt?'
+
         reporter: 'Wie heißt Du?'
         reporter_url: 'Wie kann man Dich errreichen?'
+
+        internal_user_info: 'Interner Kommentar'
 
     placeholder:
       event:
         reporter_url: 'Kontaktdaten'
 
+  activerecord:
+    help:
+      event:
+        title: ''
+        subtitle: 'Slogan oder Tagline  der Veranstaltung, wenn vorhanden'
+        description: 'kurze Beschreibung der Veranstaltung'
+        main_url: 'Link zur Startseite, zB: http://www.conf.com'
+
+        date: 'Wann startet die Veranstaltung?'
+        city: 'zB: Hamburg oder Frankfurt (Main)'
+        country_code: 'Bitte wähle ein Land aus der Liste'
+
+        organizers: 'Organisation(en) hinter der Veranstaltung, eine pro Zeile'
+        contact_url: 'zB: @superconf (twitter) oder http://www.conf.com/contact.html oder e-mail'
+
+        tag_list: "kommaseparierte Liste von Themen, zB: obst, gemüse, nachtisch"
+
+        speaker_list_url: 'URL für eine Liste der Teilnehmer_innen, zB: http://www.conf.com/our_speakers.html'
+        woman: ''
+        total: ''
+
+        reporter: 'Name, Pseudonym'
+        reporter_url: 'zB: @inge (twitter) oder http://www.my_blog.com/contact.html oder e-mail (Achtung! Erscheint auf der Seite.)'
+
+        internal_user_info: 'Nur für die Moderation, wird nicht auf der Seite angezeigt'

@@ -41,7 +41,7 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'morrisjs-rails'
 gem 'raphael-rails'
-gem 'bootstrap_form'
+gem 'bootstrap_form', '~> 2.2.0'
 gem 'rails-i18n'
 gem 'acts-as-taggable-on'
 gem 'country_select', '~> 2.1.0'
