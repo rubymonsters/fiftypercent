@@ -3,28 +3,35 @@
 car_show:
   title: Carshow 3000
   subtitle: the super car-show
-  date: 2014-08-30 21:49:51
+  description: It is such a super car show!
+  main_url: http://www.carshow.de
+  date: 2014-08-30
   city: Hamburg
   country_code: DE
-  description: It is such a super car show!
-  main_url: http://www.heise.de
-  speaker_list_url: http://www.heise.de
+  organizers: "Car Inc.\nIntercar GmbH"
+  contact_url: http://www.carshow.de/contact
+  speaker_list_url: http://www.carshow.de/speakers.html
   woman: 2
   total: 8
   reporter: Horst
   reporter_url: '@horst'
+  internal_user_info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  internal_admin_info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
 cebit:
   title: CeBit
   subtitle: die grosse Computer-Messe
+  description: All about computers.
+  main_url: http://www.cebit.de
   date: 2014-09-30 21:49:51
   city: Hannover
   country_code: DE
-  description: All about computers
-  main_url: http://www.cebit.de
+  organizers: "Messe Hannover\nCebit GmbH\nVerband der IT"
+  contact_url: http://www.carshow.de/contact
   speaker_list_url: http://www.cebit.de/speakers.html
   woman: 20
   total: 80
   reporter: Horst
   reporter_url: '@horst'
-
+  internal_user_info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  internal_admin_info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
