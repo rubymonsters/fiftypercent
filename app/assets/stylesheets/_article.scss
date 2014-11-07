@@ -1,0 +1,31 @@
+article {
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.1);
+  
+  h1 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  &.bright{
+    background-color: $article-bright;
+  }
+  &.dark{
+    background-color: $article-dark;
+  }
+
+  .date {
+    color: $bright-grey;
+    text-decoration: none;
+    text-transform: uppercase;
+    span {
+      color: $bright-grey;
+    }
+  }
+
+  .bold {
+    padding-bottom: 20px;
+    font-weight: 700;
+  }
+}

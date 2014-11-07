@@ -1,0 +1,48 @@
+#sidebar {
+  
+  #tag_cloud {
+    line-height: 1.6em;
+
+    .s { font-size: 0.8em; }
+    .m { font-size: 1.2em; }
+    .l { font-size: 1.8em; }
+    a {
+      text-decoration: none;
+    }
+  }
+  min-height: 150px;
+  padding: 20px;
+  background-color: $dark-grey;
+  color: #eee;
+
+  aside {
+    margin-bottom: 40px;
+  }
+
+  h1 {
+    border-bottom: 1px solid gray;
+    color: $bright-grey;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+
+  a {
+    color: $bright-grey;
+    text-decoration: underline;
+  }
+
+  a.btn-sidebar {
+    background-color: $dark-grey;
+    color: $bright-grey;
+    border-color: $bright-grey;
+    &:hover{
+      color: $dark-grey;
+      background-color: $bright-grey;
+    }
+  }
+}
+

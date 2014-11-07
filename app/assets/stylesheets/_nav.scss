@@ -1,0 +1,26 @@
+.navbar {
+  background-color: $dark-grey;
+  min-height: 100px;
+  padding-top: 30px;
+  color: $background-color;
+  /*background: url('micro.png') no-repeat center center fixed;*/
+  /*background-size: cover;*/
+  
+  .navbar-brand {
+    font-size: 72px;
+    font-family: 'TitilliumWeb Bold';
+    text-transform: uppercase;
+    color: $background-color;
+  }
+  
+  a {
+    color: $background-color;
+  }
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: $background-color;
+  &:hover {
+    color: $bright-grey;
+  }
+}
