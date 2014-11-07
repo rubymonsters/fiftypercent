@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  concern :paginatable do
+    get '(page/:page)', :action => :index, :on => :collection, :as => ''
+  end
+
   get 'log_out' => 'sessions#destroy', as: 'log_out'
 
   get 'log_in' => 'sessions#new', as: 'log_in'
@@ -10,9 +14,10 @@ Rails.application.routes.draw do
 
   root 'events#index'
 
-  resources :events
+  resources :events, concerns: :paginatable
 
   get 'tags/:tag', to: 'events#index', as: :tag
+
 
   namespace :admin do
     resources :events

@@ -38,21 +38,24 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'bootstrap-sass', '~> 3.2.0'
+gem 'bcrypt',            '~> 3.1.7'
+gem 'rails-i18n'
+gem 'kaminari',          '~> 0.16.1'
+gem 'acts-as-taggable-on'
+
+gem 'bootstrap-sass',     '~> 3.2.0'
+gem 'bootstrap_form',     '~> 2.2.0'
 gem 'morrisjs-rails'
 gem 'raphael-rails'
-gem 'bootstrap_form', '~> 2.2.0'
-gem 'rails-i18n'
-gem 'acts-as-taggable-on'
-gem 'country_select', '~> 2.1.0'
-gem 'capistrano', '~> 3.2.0'
-gem 'capistrano-rails', '~> 1.1.0'
+gem 'country_select',    '~> 2.1.0'
+
+gem 'capistrano',        '~> 3.2.0'
+gem 'capistrano-rails',  '~> 1.1.0'
 gem 'capistrano-bundler'
 
 gem 'execjs'
 gem 'therubyracer'
-gem 'bcrypt', '~> 3.1.7'
 
-gem 'rack-attack', '~> 4.2.0'
+gem 'rack-attack',       '~> 4.2.0'
 
 gem 'quiet_assets', group: :development
