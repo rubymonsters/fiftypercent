@@ -1,5 +1,5 @@
 #sidebar {
-  
+
   #tag_cloud {
     line-height: 1.6em;
 
@@ -35,10 +35,17 @@
     text-decoration: underline;
   }
 
-  a.btn-sidebar {
+  input.form-control {
+    border-color: $bright-grey;
+    background-color: $background-color;
+  }
+
+  .btn-sidebar {
     background-color: $dark-grey;
     color: $bright-grey;
     border-color: $bright-grey;
+    text-decoration: none;
+
     &:hover{
       color: $dark-grey;
       background-color: $bright-grey;

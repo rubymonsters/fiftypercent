@@ -5,6 +5,8 @@ class EventsController < ApplicationController
   def index
     if params[:tag].present?
       @events = Event.tagged_with(params[:tag]).page(params[:page])
+    elsif params[:q].present?
+      @events = Event.search(params[:q]).page(params[:page])
     else
       @events = Event.order(:created_at).page(params[:page])
     end

@@ -1,12 +1,26 @@
 <% if params[:controller] == 'events' and %w(index show).include?(params[:action])  %>
 <div class='col-md-4' id='sidebar'>
-  <aside class="widget">
-    <%= link_to new_event_path, class: 'btn btn-sidebar' do %>
+
+    <%= link_to new_event_path, class: 'btn btn-sidebar', style: 'width: 100%;' do %>
       <span class="glyphicon glyphicon-plus-sign"></span>
       Neue Veranstaltung eintragen
     <% end %>
+
+  <aside class="widget">
     <h1>
-      tags:
+      Suche
+    </h1>
+    <%= form_tag(events_path, method: 'get', class: 'form-inline', role: 'form') do %>
+      <div class="form-group">
+        <%= text_field_tag(:q, params[:q],  {class: 'form-control', placeholder: 'Suchbegriff..'}) %>
+        <%= submit_tag(raw('Suchen'), class: 'btn btn-sidebar') %>
+      </div>
+    <% end %>
+  </aside>
+
+  <aside class="widget">
+    <h1>
+      Tags
     </h1>
     <div id='tag_cloud'>
       <% tag_cloud Event.tag_counts, %w[s m l] do |tag, css_class| %>
@@ -17,7 +31,7 @@
 
   <aside class="widget">
     <h1>
-      Statistik:
+      Statistik
     </h1>
     <p>
       Bisher gezählt: <%= Event.count %> Veranstaltungen.<br>

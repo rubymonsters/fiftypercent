@@ -1,3 +1,13 @@
+<% if params[:q] %>
+<div class="row">
+  <div class="col-md-12">
+    Suchbegriff: <strong>"<%= params[:q] %>"</strong> &mdash;
+    <%= page_entries_info @events %><br><br>
+  </div>
+</div>
+
+<% end %>
+
 <% @events.each do |event| %>
   <div class="row">
     <div class="col-md-12">
@@ -51,7 +61,9 @@
 <% end %>
 <div class="row">
   <div class="col-md-5">
-    <%= page_entries_info @events %>
+    <% if @events.any? %>
+      <%= page_entries_info @events %>
+    <% end %>
   </div>
   <div class="col-md-7 text-right">
     <%= paginate @events %>
