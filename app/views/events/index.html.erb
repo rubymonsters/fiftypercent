@@ -1,71 +1,14 @@
-<% if params[:q] %>
-<div class="row">
-  <div class="col-md-12">
-    Suchbegriff: <strong>"<%= params[:q] %>"</strong> &mdash;
-    <%= page_entries_info @events %><br><br>
-  </div>
-</div>
+<%= render partial: 'tag_or_search_summery' %>
 
-<% end %>
+<%= render @events %>
 
-<% @events.each do |event| %>
+<% if @events.any? %>
   <div class="row">
-    <div class="col-md-12">
-      <article class="<%= cycle('bright', 'dark') -%>">
-        <h1>
-          <%= link_to event.title, event %>
-        </h1>
-        <div class="row">
-          <div class="col-md-6">
-            <ul>
-              <li>
-                Es reden:
-                <div class="bold">
-                  <%= event.male %>% Männer
-                </div>
-              </li>
-              <li>
-                Veranstaltet von:
-                <div class="bold">
-                  <%= event.main_url%>
-                </div>
-              </li>
-            <ul>
-          </div>
-          <div class="col-md-6">
-            <%= render "donut", event: event %>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <hr>
-            <ul class="date">
-              <li>
-                <span>
-                  Datum:
-                </span>
-                <%= event.date.strftime("%d %B %Y um %H:%M Uhr") %>
-              </li>
-              <li>
-                <span>
-                  Ort:
-                </span>
-                <%= event.city %>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </article>
+    <div class="col-md-5">
+      <%= page_entries_info @events %>
+    </div>
+    <div class="col-md-7 text-right">
+      <%= paginate @events %>
     </div>
   </div>
 <% end %>
-<div class="row">
-  <div class="col-md-5">
-    <% if @events.any? %>
-      <%= page_entries_info @events %>
-    <% end %>
-  </div>
-  <div class="col-md-7 text-right">
-    <%= paginate @events %>
-  </div>
-</div>

@@ -1,0 +1,15 @@
+<% if params[:q] %>
+  <div class="row">
+    <div class="col-md-12">
+      Suchbegriff: <strong>"<%= params[:q] %>"</strong> &mdash;
+      <%= page_entries_info @events %><br><br>
+    </div>
+  </div>
+<% elsif params[:tag] %>
+  <div class="row">
+    <div class="col-md-12">
+      Tag: <strong>"<%= params[:tag] %>"</strong> &mdash;
+      <%= page_entries_info @events %><br><br>
+    </div>
+  </div>
+<% end %>

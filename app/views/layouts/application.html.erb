@@ -24,14 +24,16 @@
   </div>
 
   <div class='row'>
+
     <div class='col-md-8'>
       <%= yield %>
     </div>
-
-    <%= render 'shared/sidebar' %>
-
-    </div>
-
+    <% if layout_needs_sidebar?  %>
+      <div class='col-md-4' id='sidebar'>
+        <%= render 'shared/sidebar' %>
+    <% else %>
+      <div class='col-md-4'>&nbsp;</div>
+    <% end %>
   </div>
 </div>
 
