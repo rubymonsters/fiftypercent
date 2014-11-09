@@ -12,15 +12,19 @@ class Admin::EventsController < Admin::BaseController
     end
   end
 
+  def show
+    @event = Event.find(params[:id])
+  end
+
   def publish
-    event = Event.find(params[:id])
-    event.update_attributes(published_at: Time.now)
+    @event = Event.find(params[:id])
+    @event.update_attributes(published_at: Time.now)
     redirect_to admin_events_path
   end
 
   def unpublish
-    event = Event.find(params[:id])
-    event.update_attributes(published_at: nil)
+    @event = Event.find(params[:id])
+    @event.update_attributes(published_at: nil)
     redirect_to admin_events_path
   end
 

@@ -1,0 +1,93 @@
+<div class="action-bar">
+  <%= link_to edit_admin_event_path, class: 'btn btn-default' do  %>
+    <span class="glyphicon glyphicon-edit"></span>
+    edit
+  <% end %>
+  <% if @event.published? %>
+    <%= link_to unpublish_admin_event_path(@event.id), method: 'post', data: {confirm: 'This will set event to "unpublished".'}, class: 'btn btn-default' do %>
+      <span class="glyphicon glyphicon-ban-circle" style="color: DarkRed;"></span>
+      hide
+    <% end %>
+  <% else %>
+    <%= link_to publish_admin_event_path(@event.id), method: 'post', class: 'btn btn-success' do %>
+      <span class="glyphicon glyphicon-ok-circle"></span>
+      publish
+    <% end %>
+  <% end %>
+  <%= link_to admin_event_path, method: 'delete', data: {confirm: 'Are you sure? You cannot undo this!'}, class: 'btn btn-danger' do  %>
+    <span class="glyphicon glyphicon-remove"></span>
+    delete
+  <% end %>
+  <%= link_to admin_events_path, class: 'btn btn-default' do  %>
+    <span class="glyphicon glyphicon-list"></span>
+    back to list
+  <% end %>
+</div>
+
+<div class="event-properties">
+  <h4>Was?</h4>
+  <dl class="dl-horizontal">
+    <dt>Title</dt>
+    <dd><%= @event.title %></dd>
+
+    <dt>Subtitle/Motto/Claim</dt>
+    <dd><%= @event.subtitle %></dd>
+
+    <dt>Description</dt>
+    <dd><%= @event.description %></dd>
+  
+    <dt>Main URL</dt>
+    <dd><%= link_to @event.main_url, @event.main_url %></dd>
+  </dl>
+
+  <h4>Wann und wo?</h4>
+  <dl class="dl-horizontal">
+    <dt>Date</dt>
+    <dd><%= @event.date.to_s(:gd) %></dd>
+
+    <dt>City</dt>
+    <dd><%= @event.city %></dd>
+
+    <dt>Country</dt>
+    <dd><%= @event.country_name %></dd>
+  </dl>
+
+  <h4>Wer?</h4>
+  <dl class="dl-horizontal">
+    <dt>Organizers</dt>
+    <dd><%= simple_format(@event.organizers) %></dd>
+
+    <dt>Contact</dt>
+    <dd><%= simple_format(@event.contact_url) %></dd>
+  </dl>
+
+  <h4>Sprecher_innen</h4>
+  <dl class="dl-horizontal">
+    <dt>Speaker_list_url</dt>
+    <dd><%= @event.speaker_list_url %></dd>
+
+    <dt>Woman</dt>
+    <dd><%= @event.woman %></dd>
+
+    <dt>Total</dt>
+    <dd><%= @event.total %></dd>
+  </dl>
+
+  <h4>Reporter</h4>
+  <dl class="dl-horizontal">
+    <dt>Reporter</dt>
+    <dd><%= @event.reporter %></dd>
+
+    <dt>Contact</dt>
+    <dd><%= @event.reporter_url %></dd>
+  </dl>
+
+  <h4>Internal notes <small>(not visible on site)</small></h4>
+  <dl class="dl-horizontal">
+    <dt>User-Notes</dt>
+    <dd><%= @event.internal_user_info %></dd>
+
+    <dt>Admin-Notes</dt>
+    <dd><%= @event.internal_admin_info %></dd>
+  </dl>
+</div>
