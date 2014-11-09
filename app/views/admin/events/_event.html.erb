@@ -1,4 +1,4 @@
-<tr class="<%= 'warning' unless event.published? %>">
+<tr class="<%= 'success' unless event.published? %>">
   <td>
     <%= link_to event.title, admin_event_path(event) %>
   </td>
@@ -15,7 +15,7 @@
         hide
       <% end %>
     <% else %>
-      <%= link_to publish_admin_event_path(event.id), method: 'post', class: 'btn btn-xs btn-success' do %>
+      <%= link_to publish_admin_event_path(event.id), method: 'post', class: 'btn btn-xs btn-default' do %>
         <span class="glyphicon glyphicon-ok-circle"></span>
         publish
       <% end %>
@@ -24,5 +24,21 @@
   <td class="small">
     <%= event.created_at.to_s(:gdt) %>
     <%= "von: #{event.reporter}" if event.reporter.present? %>
+  </td>
+  <td class="text-right">
+    <% if event.internal_admin_info.present? || event.internal_user_info.present? %>
+      <a  class="internal-info"
+          data-toggle="popover"
+          data-placement="left"
+          title="Internal Info:"
+          data-html="true"
+          data-content="<strong>User:</strong><br><%= event.internal_user_info %><hr><strong>Admin:</strong><br><%= event.internal_admin_info %><hr><a href='<%= edit_admin_event_path(event) %>#internal'>Edit</a>"
+         >
+        <span class="glyphicon glyphicon-info-sign"></span>
+      </a>
+    <% end %>
+    <%= link_to edit_admin_event_path(event) do %>
+      <span class="glyphicon glyphicon-edit"></span>
+    <% end %>
   </td>
 </tr>

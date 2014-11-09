@@ -32,6 +32,15 @@ body.frontend {
   background-color: $background-color;
   color: $text-grey;
   font-family: 'Open Sans', sans-serif;
+
+  a  {
+    color: #333538;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
 }
 
 ol, ul {
@@ -44,26 +53,6 @@ li {
   margin: 0;
   padding: 0;
 }
-
-.flash {
-  padding: 6px 12px;
-  font-size: 120%;
-  background-color: $background-color;
-}
-
-.flash_alert {
-  color: #800040;
-}
-
-a  {
-  color: #333538;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
 
 .glyphicon {
   margin-right: 4px;

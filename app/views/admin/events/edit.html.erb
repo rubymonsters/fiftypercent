@@ -1,4 +1,12 @@
 <%= bootstrap_form_for([:admin, @event]) do |f| %>
   <%= render partial: 'events/form_fields', locals: {f: f} %>
+
+  <fieldset>
+    <legend>Moderation Intern</legend>
+    <%= f.text_area :internal_admin_info %>
+  </fieldset>
+
+
+
   <%= f.submit 'Speichern', class: "btn btn-success" %>
 <% end %>

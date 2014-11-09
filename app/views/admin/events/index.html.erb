@@ -1,16 +1,32 @@
-<h3>
-  <span class="glyphicon glyphicon-ban-circle" style="color: DarkOrange;"></span>
-  Unpublished events:
-</h3>
+<% unless params[:q] || params[:tag] %>
+  <h3>
+    <span class="glyphicon glyphicon-ban-circle" style="color: DarkOrange;"></span>
+    Unpublished events:
+  </h3>
 
-<table id="unpublished-events" class="table table-striped table-hover table-condensed">
-  <%= render partial:'event', collection: @unpublished_events, as: 'event' %>
-</table>
+  <table id="unpublished-events" class="table table-striped table-hover table-condensed">
+    <%= render partial:'event', collection: @unpublished_events, as: 'event' %>
+  </table>
+<% end %>
 
-<h3>
-  <span class="glyphicon glyphicon-list"></span>
-  All events:
-</h3>
+<div class="row published-events-header">
+  <h3 class="col-sm-4">
+    <span class="glyphicon glyphicon-list"></span>
+    All events:
+  </h3>
+
+  <div class="col-sm-4">
+    <%= page_entries_info @events %>
+  </div>
+
+  <%= form_tag(admin_events_path, method: 'get', class: 'form-inline col-sm-4 text-right', role: 'form') do %>
+    <div class="form-group">
+      <%= text_field_tag(:q, params[:q],  {class: 'form-control', placeholder: 'Suchbegriff..'}) %>
+      <%= submit_tag(raw('Suchen'), class: 'btn btn-primary') %>
+    </div>
+  <% end %>
+</div>
+
 <table id="published-events" class="table table-striped table-hover table-condensed">
   <%= render @events %>
 </table>
@@ -25,3 +41,18 @@
     </div>
   </div>
 <% end %>
+
+<script>
+  $("[data-toggle=popover]").popover();
+  // workaround because trigger: focus does not work as advertised
+  jQuery(function($) {
+    jQuery("body").on("click",".internal-info",function(){
+          $(this).popover();
+          $(".internal-info").not(this).popover("hide"); //hide other popovers
+          return false;
+      });
+      jQuery("body").on("click",function(){
+          $(".internal-info").popover("hide"); //hide all popovers when clicked on body
+      });
+  });
+</script>

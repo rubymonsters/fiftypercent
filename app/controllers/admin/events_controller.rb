@@ -14,16 +14,9 @@ class Admin::EventsController < Admin::BaseController
     end
   end
 
-  def show
-  end
-
-  def edit
-  end
-
-
   def update
     if @event.update(event_params)
-      redirect_to admin_event_path(@event)
+      redirect_to admin_event_path(@event), flash: {success: "Successfully updated event: <strong>\"#{@event.title}\"</strong>"}
     else
       render 'edit'
     end
@@ -31,17 +24,17 @@ class Admin::EventsController < Admin::BaseController
 
   def destroy
     @event.destroy
-    redirect_to admin_events_path
+    redirect_to admin_events_path, flash: {success: "Successfully deleted event: <strong>\"#{@event.title}\"</strong>"}
   end
 
   def publish
     @event.update_attributes(published_at: Time.now)
-    redirect_to admin_events_path
+    redirect_to admin_events_path, flash: {success: "Successfully <strong>published</strong> event: <strong>\"#{@event.title}\"</strong>"}
   end
 
   def unpublish
     @event.update_attributes(published_at: nil)
-    redirect_to admin_events_path
+    redirect_to admin_events_path, flash: {success: "Successfully <strong>un-published</strong> event: <strong>\"#{@event.title}\"</strong>"}
   end
 
   private

@@ -16,13 +16,7 @@
 <%= render 'shared/menu' %>
 
 <div class='container' id='content'>
-
-  <div class='row'>
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, class: "flash flash_#{name} panel panel-primary col-md-8" %>
-    <% end %>
-  </div>
-
+  <%= flash_messages %>
   <div class='row'>
 
     <div class='col-md-8'>
