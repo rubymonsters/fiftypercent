@@ -14,3 +14,14 @@
 <table id="published-events" class="table table-striped table-hover table-condensed">
   <%= render @events %>
 </table>
+
+<% if @events.any? %>
+  <div class="row">
+    <div class="col-md-5">
+      <%= page_entries_info @events %>
+    </div>
+    <div class="col-md-7 text-right">
+      <%= paginate @events %>
+    </div>
+  </div>
+<% end %>

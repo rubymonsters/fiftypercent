@@ -1,0 +1,4 @@
+<%= bootstrap_form_for([:admin, @event]) do |f| %>
+  <%= render partial: 'events/form_fields', locals: {f: f} %>
+  <%= f.submit 'Speichern', class: "btn btn-success" %>
+<% end %>

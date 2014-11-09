@@ -1,4 +1,12 @@
 .admin {
+  .edit_event {
+    legend {
+      background-color: $dark-grey;
+      color: $bright-grey;
+      padding-left: 8px;
+    }
+  }
+  
   .event-properties {
     h4 {
       border-bottom: 1px solid gray;

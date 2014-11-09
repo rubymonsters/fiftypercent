@@ -13,7 +13,10 @@
 </p>
 <p>Los gehts:</p>
 
-<%= render 'form' %>
+<%= bootstrap_form_for(@event) do |f| %>
+  <%= render partial: 'form_fields', locals: {f: f} %>
+  <%= f.submit 'Speichern', class: "btn btn-success" %>
+<% end %>
 
 <p>
   Danke für Deinen Beitrag.
