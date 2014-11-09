@@ -26,7 +26,7 @@
 @import "events";
 @import "sidebar";
 
-body {
+body.frontend {
   padding-top: 130px;
   background-color: $background-color;
   color: $text-grey;

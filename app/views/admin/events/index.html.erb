@@ -1,5 +1,16 @@
-<ul>
-  <% @events.each do |event| %>
-    <li><%= event.title %></li>
-  <% end %>
-</ul>
+<h3>
+  <span class="glyphicon glyphicon-ban-circle" style="color: DarkOrange;"></span>
+  Unpublished events:
+</h3>
+
+<table id="unpublished-events" class="table table-striped table-hover table-condensed">
+  <%= render partial:'event', collection: @unpublished_events, as: 'event' %>
+</table>
+
+<h3>
+  <span class="glyphicon glyphicon-list"></span>
+  All events:
+</h3>
+<table id="published-events" class="table table-striped table-hover table-condensed">
+  <%= render @events %>
+</table>

@@ -1,0 +1,28 @@
+<tr class="<%= 'warning' unless event.published? %>">
+  <td>
+    <%= link_to event.title, admin_event_path(event) %>
+  </td>
+  <td>
+    <%= event.date.to_s(:gd) %>
+  </td>
+  <td>
+    <%= event.city %>
+  </td>
+  <td>
+    <% if event.published? %>
+      <%= link_to unpublish_admin_event_path(event.id), method: 'post', class: 'btn btn-xs btn-default' do %>
+        <span class="glyphicon glyphicon-ban-circle"></span>
+        hide
+      <% end %>
+    <% else %>
+      <%= link_to publish_admin_event_path(event.id), method: 'post', class: 'btn btn-xs btn-success' do %>
+        <span class="glyphicon glyphicon-ok-circle"></span>
+        publish
+      <% end %>
+    <% end %>
+  </td>
+  <td class="small">
+    <%= event.created_at.to_s(:gdt) %>
+    <%= "von: #{event.reporter}" if event.reporter.present? %>
+  </td>
+</tr>

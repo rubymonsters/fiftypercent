@@ -12,15 +12,38 @@ class Admin::EventsControllerTest < ActionController::TestCase
   end
 
 
-
   test "should get index if logged in" do
     get :index, nil, user_id: users(:horst).id
     assert_template :index
   end
 
-  test "should list events titles" do
+  test "should list unpublished events titles" do
     get :index, nil, user_id: users(:horst).id
-    assert_select 'li', /^CeBi/
+    assert_select '#unpublished-events' do
+      assert_select  'td', /^CeBi/
+    end
+  end
+
+  test "should list published events titles" do
+    get :index, nil, user_id: users(:horst).id
+    assert_select '#published-events' do
+      assert_select  'td', /^Carshow/
+    end
+  end
+
+
+  test "publish-method publishes an event" do
+    assert_difference 'Event.published.count'  do
+      post :publish, {id: events(:cebit).id}, {user_id: users(:horst).id}
+    end
+    assert_redirected_to admin_events_path
+  end
+
+  test "unpublish-method un-publishes an event" do
+    assert_difference 'Event.unpublished.count' do
+      post :unpublish, {id: events(:car_show).id}, {user_id: users(:horst).id}
+    end
+    assert_redirected_to admin_events_path
   end
 
 end
