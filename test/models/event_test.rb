@@ -18,4 +18,20 @@ class EventTest < ActiveSupport::TestCase
   test "should not save an event without a title" do
     assert_not Event.new.save
   end
+  
+  test "search finds events by title" do
+    assert_equal Event.search('bit').size, 1
+    assert_equal Event.search('bit').first, events(:cebit)
+  end
+  
+  test "search finds events by subtitle" do
+    assert_equal Event.search('super').size, 1
+    assert_equal Event.search('super').first, events(:car_show)
+  end
+  
+  test "search finds events by description" do
+    assert_equal Event.search('such').size, 1
+    assert_equal Event.search('such').first, events(:car_show)
+  end
+  
 end
