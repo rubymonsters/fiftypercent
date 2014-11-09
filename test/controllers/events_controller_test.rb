@@ -7,6 +7,22 @@ class EventsControllerTest < ActionController::TestCase
     assert_equal assigns(:events).size, 2
   end
 
+  test "index should only show published events" do
+    get :index
+    assert_includes assigns(:events), events(:car_show)
+    assert_not_includes assigns(:events), events(:cebit)
+  end
+  
+  test "search should show published events" do
+    get :index, {q: "car"}
+    assert_includes assigns(:events), events(:car_show)
+  end
+
+  test "search should not show UNpublished events" do
+    get :index, {q: "CeBit"}
+    assert_empty assigns(:events)
+  end
+
   valid_event_hash = {
     title: 'New Event',
     date: Time.now,

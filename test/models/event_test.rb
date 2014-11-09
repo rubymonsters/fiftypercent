@@ -18,28 +18,39 @@ class EventTest < ActiveSupport::TestCase
   test "should not save an event without a title" do
     assert_not Event.new.save
   end
-  
+
   test "search finds events by title" do
     assert_equal Event.search('bit').size, 1
     assert_equal Event.search('bit').first, events(:cebit)
   end
-  
+
   test "search finds events by subtitle" do
     assert_equal Event.search('super').size, 1
     assert_equal Event.search('super').first, events(:car_show)
   end
-  
+
   test "search finds events by description" do
     assert_equal Event.search('such').size, 1
     assert_equal Event.search('such').first, events(:car_show)
   end
-  
-  test "event with published-date should be public?" do
-    assert events(:car_show).public?
+
+  test "event with published-date should be published?" do
+    assert events(:car_show).published?
+  end
+
+  test "event without published-date should NOT be published?" do
+    refute events(:cebit).published?
   end
   
-  test "event with published-date should be public?" do
-    refute events(:cebit).public?
+  test "Event.published finds all published events" do
+    assert_equal Event.published.size, 2
+    assert_includes Event.published.all, events(:car_show)
+    assert_includes Event.published.all, events(:flower_conf)
   end
-  
+
+  test "Event.unpublished finds all not-published events" do
+    assert_equal Event.unpublished.size, 1
+    assert_equal Event.unpublished.first, events(:cebit)
+  end
+
 end

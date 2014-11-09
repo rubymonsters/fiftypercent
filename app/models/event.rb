@@ -5,6 +5,9 @@ class Event < ActiveRecord::Base
   acts_as_taggable
   acts_as_taggable_on :topics
 
+  scope :published,   -> { where('events.published_at IS NOT NULL') }
+  scope :unpublished, -> { where('events.published_at IS NULL') }
+
   def male
     100 - (woman.to_f/total.to_f*100).to_i
   end
@@ -16,6 +19,10 @@ class Event < ActiveRecord::Base
     else
       ''
     end
+  end
+
+  def published?
+    published_at.present?
   end
 
   def self.search(q)
