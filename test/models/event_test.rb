@@ -34,4 +34,12 @@ class EventTest < ActiveSupport::TestCase
     assert_equal Event.search('such').first, events(:car_show)
   end
   
+  test "event with published-date should be public?" do
+    assert events(:car_show).public?
+  end
+  
+  test "event with published-date should be public?" do
+    refute events(:cebit).public?
+  end
+  
 end

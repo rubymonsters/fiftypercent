@@ -1,5 +1,7 @@
 # https://gist.github.com/dvessel/1478685
 
 
-myExtraExcludes = "log,vendor,tmp,.sass-cache,.DS_Store,public/assets"
+myExtraExcludes       = "log,vendor,tmp,.sass-cache,.DS_Store,public/assets"
+
+excludeDirectories    = "{$excludeDirectories,$myExtraExcludes}"
 excludeInFolderSearch = "{$excludeInFolderSearch,$myExtraExcludes}" 
