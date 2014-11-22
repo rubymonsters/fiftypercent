@@ -26,7 +26,7 @@ class Event < ActiveRecord::Base
   end
 
   def self.search(q)
-    Event.where('events.title ILIKE ? OR events.subtitle ILIKE ? OR events.description ILIKE ?',
-                "%#{q}%", "%#{q}%", "%#{q}%")
+    Event.where('events.title ILIKE ? OR events.subtitle ILIKE ? OR events.description ILIKE ? OR events.reporter ILIKE ?',
+                "%#{q}%", "%#{q}%", "%#{q}%", "%#{q}%")
   end
 end

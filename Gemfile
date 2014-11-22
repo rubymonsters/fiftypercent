@@ -59,3 +59,4 @@ gem 'therubyracer'
 gem 'rack-attack',       '~> 4.2.0'
 
 gem 'quiet_assets', group: :development
+gem 'minitest-reporters', group: :test

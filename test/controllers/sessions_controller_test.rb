@@ -10,14 +10,14 @@ class SessionsControllerTest < ActionController::TestCase
   test "should log a user in if pw is valid" do
     post :create, {email: 'horst@mail.com', password: 'geheim'}
     assert_equal session[:user_id], users(:horst).id
-    assert_match /Logged\ in/, flash[:notice]
+    assert_match /Logged\ in/, flash[:success] # !> ambiguous first argument; put parentheses or even spaces
     assert_redirected_to admin_events_path
   end
 
   test "should NOT log a user in if pw is NOT valid" do
     post :create, {email: 'horst@mail.com', password: 'nicht_das_password'}
     assert_not session[:user_id]
-    assert_match /Invalid/, flash[:alert]
+    assert_match /Invalid/, flash[:alert] # !> ambiguous first argument; put parentheses or even spaces
     assert_template :new
   end
 
@@ -26,7 +26,7 @@ class SessionsControllerTest < ActionController::TestCase
   test "calling destroy action logs the user out" do
     get :destroy, nil, {user_id: users(:horst).id}
     assert_not session[:user_id]
-    assert_match /Logged\ out/, flash[:notice]
+    assert_match /Logged\ out/, flash[:success] # !> ambiguous first argument; put parentheses or even spaces
     assert_redirected_to root_path
   end
 

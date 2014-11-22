@@ -1,3 +1,5 @@
+require 'test_helper'
+
 class EventsControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
@@ -42,3 +44,4 @@ class EventsControllerTest < ActionController::TestCase
     assert_equal 'Event was successfully created.', flash[:notice]
   end
 end
+  

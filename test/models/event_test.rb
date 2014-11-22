@@ -34,6 +34,11 @@ class EventTest < ActiveSupport::TestCase
     assert_equal Event.search('such').first, events(:car_show)
   end
 
+  test "search finds events by reporter" do
+    assert_equal Event.search('inge').size, 1
+    assert_equal Event.search('such').first, events(:car_show)
+  end
+
   test "event with published-date should be published?" do
     assert events(:car_show).published?
   end
