@@ -1,3 +1,5 @@
+require 'test_helper'
+
 class Admin::EventsControllerTest < ActionController::TestCase
 
   # this behavior here is inherited from Admin::BaseController
@@ -20,14 +22,14 @@ class Admin::EventsControllerTest < ActionController::TestCase
   test "should list unpublished events titles" do
     get :index, nil, user_id: users(:horst).id
     assert_select '#unpublished-events' do
-      assert_select  'td', /^CeBi/
+      assert_select  'td', /CeBi/
     end
   end
 
   test "should list published events titles" do
     get :index, nil, user_id: users(:horst).id
     assert_select '#published-events' do
-      assert_select  'td', /^Carshow/
+      assert_select  'td', /Carshow/
     end
   end
 

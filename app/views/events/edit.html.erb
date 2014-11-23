@@ -1,6 +1,24 @@
-<h1>Veranstaltung</h1>
+<h1>Veranstaltung bearbeiten:</h1>
 
-<%= render 'form' %>
+<p>
+  This event can still be edited by <strong>you</strong> for
+  <strong><%= (@event.remaining_edit_time / 60.0).to_i %> minutes</strong>.
+  Counting from the moment, this page was loaded by
+  you browser. So go ahead and edit it:
+</p>
 
-<%= link_to 'Anzeigen', @event %>
-<%= link_to 'Back', events_path %>
+<%= bootstrap_form_for(@event) do |f| %>
+  <%= render partial: 'form_fields', locals: {f: f} %>
+  <%= f.submit  'Update', class: 'btn btn-success'%>
+  <%= link_to raw('<span class="glyphicon glyphicon-ban-circle"></span> Cancel'),
+              event_path(@event),
+              class: 'btn btn-default' %>
+<% end %>
+
+<p>
+  <br>
+  After updating, this event can still be edited by <strong>you</strong> for
+  <strong><%= (@event.remaining_edit_time / 60.0).to_i %> minutes</strong>.
+  Counting from the moment, this page was loaded by
+  you browser.<br><br><br>
+</p>

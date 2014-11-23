@@ -35,15 +35,36 @@
   <% end %>
   <dt>Tags</dt>
   <dd><%= raw @event.tag_list.map { |t| link_to t, tag_path(t) }.join(' | ') %></dd>
+  <dt>Status</dt>
+  <dd>
+    <% if @event.published? %>
+      Publiziert und für alle sichtbar.
+    <% else %>
+      Noch nicht durch die Moderation frei gegeben, nur für Dich und die Moderation sichtbar.
+    <% end %>
+  </dd>
 </dl>
 
 <%= render "donut", event: @event %>
 
-  <% if current_user %>
-    <%= link_to 'Destroy', @event, method: :delete, data: { confirm: 'Are you sure?' } %></td> |
-    <%= link_to 'Edit', edit_event_path(@event) %> |
-    <%= link_to 'Back', events_path %>
-  <% end %>
+<% if @event.frontend_editable?(session[:reported_events_ids], current_user) %>
+<p>
+  <br><br><br>
+  This event can still be edited by <strong>you</strong> for
+  <strong><%= (@event.remaining_edit_time / 60.0).to_i %> minutes</strong>.
+  Counting from the moment, this page was loaded by
+  you browser.
+</p>
+<%= link_to raw('<span class="glyphicon glyphicon-pencil"></span> Edit'),
+            edit_event_path(@event),
+            class: 'btn btn-default' %>
+<% end %>
+
+<% if current_user %>
+  <%= link_to 'Destroy', @event, method: :delete, data: { confirm: 'Are you sure?' } %></td> |
+  <%= link_to 'Edit', edit_event_path(@event) %> |
+  <%= link_to 'Back', events_path %>
+<% end %>
 
 
 

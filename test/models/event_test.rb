@@ -8,7 +8,7 @@ class EventTest < ActiveSupport::TestCase
     I18n.locale = old_locale
   end
 
-  test "a new event has the right name" do
+  test "a new event has the right country name" do
     old_locale = I18n.locale
     I18n.locale = :fr
     assert_equal Event.new(country_code: 'FR').country_name, 'France'
@@ -46,7 +46,7 @@ class EventTest < ActiveSupport::TestCase
   test "event without published-date should NOT be published?" do
     refute events(:cebit).published?
   end
-  
+
   test "Event.published finds all published events" do
     assert_equal Event.published.size, 2
     assert_includes Event.published.all, events(:car_show)
@@ -57,5 +57,40 @@ class EventTest < ActiveSupport::TestCase
     assert_equal Event.unpublished.size, 1
     assert_equal Event.unpublished.first, events(:cebit)
   end
+
+
+  test "Event knows if has been recently_created?" do
+    event = Event.create!(valid_event_hash)
+    assert event.recently_created?
+  end
+
+  test "Event knows if has NOT been recently_created?" do
+    event = Event.create!(valid_event_hash)
+    event.created_at = 2.days.ago
+    event.save!
+    assert_not event.recently_created?
+  end
+
+  test 'can be edited by author' do
+    event = Event.create!(valid_event_hash)
+    assert event.frontend_editable?([event.id], nil)
+  end
+
+  test 'can NOT be edited by author if to old' do
+    event = Event.create!(valid_event_hash)
+    event.created_at = 2.hours.ago
+    assert_not event.frontend_editable?([event.id], nil)
+  end
+
+  test 'can NOT be edited by someone else' do
+    event = Event.create!(valid_event_hash)
+    assert_not event.frontend_editable?(nil, nil)
+  end
+
+  test 'can be edited by any admin' do
+    event = Event.create!(valid_event_hash)
+    assert event.frontend_editable?([], users(:horst))
+  end
+
 
 end

@@ -3,7 +3,7 @@ class Admin::EventsController < Admin::BaseController
   before_action :set_event, only: [:show, :edit, :update, :destroy, :publish, :unpublish]
 
   def index
-    @unpublished_events = Event.unpublished.order(:created_at)
+    @unpublished_events = Event.unpublished.order(created_at: :desc)
 
     if params[:tag].present?
       @events = Event.order(created_at: :desc).tagged_with(params[:tag]).page(params[:page]).per(40)
