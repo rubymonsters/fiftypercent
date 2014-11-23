@@ -16,6 +16,9 @@
 <%= render 'shared/menu' %>
 
 <div class='container' id='content'>
+  <% if Rails.env.development? %>
+    <%= render 'shared/debug' %>
+  <% end %>
   <%= flash_messages %>
   <div class='row'>
 

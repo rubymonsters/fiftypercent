@@ -4,7 +4,8 @@ require 'rails/test_help'
 
 require 'minitest/reporters'
 
-Minitest::Reporters.use! # [Minitest::Reporters::DefaultReporter.new]
+Minitest::Reporters.use! # [Minitest::Reporters::DefaultReporter.new(slow_count: 5)]
+
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.

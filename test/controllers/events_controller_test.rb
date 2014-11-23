@@ -38,10 +38,27 @@ class EventsControllerTest < ActionController::TestCase
 
   test "should create event" do
     assert_difference('Event.count') do
-      post :create, event: valid_event_hash, user_id: users(:horst).id
+      post :create, event: valid_event_hash
     end
     assert_redirected_to event_path(assigns(:event))
     assert_equal 'Event was successfully created.', flash[:notice]
   end
+  
+  test 'should store event-id of created event in an array in the users session' do
+    post :create, event: valid_event_hash
+    new_event_id = Event.where(title: 'New Event').first.id
+    assert_includes session[:reported_events_ids], new_event_id
+  end
+
+  test 'should store event-id of a second event in an array in the users session' do
+    post :create, event: valid_event_hash
+    post :create, event: valid_event_hash.merge(title: 'Title Two')
+    new_event_id    = Event.where(title: 'New Event').first.id
+    second_event_id = Event.where(title: 'Title Two').first.id
+    assert_includes session[:reported_events_ids], new_event_id
+    assert_includes session[:reported_events_ids], second_event_id
+    assert_equal 2, session[:reported_events_ids].size
+  end
+  
 end
   

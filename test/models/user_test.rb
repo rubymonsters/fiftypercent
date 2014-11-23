@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-
   test "a user can be authenticated" do
     assert_equal User.authenticate(users(:horst).email, 'geheim'), users(:horst)
   end
