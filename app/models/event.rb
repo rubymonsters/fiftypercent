@@ -16,7 +16,7 @@ class Event < ActiveRecord::Base
                 "%#{q}%", "%#{q}%", "%#{q}%", "%#{q}%")
   end
 
-  def male
+  def percent_male
     100 - (woman.to_f/total.to_f*100).to_i
   end
 
