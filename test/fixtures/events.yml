@@ -13,6 +13,7 @@ car_show:
   speaker_list_url: http://www.carshow.de/speakers.html
   woman: 2
   total: 8
+  remark: Some random remark about the event.
   reporter: Inge
   reporter_url: '@inge'
   internal_user_info:  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
@@ -32,6 +33,7 @@ flower_conf:
   speaker_list_url: http://www.flowerconf.de/speakers.html
   woman: 7
   total: 19
+  remark: Some random remark about the event.
   reporter: Horst
   reporter_url: '@horst'
   internal_user_info:  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
@@ -51,6 +53,7 @@ cebit:
   speaker_list_url: http://www.cebit.de/speakers.html
   woman: 20
   total: 80
+  remark: Some random remark about the event.
   reporter: Horst
   reporter_url: '@horst'
   internal_user_info:  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."

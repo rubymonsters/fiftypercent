@@ -67,6 +67,7 @@ class EventsController < ApplicationController
                                     :contact_url, 
                                     :woman, 
                                     :total, 
+                                    :remark,
                                     :reporter,
                                     :reporter_url, 
                                     :tag_list,

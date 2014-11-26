@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141109113302) do
+ActiveRecord::Schema.define(version: 20141126210657) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20141109113302) do
     t.text     "internal_user_info"
     t.text     "internal_admin_info"
     t.datetime "published_at"
+    t.text     "remark"
   end
 
   create_table "taggings", force: true do |t|

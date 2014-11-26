@@ -19,6 +19,7 @@ de:
         speaker_list_url: 'Hast Du den genauen link zu den Speakern?'
         woman: 'Wieviel Frauen reden/diskutieren/etc?'
         total: 'Wieviel Teilnehmer_innen sind es insgesamt?'
+        remark: Anmerkung
 
         reporter: 'Wie heißt Du?'
         reporter_url: 'Wie kann man Dich errreichen?'
@@ -49,6 +50,7 @@ de:
         speaker_list_url: 'URL für eine Liste der Teilnehmer_innen, zB: http://www.conf.com/our_speakers.html'
         woman: ''
         total: ''
+        remark: 'zB: 2 der 3 Fauen sind lediglich Moderatorinnen.'
 
         reporter: 'Name, Pseudonym'
         reporter_url: 'zB: @inge (twitter) oder http://www.my_blog.com/contact.html oder e-mail (Achtung! Erscheint auf der Seite.)'
