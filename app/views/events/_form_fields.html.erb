@@ -30,9 +30,9 @@
 
 <fieldset>
   <legend>Sprecher_innen</legend>
+  <%= f.number_field :woman, min: 0 %>
+  <%= f.number_field :total, min: 0 %>
   <%= f.url_field :speaker_list_url %>
-  <%= f.number_field :woman, wrapper: { class: 'col-sm-4'} %>
-  <%= f.number_field :total %>
 </fieldset>
 
 <fieldset>

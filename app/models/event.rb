@@ -2,8 +2,8 @@ class Event < ActiveRecord::Base
 
   EDIT_TIME = 20 # minutes the event stays editable by the author
 
-  validates :title, :date, :city, :country_code, :main_url, :total, :woman, :reporter, presence: true
-  validates :total, :woman, numericality: true
+  validates :title, :date, :city, :country_code, :main_url, :total, :woman, presence: true
+  validates :total, :woman, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   acts_as_taggable
   acts_as_taggable_on :topics
