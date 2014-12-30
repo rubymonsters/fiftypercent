@@ -1,5 +1,7 @@
 class Event < ActiveRecord::Base
 
+  has_many :comments, as: :commentable
+
   EDIT_TIME = 20 # minutes the event stays editable by the author
 
   validates :title, :date, :city, :country_code, :main_url, :total, :woman, presence: true
