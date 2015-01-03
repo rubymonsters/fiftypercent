@@ -19,8 +19,10 @@ ActiveRecord::Schema.define(version: 20141230123146) do
   create_table "comments", force: true do |t|
     t.text     "title"
     t.text     "body"
+    t.string   "author"
     t.string   "public_contact"
     t.string   "internal_contact"
+    t.datetime "published_at"
     t.integer  "commentable_id"
     t.string   "commentable_type"
     t.datetime "created_at"

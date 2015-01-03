@@ -4,17 +4,15 @@ Rails.application.routes.draw do
     get '(page/:page)', :action => :index, :on => :collection, :as => ''
   end
 
-  get 'log_out' => 'sessions#destroy', as: 'log_out'
-
-  get 'log_in' => 'sessions#new', as: 'log_in'
-  resources :sessions
-
-  get 'sign_up' => 'users#new', as: 'sign_up'
-  resources :users
-
   root 'events#index'
 
-  resources :events, concerns: :paginatable
+  get 'log_out' => 'sessions#destroy', as: 'log_out'
+  get 'log_in'  => 'sessions#new',     as: 'log_in'
+  resources :sessions
+
+  resources :events, concerns: :paginatable do
+    resources :comments, only: [:create]
+  end
 
   get 'tags/:tag', to: 'events#index', as: :tag
 

@@ -1,6 +1,12 @@
 de:
   helpers:
     label:
+      comment:
+        title: Titel
+        author: 'Wer bist Du? Name, Spitzname oder Pseudonym.'
+        public_contact: 'Wie kann man Dich errreichen? (optional)'
+        body: 'Text Deiner Ergänzung'
+        internal_contact: 'Interne Kontaktinfo. Wird nicht auf der Seite veröffentlicht.'
       event:
         title: 'Titel der Konferenz'
         subtitle: 'Motto'
@@ -32,6 +38,11 @@ de:
 
   activerecord:
     help:
+      comment:
+        title:
+        internal_contact: 'Nur Moderatorinnen oder Admins können so mit Dir Kontakt aufnehmen.'
+        public_contact: 'zB: @myname (twitter) oder http://www.my-blog.com/contact.html oder e-mail'
+        internal_contact: 'zB: @myname (twitter) oder http://www.my-blog.com/contact.html oder e-mail'
       event:
         title: ''
         subtitle: 'Slogan oder Tagline  der Veranstaltung, wenn vorhanden'

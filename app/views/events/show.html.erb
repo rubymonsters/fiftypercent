@@ -48,18 +48,21 @@
 </dl>
 
 <%= render "donut", event: @event %>
+<%= render "comment_form", event: @event %>
+
+
 
 <% if @event.frontend_editable?(session[:reported_events_ids], current_user) %>
-<p>
-  <br><br><br>
-  This event can still be edited by <strong>you</strong> for
-  <strong><%= (@event.remaining_edit_time / 60.0).to_i %> minutes</strong>.
-  Counting from the moment, this page was loaded by
-  you browser.
-</p>
-<%= link_to raw('<span class="glyphicon glyphicon-pencil"></span> Edit'),
-            edit_event_path(@event),
-            class: 'btn btn-default' %>
+  <p>
+    <br><br><br>
+    This event can still be edited by <strong>you</strong> for
+    <strong><%= (@event.remaining_edit_time / 60.0).to_i %> minutes</strong>.
+    Counting from the moment, this page was loaded by
+    you browser.
+  </p>
+  <%= link_to raw('<span class="glyphicon glyphicon-pencil"></span> Edit'),
+              edit_event_path(@event),
+              class: 'btn btn-default' %>
 <% end %>
 
 <% if current_user %>
