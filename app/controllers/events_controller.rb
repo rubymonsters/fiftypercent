@@ -11,7 +11,8 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
+    @event   = Event.find(params[:id])
+    @comment = Comment.new
     unless @event.published? || @event.frontend_editable?(session[:reported_events_ids], current_user)
       redirect_to events_path, notice: 'This event cannot be shown.'
     end
@@ -57,19 +58,19 @@ class EventsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
       params.require(:event).permit(:title,
-                                    :subtitle, 
-                                    :date, 
-                                    :city, 
-                                    :country_code, 
-                                    :description, 
-                                    :main_url, 
-                                    :speaker_list_url, 
-                                    :contact_url, 
-                                    :woman, 
-                                    :total, 
+                                    :subtitle,
+                                    :date,
+                                    :city,
+                                    :country_code,
+                                    :description,
+                                    :main_url,
+                                    :speaker_list_url,
+                                    :contact_url,
+                                    :woman,
+                                    :total,
                                     :remark,
                                     :reporter,
-                                    :reporter_url, 
+                                    :reporter_url,
                                     :tag_list,
                                     :internal_user_info )
     end
