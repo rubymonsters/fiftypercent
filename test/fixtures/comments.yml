@@ -5,9 +5,12 @@ one:
   body: MyText
   public_contact: MyString
   internal_contact: MyString
+  commentable: car_show(Event)
+
 
 two:
   title: MyText
   body: MyText
   public_contact: MyString
   internal_contact: MyString
+  commentable: car_show(Event)
