@@ -33,6 +33,8 @@ gem 'rack-attack',       '~> 4.2.0'
 group :development do
   gem 'spring'
   gem 'puma'
+  gem 'faker'
+  gem 'pry-rails'
   gem 'quiet_assets'
 end
 
