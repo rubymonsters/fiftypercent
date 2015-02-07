@@ -11,39 +11,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141230123146) do
+ActiveRecord::Schema.define(version: 20150207190850) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "comments", force: true do |t|
+  create_table "comments", force: :cascade do |t|
     t.text     "title"
     t.text     "body"
-    t.string   "author"
-    t.string   "public_contact"
-    t.string   "internal_contact"
-    t.datetime "published_at"
+    t.string   "author",           limit: 255
+    t.string   "public_contact",   limit: 255
+    t.string   "internal_contact", limit: 255
     t.integer  "commentable_id"
-    t.string   "commentable_type"
+    t.string   "commentable_type", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "mod_state"
   end
 
-  create_table "events", force: true do |t|
+  create_table "events", force: :cascade do |t|
     t.text     "title"
     t.text     "subtitle"
     t.datetime "date"
-    t.string   "city"
-    t.string   "country_code"
+    t.string   "city",                limit: 255
+    t.string   "country_code",        limit: 255
     t.text     "description"
-    t.string   "main_url"
+    t.string   "main_url",            limit: 255
     t.text     "contact_url"
-    t.string   "speaker_list_url"
+    t.string   "speaker_list_url",    limit: 255
     t.integer  "woman"
     t.integer  "total"
-    t.string   "category"
-    t.string   "reporter"
-    t.string   "reporter_url"
+    t.string   "category",            limit: 255
+    t.string   "reporter",            limit: 255
+    t.string   "reporter_url",        limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "organizers"
@@ -53,12 +53,12 @@ ActiveRecord::Schema.define(version: 20141230123146) do
     t.text     "remark"
   end
 
-  create_table "taggings", force: true do |t|
+  create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
-    t.string   "taggable_type"
+    t.string   "taggable_type", limit: 255
     t.integer  "tagger_id"
-    t.string   "tagger_type"
+    t.string   "tagger_type",   limit: 255
     t.string   "context",       limit: 128
     t.datetime "created_at"
   end
@@ -66,17 +66,17 @@ ActiveRecord::Schema.define(version: 20141230123146) do
   add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true, using: :btree
   add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context", using: :btree
 
-  create_table "tags", force: true do |t|
-    t.string  "name"
-    t.integer "taggings_count", default: 0
+  create_table "tags", force: :cascade do |t|
+    t.string  "name",           limit: 255
+    t.integer "taggings_count",             default: 0
   end
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
-  create_table "users", force: true do |t|
-    t.string   "email"
-    t.string   "password_hash"
-    t.string   "password_salt"
+  create_table "users", force: :cascade do |t|
+    t.string   "email",         limit: 255
+    t.string   "password_hash", limit: 255
+    t.string   "password_salt", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end

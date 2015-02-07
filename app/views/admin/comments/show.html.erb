@@ -1,0 +1,44 @@
+<h2>
+  <span class="glyphicon glyphicon-comment"></span>
+  <%= @comment.title %>
+  <small>id: <%= @comment.id %></small>
+</h2>
+
+<dl class="dl-horizontal">
+  <dt>Title</dt>
+  <dd><%= @comment.title %></dd>
+  <dt>Author</dt>
+  <dd><%= @comment.author %></dd>
+  <dt>Body</dt>
+  <dd><%= @comment.body %></dd>
+  <dt>&nbsp;</dt><dd>&nbsp;</dd>
+  <dt>Public_contact</dt>
+  <dd><%= @comment.public_contact %></dd>
+  <dt>Internal_contact</dt>
+  <dd><%= @comment.internal_contact %></dd>
+  <dt>&nbsp;</dt><dd>&nbsp;</dd>
+  <dt>Created_at</dt>
+  <dd><%= @comment.created_at.to_s(:gdt) %></dd>
+  <dt>Updated_at</dt>
+  <dd><%= @comment.updated_at.to_s(:gdt) %></dd>
+  <dt>Mod_state</dt>
+  <dd><%= @comment.mod_state %></dd>
+  <dt>&nbsp;</dt><dd>&nbsp;</dd>
+  <dt>Belongs to <%= @comment.commentable_type %></dt>
+  <dd><%= link_to @comment.commentable.title, polymorphic_path([:admin, @comment.commentable]) %></dd>
+</dl>
+
+<%= link_to admin_comments_path, class: 'btn btn-default' do %>
+  <span class="glyphicon glyphicon-list"></span>
+  Back to list of comments
+<% end %>
+
+<%= link_to edit_admin_comment_path(@comment), class: 'btn btn-default' do %>
+  <span class="glyphicon glyphicon-edit"></span>
+  Edit this comment
+<% end %>
+
+<%= link_to admin_comment_path(@comment), method: 'delete', class: 'btn btn-danger pull-right' do %>
+  <span class="glyphicon glyphicon-remove"></span>
+  Delete this comment
+<% end %>

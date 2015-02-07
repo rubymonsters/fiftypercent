@@ -1,0 +1,22 @@
+<%= bootstrap_form_for([:admin, @comment]) do |f| %>
+
+  <fieldset>
+    <legend>Comment</legend>
+    <%= f.text_field :title %>
+    <%= f.text_field :author %>
+    <%= f.text_area :body %>
+  </fieldset>
+
+  <fieldset>
+    <legend>Contact</legend>
+    <%= f.text_field :public_contact %>
+    <%= f.text_field :internal_contact %>
+  </fieldset>
+
+  <%= f.submit 'Safe', class: "btn btn-success" %>
+<% end %>
+
+<%= link_to admin_comment_path(@comment), class: 'btn btn-default pull-right' do %>
+  <span class="glyphicon glyphicon-comment"></span>
+  Cancel / Back
+<% end %>

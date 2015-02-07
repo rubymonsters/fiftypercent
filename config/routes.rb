@@ -24,6 +24,12 @@ Rails.application.routes.draw do
         post 'unpublish'
       end
     end
+    resources :comments do
+      member do
+        post 'publish'
+        post 'unpublish'
+      end
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

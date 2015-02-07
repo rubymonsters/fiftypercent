@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
   def create
     @event   = Event.find params[:event_id]
     if !@event.published?
-      redirect_to events_path, notice: 'This event cannot be shown.'
+      redirect_to events_path, notice: 'This event cannot be commented.'
     end
     @comment = @event.comments.new(comment_params)
     
