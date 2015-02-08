@@ -1,0 +1,36 @@
+.edit_event {
+  legend {
+    background-color: $dark-grey;
+    color: $bright-grey;
+    padding-left: 8px;
+  }
+}
+
+a.internal-info {
+  color: #999;
+  cursor: w-resize;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.popover{
+  max-width:540px;
+}
+
+
+table#unpublished-events {
+  margin-bottom: 48px;
+}
+
+.published-events-header {
+  h3 {
+    margin-top: 0;
+  }
+}
+
+.event-properties {
+  h4 {
+    border-bottom: 1px solid gray;
+  }
+}

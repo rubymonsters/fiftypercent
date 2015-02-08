@@ -1,5 +1,28 @@
 <tr class="<%= comment.mod_state %>">
-  <td><%= link_to comment.title, admin_comment_path(comment) %></td>
-  <td><%= comment.author %></td>
-  <td><%= comment.body %></td>
+  <td>
+    <strong>
+      <%= link_to comment.title, admin_comment_path(comment) %>
+    </strong>
+    <p class="commentable">
+      <%= link_to polymorphic_path([:admin, comment.commentable]) do %>
+        <br>
+        <strong>
+          <span class="glyphicon glyphicon-calendar"></span>
+          <br>
+          <%= comment.commentable_type %>:
+        </strong>
+        <%= comment.commentable.title %>
+      <% end %>
+    </p>
+  </td>
+  <td>
+    <%= comment.author %><br>
+    <br>
+    <span class="glyphicon glyphicon-time"></span>
+    <br>
+    <%= comment.created_at.to_s(:gdt) %>
+  </td>
+  <td>
+    <%= simple_format(comment.body) %>
+  </td>
 </tr>

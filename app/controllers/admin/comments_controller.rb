@@ -3,7 +3,12 @@ class Admin::CommentsController < Admin::BaseController
   before_action :set_comment, only: [:show, :edit, :update, :destroy, :publish, :unpublish]
 
   def index
-    @comments = Comment.all
+    @commentable = find_commentable
+    if @commentable
+      @comments = @commentable.comments.all.page(params[:page])
+    else
+      @comments    = Comment.includes(:commentable).order(created_at: :desc).page(params[:page]).per(40)
+    end
   end
 
   def show
@@ -33,6 +38,12 @@ class Admin::CommentsController < Admin::BaseController
   
     def set_comment
       @comment = Comment.find(params[:id])
+    end
+    
+    def find_commentable
+      if params[:commentable_type] && params[:commentable_id]
+        params[:commentable_type].constantize.find(params[:commentable_id].to_i)
+      end
     end
 
 end

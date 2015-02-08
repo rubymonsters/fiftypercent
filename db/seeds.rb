@@ -66,4 +66,18 @@ Event.create({
   end
 end
 
+event_count = Event.count
+210.times do
+  event_id = Event.offset(rand(event_count)).first.id
+  Comment.create({
+    title:            Faker::Company.catch_phrase,
+    body:             Faker::Lorem.paragraphs(rand(6)+1).join("\n\n"),
+    author:           Faker::Name.name,
+    public_contact:   Faker::Internet.url,
+    internal_contact: Faker::Internet.email,
+    commentable_id:   event_id,
+    commentable_type: Event    
+  })
+end
+
 User.create(email: 'horst@mail.com', password:'geheim')

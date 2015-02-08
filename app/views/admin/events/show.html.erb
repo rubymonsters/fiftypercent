@@ -22,6 +22,11 @@
     <span class="glyphicon glyphicon-list"></span>
     back to list
   <% end %>
+  <%= link_to admin_comments_path(commentable_type: 'Event', commentable_id: @event.id), class: 'btn btn-default' do  %>
+    <span class="glyphicon glyphicon-comment"></span>
+    <%= @event.comments.count %>
+    comments
+  <% end %>
 </div>
 
 <div class="event-properties">

@@ -14,7 +14,7 @@ de:
           one: "<b>1</b> %{entry_name}"
           other: "<b>Alle %{count}</b> %{entry_name}"
       more_pages:
-        display_entries: "Event <b>%{first}&nbsp;-&nbsp;%{last}</b> von <b>%{total}</b> insgesamt"
+        display_entries: "Eintrag <b>%{first}&nbsp;-&nbsp;%{last}</b> von <b>%{total}</b> insgesamt"
 en:
   views:
     pagination:
