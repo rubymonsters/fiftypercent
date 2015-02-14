@@ -6,4 +6,4 @@ myExtraExcludes       = "log,vendor,tmp,.sass-cache,.DS_Store,public/assets"
 excludeDirectories    = "{$excludeDirectories,$myExtraExcludes}"
 excludeInFolderSearch = "{$excludeInFolderSearch,$myExtraExcludes}"
 
-TM_RUBY = '/Users/work/.rvm/bin/textmate_ruby'
+# TM_RUBY = '/Users/work/.rvm/bin/textmate_ruby'

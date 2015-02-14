@@ -15,10 +15,12 @@ article {
     background-color: $article-dark;
   }
 
-  .date {
+  .byline {
+    margin-top: 16px;
+    border-top: 1px solid #e2e2e2;
+    padding-top: 10px;
     color: $bright-grey;
     text-decoration: none;
-    text-transform: uppercase;
     span {
       color: $bright-grey;
     }

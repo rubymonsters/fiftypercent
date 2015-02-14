@@ -1,0 +1,22 @@
+<div class="comment">
+  <h3>
+    <span class="glyphicon glyphicon-comment"></span>
+    <%= comment.title %>
+  </h3>
+  <p>
+    <span class="glyphicon glyphicon-time"></span>
+    <%= comment.created_at.to_s(:gdt) %>
+    &nbsp;
+    <span class="glyphicon glyphicon-user"></span>
+    <%= comment.author %>
+    <% if comment.public_contact %>
+      &nbsp;
+      <span class="glyphicon glyphicon-envelope"></span>
+      <%= comment.public_contact %>
+    <% end %>
+  </p>
+  <div class="comment-body">
+    <%= simple_format(comment.body) %>
+  </div>
+  
+</div>

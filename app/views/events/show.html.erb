@@ -48,9 +48,6 @@
 </dl>
 
 <%= render "events/donut", event: @event %>
-<%= render "events/comment_form", event: @event, comment: @comment %>
-
-
 
 <% if @event.frontend_editable?(session[:reported_events_ids], current_user) %>
   <p>
@@ -64,6 +61,15 @@
               edit_event_path(@event),
               class: 'btn btn-default' %>
 <% end %>
+
+<% if @event.comments.published.any? %>
+  <div class="comments" id="comments">
+    <h2>Eure Kommentare:</h2>
+    <%= render partial: 'comment', collection: @event.comments.published %>
+  </div>
+<% end %>
+
+<%= render "events/comment_form", event: @event, comment: @comment %>
 
 <% if current_user %>
   <%= link_to 'Destroy', @event, method: :delete, data: { confirm: 'Are you sure?' } %></td> |

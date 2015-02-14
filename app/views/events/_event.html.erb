@@ -3,7 +3,7 @@
     <%= link_to event.title, event %>
   </h1>
 
-  <div class="row">
+  <div class="main row">
     <div class="col-md-6">
       <ul>
         <li>
@@ -25,15 +25,14 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-md-12">
-      <hr>
+  <div class="byline row">
+    <div class="col-md-9">
       <ul class="date">
         <li>
           <span>
             Datum:
           </span>
-          <%= event.date.strftime("%d %B %Y um %H:%M Uhr") %>
+          <%= event.date.to_s(:gd) %>
         </li>
         <li>
           <span>
@@ -42,6 +41,14 @@
           <%= event.city %>
         </li>
       </ul>
+    </div>
+    <div class="col-md-3">
+      <% if event.comments.any? %>
+        <%= link_to event_path(event, anchor: 'comments') do %>
+          <span class="glyphicon glyphicon-comment"></span>
+          <%= event.comments.size %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 
