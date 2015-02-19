@@ -21,6 +21,8 @@ gem 'morrisjs-rails'
 gem 'raphael-rails'
 gem 'country_select',    '~> 2.1.0'
 
+gem 'faker'
+
 gem 'capistrano',        '~> 3.2.0'
 gem 'capistrano-rails',  '~> 1.1.0'
 gem 'capistrano-bundler'
@@ -33,7 +35,6 @@ gem 'rack-attack',       '~> 4.2.0'
 group :development do
   gem 'spring'
   gem 'puma'
-  gem 'faker'
   gem 'pry-rails'
   gem 'quiet_assets'
 end

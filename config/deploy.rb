@@ -25,8 +25,11 @@ set :log_level, :info
 # Default value for :linked_files is []
 set :linked_files, %w{config/database.yml config/secrets.yml}
 
+# see: https://github.com/capistrano/bundler/issues/45
+set :bundle_binstubs, nil
+
 # Default value for linked_dirs is []
-set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 # Default value for default_env is {}
 set :default_env, { path: "/opt/ruby/bin:$PATH" }

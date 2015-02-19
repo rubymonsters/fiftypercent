@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-puts "It's me! ++++++++++++++++++++++++++++++++++++"
 begin
   load File.expand_path("../spring", __FILE__)
 rescue LoadError
