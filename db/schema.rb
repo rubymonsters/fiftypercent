@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150207190850) do
+ActiveRecord::Schema.define(version: 20150219104002) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20150207190850) do
     t.text     "internal_admin_info"
     t.datetime "published_at"
     t.text     "remark"
+    t.string   "mod_state"
   end
 
   create_table "taggings", force: :cascade do |t|

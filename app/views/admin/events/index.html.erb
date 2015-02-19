@@ -1,30 +1,14 @@
-<% unless params[:q] || params[:tag] %>
-  <h3>
-    <span class="glyphicon glyphicon-ban-circle" style="color: DarkOrange;"></span>
-    Unpublished events:
-  </h3>
+<%= render partial: 'filter_form' %>
 
-  <table id="unpublished-events" class="table table-striped table-hover table-condensed">
-    <%= render partial:'event', collection: @unpublished_events, as: 'event' %>
-  </table>
-<% end %>
-
-<div class="row published-events-header">
-  <h3 class="col-sm-4">
+<div class="row events-header">
+  <h4 class="col-sm-6">
     <span class="glyphicon glyphicon-list"></span>
-    All events:
-  </h3>
+    <%= events_description %>
+  </h4>
 
-  <div class="col-sm-4">
+  <h4 class="col-sm-6 text-right">
     <%= page_entries_info @events %>
-  </div>
-
-  <%= form_tag(admin_events_path, method: 'get', class: 'form-inline col-sm-4 text-right', role: 'form') do %>
-    <div class="form-group">
-      <%= text_field_tag(:q, params[:q],  {class: 'form-control', placeholder: 'Suchbegriff..'}) %>
-      <%= submit_tag(raw('Suchen'), class: 'btn btn-primary') %>
-    </div>
-  <% end %>
+  </h4>
 </div>
 
 <table id="published-events" class="table table-striped table-hover table-condensed">
@@ -43,6 +27,10 @@
 <% end %>
 
 <script>
+  $('a[data-remote=true]').bind('ajax:beforeSend', function() {
+    $(this).closest('tr').find('td').css('background-color', '#FFFFCC');
+  });
+
   $("[data-toggle=popover]").popover();
   // workaround because trigger: focus does not work as advertised
   jQuery(function($) {

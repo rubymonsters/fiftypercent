@@ -1,3 +1,22 @@
+#filter-form {
+ margin-bottom: 12px;
+}
+
+#published-events {
+  .title {
+    border-left: 4px solid silver;
+  }
+  .mod-state-ok .title {
+    border-left-color: green;
+  }
+  .mod-state-hidden .title {
+    border-left-color: Crimson;
+  }
+  .last {
+    border-right: 1px solid #ccc;
+  }
+}
+
 .edit_event {
   legend {
     background-color: $dark-grey;
@@ -18,16 +37,6 @@ a.internal-info {
   max-width:540px;
 }
 
-
-table#unpublished-events {
-  margin-bottom: 48px;
-}
-
-.published-events-header {
-  h3 {
-    margin-top: 0;
-  }
-}
 
 .event-properties {
   h4 {

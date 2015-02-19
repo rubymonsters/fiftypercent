@@ -10,12 +10,13 @@ class Event < ActiveRecord::Base
   acts_as_taggable
   acts_as_taggable_on :topics
 
-  scope :published,   -> { where('events.published_at IS NOT NULL') }
-  scope :unpublished, -> { where('events.published_at IS NULL') }
+  scope :unchecked, -> { where('events.mod_state IS NULL') }
+  scope :published, -> { where( mod_state: 'ok') }
+  scope :hidden,    -> { where( mod_state: 'hidden') }
 
   def self.search(q)
-    Event.where('events.title ILIKE ? OR events.subtitle ILIKE ? OR events.description ILIKE ? OR events.reporter ILIKE ?',
-                "%#{q}%", "%#{q}%", "%#{q}%", "%#{q}%")
+    Event.where('events.title ILIKE ? OR events.subtitle ILIKE ? OR events.description ILIKE ? OR events.reporter ILIKE ? OR events.city ILIKE ?',
+                "%#{q}%", "%#{q}%", "%#{q}%", "%#{q}%", "%#{q}%")
   end
 
   def percent_male
@@ -31,8 +32,16 @@ class Event < ActiveRecord::Base
     end
   end
 
+  def unchecked?
+    mod_state == nil
+  end
+
   def published?
-    published_at.present?
+    mod_state == 'ok'
+  end
+
+  def hidden?
+    mod_state == 'hidden'
   end
 
   def recently_created?

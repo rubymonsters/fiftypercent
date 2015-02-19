@@ -1,0 +1,55 @@
+<div class="row overview">
+
+  <div class="col-sm-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2 class="panel-title">
+          <span class="glyphicon glyphicon-calendar"></span>
+          Events
+        </h2>
+      </div>
+      <div class="panel-body">
+        <ul class="nav nav-pills nav-stacked">
+          <li>
+            <%= link_to admin_events_path(mod_state: 'unchecked') do %>
+              <span class="glyphicon glyphicon-question-sign"></span>
+              unchecked
+              (<%= Event.unchecked.count %>)
+            <% end %>
+          </li>
+          <li>
+            <%= link_to admin_events_path(mod_state: 'published') do %>
+              <span class="glyphicon glyphicon-thumbs-up"></span>
+              published
+              (<%= Event.published.count %>)
+            <% end %>
+          </li>
+          <li>
+            <%= link_to admin_events_path(mod_state: 'hidden') do %>
+              <span class="glyphicon glyphicon-thumbs-down"></span>
+              hidden
+              (<%= Event.hidden.count %>)
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2 class="panel-title">
+          <span class="glyphicon glyphicon-comment"></span>
+          Comments
+        </h2>
+      </div>
+      <div class="panel-body">
+        Panel content
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+  </div>
+</div>

@@ -19,13 +19,6 @@ class Admin::EventsControllerTest < ActionController::TestCase
     assert_template :index
   end
 
-  test "should list unpublished events titles" do
-    get :index, nil, user_id: users(:horst).id
-    assert_select '#unpublished-events' do
-      assert_select  'td', /CeBi/
-    end
-  end
-
   test "should list published events titles" do
     get :index, nil, user_id: users(:horst).id
     assert_select '#published-events' do
@@ -36,16 +29,16 @@ class Admin::EventsControllerTest < ActionController::TestCase
 
   test "publish-method publishes an event" do
     assert_difference 'Event.published.count'  do
-      post :publish, {id: events(:cebit).id}, {user_id: users(:horst).id}
+      patch :publish, {id: events(:cebit).id}, {user_id: users(:horst).id}
     end
-    assert_redirected_to admin_events_path
+    assert_redirected_to admin_event_path(events(:cebit).id)
   end
 
   test "unpublish-method un-publishes an event" do
-    assert_difference 'Event.unpublished.count' do
-      post :unpublish, {id: events(:car_show).id}, {user_id: users(:horst).id}
+    assert_difference 'Event.hidden.count' do
+      patch :hide, {id: events(:car_show).id}, {user_id: users(:horst).id}
     end
-    assert_redirected_to admin_events_path
+    assert_redirected_to admin_event_path(events(:car_show).id)
   end
 
 end

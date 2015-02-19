@@ -18,16 +18,19 @@ Rails.application.routes.draw do
 
 
   namespace :admin do
+    root to: "home#start"
     resources :events do
       member do
-        post 'publish'
-        post 'unpublish'
+        patch 'publish'
+        patch 'hide'
+        patch 'uncheck'
       end
     end
     resources :comments do
       member do
         post 'publish'
-        post 'unpublish'
+        post 'hide'
+        post 'uncheck'
       end
     end
   end

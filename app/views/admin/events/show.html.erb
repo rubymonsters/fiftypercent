@@ -1,32 +1,52 @@
-<div class="action-bar">
-  <%= link_to edit_admin_event_path, class: 'btn btn-default' do  %>
-    <span class="glyphicon glyphicon-edit"></span>
-    edit
-  <% end %>
-  <% if @event.published? %>
-    <%= link_to unpublish_admin_event_path(@event.id), method: 'post', data: {confirm: 'This will set event to "unpublished".'}, class: 'btn btn-default' do %>
-      <span class="glyphicon glyphicon-ban-circle" style="color: DarkRed;"></span>
-      hide
+<div class="action-bar row">
+  <div class="col-sm-3">
+    <h4><%= event_mod_state_title(@event) %></h4>
+  </div>
+  <div class="col-sm-3">
+    <div class="btn-group btn-group-sm" role="group" aria-label="...">
+      <% unless @event.unchecked? %>
+        <%= link_to uncheck_admin_event_path(@event), class: 'btn btn-default', method: 'patch' do %>
+          <span class="glyphicon glyphicon-question-sign"></span>
+          uncheck
+        <% end %>
+      <% end %>
+      <% unless @event.published? %>
+        <%= link_to publish_admin_event_path(@event), class: 'btn btn-default', method: 'patch' do %>
+          <span class="glyphicon glyphicon-thumbs-up"></span>
+          publish
+        <% end %>
+      <% end %>
+      <% unless @event.hidden? %>
+        <%= link_to hide_admin_event_path(@event), class: 'btn btn-default', method: 'patch' do %>
+          <span class="glyphicon glyphicon-thumbs-down"></span>
+          hide
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-sm-2">
+    <%= link_to edit_admin_event_path, class: 'btn btn-default' do  %>
+      <span class="glyphicon glyphicon-edit"></span>
+      edit
     <% end %>
-  <% else %>
-    <%= link_to publish_admin_event_path(@event.id), method: 'post', class: 'btn btn-success' do %>
-      <span class="glyphicon glyphicon-ok-circle"></span>
-      publish
+
+  </div>
+  <div class="col-sm-4">
+    <%= link_to admin_event_path, method: 'delete', data: {confirm: 'Are you sure? You cannot undo this!'}, class: 'btn btn-danger' do  %>
+      <span class="glyphicon glyphicon-remove"></span>
+      delete
     <% end %>
-  <% end %>
-  <%= link_to admin_event_path, method: 'delete', data: {confirm: 'Are you sure? You cannot undo this!'}, class: 'btn btn-danger' do  %>
-    <span class="glyphicon glyphicon-remove"></span>
-    delete
-  <% end %>
-  <%= link_to admin_events_path, class: 'btn btn-default' do  %>
-    <span class="glyphicon glyphicon-list"></span>
-    back to list
-  <% end %>
-  <%= link_to admin_comments_path(commentable_type: 'Event', commentable_id: @event.id), class: 'btn btn-default' do  %>
-    <span class="glyphicon glyphicon-comment"></span>
-    <%= @event.comments.count %>
-    comments
-  <% end %>
+    <%= link_to admin_events_path, class: 'btn btn-default' do  %>
+      <span class="glyphicon glyphicon-list"></span>
+      back to list
+    <% end %>
+    <%= link_to admin_comments_path(commentable_type: 'Event', commentable_id: @event.id), class: 'btn btn-default' do  %>
+      <span class="glyphicon glyphicon-comment"></span>
+      <%= @event.comments.count %>
+      comments
+    <% end %>
+
+  </div>
 </div>
 
 <div class="event-properties">
@@ -40,7 +60,7 @@
 
     <dt>Description</dt>
     <dd><%= @event.description %></dd>
-  
+
     <dt>Main URL</dt>
     <dd><%= link_to @event.main_url, @event.main_url %></dd>
   </dl>

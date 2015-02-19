@@ -39,12 +39,20 @@ class EventTest < ActiveSupport::TestCase
     assert_equal Event.search('such').first, events(:car_show)
   end
 
-  test "event with published-date should be published?" do
-    assert events(:car_show).published?
+
+  test "events without a mod_state are unchecked" do
+    assert Event.new.unchecked?
+    refute Event.new(mod_state: 'anything').unchecked?
   end
 
-  test "event without published-date should NOT be published?" do
-    refute events(:cebit).published?
+  test "events with modstat ok are published" do
+    assert Event.new(mod_state: 'ok').published?
+    refute Event.new(mod_state: 'not-ok').published?
+  end
+
+  test "events with modstat hidden are hidden" do
+    assert Event.new(mod_state: 'hidden').hidden?
+    refute Event.new(mod_state: 'not-hidden').hidden?
   end
 
   test "Event.published finds all published events" do
@@ -53,9 +61,9 @@ class EventTest < ActiveSupport::TestCase
     assert_includes Event.published.all, events(:flower_conf)
   end
 
-  test "Event.unpublished finds all not-published events" do
-    assert_equal Event.unpublished.size, 1
-    assert_equal Event.unpublished.first, events(:cebit)
+  test "Event.unchecked finds all unchecked events" do
+    assert_equal Event.unchecked.size, 1
+    assert_equal Event.unchecked.first, events(:cebit)
   end
 
 

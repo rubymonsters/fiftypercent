@@ -5,10 +5,16 @@ $admin-link-color: #4682B4; //SteelBlue
 .admin {
 
   @import "admin/*";
-  
+
   .navbar-brand {
     font-weight: bold;
     color: #ddd;
+  }
+
+  .navbar-inverse .navbar-nav{
+    a {
+      color: #ddd;
+    }
   }
 
   a {

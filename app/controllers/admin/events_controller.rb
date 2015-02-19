@@ -1,17 +1,24 @@
 class Admin::EventsController < Admin::BaseController
 
-  before_action :set_event, only: [:show, :edit, :update, :destroy, :publish, :unpublish]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :publish, :hide, :uncheck]
 
   def index
-    @unpublished_events = Event.unpublished.order(created_at: :desc)
-
-    if params[:tag].present?
-      @events = Event.order(created_at: :desc).tagged_with(params[:tag]).page(params[:page]).per(40)
-    elsif params[:q].present?
-      @events = Event.order(created_at: :desc).search(params[:q]).page(params[:page]).per(40)
+    if params[:q].present?
+      @events = Event.search(params[:q])
     else
-      @events = Event.order(created_at: :desc).page(params[:page]).per(40)
+      @events = Event.all
     end
+
+    case params[:mod_state]
+    when 'unchecked'
+      @events = @events.unchecked
+    when 'published'
+      @events = @events.published
+    when 'hidden'
+      @events = @events.hidden
+    end
+
+    @events = @events.order(created_at: :desc).page(params[:page]).per(40)
   end
 
   def update
@@ -28,20 +35,34 @@ class Admin::EventsController < Admin::BaseController
   end
 
   def publish
-    @event.update_attributes(published_at: Time.now)
-    redirect_to admin_events_path, flash: {success: "Successfully <strong>published</strong> event: <strong>\"#{@event.title}\"</strong>"}
+    @event.update_attributes(mod_state: 'ok')
+    respond_to do |format|
+      format.html {redirect_to admin_event_path(@event), flash: {success: "Successfully <strong>published</strong> event: <strong>\"#{@event.title}\"</strong>"}}
+      format.js {}
+    end
   end
 
-  def unpublish
-    @event.update_attributes(published_at: nil)
-    redirect_to admin_events_path, flash: {success: "Successfully <strong>un-published</strong> event: <strong>\"#{@event.title}\"</strong>"}
+  def hide
+    @event.update_attributes(mod_state: 'hidden')
+    respond_to do |format|
+      format.html {redirect_to admin_event_path(@event), flash: {success: "Successfully <strong>hid</strong> event: <strong>\"#{@event.title}\"</strong>"}}
+      format.js {}
+    end
+  end
+
+  def uncheck
+    @event.update_attributes(mod_state: nil)
+    respond_to do |format|
+      format.html {redirect_to admin_event_path(@event), flash: {success: "Successfully <strong>un-published</strong> event: <strong>\"#{@event.title}\"</strong>"}}
+      format.js {}
+    end
   end
 
   private
     def event_params
       params.require(:event).permit!
     end
-    
+
     def set_event
       @event = Event.find(params[:id])
     end

@@ -1,5 +1,5 @@
-<tr class="<%= 'success' unless event.published? %>">
-  <td>
+<tr class="mod-state-<%= event.mod_state %>" id="<%= dom_id(event) %>">
+  <td class="title">
     <% if event.recently_created? %>
       &nbsp;
       <span style="color: #cc3333;" class="glyphicon glyphicon-user" title="User can edit for <%= (event.remaining_edit_time / 60.0).to_i %> more minutes"></span>
@@ -12,24 +12,45 @@
   <td>
     <%= event.city %>
   </td>
-  <td>
-    <% if event.published? %>
-      <%= link_to unpublish_admin_event_path(event.id), method: 'post', class: 'btn btn-xs btn-default' do %>
-        <span class="glyphicon glyphicon-ban-circle"></span>
-        hide
-      <% end %>
-    <% else %>
-      <%= link_to publish_admin_event_path(event.id), method: 'post', class: 'btn btn-xs btn-default' do %>
-        <span class="glyphicon glyphicon-ok-circle"></span>
-        publish
-      <% end %>
-    <% end %>
+  <td class="mod-buttons">
+    <div class="btn-group btn-group-xs">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+        <span class="glyphicon glyphicon-cog"></span>
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <% unless event.unchecked? %>
+          <li>
+            <%= link_to uncheck_admin_event_path(event), method: 'patch', remote: true do %>
+              <span class="glyphicon glyphicon-question-sign"></span>
+              mark unchecked
+            <% end %>
+          </li>
+        <% end %>
+        <% unless event.published? %>
+          <li>
+            <%= link_to publish_admin_event_path(event), method: 'patch', remote: true do %>
+              <span class="glyphicon glyphicon-thumbs-up"></span>
+              publish
+            <% end %>
+          </li>
+        <% end %>
+        <% unless event.hidden? %>
+          <li>
+            <%= link_to hide_admin_event_path(event), method: 'patch', remote: true do %>
+              <span class="glyphicon glyphicon-thumbs-down"></span>
+              hide
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </td>
   <td class="small">
     <%= event.created_at.to_s(:gdt) %>
     <%= "von: #{event.reporter}" if event.reporter.present? %>
   </td>
-  <td class="text-right">
+  <td class="text-right last">
     <% if event.internal_admin_info.present? || event.internal_user_info.present? %>
       <a  class="internal-info"
           data-toggle="popover"
