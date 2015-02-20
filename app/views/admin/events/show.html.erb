@@ -32,7 +32,7 @@
 
   </div>
   <div class="col-sm-4">
-    <%= link_to admin_event_path, method: 'delete', data: {confirm: 'Are you sure? You cannot undo this!'}, class: 'btn btn-danger' do  %>
+    <%= link_to admin_event_path, method: 'delete', data: {confirm: 'Are you sure? You cannot undo this! Will also destroy the associated comments.'}, class: 'btn btn-danger' do  %>
       <span class="glyphicon glyphicon-remove"></span>
       delete
     <% end %>

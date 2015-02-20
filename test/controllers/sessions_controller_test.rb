@@ -11,7 +11,7 @@ class SessionsControllerTest < ActionController::TestCase
     post :create, {email: 'horst@mail.com', password: 'geheim'}
     assert_equal session[:user_id], users(:horst).id
     assert_match /Logged\ in/, flash[:success] # !> ambiguous first argument; put parentheses or even spaces
-    assert_redirected_to admin_events_path
+    assert_redirected_to admin_root_path
   end
 
   test "should NOT log a user in if pw is NOT valid" do

@@ -50,6 +50,14 @@
     <%= event.created_at.to_s(:gdt) %>
     <%= "von: #{event.reporter}" if event.reporter.present? %>
   </td>
+  <td>
+    <% if event.comments.any? %>
+      <%= link_to admin_comments_path(commentable_type: 'Event', commentable_id: event.id) do %>
+        <span class="glyphicon glyphicon-comment"></span>
+        <%= event.comments.size %>
+      <% end %>
+    <% end %>
+  </td>
   <td class="text-right last">
     <% if event.internal_admin_info.present? || event.internal_user_info.present? %>
       <a  class="internal-info"

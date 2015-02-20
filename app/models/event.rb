@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
 
-  has_many :comments, as: :commentable
+  has_many :comments, as: :commentable, dependent: :destroy
 
   EDIT_TIME = 20 # minutes the event stays editable by the author
 
@@ -15,6 +15,7 @@ class Event < ActiveRecord::Base
   scope :hidden,    -> { where( mod_state: 'hidden') }
 
   def self.search(q)
+    q.strip!
     Event.where('events.title ILIKE ? OR events.subtitle ILIKE ? OR events.description ILIKE ? OR events.reporter ILIKE ? OR events.city ILIKE ?',
                 "%#{q}%", "%#{q}%", "%#{q}%", "%#{q}%", "%#{q}%")
   end
@@ -52,7 +53,7 @@ class Event < ActiveRecord::Base
     created_at - EDIT_TIME.minutes.ago
   end
 
-  def frontend_editable?(reported_events_ids, current_user)
-    current_user.present? || (reported_events_ids.to_a.include?(id) && recently_created?)
+  def frontend_editable?(reported_events_ids)
+    reported_events_ids.to_a.include?(id) && recently_created?
   end
 end

@@ -28,9 +28,9 @@ Rails.application.routes.draw do
     end
     resources :comments do
       member do
-        post 'publish'
-        post 'hide'
-        post 'uncheck'
+        patch 'publish'
+        patch 'hide'
+        patch 'uncheck'
       end
     end
   end

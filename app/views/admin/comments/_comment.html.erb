@@ -1,19 +1,54 @@
-<tr class="<%= comment.mod_state %>">
-  <td>
+<tr class="mod-state-<%= comment.mod_state %>" id="<%= dom_id(comment) %>">
+  <td class="title">
     <strong>
       <%= link_to comment.title, admin_comment_path(comment) %>
     </strong>
-    <p class="commentable">
-      <%= link_to polymorphic_path([:admin, comment.commentable]) do %>
-        <br>
+    <br>
+    <% if comment.commentable %>
+      <%= link_to polymorphic_path([:admin, comment.commentable]), class: 'commentable' do %>
         <strong>
           <span class="glyphicon glyphicon-calendar"></span>
-          <br>
           <%= comment.commentable_type %>:
         </strong>
         <%= comment.commentable.title %>
       <% end %>
-    </p>
+    <% else %>
+      -
+    <% end %>
+    <br>
+    <div class="btn-group btn-group-xs">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+        <span class="glyphicon glyphicon-cog"></span>
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <% unless comment.unchecked? %>
+          <li>
+            <%= link_to uncheck_admin_comment_path(comment), method: 'patch', remote: true do %>
+              <span class="glyphicon glyphicon-question-sign"></span>
+              mark unchecked
+            <% end %>
+          </li>
+        <% end %>
+        <% unless comment.published? %>
+          <li>
+            <%= link_to publish_admin_comment_path(comment), method: 'patch', remote: true do %>
+              <span class="glyphicon glyphicon-thumbs-up"></span>
+              publish
+            <% end %>
+          </li>
+        <% end %>
+        <% unless comment.hidden? %>
+          <li>
+            <%= link_to hide_admin_comment_path(comment), method: 'patch', remote: true do %>
+              <span class="glyphicon glyphicon-thumbs-down"></span>
+              hide
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
   </td>
   <td>
     <%= comment.author %><br>
@@ -22,7 +57,7 @@
     <br>
     <%= comment.created_at.to_s(:gdt) %>
   </td>
-  <td>
+  <td class="last">
     <%= simple_format(comment.body) %>
   </td>
 </tr>

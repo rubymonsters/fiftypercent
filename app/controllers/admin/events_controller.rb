@@ -18,7 +18,7 @@ class Admin::EventsController < Admin::BaseController
       @events = @events.hidden
     end
 
-    @events = @events.order(created_at: :desc).page(params[:page]).per(40)
+    @events = @events.includes(:comments).order(created_at: :desc).page(params[:page]).per(40)
   end
 
   def update

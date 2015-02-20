@@ -81,24 +81,17 @@ class EventTest < ActiveSupport::TestCase
 
   test 'can be edited by author' do
     event = Event.create!(valid_event_hash)
-    assert event.frontend_editable?([event.id], nil)
+    assert event.frontend_editable?([event.id])
   end
 
   test 'can NOT be edited by author if to old' do
     event = Event.create!(valid_event_hash)
     event.created_at = 2.hours.ago
-    assert_not event.frontend_editable?([event.id], nil)
+    assert_not event.frontend_editable?([event.id])
   end
 
   test 'can NOT be edited by someone else' do
     event = Event.create!(valid_event_hash)
-    assert_not event.frontend_editable?(nil, nil)
+    assert_not event.frontend_editable?(nil)
   end
-
-  test 'can be edited by any admin' do
-    event = Event.create!(valid_event_hash)
-    assert event.frontend_editable?([], users(:horst))
-  end
-
-
 end

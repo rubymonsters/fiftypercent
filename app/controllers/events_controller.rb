@@ -13,7 +13,7 @@ class EventsController < ApplicationController
   def show
     @event   = Event.includes(:comments).find(params[:id])
     @comment = Comment.new
-    unless @event.published? || @event.frontend_editable?(session[:reported_events_ids], current_user)
+    unless @event.published? || @event.frontend_editable?(session[:reported_events_ids])
       redirect_to events_path, notice: 'This event cannot be shown.'
     end
   end
@@ -24,7 +24,7 @@ class EventsController < ApplicationController
 
   def edit
     @event = Event.find(params[:id])
-    unless @event.frontend_editable?(session[:reported_events_ids], current_user)
+    unless @event.frontend_editable?(session[:reported_events_ids])
       flash[:error] = 'Sorry, you cannot edit this event.'
       redirect_to events_path
     end
@@ -43,7 +43,7 @@ class EventsController < ApplicationController
 
   def update
     @event = Event.find(params[:id])
-    unless @event.frontend_editable?(session[:reported_events_ids], current_user)
+    unless @event.frontend_editable?(session[:reported_events_ids])
       flash[:error] = 'Sorry, you cannot edit this event.'
       redirect_to events_path
     end
