@@ -1,55 +1,106 @@
-<article class="<%= cycle('bright', 'dark') -%>">
+<article>
   <h1>
     <%= link_to event.title, event %>
   </h1>
-
+  <% if event.subtitle.present? %>
+    <div class="subtitle"><%= event.subtitle %></div>
+  <% end %>
+  <div class="where-when">
+    <span class="glyphicon glyphicon-calendar"></span>
+    <%= event.date.to_s(:gd) %>
+    &nbsp; &nbsp;
+    <span class="glyphicon glyphicon-home"></span>&nbsp;
+    <%= event.city %>
+  </div>
   <div class="main row">
-    <div class="col-md-6">
-      <ul>
-        <li>
-          Es reden:
-          <div class="bold">
-            <%= event.percent_male %>% Männer
-          </div>
-        </li>
-        <li>
-          Veranstaltet von:
-          <div class="bold">
-            <%= event.main_url%>
-          </div>
-        </li>
-      <ul>
+    <div class="col-md-8">
+
+      <% if event.description.present? %>
+        <div class="description"><%= simple_format(event.description) %></div>
+      <% end %>
+      <% if event.organizers.present? %>
+        <div class="organizers">
+          <strong>Veranstalter:</strong>
+          <%= simple_format(event.organizers) %>
+        </div>
+      <% end %>
+
+      <div class="who-speaks">
+        Es sprechen <%= event.percent_male %>% Männer.
+      </div>
+
+      <% if is_single_view %>
+        <hr>
+        <dl class="">
+          <% if event.main_url.present? %>
+            <dt>Webseite</dt>
+            <dd><%= link_to event.main_url, event.main_url %></dd>
+          <% end %>
+          <% if event.speaker_list_url.present? %>
+            <dt>Link zur Speakerliste</dt>
+            <dd><%= link_to event.speaker_list_url, event.speaker_list_url %></dd>
+          <% end %>
+          <% if event.contact_url.present? %>
+            <dt>Kontakt zur Veranstaltung</dt>
+            <dd><%= mail_to event.contact_url, event.contact_url %></dd>
+          <% end %>
+          <dt>Anzahl der Speaker</dt>
+          <dd><%= event.total.to_s + " Sprecher, davon " + event.woman.to_s + " Frauen" %></dd>
+          <% if event.remark.present? %>
+            <dt>Anmerkung</dt>
+            <dd><%= event.remark%></dd>
+          <% end %>
+
+        </dl>
+      <% end %>
+
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
       <%= render "donut", event: event %>
     </div>
   </div>
 
-  <div class="byline row">
-    <div class="col-md-9">
-      <ul class="date">
-        <li>
-          <span>
-            Datum:
-          </span>
-          <%= event.date.to_s(:gd) %>
-        </li>
-        <li>
-          <span>
-            Ort:
-          </span>
-          <%= event.city %>
-        </li>
-      </ul>
-    </div>
-    <div class="col-md-3">
-      <% if event.comments.any? %>
-        <%= link_to event_path(event, anchor: 'comments') do %>
-          <span class="glyphicon glyphicon-comment"></span>
-          <%= event.comments.size %>
+  <% if is_single_view %>
+
+    <div class="footer single row">
+      <div class="col-md-9">
+        <% if event.reporter.present? %>
+          <strong>Reporter:</strong>
+          &nbsp;
+          <span class="glyphicon glyphicon-eye-open"></span>&nbsp;
+          <%= event.reporter %>
         <% end %>
-      <% end %>
+        <% if event.reporter_url.present? %>
+          &nbsp; &nbsp;
+          <span class="glyphicon glyphicon-envelope"></span>&nbsp;
+          <%= event.reporter_url %>
+        <% end %>
+      </div>
+      <div class="col-md-3 text-right">
+        &nbsp;
+      </div>
     </div>
-  </div>
+
+  <% else %>
+
+    <div class="footer list row">
+      <div class="col-md-9">
+        <% if event.comments.published.any? %>
+          <%= link_to event_path(event, anchor: 'comments') do %>
+            <span class="glyphicon glyphicon-comment"></span>
+            <%= event.comments.published.size %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="col-md-3 text-right">
+        <%= link_to event_path(event) do %>
+          more
+          <span class="glyphicon glyphicon-arrow-right"></span>
+        <% end %>
+      </div>
+    </div>
+
+  <% end %>
+
 
 </article>

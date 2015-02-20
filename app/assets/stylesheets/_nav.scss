@@ -10,7 +10,10 @@
     font-size: 72px;
     font-family: 'TitilliumWeb Bold';
     text-transform: uppercase;
-    color: $background-color;
+    color: #EEE;
+    &:hover {
+      color: #FFF;
+    }
   }
   
   a {

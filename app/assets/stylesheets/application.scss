@@ -29,13 +29,12 @@
 @import "sidebar";
 @import "admin";
 
-body.frontend {
+.frontend {
   background-color: $background-color;
   color: $text-grey;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Arial, Helvetica,'Open Sans', sans-serif;
 
   a  {
-    color: #333538;
     text-decoration: none;
   }
 
@@ -55,8 +54,5 @@ li {
   padding: 0;
 }
 
-.glyphicon {
-  margin-right: 4px;
-}
 
 @import "small_screens";
