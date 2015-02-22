@@ -107,3 +107,24 @@ en:
         male: Male
         female: Female
       your_comments: Your comments
+
+  new:
+    event:
+      title: Add new event
+      explain_html: |
+        <p>
+        This is how it works: Fill in the fields, if you have the corresponding information.
+        Most important, of cause, is the number of female* speakers and the total amount of speakers.
+        Please don't forget a link to the list of speakers, so your numbers are easy to reproduce.
+        </p>
+        <p>
+        If you are done, just hit "Save". Your entry will still be editable for <strong>you</strong>
+        for 20 more minutes. It will onlyl be visible to others once it is confirmed by the sites moderators.
+        </p>
+        <p>Here we go:</p>
+      save: Save
+      thank_you_html: |
+        <p>
+          Thanks for you cooperation.
+          Even after saving <strong>you</strong> can still edit the events data for 20 more minutes.
+        </p>

@@ -74,5 +74,31 @@
   </div>
 
   <div class="col-sm-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2 class="panel-title">
+          <span class="glyphicon glyphicon-file"></span>
+          Pages
+        </h2>
+      </div>
+      <div class="panel-body">
+        <ul class="nav nav-pills nav-stacked">
+          <li>
+            <%= link_to admin_pages_path(location: 'snippet') do %>
+              <span class="glyphicon glyphicon-align-justify"></span>
+              snippets
+              (<%= Page.snippets.count %>)
+            <% end %>
+          </li>
+          <li>
+            <%= link_to admin_pages_path(location: 'menu_page') do %>
+              <span class="glyphicon glyphicon-file"></span>
+              menu_pages
+              (<%= Page.menu_pages.count %>)
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
