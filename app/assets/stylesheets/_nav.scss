@@ -3,9 +3,7 @@
   min-height: 100px;
   padding-top: 30px;
   color: $background-color;
-  /*background: url('micro.png') no-repeat center center fixed;*/
-  /*background-size: cover;*/
-  
+
   .navbar-brand {
     font-size: 72px;
     font-family: 'TitilliumWeb Bold';
@@ -18,6 +16,16 @@
   
   a {
     color: $background-color;
+  }
+  .language-switcher {
+    a {
+      display: inline-block;
+      padding-left:  6px;
+      padding-right: 6px;
+      &.active {
+        font-weight: bold;
+      }
+    }
   }
 }
 

@@ -20,4 +20,20 @@ module ApplicationHelper
   def layout_needs_sidebar?
     params[:controller] == 'events' and %w(index show).include?(params[:action])
   end
+
+  def language_switcher
+    target_url = request.original_url
+    if request.fullpath == '/'
+      target_url += "#{I18n.locale.to_s}/"
+    end
+    links = [:de, :en].map do |lang|
+      if lang == I18n.locale
+        link_to(lang.to_s.upcase, target_url, class: 'active')
+      else
+        link_to(lang.to_s.upcase, target_url.sub(/\/(de|en)\//,"/#{lang.to_s}/"))
+      end
+    end
+    links.join('|')
+  end
+
 end

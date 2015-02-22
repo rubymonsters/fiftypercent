@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">50 prozent</a>
+      <a class="navbar-brand" href="<%= root_path %>/">50 prozent</a>
       sind die Hälfte.
     </div>
 
@@ -36,17 +36,11 @@
           <li class="visible-xs"><a href="#join">Mitmachen</a></li>
           <li><a href="#">Kontakt</a></li>
           <li><a href="#">Impressum</a></li>
-
-          <li>
-            <%= link_to log_in_path do %>
-              <span class="glyphicon glyphicon-log-in"></span>
-            <% end %>
-          </li>
-
         <% end %>
 
-
-
+        <li class="language-switcher">
+          <%= language_switcher.html_safe %>
+        </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

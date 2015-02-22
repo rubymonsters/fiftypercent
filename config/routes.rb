@@ -4,18 +4,20 @@ Rails.application.routes.draw do
     get '(page/:page)', :action => :index, :on => :collection, :as => ''
   end
 
-  root 'events#index'
 
-  get 'log_out' => 'sessions#destroy', as: 'log_out'
-  get 'log_in'  => 'sessions#new',     as: 'log_in'
-  resources :sessions
+  scope "(:locale)", locale: /de|en/ do
+    root 'events#index'
 
-  resources :events, concerns: :paginatable do
-    resources :comments, only: [:create]
+    get 'log_out' => 'sessions#destroy', as: 'log_out'
+    get 'log_in'  => 'sessions#new',     as: 'log_in'
+    resources :sessions
+
+    resources :events, concerns: :paginatable, only: [:index, :show, :new, :create, :update] do
+      resources :comments, only: [:create]
+    end
+
+    get 'tags/:tag', to: 'events#index', as: :tag
   end
-
-  get 'tags/:tag', to: 'events#index', as: :tag
-
 
   namespace :admin do
     root to: "home#start"
