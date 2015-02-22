@@ -145,6 +145,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
     raphael-rails (2.1.2)
+    redcarpet (3.2.2)
     ref (1.0.5)
     ruby-progressbar (1.7.1)
     sass (3.2.19)
@@ -206,6 +207,7 @@ DEPENDENCIES
   rails (= 4.2.0)
   rails-i18n
   raphael-rails
+  redcarpet (~> 3.2.2)
   sass-rails (~> 4.0.3)
   spring
   therubyracer

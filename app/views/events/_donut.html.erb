@@ -4,8 +4,10 @@
   Morris.Donut({
     element: 'myfirstchart-<%= event.id %>',
     data: [
-      {label: "Männer", value: <%= event.total - event.woman %> },
-      {label: "Frauen", value: <%= event.woman %>},
+      {label: "<%= I18n.t 'show.event.donut.male' %>",
+       value: <%= event.total - event.woman %> },
+      {label: "<%= I18n.t 'show.event.donut.female' %>",
+       value: <%= event.woman %>},
     ],
     backgroundColor: '#ccc',
     labelColor: '#1E243E',

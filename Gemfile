@@ -20,7 +20,7 @@ gem 'bootstrap_form',     '~> 2.2.0'
 gem 'morrisjs-rails'
 gem 'raphael-rails'
 gem 'country_select',    '~> 2.1.0'
-
+gem 'redcarpet',         '~> 3.2.2'
 gem 'faker'
 
 gem 'capistrano',        '~> 3.2.0'

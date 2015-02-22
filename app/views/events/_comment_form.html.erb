@@ -1,15 +1,15 @@
 <%= bootstrap_form_for [event, comment] do |f| %>
   <fieldsset>
-    <legend>Füge einen Kommentar hinzu:</legend>
+    <legend><%= t('fieldset.legend.comment.add_a_comment') %></legend>
     <%= f.text_field :title %>
     <%= f.text_field :author %>
     <%= f.text_field :public_contact %>
     <%= f.text_area  :body %>
   </fieldsset>
   <fieldsset>
-    <legend>Extra Info:</legend>
+    <legend><%= t('fieldset.legend.comment.extra_info') %></legend>
     <%= f.text_field :internal_contact %>
   </fieldsset>
   
-  <%= f.submit 'Ergänzung hinzufügen' %>
+  <%= f.submit 'Save', class: 'btn btn-success' %>
 <% end %> 

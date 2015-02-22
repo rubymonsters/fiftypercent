@@ -3,14 +3,14 @@ de:
     label:
       comment:
         title: Titel
-        author: 'Wer bist Du? Name, Spitzname oder Pseudonym.'
+        author: 'Wer bist Du? Name, Spitzname oder Pseudonym'
         public_contact: 'Wie kann man Dich errreichen? (optional)'
         body: 'Text Deiner Ergänzung'
         internal_contact: 'Interne Kontaktinfo. Wird nicht auf der Seite veröffentlicht.'
       event:
         title: 'Titel der Konferenz'
         subtitle: 'Motto'
-        description: 'Was für eine Konferenzt ist das?'
+        description: 'Was für eine Konferenz ist das?'
         main_url: 'Wie lautet die URL der Konferenz?'
 
         date: 'Datum'
@@ -53,7 +53,7 @@ de:
         city: 'zB: Hamburg oder Frankfurt (Main)'
         country_code: 'Bitte wähle ein Land aus der Liste'
 
-        organizers: 'Organisation(en) hinter der Veranstaltung, eine pro Zeile'
+        organizers: 'Organisation(en) hinter der Veranstaltung, eine pro Zeile. Du hast URLs für die Organisationen? Nutze markdown-syntax für klickbare Links: [Organiser Name](http://www.organizer-website.org/)'
         contact_url: 'zB: @superconf (twitter) oder http://www.conf.com/contact.html oder e-mail'
 
         tag_list: "kommaseparierte Liste von Themen, zB: obst, gemüse, nachtisch"
@@ -67,3 +67,45 @@ de:
         reporter_url: 'zB: @inge (twitter) oder http://www.my_blog.com/contact.html oder e-mail (Achtung! Erscheint auf der Seite.)'
 
         internal_user_info: 'Nur für die Moderation, wird nicht auf der Seite angezeigt'
+
+  fieldset:
+    legend:
+      comment:
+        add_a_comment: 'Füge einen Kommentar hinzu:'
+        extra_info: 'Extra Info:'
+      event:
+        what: "Was?"
+        when_and_where: "Wann und wo?"
+        who: "Wer?"
+        topics: "Themen"
+        speakers: "Sprecher_innen"
+        and_you: "Und Du?"
+        finally: "Schließlich"
+
+  layout:
+    header:
+      title: 50 Prozent
+      claim: sind die Hälfte.
+    sidebar:
+      add_new_event_html: 'Neue Veranstaltung <span class="hidden-sm">eintragen</span>'
+      search: Suchen
+      searchterm: 'Suchbegriff..'
+      statistics: Statistik
+      statistics_statement_html: "Bisher gezählt: %{event_count} Veranstaltungen.<br>%{total} Vortragende insgesamt, davon %{women} Frauen. <strong>Das sind %{percent} Prozent.</strong>"
+
+  show:
+    event:
+      organizers: Veranstalter
+      speaking: "Es sprechen %{percent_male}% Männer."
+      website: Webseite
+      speaker_list_url: Link zur Speakerliste
+      contact_url: Kontakt zur Veranstaltung
+      speaker_count: Anzahl der Speaker
+      speaker_count_statement: "%{total} Sprecherinnen, davon %{women} Frauen"
+      remark: Anmerkung
+      more: mehr
+      comments: Kommentare
+      donut:
+        male: Männer
+        female: Frauen
+      your_comments: Eure Kommentare

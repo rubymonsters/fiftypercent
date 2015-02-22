@@ -15,7 +15,7 @@
 
 <% if @event.comments.published.any? %>
   <div class="comments" id="comments">
-    <h2>Eure Kommentare:</h2>
+    <h2><%= t 'show.event.your_comments' %>:</h2>
     <%= render partial: 'comment', collection: @event.comments.published %>
   </div>
 <% end %>
@@ -23,9 +23,12 @@
 <%= render "events/comment_form", event: @event, comment: @comment %>
 
 <% if current_user %>
-  <%= link_to 'Destroy', @event, method: :delete, data: { confirm: 'Are you sure?' } %></td> |
-  <%= link_to 'Edit', edit_event_path(@event) %> |
-  <%= link_to 'Back', events_path %>
+  <%= link_to edit_admin_event_path(@event), class: 'btn btn-default' do %>
+    Admin:
+    <span class="glyphicon glyphicon-cog"></span>
+    edit
+  <% end %>
+
 <% end %>
 
 

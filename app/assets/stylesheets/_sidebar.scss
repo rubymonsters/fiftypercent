@@ -1,5 +1,10 @@
 #sidebar {
 
+  min-height: 150px;
+  padding: 20px;
+  background-color: $dark-grey;
+  color: #eee;
+
   #tag_cloud {
     line-height: 1.6em;
 
@@ -10,10 +15,6 @@
       text-decoration: none;
     }
   }
-  min-height: 150px;
-  padding: 20px;
-  background-color: $dark-grey;
-  color: #eee;
 
   aside {
     margin-bottom: 40px;
@@ -45,11 +46,24 @@
     color: $bright-grey;
     border-color: $bright-grey;
     text-decoration: none;
-
     &:hover{
       color: $dark-grey;
       background-color: $bright-grey;
     }
+  }
+  form.search input {
+      width: 306px;
+  }
+}
+
+@media (max-width: 1180px) {
+  #sidebar form.search input {
+      width: 238px;
+  }
+}
+@media (max-width: 990px) {
+  #sidebar form.search input {
+      width: 166px;
   }
 }
 

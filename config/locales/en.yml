@@ -1,25 +1,109 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   helpers:
     label:
+      comment:
+        title: Title
+        author: 'Who are you? Name, Nickname oor Pseudonym'
+        public_contact: 'How can you be contacted? (optional)'
+        body: 'Text of you comment'
+        internal_contact: 'Internal contact info. Will not be published on the page.'
       event:
+        title: 'Title of the conference'
+        subtitle: 'Motto'
+        description: 'What is the conference about?'
+        main_url: "What\'s the conferences URL?"
+
+        date: 'Date'
+        city: 'In which city will the conference take place?'
+        country_code: 'In what country is this?'
+
+        organizers: 'Organizers'
+        contact_url: 'How can the organizers be contacted?'
+
+        tag_list: "Tag-List"
+
+        speaker_list_url: 'Do you have a direkt link to the list of speakers?'
+        woman: 'How many women talk/discuss/etc?'
+        total: 'How many participants are there in total?'
+        remark: Remark
+
+        reporter: 'What is your name?'
+        reporter_url: 'How can you be contacted?'
+
+        internal_user_info: 'Internal Comment'
+
+    placeholder:
+      event:
+        reporter_url: 'Kontaktdaten'
+
+  activerecord:
+    help:
+      comment:
+        title:
+        public_contact:   'e.g.: @myname (twitter) or http://www.my-blog.com/contact.html or e-mail'
+        internal_contact: 'e.g.: @myname (twitter) or http://www.my-blog.com/contact.html or e-mail'
+      event:
+        title: ''
+        subtitle: 'Slogan or tagline for the event, if it has one.'
+        description: 'A short description of the event'
+        main_url: 'Link to main webpage, zB: http://www.conf.com'
+
+        date: "What\'s the first day of the event?"
+        city: 'e.g.: Hamburg or London'
+        country_code: 'Please select a country from the list.'
+
+        organizers: 'Organisation(s) running the event, one per line. Have URLs for the organizers? Use markdown-syntax to make them clickable links: [Organiser Name](http://www.organizer-website.org/)'
+        contact_url: 'e.g.: @superconf (twitter) or http://www.conf.com/contact.html or e-mail'
+
+        tag_list: "comma-separated list of topics, e.g.: fruit, vegetable, dessert"
+
+        speaker_list_url: 'URL for a list of participants, e.g.: http://www.conf.com/our_speakers.html'
+        woman: ''
+        total: ''
+        remark: 'e.g.: "Two of the three woman are only panel moderators."'
+
+        reporter: 'Name, Pseudonym'
+        reporter_url: 'e.g.: @inge (twitter) or http://www.my_blog.com/contact.html or e-mail (Attention! Will be visible on page.)'
+
+        internal_user_info: 'Only for site moderation, will not be shown on the page.'
+
+  fieldset:
+    legend:
+      comment:
+        add_a_comment: 'Add a comment:'
+        extra_info: 'Extra info:'
+      event:
+        what: "What?"
+        when_and_where: "When and where?"
+        who: "Who?"
+        topics: "Topics"
+        speakers: "Speakers"
+        and_you: "And you?"
+        finally: "Finally"
+
+  layout:
+    header:
+      title: 50 percent
+      claim: "that\'s half of it"
+    sidebar:
+      add_new_event_html: 'Add new event'
+      search: Search
+      searchterm: 'Search term...'
+      statistics: Statistics
+      statistics_statement_html: "Counted so far: %{event_count} events.<br>%{total} speakers in total, %{women} of which were women. <strong>That is %{percent} percent.</strong>"
+
+  show:
+    event:
+      organizers: Organizers
+      speaking: "Speakers are %{percent_male}% male."
+      speaker_list_url: Speaker list URL
+      contact_url: Event contact
+      speaker_count: Speaker count
+      speaker_count_statement: "%{total} speakers total, %{women} of which are women"
+      remark: Remark
+      more: more
+      comments: Comments
+      donut:
+        male: Male
+        female: Female
+      your_comments: Your comments

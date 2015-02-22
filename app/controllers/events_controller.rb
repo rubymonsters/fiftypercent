@@ -64,6 +64,7 @@ class EventsController < ApplicationController
                                     :country_code,
                                     :description,
                                     :main_url,
+                                    :organizers,
                                     :speaker_list_url,
                                     :contact_url,
                                     :woman,

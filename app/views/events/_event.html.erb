@@ -1,7 +1,5 @@
 <article>
-  <h1>
-    <%= link_to event.title, event %>
-  </h1>
+  <h1><%= link_to event.title, event %></h1>
   <% if event.subtitle.present? %>
     <div class="subtitle"><%= event.subtitle %></div>
   <% end %>
@@ -14,49 +12,47 @@
   </div>
   <div class="main row">
     <div class="col-md-8">
-
       <% if event.description.present? %>
         <div class="description"><%= simple_format(event.description) %></div>
       <% end %>
       <% if event.organizers.present? %>
         <div class="organizers">
-          <strong>Veranstalter:</strong>
-          <%= simple_format(event.organizers) %>
+          <strong><%= t 'show.event.organizers' %>:</strong>
+          <%= markdown(event.organizers) %>
         </div>
       <% end %>
 
       <div class="who-speaks">
-        Es sprechen <%= event.percent_male %>% Männer.
+        <%= t 'show.event.speaking', percent_male: event.percent_male %>
       </div>
 
       <% if is_single_view %>
         <hr>
         <dl class="">
           <% if event.main_url.present? %>
-            <dt>Webseite</dt>
+            <dt><%= t 'show.event.website' %></dt>
             <dd><%= link_to event.main_url, event.main_url %></dd>
           <% end %>
           <% if event.speaker_list_url.present? %>
-            <dt>Link zur Speakerliste</dt>
+            <dt><%= t 'show.event.speaker_list_url' %></dt>
             <dd><%= link_to event.speaker_list_url, event.speaker_list_url %></dd>
           <% end %>
           <% if event.contact_url.present? %>
-            <dt>Kontakt zur Veranstaltung</dt>
-            <dd><%= mail_to event.contact_url, event.contact_url %></dd>
+            <dt><%= t 'show.event.contact_url' %></dt>
+            <dd><%= link_to event.contact_url, event.contact_url %></dd>
           <% end %>
-          <dt>Anzahl der Speaker</dt>
-          <dd><%= event.total.to_s + " Sprecher, davon " + event.woman.to_s + " Frauen" %></dd>
+          <dt><%= t 'show.event.speaker_count' %></dt>
+          <dd><%= t 'show.event.speaker_count_statement', total: event.total.to_s, women: event.woman.to_s %></dd>
           <% if event.remark.present? %>
-            <dt>Anmerkung</dt>
+            <dt><%= t 'show.event.remark' %></dt>
             <dd><%= event.remark%></dd>
           <% end %>
-
         </dl>
       <% end %>
 
     </div>
     <div class="col-md-4">
-      <%= render "donut", event: event %>
+      <%= render 'events/donut', event: event %>
     </div>
   </div>
 
@@ -82,16 +78,16 @@
 
     <div class="footer list row">
       <div class="col-md-9">
-        <% if event.comments.published.any? %>
-          <%= link_to event_path(event, anchor: 'comments') do %>
+        <% if event.comments.select{|c| c.published?}.any? %>
+          <%= link_to event_path(event, anchor: 'comments'), title: t('show.event.comments') do %>
             <span class="glyphicon glyphicon-comment"></span>
-            <%= event.comments.published.size %>
+            <%= event.comments.select{|c| c.published?}.size %>
           <% end %>
         <% end %>
       </div>
       <div class="col-md-3 text-right">
         <%= link_to event_path(event) do %>
-          more
+          <%= t 'show.event.more' %>
           <span class="glyphicon glyphicon-arrow-right"></span>
         <% end %>
       </div>

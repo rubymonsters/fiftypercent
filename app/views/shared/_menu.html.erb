@@ -8,39 +8,25 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="<%= root_path %>/">50 prozent</a>
-      sind die Hälfte.
+      <a class="navbar-brand" href="<%= root_path %>/"><%= t 'layout.header.title' %></a>
+      <%= t 'layout.header.claim' %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <% if current_user %>
-
-          <li>
-            <%= link_to admin_root_path do %>
-              <span class="glyphicon glyphicon-user"></span>
-              <%= current_user.email %>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to log_out_path do %>
-              <span class="glyphicon glyphicon-log-in"></span>
-              Log out
-            <% end %>
-          </li>
-
-        <% else %>
-
-          <li class="visible-xs"><a href="#why">Warum?</a></li>
-          <li class="visible-xs"><a href="#join">Mitmachen</a></li>
-          <li><a href="#">Kontakt</a></li>
-          <li><a href="#">Impressum</a></li>
-        <% end %>
-
+        <li class="visible-xs"><a href="#why">Warum?</a></li>
+        <li class="visible-xs"><a href="#join">Mitmachen</a></li>
         <li class="language-switcher">
           <%= language_switcher.html_safe %>
         </li>
+        <% if current_user %>
+          <li>
+            <%= link_to admin_root_path do %>
+              <span class="glyphicon glyphicon-cog"></span>
+            <% end %>
+          </li>
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

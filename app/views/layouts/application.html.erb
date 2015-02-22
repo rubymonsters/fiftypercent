@@ -22,14 +22,14 @@
   <%= flash_messages %>
   <div class='row'>
 
-    <div class='col-md-8'>
+    <div class='col-sm-8'>
       <%= yield %>
     </div>
     <% if layout_needs_sidebar?  %>
-      <div class='col-md-4' id='sidebar'>
+      <div class='col-sm-4' id='sidebar'>
         <%= render 'shared/sidebar' %>
     <% else %>
-      <div class='col-md-4'>&nbsp;</div>
+      <div class='col-sm-4'>&nbsp;</div>
     <% end %>
   </div>
 </div>

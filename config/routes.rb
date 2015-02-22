@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     get 'log_in'  => 'sessions#new',     as: 'log_in'
     resources :sessions
 
-    resources :events, concerns: :paginatable, only: [:index, :show, :new, :create, :update] do
+    resources :events, concerns: :paginatable, only: [:index, :show, :new, :create, :edit, :update] do
       resources :comments, only: [:create]
     end
 

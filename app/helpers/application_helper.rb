@@ -36,4 +36,24 @@ module ApplicationHelper
     links.join('|')
   end
 
+  def markdown(text)
+    options = {
+      filter_html:     true,
+      safe_links_only: true,
+      no_images:       true,
+      hard_wrap:       true,
+      link_attributes: {target: '_blank'}
+    }
+
+    extensions = {
+      autolink:           true,
+      # superscript:        true,
+      # disable_indented_code_blocks: true
+    }
+
+    renderer = Redcarpet::Render::HTML.new(options)
+    markdown = Redcarpet::Markdown.new(renderer, extensions)
+
+    markdown.render(text).html_safe
+  end
 end
