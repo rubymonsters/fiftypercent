@@ -55,7 +55,7 @@ Event.create({
       speaker_list_url:    Faker::Internet.url,
       tag_list:            Faker::Lorem.words(4),
       woman:               percent_woman,
-      total:               100,
+      total:               130,
       category:            'Konferenz',
       reporter:            Faker::Name.name,
       reporter_url:        Faker::Internet.email,
