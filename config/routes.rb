@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: "home#start"
+    resources :pages
     resources :events do
       member do
         patch 'publish'

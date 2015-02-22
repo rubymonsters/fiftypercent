@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  slug: MyString
+  title: MyString
+  body: MyText
+  location: MyString
+  rank: 1
+
+two:
+  slug: MyString
+  title: MyString
+  body: MyText
+  location: MyString
+  rank: 1
