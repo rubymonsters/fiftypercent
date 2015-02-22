@@ -1,0 +1,16 @@
+<%= f.text_field :slug, label: 'Slug', help: 'uniq identifyer, part of URL' %>
+<%= f.form_group :location, label: { text: "Text-Type" }, help: "Where and how to display the text?" do %>
+  <%= f.radio_button :location, "sidebar_snippet",   label: "Sidebar Snippet", inline: true %>
+  <%= f.radio_button :location, "menu_page",         label: "Menu Page", inline: true %>
+  <%= f.radio_button :location, "other",             label: "Other", inline: true %>
+<% end %>
+<%= f.select :rank, (1..20), { label: "Sort rank", help: 'Order to sort elements in menu or sidebar' } %>
+
+<%= f.fields_for :translations do |translation_fields| %>
+  <h4>Translation: <%= translation_fields.object.locale %></h4>
+  <%= translation_fields.hidden_field :locale %>
+  <%= translation_fields.text_field :title %>
+  <%= translation_fields.text_area :body %>
+<% end %>
+  
+

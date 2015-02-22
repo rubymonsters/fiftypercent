@@ -1,0 +1,4 @@
+<%= bootstrap_form_for([:admin, @page]) do |f| %>
+  <%= render partial: 'form_fields', locals: {f: f} %>
+  <%= f.submit 'Save', class: "btn btn-success" %>
+<% end %>
