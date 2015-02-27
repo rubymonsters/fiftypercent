@@ -4,8 +4,10 @@ class Page < ActiveRecord::Base
 
   accepts_nested_attributes_for :translations
 
-  scope :sidebar_snippets, -> { where( location: 'sidebar_snippet') }
-  scope :menu_pages,       -> { where( location: 'menu') }
+  validates :rank, uniqueness: {scope: 'page_type'}
 
+  scope :blog_posts,       -> { where( page_type: 'blog_post') }
+  scope :sidebar_snippets, -> { where( page_type: 'sidebar_snippet') }
+  scope :menu_pages,       -> { where( page_type: 'menu') }
 
 end

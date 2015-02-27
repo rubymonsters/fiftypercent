@@ -20,13 +20,15 @@ class Admin::PagesController < Admin::BaseController
 
   def build_empty_locales_for_form(object)
     %w(de en).each do |language|
-      object.translations.build(locale: language) unless object.translated_locales.include?(language.to_sym)
+      unless object.translated_locales.include?(language.to_sym)
+        object.translations.build(locale: language)
+      end
     end
   end
 
   def page_params
     params.require(:page).permit(:slug,
-                                 :location,
+                                 :page_type,
                                  :rank,
                                  translations_attributes: [:title, :body, :locale] )
   end

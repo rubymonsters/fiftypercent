@@ -84,14 +84,21 @@
       <div class="panel-body">
         <ul class="nav nav-pills nav-stacked">
           <li>
-            <%= link_to admin_pages_path(location: 'snippet') do %>
+            <%= link_to admin_pages_path(page_type: 'blog_post') do %>
+              <span class="glyphicon glyphicon-leaf"></span>
+              Blog Posts
+              (<%= Page.blog_posts.count %>)
+            <% end %>
+          </li>
+          <li>
+            <%= link_to admin_pages_path(page_type: 'snippet') do %>
               <span class="glyphicon glyphicon-align-justify"></span>
               sidebar_snippets
               (<%= Page.sidebar_snippets.count %>)
             <% end %>
           </li>
           <li>
-            <%= link_to admin_pages_path(location: 'menu_page') do %>
+            <%= link_to admin_pages_path(page_type: 'menu_page') do %>
               <span class="glyphicon glyphicon-file"></span>
               menu_pages
               (<%= Page.menu_pages.count %>)
