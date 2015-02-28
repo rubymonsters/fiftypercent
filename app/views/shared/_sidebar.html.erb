@@ -32,25 +32,12 @@
   </p>
 </aside>
 
-<aside class="widget">
-  <h1>
-    <a name="why"></a>Warum?
-  </h1>
-  50 Prozent sind die Hälfte. Frauen sind in etwa die Hälfte aller Menschen, aber selten die Hälfte auf Podien, am Mikro, bei Talk-Shows oder Konferenzen. "50 Prozent" dokumentiert, wieviele Frauen* es tatsächlich sind.
-
-  Außerdem gibt es hier Datenbanken mit Rednerinnen, Beispiele und Methoden, die dabei helfen, das eigene Event gleichmäßiger zu besetzen und Ähnliche Projekte.
-
-  (* Mit 'Frauen' sind alle gemeint, die sich selbst als eine sehen)
-</aside>
-
-<aside class="widget">
-  <h1>
-    <a name="join"></a>Mitmachen
-  </h1>
-  Alle, die gern Frauen* und Männer bei Events zählen, sind herzlich eingeladen, die Ergebnisse per Mail an 50prozent at riseup dot net zu schicken. Gern mit: Titel, URL, Angaben zu den Veranstaltenden (samt Kontakt, falls vorhanden), Datum, Ort, Thema und ob die Zählerin bzw. der Zähler als solche genannt werden dürfen.
-
-  Es kann auch per Twitter gezählt werden: einfach die Gesamtzahl der Redner/Rednerinnen, Zahl der Frauen, URL und den Hashtag #50prozent in einen Tweet.
-</aside>
+<% Page.sidebar_snippets.order(:rank).includes(:translations).all.each do |snippet| %>
+  <aside class="widget">
+    <h1><%= snippet.title %></h1>
+    <%= markdown(snippet.body) %>
+  </aside>
+<% end %>
 
 <aside class="widget">
   <h1>Tags</h1>

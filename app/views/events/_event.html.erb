@@ -18,7 +18,7 @@
       <% if event.organizers.present? %>
         <div class="organizers">
           <strong><%= t 'show.event.organizers' %>:</strong>
-          <%= markdown(event.organizers) %>
+          <%= markdown(event.organizers, filter_html: true, link_attributes: {target: '_blank'}) %>
         </div>
       <% end %>
 

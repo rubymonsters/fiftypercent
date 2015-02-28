@@ -1,33 +1,39 @@
 <%= f.text_field :slug, label: 'Slug',
                         help: 'uniq identifyer, part of URL, only: a-z0-9_',
                         control_col: "col-sm-4" %>
+<div class="<%= 'hide' if @is_new_blog_post %>">
+  <%= f.form_group :page_type, label: { text: "Text-Type" }, help: "Where and how to display the text?" do %>
+    <%= f.radio_button :page_type, "blog_post",         label: "Blog Post", inline: true %>
+    <%= f.radio_button :page_type, "sidebar_snippet",   label: "Sidebar Snippet", inline: true %>
+    <%= f.radio_button :page_type, "menu_page",         label: "Menu Page",       inline: true %>
+    <%= f.radio_button :page_type, "other",             label: "Other",           inline: true %>
+  <% end %>
 
-<%= f.form_group :page_type, label: { text: "Text-Type" }, help: "Where and how to display the text?" do %>
-  <%= f.radio_button :page_type, "blog_post",         label: "Blog Post", inline: true %>
-  <%= f.radio_button :page_type, "sidebar_snippet",   label: "Sidebar Snippet", inline: true %>
-  <%= f.radio_button :page_type, "menu_page",         label: "Menu Page",       inline: true %>
-  <%= f.radio_button :page_type, "other",             label: "Other",           inline: true %>
-<% end %>
-
-<%= f.text_field :rank, { label: "Sort rank",
-                          help: 'Order to sort elements in menu or sidebar',
-                          control_col: "col-sm-2"} %>
-<div class="form-group">
-  <label for="" class="control-label col-sm-2">
-    &nbsp;
-  </label>
-  <div class="existing-ranks col-sm-10">
-    <strong>existing ranks:</strong> &nbsp;
-    sidebar_snippets: <%= Page.sidebar_snippets.pluck(:rank).sort.join(', ') %> &nbsp; - &nbsp;
-    menu_pages: <%= Page.menu_pages.pluck(:rank).sort.join(', ') %>
+  <%= f.text_field :rank, { label: "Sort rank",
+                            help: 'Order to sort elements in menu or sidebar',
+                            control_col: "col-sm-2"} %>
+  <div class="form-group">
+    <label for="" class="control-label col-sm-2">
+      &nbsp;
+    </label>
+    <div class="existing-ranks col-sm-10">
+      <strong>existing ranks:</strong> &nbsp;
+      sidebar_snippets: <%= Page.sidebar_snippets.pluck(:rank).sort.join(', ') %> &nbsp; - &nbsp;
+      menu_pages: <%= Page.menu_pages.pluck(:rank).sort.join(', ') %>
+    </div>
   </div>
 </div>
 
-<%= f.fields_for :translations do |translation_fields| %>
-  <h4>Translation: <%= translation_fields.object.locale %></h4>
-  <%= translation_fields.hidden_field :locale %>
-  <%= translation_fields.text_field :title %>
-  <%= translation_fields.text_area :body %>
+
+<%= f.fields_for :translations, f.object.translations.sort_by(&:locale) do |translation| %>
+  <h4>
+    <%= image_tag "flags/#{translation.object.locale.to_s}.png" %>
+    <%= translation.object.locale.to_s.upcase %>
+  </h4>
+  <%= translation.hidden_field :locale %>
+  <%= translation.text_field :title %>
+  <%= translation.text_area :body, help: 'Use markdown for text formating' %>
+  <hr>
 <% end %>
 
 

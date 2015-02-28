@@ -1,0 +1,21 @@
+<tr id="<%= dom_id(page) %>">
+  <td>
+    <%= link_to admin_page_path(page) do %>
+      <%= logo_for_page(page) %>
+      &nbsp;
+      <%= page.slug %>
+    <% end %>
+  </td>
+  <td><%= page.rank %></td>
+  <% [:de, :en].each do |locale| %>
+    <td>
+      <%= image_tag("flags/#{locale.to_s}.png") %>
+      <%= page.translation_for(locale).title %>
+    </td>
+  <% end %>
+  <td>
+    <%= link_to edit_admin_page_path(page) do %>
+      <span class="glyphicon glyphicon-edit"></span> edit
+    <% end %>
+  </td>
+</tr>
