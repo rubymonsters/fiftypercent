@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       resources :comments, only: [:create]
     end
 
+    get 'p/:slug',   to: 'pages#show', as: :page
     get 'tags/:tag', to: 'events#index', as: :tag
   end
 

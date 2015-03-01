@@ -15,8 +15,44 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li class="visible-xs"><a href="#why">Warum?</a></li>
-        <li class="visible-xs"><a href="#join">Mitmachen</a></li>
+        <li class="visible-xs">
+          <a href="#sidebar-search">
+            <span class="glyphicon glyphicon-search"></span>&nbsp;
+            <%= t 'layout.sidebar.search' %>
+          </a>
+        </li>
+        <li class="visible-xs">
+          <a href="#statistics">
+            <span class="glyphicon glyphicon-adjust"></span>&nbsp;
+            <%= t 'layout.sidebar.statistics' %>
+          </a>
+        </li>
+        <li class="visible-xs">
+          <a href="#tags">
+            <span class="glyphicon glyphicon-tag"></span>&nbsp;
+            Tags
+          </a>
+        </li>
+        <li role="presentation" class="divider"></li>
+        <% Page.sidebar_snippets.order(:rank).includes(:translations).all.each do |snippet| %>
+          <li class="visible-xs">
+            <a href="#<%= dom_id(snippet) %>">
+              <span class="glyphicon glyphicon-arrow-down"></span>&nbsp;
+              <%= snippet.title %>
+            </a>
+          </li>
+        <% end %>
+        <li role="presentation" class="divider"></li>
+
+        <% Page.menu_pages.order(:rank).includes(:translations).all.each do |page| %>
+          <li class="visible-xs">
+            <%= link_to page_path(page.slug) do %>
+              <span class="glyphicon glyphicon-file"></span>&nbsp;
+              <%= page.title %>
+            <% end %>
+          </li>
+        <% end %>
+
         <li class="language-switcher">
           <%= language_switcher.html_safe %>
         </li>

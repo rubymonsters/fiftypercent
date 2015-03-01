@@ -87,6 +87,7 @@ en:
       claim: "that\'s half of it"
     sidebar:
       add_new_event_html: 'Add new event'
+      more: More
       search: Search
       searchterm: 'Search term...'
       statistics: Statistics

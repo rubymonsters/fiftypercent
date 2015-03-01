@@ -5,7 +5,7 @@
 <% end %>
 </aside>
 
-<aside class="widget">
+<aside class="widget" id="sidebar-search">
   <h1><%= t 'layout.sidebar.search' %></h1>
   <%= form_tag(events_path, method: 'get', class: 'form-inline search', role: 'form') do %>
     <div class="form-group">
@@ -20,7 +20,7 @@
 </aside>
 
 
-<aside class="widget">
+<aside class="widget" id="statistics">
   <h1><%= t 'layout.sidebar.statistics' %></h1>
   <p>
     <%= t 'layout.sidebar.statistics_statement_html',
@@ -33,13 +33,27 @@
 </aside>
 
 <% Page.sidebar_snippets.order(:rank).includes(:translations).all.each do |snippet| %>
-  <aside class="widget">
+  <aside class="widget" id="<%= dom_id(snippet) %>">
     <h1><%= snippet.title %></h1>
     <%= markdown(snippet.body) %>
   </aside>
 <% end %>
 
-<aside class="widget">
+<aside class="widget" id="page-list">
+  <h1><%= t 'layout.sidebar.more' %></h1>
+  <ul class="list-unstyled">
+    <% Page.menu_pages.order(:rank).includes(:translations).all.each do |page| %>
+      <li>
+        <%= link_to page_path(page.slug) do %>
+          <span class="glyphicon glyphicon-file"></span>
+          <%= page.title %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</aside>
+
+<aside class="widget" id="tags">
   <h1>Tags</h1>
   <div id='tag_cloud'>
     <% tag_cloud Event.tag_counts, %w[s m l] do |tag, css_class| %>

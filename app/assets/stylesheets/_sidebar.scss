@@ -16,23 +16,28 @@
     }
   }
 
+  #page-list ul li {
+    font-size: 16px;
+  }
+
   aside {
     margin-bottom: 32px;
   }
 
   h1 {
-    border-bottom: 1px solid gray;
     color: $bright-grey;
     font-size: 16px;
-    letter-spacing: 1px;
-    margin-bottom: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
     text-transform: uppercase;
   }
 
 
   a {
-    color: $bright-grey;
-    text-decoration: underline;
+    color: #888;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   input.form-control {
@@ -48,6 +53,7 @@
     &:hover{
       color: $dark-grey;
       background-color: $bright-grey;
+      text-decoration: none;
     }
   }
   form.search input {

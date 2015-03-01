@@ -18,7 +18,7 @@ module ApplicationHelper
   end
 
   def layout_needs_sidebar?
-    params[:controller] == 'events' and %w(index show).include?(params[:action])
+    %w(events pages).include?(params[:controller]) and %w(index show).include?(params[:action])
   end
 
   def language_switcher
