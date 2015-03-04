@@ -94,6 +94,12 @@ de:
       statistics: Statistik
       statistics_statement_html: "Bisher gezählt: %{event_count} Veranstaltungen.<br>%{total} Vortragende insgesamt, davon %{women} Frauen. <strong>Das sind %{percent} Prozent.</strong>"
 
+  blog:
+    header:
+      title: "50 prozent speakerinnen blog"
+    sidebar:
+      pages: Pages
+
   show:
     event:
       organizers: Veranstalter

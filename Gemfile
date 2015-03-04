@@ -34,12 +34,15 @@ gem 'rack-attack',       '~> 4.2.0'
 # gem 'jbuilder', '~> 2.0'
 
 group :development do
-  gem 'spring'
   gem 'puma'
-  gem 'pry-rails'
   gem 'quiet_assets'
 end
 
 group :test do
   gem 'minitest-reporters'
+end
+
+group :test, :development do
+  gem 'pry-rails'
+  gem 'spring'
 end

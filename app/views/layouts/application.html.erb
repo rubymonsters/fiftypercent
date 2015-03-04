@@ -11,9 +11,15 @@
   <%= csrf_meta_tags %>
 
 </head>
-<body class="frontend">
+<body class="frontend<%= ' blog' if is_blog? %>">
 
-<%= render 'shared/menu' %>
+<% if is_blog? %>
+  <%= render 'shared/blog_header' %>
+<% else %>
+  <%= render 'shared/header' %>
+<% end %>
+
+
 
 <div class='container' id='content'>
   <% if Rails.env.development? %>
@@ -27,7 +33,12 @@
     </div>
     <% if layout_needs_sidebar?  %>
       <div class='col-sm-4' id='sidebar'>
-        <%= render 'shared/sidebar' %>
+        <% if is_blog? %>
+          <%= render 'shared/blog_sidebar' %>
+        <% else %>
+          <%= render 'shared/sidebar' %>
+        <% end %>
+
     <% else %>
       <div class='col-sm-4'>&nbsp;</div>
     <% end %>

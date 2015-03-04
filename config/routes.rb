@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-
   concern :paginatable do
     get '(page/:page)', :action => :index, :on => :collection, :as => ''
   end
 
+  scope constraints: {subdomain: 'blog'} do
+    get '/', to: 'blog_posts#index',  as: 'blog_root'
+    get 'p/:slug',   to: 'blog_pages#show', as: :blog_page
+  end
 
   scope "(:locale)", locale: /de|en/ do
     root 'events#index'

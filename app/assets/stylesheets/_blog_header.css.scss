@@ -1,0 +1,15 @@
+.blog-navbar {
+    background-color: $dark-grey;
+    color: $background-color;
+    
+    .navbar-brand {
+      font-size: 32px;
+      font-family: 'TitilliumWeb Bold';
+      text-transform: uppercase;
+      color: #EEE;
+      &:hover {
+        color: #FFF;
+      }
+    }
+    
+}

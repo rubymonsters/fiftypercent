@@ -91,7 +91,21 @@
             <% end %>
           </li>
           <li>
-            <%= link_to admin_pages_path(page_type: 'snippet') do %>
+            <%= link_to admin_pages_path(page_type: 'blog_page') do %>
+              <span class="glyphicon glyphicon-file"></span>
+              Blog Pages
+              (<%= Page.blog_pages.count %>)
+            <% end %>
+          </li>
+          <li>
+            <%= link_to admin_pages_path(page_type: 'blog_sidebar_snippet') do %>
+              <span class="glyphicon glyphicon-align-justify"></span>
+              Blog sidebar_snippets
+              (<%= Page.blog_sidebar_snippets.count %>)
+            <% end %>
+          </li>
+          <li>
+            <%= link_to admin_pages_path(page_type: 'sidebar_snippet') do %>
               <span class="glyphicon glyphicon-align-justify"></span>
               sidebar_snippets
               (<%= Page.sidebar_snippets.count %>)

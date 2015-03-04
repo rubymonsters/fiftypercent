@@ -21,13 +21,15 @@
 // our partials
 @import "variables";
 @import "fonts";
-@import "nav";
+@import "header";
 @import "article";
 @import "comments";
 @import "events";
 @import "forms";
 @import "sidebar";
 @import "admin";
+
+@import "blog_header";
 
 .frontend {
   background-color: $background-color;

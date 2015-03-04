@@ -93,6 +93,12 @@ en:
       statistics: Statistics
       statistics_statement_html: "Counted so far: %{event_count} events.<br>%{total} speakers in total, %{women} of which were women. <strong>That is %{percent} percent.</strong>"
 
+  blog:
+    header:
+      title: "50 percent speakerinnen blog"
+    sidebar:
+      pages: Seiten
+
   show:
     event:
       organizers: Organizers
