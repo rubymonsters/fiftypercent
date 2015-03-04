@@ -4,5 +4,6 @@ class BlogPostsController < ApplicationController
   end
 
   def show
+    @post = Page.find(params[:id])
   end
 end

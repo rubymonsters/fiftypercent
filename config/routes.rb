@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   end
 
   scope constraints: {subdomain: 'blog'} do
-    get '/', to: 'blog_posts#index',  as: 'blog_root'
-    get 'p/:slug',   to: 'blog_pages#show', as: :blog_page
+    get '/',         to: 'blog_posts#index',  as: 'blog_root'
+    get 'post/:id',  to: 'blog_posts#show',   as: 'blog_post'
+    get 'p/:slug',   to: 'blog_pages#show',        as: 'blog_page'
   end
 
   scope "(:locale)", locale: /de|en/ do

@@ -1,4 +1,6 @@
-<h2><%= post.title %></h2>
+<h2>
+  <%= link_to post.title, blog_post_path(post.id) %>
+</h2>
 
 <% if post.abstract.present? %>
   <div class="abstract">

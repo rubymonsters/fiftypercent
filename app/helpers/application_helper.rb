@@ -1,7 +1,8 @@
 module ApplicationHelper
 
   def is_blog?
-    params[:subdomain] == 'blog'
+    request.subdomains.first == 'blog'
+    # params[:subdomain] == 'blog'
   end
 
   def bootstrap_class_for(flash_type)
@@ -22,7 +23,7 @@ module ApplicationHelper
   end
 
   def layout_needs_sidebar?
-    %w(events pages blog_posts).include?(params[:controller]) and %w(index show).include?(params[:action])
+    %w(events pages blog_posts blog_pages).include?(params[:controller]) and %w(index show).include?(params[:action])
   end
 
   def language_switcher
