@@ -2,33 +2,33 @@ de:
   helpers:
     label:
       comment:
-        title: Titel
-        author: 'Wer bist Du? Name, Spitzname oder Pseudonym'
-        public_contact: 'Wie kann man Dich errreichen? (optional)'
-        body: 'Text Deiner Ergänzung'
+        title: Titel des Kommentar
+        author: 'Dein / Ihr Name, Spitzname oder Pseudonym'
+        public_contact: 'Kontaktmöglichkeiten (optional)'
+        body: 'Text der Ergänzung'
         internal_contact: 'Interne Kontaktinfo. Wird nicht auf der Seite veröffentlicht.'
       event:
-        title: 'Titel der Konferenz'
+        title: 'Titel der Veranstaltung'
         subtitle: 'Motto'
-        description: 'Was für eine Konferenz ist das?'
-        main_url: 'Wie lautet die URL der Konferenz?'
+        description: Beschreibung der Veranstaltung
+        main_url: 'Wie lautet die URL der Veranstaltung?'
 
         date: 'Datum'
-        city: 'In welcher Stadt findet die Konferenz statt?'
+        city: 'In welcher Stadt findet die Veranstaltung statt?'
         country_code: 'In welchem Land liegt das?'
 
-        organizers: 'Veranstalter'
-        contact_url: 'Wie kann man die Konferenz kontaktieren?'
+        organizers: Veranstaltet von
+        contact_url: Wie kann die Veranstaltung kontaktiert werden?
 
-        tag_list: "Tag-Liste"
+        tag_list: Themen (Tags)
 
-        speaker_list_url: 'Hast Du den genauen link zu den Speakern?'
-        woman: 'Wieviel Frauen reden/diskutieren/etc?'
-        total: 'Wieviel Teilnehmer_innen sind es insgesamt?'
+        speaker_list_url: 'Gibt es einen direkten Link zur gesamten Liste der Speaker*innen?'
+        woman: 'Wie viele Frauen* stehen im Programm?'
+        total: 'Wie viele Personen reden insgesamt?'
         remark: Anmerkung
 
-        reporter: 'Wie heißt Du?'
-        reporter_url: 'Wie kann man Dich errreichen?'
+        reporter: 'Dein / Ihr Name'
+        reporter_url: 'Kontaktmöglichkeiten'
 
         internal_user_info: 'Interner Kommentar'
 
@@ -40,31 +40,31 @@ de:
     help:
       comment:
         title:
-        internal_contact: 'Nur Moderatorinnen oder Admins können so mit Dir Kontakt aufnehmen.'
-        public_contact: 'zB: @myname (twitter) oder http://www.my-blog.com/contact.html oder e-mail'
-        internal_contact: 'zB: @myname (twitter) oder http://www.my-blog.com/contact.html oder e-mail'
+        internal_contact: 'Nur Moderatorinnen oder Admins können so mit Dir/Ihnen Kontakt aufnehmen.'
+        public_contact:   'Z.B.: @myname (twitter) oder http://www.my-blog.com/contact.html oder E-Mail (Achtung! Erscheint auf der Seite.)'
+        internal_contact: 'Z.B.: @myname (twitter) oder http://www.my-blog.com/contact.html oder E-Mail'
       event:
         title: ''
         subtitle: 'Slogan oder Tagline  der Veranstaltung, wenn vorhanden'
-        description: 'kurze Beschreibung der Veranstaltung'
+        description: 'kurze Zusammenfassung'
         main_url: 'Link zur Startseite, zB: http://www.conf.com'
 
         date: 'Wann startet die Veranstaltung?'
         city: 'zB: Hamburg oder Frankfurt (Main)'
         country_code: 'Bitte wähle ein Land aus der Liste'
 
-        organizers: 'Organisation(en) hinter der Veranstaltung, eine pro Zeile. Du hast URLs für die Organisationen? Nutze markdown-syntax für klickbare Links: [Organiser Name](http://www.organizer-website.org/)'
-        contact_url: 'zB: @superconf (twitter) oder http://www.conf.com/contact.html oder e-mail'
+        organizers: 'Organisation(en) hinter der Veranstaltung, eine pro Zeile. Du hast URLs für die Organisationen? Klickbare Links bitte so eintragen: [Name der Organisation](http://www.organizer-website.org/)'
+        contact_url: 'Z.B. @superconf (Twitter) oder http://www.conf.com/contact.html oder E-Mail'
 
-        tag_list: "kommaseparierte Liste von Themen, zB: obst, gemüse, nachtisch"
+        tag_list: 'Die zwei bis vier wichtigsten Themen der Veranstaltung, z.B.: "Medien, IT, Wirtschaft" - mit Kommas getrennt'
 
-        speaker_list_url: 'URL für eine Liste der Teilnehmer_innen, zB: http://www.conf.com/our_speakers.html'
-        woman: ''
+        speaker_list_url: ''
+        woman: 'Bitte genau recherchieren, wenn möglich, etwa mit einer Internet-Suche zum Namen.'
         total: ''
-        remark: 'zB: 2 der 3 Fauen sind lediglich Moderatorinnen.'
+        remark: 'Z.B.: Zwei der drei Frauen sind Moderatorinnen (aber nur einer von zehn Männern).'
 
-        reporter: 'Name, Pseudonym'
-        reporter_url: 'zB: @inge (twitter) oder http://www.my_blog.com/contact.html oder e-mail (Achtung! Erscheint auf der Seite.)'
+        reporter: 'Name oder Pseudonym (muss nicht eingetragen werden)'
+        reporter_url: 'Z.B. @inge (Twitter) oder http://www.my_blog.com/contact.html oder Mailadresse (Achtung! Erscheint auf der Seite.)'
 
         internal_user_info: 'Nur für die Moderation, wird nicht auf der Seite angezeigt'
 
@@ -79,7 +79,7 @@ de:
         who: "Wer?"
         topics: "Themen"
         speakers: "Sprecher_innen"
-        and_you: "Und Du?"
+        and_you: "Kontakt (optional)"
         finally: "Schließlich"
 
   layout:
@@ -103,7 +103,7 @@ de:
 
   show:
     event:
-      organizers: Veranstalter
+      organizers: Veranstaltet von
       speaking: "Es sprechen %{percent_male}% Männer."
       website: Webseite
       speaker_list_url: Link zur Speakerliste
@@ -111,6 +111,7 @@ de:
       speaker_count: Anzahl der Speaker
       speaker_count_statement: "%{total} Sprecherinnen, davon %{women} Frauen"
       remark: Anmerkung
+      reporter: Gezählt von
       more: mehr
       comments: Kommentare
       donut:
@@ -123,21 +124,20 @@ de:
       title: Neue Veranstaltung eintragen
       explain_html: |
         <p>
-        Und so geht's: Felder ausfüllen, soweit Du die Informationen hast.
+        Und so geht's: Felder ausfüllen, soweit die Informationen bekannt sind.
         Zentral sind natürlich die Zahl der weiblichen* Sprecherinnen und die Gesamtzahl.
-        Bitte nicht den Link zur Speaker-Liste vergessen. So lassen sich die Angaben leicht
+        Bitte nicht den Link zur Quelle vergessen, wenn es einen gibt. So lassen sich die Angaben leicht
         nachvollziehen.
         </p>
         <p>
-        Wenn Du fertig bist, einfach "Speichern". Dein Eintrag bleibt auch danach noch 20min
-        für <strong>Dich</strong> editierbar. Für andere wird er erst sichtbar, wenn jemand
-        von der Moderation ihn frei geschaltet hat.
+        Zum Schluss einfach "Speichern" klicken. Der Eintrag bleibt dann noch 20 Minuten für
+        <strong>Dich/Sie</strong> editierbar.
+        Für andere wird er erst sichtbar, wenn ihn die Moderation frei geschaltet hat.
         </p>
         <p>Los gehts:</p>
       save: Speichern
       thank_you_html: |
         <p>
-          Danke für Deinen Beitrag.
-          Auch nach dem Speichern kannst <strong>Du</strong> die Daten der Veranstaltung noch für 20min
-          weiter bearbeiten.
+          Danke für den Beitrag!
+          Nach dem Speichern können die eingegebenen Daten noch 20 Minuten weiter bearbeitet werden.
         </p>

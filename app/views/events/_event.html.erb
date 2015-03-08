@@ -61,7 +61,7 @@
     <div class="footer single row">
       <div class="col-md-12">
         <% if event.reporter.present? %>
-          <strong>Reporter:</strong>
+          <strong><%= t 'show.event.reporter' %>:</strong>
           &nbsp;
           <span class="glyphicon glyphicon-eye-open"></span>&nbsp;
           <%= event.reporter %>
