@@ -20,7 +20,9 @@
   </div>
 <% end %>
 
-<%= render "events/comment_form", event: @event, comment: @comment %>
+<% if @event.published? %>
+  <%= render "events/comment_form", event: @event, comment: @comment %>
+<% end %>
 
 <% if current_user %>
   <%= link_to edit_admin_event_path(@event), class: 'btn btn-default' do %>
