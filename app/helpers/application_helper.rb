@@ -1,5 +1,9 @@
 module ApplicationHelper
 
+  def class_for_body_tag
+    " #{controller_name}-#{action_name}"
+  end
+
   def is_blog?
     request.subdomains.first == 'blog'
     # params[:subdomain] == 'blog'

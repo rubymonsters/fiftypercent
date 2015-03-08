@@ -16,6 +16,9 @@ class Page < ActiveRecord::Base
   scope :sidebar_snippets,      -> { where( page_type: 'sidebar_snippet') }
   scope :menu_pages,            -> { where( page_type: 'menu_page') }
 
+  def categories
+    []
+  end
 
   def abstract
     body_str   = translation_for(I18n.locale).body
@@ -27,5 +30,10 @@ class Page < ActiveRecord::Base
     body_str   = translation_for(I18n.locale).body
     match_data = /\[\-\-\-\]/.match(body_str)
     match_data ? match_data.post_match : body_str
+  end
+
+  def full_body
+    body_str   = translation_for(I18n.locale).body
+    body_str.gsub(/\[\-\-\-\]/, "\n")
   end
 end

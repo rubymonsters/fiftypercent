@@ -1,14 +1,24 @@
-<h2>
-  <%= link_to post.title, blog_post_path(post.id) %>
-</h2>
+<article class="blog-post">
+  <h2>
+    <%= link_to post.title, blog_post_path(post.id) %>
+  </h2>
+  <div class="byline">
+    <span class="glyphicon glyphicon-time"></span>
+    <%= post.created_at.to_s(:gdt) %>
+    <% if post.categories.any? %>
+      <span class="glyphicon glyphicon-folder-open"></span>
+      <% post.categories.map {|c| c.name}.join(', ') %>
+    <% end %>
+  </div>
 
-<% if post.abstract.present? %>
-  <div class="abstract">
-    <%= markdown(post.abstract) %>
-  </div>
-<% else %>
-  <div class="main-body">
-    <%= markdown(post.main_body) %>
-  </div>
-<% end %>
+  <% if post.abstract.present? %>
+    <div class="abstract">
+      <%= markdown(post.abstract) %>
+    </div>
+  <% else %>
+    <div class="main-body">
+      <%= markdown(post.main_body) %>
+    </div>
+  <% end %>
+</article>
   

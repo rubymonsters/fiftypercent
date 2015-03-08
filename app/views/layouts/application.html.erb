@@ -11,7 +11,7 @@
   <%= csrf_meta_tags %>
 
 </head>
-<body class="frontend<%= ' blog' if is_blog? %>">
+<body class="frontend<%= ' blog' if is_blog? %><%= class_for_body_tag %>">
 
 <% if is_blog? %>
   <%= render 'shared/blog_header' %>
