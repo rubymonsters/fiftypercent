@@ -24,6 +24,10 @@ class Event < ActiveRecord::Base
     100 - (woman.to_f/total.to_f*100).to_i
   end
 
+  def percent_female
+    (woman.to_f/total.to_f*100).to_i
+  end
+
   def country_name
     country = ISO3166::Country[country_code]
     if country
