@@ -12,7 +12,7 @@
     <% if comment.public_contact %>
       &nbsp;
       <span class="glyphicon glyphicon-envelope"></span>
-      <%= comment.public_contact %>
+      <%= linked_contact_info(comment.public_contact).html_safe %>
     <% end %>
   </p>
   <div class="comment-body">
