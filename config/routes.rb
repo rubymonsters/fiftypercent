@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
+
   concern :paginatable do
     get '(page/:page)', :action => :index, :on => :collection, :as => ''
   end
 
   scope constraints: {subdomain: 'blog'} do
-    get '/',         to: 'blog_posts#index',  as: 'blog_root'
-    get 'post/:id',  to: 'blog_posts#show',   as: 'blog_post'
-    get 'p/:slug',   to: 'blog_pages#show',        as: 'blog_page'
+    get '/',         to: 'blog_posts#index',     as: 'blog_root'
+    get 'post/:id',  to: 'blog_posts#show',      as: 'blog_post'
+    get 'p/:slug',   to: 'blog_pages#show',      as: 'blog_page'
+    get 'cat/:slug', to: 'blog_categories#show', as: 'blog_category'
   end
 
   scope "(:locale)", locale: /de|en/ do
@@ -27,6 +29,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: "home#start"
     resources :pages
+    resources :blog_categories
     resources :events do
       member do
         patch 'publish'

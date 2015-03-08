@@ -99,6 +99,7 @@ de:
       title: "50 prozent speakerinnen blog"
     sidebar:
       pages: Pages
+      categories: Kategorien
 
   show:
     event:

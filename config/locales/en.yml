@@ -98,6 +98,7 @@ en:
       title: "50 percent speakerinnen blog"
     sidebar:
       pages: Seiten
+      categories: Categoryies
 
   show:
     event:

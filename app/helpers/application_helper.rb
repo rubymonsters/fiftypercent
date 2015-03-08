@@ -27,7 +27,7 @@ module ApplicationHelper
   end
 
   def layout_needs_sidebar?
-    %w(events pages blog_posts blog_pages).include?(params[:controller]) and %w(index show).include?(params[:action])
+    %w(events pages blog_posts blog_pages blog_categories).include?(params[:controller]) and %w(index show).include?(params[:action])
   end
 
   def language_switcher

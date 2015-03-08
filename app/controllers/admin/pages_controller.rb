@@ -1,7 +1,22 @@
 class Admin::PagesController < Admin::BaseController
 
   def index
-    @pages = Page.order('created_at DESC').all
+    case params[:page_type]
+    when 'blog_post'
+      @pages = Page.blog_posts
+    when 'blog_page'
+      @pages = Page.blog_pages
+    when 'blog_sidebar_snippet'
+      @pages = Page.blog_sidebar_snippets
+    when 'sidebar_snippet'
+      @pages = Page.sidebar_snippets
+    when 'menu_page'
+      @pages = Page.menu_pages
+    else
+      @pages = Page.all
+    end
+
+    @pages = @pages.includes(:translations).order(rank: :asc)
   end
 
   def show
@@ -64,6 +79,8 @@ class Admin::PagesController < Admin::BaseController
     params.require(:page).permit(:slug,
                                  :page_type,
                                  :rank,
-                                 translations_attributes: [:id, :title, :body, :locale] )
+                                 { blog_category_ids: [] },
+                                 {translations_attributes: [:id, :title, :body, :locale]}
+                                 )
   end
 end

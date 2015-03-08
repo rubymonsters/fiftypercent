@@ -29,6 +29,10 @@
   <dd><%= @page.page_type %></dd>
   <dt>Sort Rank</dt>
   <dd><%= @page.rank %></dd>
+  <% if @page.page_type == 'blog_post' %>
+    <dt>Blog Categories</dt>
+    <dd><%= @page.blog_categories.sort_by(&:rank).map{|c| "<span class=\"badge\">#{c.name}</span>"}.join(' ').html_safe %></dd>
+  <% end %>
   <dt>&nbsp;</dt><dd>&nbsp;</dd>
   <dt>Created</dt>
   <dd><%= @page.created_at.to_s(:gdt) %></dd>

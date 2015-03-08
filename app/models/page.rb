@@ -2,6 +2,8 @@ class Page < ActiveRecord::Base
 
   translates :title, :body, :fallbacks_for_empty_translations => true
 
+  has_and_belongs_to_many :blog_categories
+
   accepts_nested_attributes_for :translations
 
   validates :slug, format: { with: /\A[a-z0-9_]+\z/, message: "only allows letters, numbers and underscore" }
@@ -15,10 +17,6 @@ class Page < ActiveRecord::Base
   scope :blog_sidebar_snippets, -> { where( page_type: 'blog_sidebar_snippet') }
   scope :sidebar_snippets,      -> { where( page_type: 'sidebar_snippet') }
   scope :menu_pages,            -> { where( page_type: 'menu_page') }
-
-  def categories
-    []
-  end
 
   def abstract
     body_str   = translation_for(I18n.locale).body

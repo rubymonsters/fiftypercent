@@ -11,10 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150227153932) do
+ActiveRecord::Schema.define(version: 20150308121937) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "blog_categories", force: :cascade do |t|
+    t.string   "slug"
+    t.string   "name"
+    t.integer  "rank"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "blog_categories_pages", id: false, force: :cascade do |t|
+    t.integer "blog_category_id", null: false
+    t.integer "page_id",          null: false
+  end
+
+  add_index "blog_categories_pages", ["blog_category_id", "page_id"], name: "index_blog_categories_pages_on_blog_category_id_and_page_id", using: :btree
+  add_index "blog_categories_pages", ["page_id", "blog_category_id"], name: "index_blog_categories_pages_on_page_id_and_blog_category_id", using: :btree
+
+  create_table "blog_category_translations", force: :cascade do |t|
+    t.integer  "blog_category_id", null: false
+    t.string   "locale",           null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "name"
+  end
+
+  add_index "blog_category_translations", ["blog_category_id"], name: "index_blog_category_translations_on_blog_category_id", using: :btree
+  add_index "blog_category_translations", ["locale"], name: "index_blog_category_translations_on_locale", using: :btree
 
   create_table "comments", force: :cascade do |t|
     t.text     "title"

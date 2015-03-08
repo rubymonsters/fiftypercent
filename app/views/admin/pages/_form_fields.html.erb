@@ -26,6 +26,9 @@
   </div>
 </div>
 
+<% if f.object.page_type == 'blog_post' %>
+  <%= f.collection_check_boxes :blog_category_ids, BlogCategory.order(:rank).all, :id, :name, inline: true %>
+<% end %>
 
 <%= f.fields_for :translations, f.object.translations.sort_by(&:locale) do |translation| %>
   <h4>

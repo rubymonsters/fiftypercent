@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-sm-4">
+    <h3>Blog Categories:</h3>
+  </div>
+  <div class="col-sm-8 text-right">
+    <%= link_to new_admin_blog_category_path, class: 'btn btn-success' do %>
+      <span class="glyphicon glyphicon-plus-sign"></span>
+      add a category
+    <% end %>
+  </div>
+</div>
+
+<table id="" class="table table-striped table-hover table-condensed">
+  <%= render @blog_categories %>
+</table>

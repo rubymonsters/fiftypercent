@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def default_url_options(options = {})
-    if controller_path =~ /^admin\//
+    if controller_path =~ /^admin\// or controller_name =~ /blog/
       options
     else
       { locale: I18n.locale }.merge options

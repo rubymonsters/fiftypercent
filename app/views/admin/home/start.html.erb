@@ -118,6 +118,13 @@
               (<%= Page.menu_pages.count %>)
             <% end %>
           </li>
+          <li>
+            <%= link_to admin_blog_categories_path do %>
+              <span class="glyphicon glyphicon-folder-open"></span>&nbsp;
+              Categories (Blog)
+              (<%= BlogCategory.count %>)
+            <% end %>
+          </li>
         </ul>
       </div>
     </div>

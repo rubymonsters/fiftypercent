@@ -5,9 +5,11 @@
   <div class="byline">
     <span class="glyphicon glyphicon-time"></span>
     <%= post.created_at.to_s(:gdt) %>
-    <% if post.categories.any? %>
-      <span class="glyphicon glyphicon-folder-open"></span>
-      <% post.categories.map {|c| c.name}.join(', ') %>
+
+    <% if post.blog_categories.any? %>
+      &nbsp;
+      <span class="glyphicon glyphicon-folder-open"></span>&nbsp;
+      <%= post.blog_categories.map {|c| c.name}.join(', ') %>
     <% end %>
   </div>
 

@@ -1,1 +1,7 @@
-<%= render partial: 'post', collection: @posts, as: :post %>
+<% if @blog_category %>
+  <h2>
+    <span class="glyphicon glyphicon-folder-open"></span>&nbsp;
+    <%= @blog_category.name %>
+  </h2>
+<% end %>
+<%= render partial: 'blog_posts/post', collection: @posts, as: :post %>

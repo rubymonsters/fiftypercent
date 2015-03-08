@@ -1,3 +1,17 @@
+<aside class="widget" id="blog-category-list">
+  <h1><%= t 'blog.sidebar.categories' %></h1>
+  <ul class="list-unstyled">
+    <% BlogCategory.order(:rank).includes(:translations).all.each do |blog_category| %>
+      <li>
+        <%= link_to blog_category_path(blog_category.slug) do %>
+          <span class="glyphicon glyphicon-folder-open"></span>&nbsp;
+          <%= blog_category.name %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</aside>
+
 <aside class="widget" id="page-list">
   <h1><%= t 'blog.sidebar.pages' %></h1>
   <ul class="list-unstyled">

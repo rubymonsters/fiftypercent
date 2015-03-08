@@ -1,0 +1,41 @@
+<div class="row">
+  <h3 class="col-sm-4">
+    <span class="glyphicon glyphicon-folder-open"></span>
+    Blog Category: <strong><%= @blog_category.slug %></strong>
+    <br>
+  </h3>
+  <div class="col-sm-8 text-right">
+    <%= link_to edit_admin_blog_category_path(@blog_category), class: 'btn btn-success' do %>
+      <span class="glyphicon glyphicon-edit"></span>
+      edit
+    <% end %>
+    &nbsp;
+    <%= link_to admin_blog_categories_path, class: 'btn btn-default' do %>
+      <span class="glyphicon glyphicon-list"></span>
+      back to list
+    <% end %>
+    <%= link_to admin_blog_category_path(@blog_category), method: 'delete', data: {confirm: 'Are you sure? There is no UNDO!'}, class: 'btn btn-danger' do %>
+      <span class="glyphicon glyphicon-remove"></span>
+      delete
+    <% end %>
+  </div>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Slug</dt>
+  <dd><%= @blog_category.slug %></dd>
+  <dt>Sort Rank</dt>
+  <dd><%= @blog_category.rank %></dd>
+  <dt>&nbsp;</dt><dd>&nbsp;</dd>
+  <dt>Created</dt>
+  <dd><%= @blog_category.created_at.to_s(:gdt) %></dd>
+  <dt>Last Update</dt>
+  <dd><%= @blog_category.updated_at.to_s(:gdt) %></dd>
+  <% [:de, :en].each do |locale| %>
+    <dt>&nbsp;</dt><dd>&nbsp;</dd>
+    <dt><%= image_tag("flags/#{locale.to_s}.png") %></dt>
+    <dd><big><%= locale %></big></dd>
+    <dt>Name</dt>
+    <dd><%= @blog_category.translation_for(locale).name %></dd>
+  <% end %>
+</dl>

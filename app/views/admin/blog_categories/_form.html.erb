@@ -1,0 +1,37 @@
+<%= bootstrap_form_for([:admin, @blog_category], layout: :horizontal, html: {class: 'blog-category-form'}) do |f| %>
+
+  <% if @blog_category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@blog_category.errors.count, "error") %> prohibited this blog_category from being saved:</h2>
+
+      <ul>
+      <% @blog_category.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.text_field :slug, label: 'Slug',
+                          help: 'uniq identifyer, part of URL, only: a-z0-9_',
+                          control_col: "col-sm-4" %>
+
+  <%= f.fields_for :translations, f.object.translations.sort_by(&:locale) do |translation| %>
+    <h4>
+      <%= image_tag "flags/#{translation.object.locale.to_s}.png" %>
+      <%= translation.object.locale.to_s.upcase %>
+    </h4>
+    <%= translation.hidden_field :locale %>
+    <%= translation.text_field :name %>
+    <hr>
+  <% end %>
+
+  <%= f.text_field :rank, { label: "Sort rank",
+                            help: 'Order to sort elements in menu or sidebar',
+                            control_col: "col-sm-2"} %>
+
+  <div class="col-sm-6 text-right">
+    <%= f.submit 'Save', class: "btn btn-success" %>
+  </div>
+
+<% end %>

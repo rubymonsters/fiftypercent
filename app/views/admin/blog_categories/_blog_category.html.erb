@@ -1,0 +1,21 @@
+<tr id="<%= dom_id(blog_category) %>">
+  <td>
+    <%= link_to admin_blog_category_path(blog_category) do %>
+      <span class="glyphicon glyphicon-folder-open"></span>
+      &nbsp;
+      <%= blog_category.slug %>
+    <% end %>
+  </td>
+  <td><%= blog_category.rank %></td>
+  <% [:de, :en].each do |locale| %>
+    <td>
+      <%= image_tag("flags/#{locale.to_s}.png") %>
+      <%= blog_category.translation_for(locale).name %>
+    </td>
+  <% end %>
+  <td>
+    <%= link_to edit_admin_blog_category_path(blog_category) do %>
+      <span class="glyphicon glyphicon-edit"></span> edit
+    <% end %>
+  </td>
+</tr>

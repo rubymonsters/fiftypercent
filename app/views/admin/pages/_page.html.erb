@@ -6,6 +6,15 @@
       <%= page.slug %>
     <% end %>
   </td>
+  <td>
+    <% if page.blog_categories.any? %>
+      <span class="glyphicon glyphicon-folder-open"
+      title="<%= page.blog_categories.sort_by(&:rank).map{|c| "#{c.name}"}.join(', ').html_safe %>"
+      ></span>
+    <% else %>
+      &nbsp;
+    <% end %>
+  </td>
   <td><%= page.rank %></td>
   <% [:de, :en].each do |locale| %>
     <td>
