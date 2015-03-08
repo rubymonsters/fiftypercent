@@ -23,6 +23,9 @@
     </td>
   <% end %>
   <td>
+    <small><%= page.created_at.to_s(:gdt) %></small>
+  </td>
+  <td>
     <%= link_to edit_admin_page_path(page) do %>
       <span class="glyphicon glyphicon-edit"></span> edit
     <% end %>

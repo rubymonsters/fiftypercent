@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     @comment = @event.comments.new(comment_params)
     
     if @comment.save
-      flash[:success] = 'Ergänung erfolgreich gespeichert.'
+      flash[:success] = 'Ergänzung erfolgreich gespeichert.'
       redirect_to event_path(@event)
     else
       flash[:error]   = 'Ihre Ergänzung konnnte nicht gespeichert werden.'

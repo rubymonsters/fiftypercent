@@ -17,7 +17,8 @@
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <%= link_to root_path do %>
+          <% frontend_url = Rails.env.development? ? root_path : 'https://50prozent.speakerinnen.org/' %>
+          <%= link_to frontend_url do %>
             <span class="glyphicon glyphicon-globe"></span>
             Visit Frontend
           <% end %>

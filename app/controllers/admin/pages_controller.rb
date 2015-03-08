@@ -16,7 +16,7 @@ class Admin::PagesController < Admin::BaseController
       @pages = Page.all
     end
 
-    @pages = @pages.includes(:translations).order(rank: :asc)
+    @pages = @pages.includes(:translations).order(rank: :asc, created_at: :desc)
   end
 
   def show
