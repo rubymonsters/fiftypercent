@@ -16,7 +16,7 @@
 <% if @event.comments.published.any? %>
   <div class="comments" id="comments">
     <h2><%= t 'show.event.your_comments' %>:</h2>
-    <%= render partial: 'comment', collection: @event.comments.published %>
+    <%= render partial: 'events/comment', collection: @event.comments.published %>
   </div>
 <% end %>
 
