@@ -32,5 +32,7 @@ module Fiftypercent
 
     # set to false if you want to see asset-requests in development-logs
     # config.quiet_assets = false
+
+    config.active_record.raise_in_transactional_callbacks = true
   end
 end

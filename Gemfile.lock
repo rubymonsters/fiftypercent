@@ -59,6 +59,11 @@ GEM
     capistrano-rails (1.1.2)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     coderay (1.1.0)
     colorize (0.7.5)
     countries (0.9.3)
@@ -199,6 +204,7 @@ DEPENDENCIES
   capistrano (~> 3.2.0)
   capistrano-bundler
   capistrano-rails (~> 1.1.0)
+  carrierwave (~> 0.10.0)
   country_select (~> 2.1.0)
   execjs
   faker

@@ -21,4 +21,6 @@ secrets.yml
 .rake_tasks
 
 public/assets
+public/images
+public/uploads
 

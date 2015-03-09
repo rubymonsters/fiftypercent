@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+
+
   concern :paginatable do
     get '(page/:page)', :action => :index, :on => :collection, :as => ''
   end
@@ -30,6 +32,7 @@ Rails.application.routes.draw do
     root to: "home#start"
     resources :pages
     resources :blog_categories
+    resources :images
     resources :events do
       member do
         patch 'publish'

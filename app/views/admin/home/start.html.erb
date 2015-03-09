@@ -125,6 +125,13 @@
               (<%= BlogCategory.count %>)
             <% end %>
           </li>
+          <li>
+            <%= link_to admin_images_path do %>
+              <span class="glyphicon glyphicon-picture"></span>&nbsp;
+              Images
+              (<%= Image.count %>)
+            <% end %>
+          </li>
         </ul>
       </div>
     </div>

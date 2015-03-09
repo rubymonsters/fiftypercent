@@ -15,6 +15,7 @@ gem 'rails-i18n'
 gem 'globalize',         '~> 5.0.0'
 gem 'kaminari',          '~> 0.16.1'
 gem 'acts-as-taggable-on'
+gem 'carrierwave',       '~> 0.10.0'
 
 gem 'bootstrap-sass',     '~> 3.3.0'
 gem 'bootstrap_form',     '~> 2.3.0'
