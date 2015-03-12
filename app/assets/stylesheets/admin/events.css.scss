@@ -4,13 +4,13 @@
 
 #published-events {
   .title {
-    border-left: 4px solid silver;
+    border-left: 6px solid silver;
   }
   .mod-state-ok .title {
-    border-left-color: green;
+    border-left-color: #2BB124
   }
   .mod-state-hidden .title {
-    border-left-color: Crimson;
+    border-left-color: #C4004A;
   }
   .last {
     border-right: 1px solid #ccc;

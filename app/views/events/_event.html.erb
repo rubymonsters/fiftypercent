@@ -103,6 +103,13 @@
         <% end %>
       </div>
       <div class="col-md-3 text-right">
+        <% if current_user %>
+          <%= link_to edit_admin_event_path(event) do %>
+            admin-edit
+            <span class="glyphicon glyphicon-edit"></span>
+          <% end %>
+          &nbsp; &nbsp;
+        <% end %>
         <%= link_to event_path(event) do %>
           <%= t 'show.event.more' %>
           <span class="glyphicon glyphicon-arrow-right"></span>
