@@ -25,8 +25,8 @@
   <p>
     <%= t 'layout.sidebar.statistics_statement_html',
           {event_count: Event.count,
-           total: total = Event.pluck(:total).sum,
-           women: woman = Event.pluck(:woman).sum,
+           total: total = Event.pluck(:total).compact.sum,
+           women: woman = Event.pluck(:woman).compact.sum,
            percent: number_with_precision((woman.to_f / total.to_f) * 100, precision: 2)
            }%>
   </p>

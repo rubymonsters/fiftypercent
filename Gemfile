@@ -29,6 +29,8 @@ gem 'capistrano',        '~> 3.2.0'
 gem 'capistrano-rails',  '~> 1.1.0'
 gem 'capistrano-bundler'
 
+gem 'nokogiri'
+
 gem 'rack-attack',       '~> 4.2.0'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

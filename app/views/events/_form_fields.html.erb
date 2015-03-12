@@ -8,7 +8,7 @@
 
 <fieldset>
   <legend><%= t('fieldset.legend.event.when_and_where') %></legend>
-  <%= f.date_select :date %>
+  <%= f.date_select :date, include_blank: true %>
   <%= f.text_field :city %>
   <div class="form-group">
     <%= label_tag 'event_country_code', t('helpers.label.event.country_code'), class: 'control-label' %>

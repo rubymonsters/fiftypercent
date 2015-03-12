@@ -61,10 +61,18 @@
     <dd><%= link_to @event.main_url, @event.main_url %></dd>
   </dl>
 
+  <% if @event.body %>
+    <h4>Body (Text vom alten wordpress-Blog)</h4>
+    <dl class="dl-horizontal">
+      <dt>Body</dt>
+      <dd><%= simple_format(@event.body) %></dd>
+    </dl>
+  <% end %>
+
   <h4>Wann und wo?</h4>
   <dl class="dl-horizontal">
     <dt>Date</dt>
-    <dd><%= @event.date.to_s(:gd) %></dd>
+    <dd><%= @event.date.to_s(:gd) if @event.date %></dd>
 
     <dt>City</dt>
     <dd><%= @event.city %></dd>

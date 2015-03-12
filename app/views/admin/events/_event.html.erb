@@ -7,7 +7,7 @@
     <%= link_to event.title, admin_event_path(event) %>
   </td>
   <td>
-    <%= event.date.to_s(:gd) %>
+    <%= event.date.to_s(:gd) if event.date %>
   </td>
   <td>
     <%= event.city %>

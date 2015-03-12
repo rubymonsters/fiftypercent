@@ -23,6 +23,12 @@
     color: $bright-grey;
     padding-left: 8px;
   }
+
+  #event_body {
+    height: 300px;
+    font-family: "Lucida Console", Monaco, "Courier New", Courier, monospace;
+    font-size: 12px;
+  }
 }
 
 a.internal-info {

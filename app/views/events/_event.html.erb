@@ -3,15 +3,19 @@
   <% if event.subtitle.present? %>
     <div class="subtitle"><%= event.subtitle %></div>
   <% end %>
-  <div class="where-when">
-    <span class="glyphicon glyphicon-calendar"></span>
-    <%= event.date.to_s(:gd) %>
-    &nbsp; &nbsp;
-    <span class="glyphicon glyphicon-home"></span>&nbsp;
-    <%= event.city %>
-  </div>
+
+  <% unless event.date.blank? and event.city.blank? %>
+    <div class="where-when">
+      <span class="glyphicon glyphicon-calendar"></span>
+      <%= event.date.to_s(:gd) if event.date %>
+      &nbsp; &nbsp;
+      <span class="glyphicon glyphicon-home"></span>&nbsp;
+      <%= event.city %>
+    </div>
+  <% end %>
+
   <div class="main row">
-    <div class="col-md-8">
+    <div class="col-md-<%= event.has_all_the_numbers? ? '8' : '12' %>">
       <% if event.description.present? %>
         <div class="description"><%= simple_format(event.description) %></div>
       <% end %>
@@ -22,9 +26,11 @@
         </div>
       <% end %>
 
-      <div class="who-speaks">
-        <%= t 'show.event.speaking', percent_male: event.percent_male %>
-      </div>
+      <% if event.has_all_the_numbers? %>
+        <div class="who-speaks">
+          <%= t 'show.event.speaking', percent_male: event.percent_male %>
+        </div>
+      <% end %>
 
       <% if is_single_view %>
         <hr>
@@ -41,8 +47,10 @@
             <dt><%= t 'show.event.contact_url' %></dt>
             <dd><%= linked_contact_info(event.contact_url).html_safe %></dd>
           <% end %>
-          <dt><%= t 'show.event.speaker_count' %></dt>
-          <dd><%= t 'show.event.speaker_count_statement', total: event.total.to_s, women: event.woman.to_s %></dd>
+          <% if event.has_all_the_numbers? %>
+            <dt><%= t 'show.event.speaker_count' %></dt>
+            <dd><%= t 'show.event.speaker_count_statement', total: event.total.to_s, women: event.woman.to_s %></dd>
+          <% end %>
           <% if event.remark.present? %>
             <dt><%= t 'show.event.remark' %></dt>
             <dd><%= event.remark%></dd>
@@ -50,10 +58,19 @@
         </dl>
       <% end %>
 
+      <% if event.body %>
+        <div id="event_body">
+          <%= simple_format(event.body) %>
+        </div>
+      <% end %>
+
+
     </div>
-    <div class="col-md-4">
-      <%= render 'events/donut', event: event %>
-    </div>
+    <% if event.has_all_the_numbers? %>
+      <div class="col-md-4">
+        <%= render 'events/donut', event: event %>
+      </div>
+    <% end %>
   </div>
 
   <% if is_single_view %>

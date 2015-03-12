@@ -22,7 +22,8 @@ class Admin::EventsController < Admin::BaseController
   end
 
   def update
-    if @event.update(event_params)
+    @event.attributes = event_params
+    if @event.save(validate: false)
       redirect_to admin_event_path(@event), flash: {success: "Successfully updated event: <strong>\"#{@event.title}\"</strong>"}
     else
       render 'edit'

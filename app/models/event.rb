@@ -60,4 +60,8 @@ class Event < ActiveRecord::Base
   def frontend_editable?(reported_events_ids)
     reported_events_ids.to_a.include?(id) && recently_created?
   end
+
+  def has_all_the_numbers?
+    woman.is_a?(Integer) and total.is_a?(Integer)
+  end
 end

@@ -213,6 +213,7 @@ DEPENDENCIES
   kaminari (~> 0.16.1)
   minitest-reporters
   morrisjs-rails
+  nokogiri
   pg
   pry-rails
   puma
