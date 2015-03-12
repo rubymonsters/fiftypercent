@@ -33,7 +33,7 @@ namespace :blog do
         created_at: article.created_at,
         body: article.content_encoded,
         tag_list: article.tags.join(', '),
-        mod_state: 'published'
+        mod_state: 'ok'
       )
       event.save!(validate: false)
     end
