@@ -28,7 +28,9 @@ en:
         remark: Remark
 
         reporter: 'What is your name?'
-        reporter_url: 'How can you be contacted?'
+        reporter_twitter: 'Twitter (optional)'
+        reporter_url: 'Contact-Website / URL (optional)'
+        reporter_email: 'E-Mail (optional)'
 
         internal_user_info: 'Internal Comment'
 
@@ -63,7 +65,9 @@ en:
         remark: 'e.g.: "Two of the three woman are only panel moderators."'
 
         reporter: 'Name, Pseudonym'
-        reporter_url: 'e.g.: @inge (twitter) or http://www.my_blog.com/contact.html or e-mail (Attention! Will be visible on page.)'
+        reporter_twitter: 'e.g.: @inge'
+        reporter_url: 'e.g.: http://www.my_blog.com/contact.html'
+        reporter_email: 'E-Mail (Attention! Will be visible on page.)'
 
         internal_user_info: 'Only for site moderation, will not be shown on the page.'
 

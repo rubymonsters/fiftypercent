@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150312210330) do
+ActiveRecord::Schema.define(version: 20150313153715) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,6 +80,8 @@ ActiveRecord::Schema.define(version: 20150312210330) do
     t.text     "remark"
     t.string   "mod_state"
     t.text     "body"
+    t.string   "reporter_twitter"
+    t.string   "reporter_email"
   end
 
   create_table "images", force: :cascade do |t|

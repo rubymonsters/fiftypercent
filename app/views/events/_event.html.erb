@@ -94,10 +94,23 @@
           <span class="glyphicon glyphicon-eye-open"></span>&nbsp;
           <%= event.reporter %>
         <% end %>
+
+        &nbsp; &nbsp;
+
+        <% if event.reporter_twitter.present? %>
+          &nbsp; &nbsp;
+          <span class="glyphicon glyphicon-bullhorn"></span>&nbsp;
+          <%= linked_contact_info(event.reporter_twitter).html_safe %>
+        <% end %>
         <% if event.reporter_url.present? %>
           &nbsp; &nbsp;
-          <span class="glyphicon glyphicon-envelope"></span>&nbsp;
+          <span class="glyphicon glyphicon-globe"></span>&nbsp;
           <%= linked_contact_info(event.reporter_url).html_safe %>
+        <% end %>
+        <% if event.reporter_email.present? %>
+          &nbsp; &nbsp;
+          <span class="glyphicon glyphicon-envelope"></span>&nbsp;
+          <%= linked_contact_info(event.reporter_email).html_safe %>
         <% end %>
       </div>
     </div>

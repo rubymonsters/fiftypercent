@@ -12,6 +12,8 @@ module EventsHelper
       link_to(contact_info, "https://twitter.com/#{contact_info.gsub(/@/,'')}")
     when /^http/
       link_to(contact_info, contact_info)
+    when /.+@.+/
+      contact_info.sub(/@/, '(-ät-)')
     else
       contact_info
     end

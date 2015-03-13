@@ -72,6 +72,8 @@ class EventsController < ApplicationController
                                     :remark,
                                     :reporter,
                                     :reporter_url,
+                                    :reporter_twitter,
+                                    :reporter_email,
                                     :tag_list,
                                     :internal_user_info )
     end

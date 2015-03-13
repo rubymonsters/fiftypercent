@@ -28,13 +28,15 @@ de:
         remark: Anmerkung
 
         reporter: 'Dein / Ihr Name'
-        reporter_url: 'Kontaktmöglichkeiten'
+        reporter_twitter: Twitter (optional)
+        reporter_url: Kontakt-Website (optional)
+        reporter_email: E-Mail (optional)
 
         internal_user_info: 'Interner Kommentar'
 
     placeholder:
       event:
-        reporter_url: 'Kontaktdaten'
+        reporter_url: 'http://www...'
 
   activerecord:
     help:
@@ -64,7 +66,9 @@ de:
         remark: 'Z.B.: Zwei der drei Frauen sind Moderatorinnen (aber nur einer von zehn Männern).'
 
         reporter: 'Name oder Pseudonym (muss nicht eingetragen werden)'
-        reporter_url: 'Z.B. @inge (Twitter) oder http://www.my_blog.com/contact.html oder Mailadresse (Achtung! Erscheint auf der Seite.)'
+        reporter_twitter: 'Z.B. @inge'
+        reporter_url: 'Z.B. http://www.my_blog.com/contact.html'
+        reporter_email: 'Mailadresse (Achtung! Erscheint auf der Seite.)'
 
         internal_user_info: 'Nur für die Moderation, wird nicht auf der Seite angezeigt'
 
