@@ -10,7 +10,7 @@ en:
       event:
         title: 'Title of the conference'
         subtitle: 'Motto'
-        description: 'What is the conference about?'
+        description: 'Motto of the event or short description (optional)'
         main_url: "What\'s the conferences URL?"
 
         date: 'Date'
@@ -47,7 +47,7 @@ en:
       event:
         title: ''
         subtitle: 'Slogan or tagline for the event, if it has one.'
-        description: 'A short description of the event'
+        description: 1-2 sentences
         main_url: 'Link to main webpage, zB: http://www.conf.com'
 
         date: "What\'s the first day of the event?"

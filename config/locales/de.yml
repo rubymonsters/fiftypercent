@@ -10,7 +10,7 @@ de:
       event:
         title: 'Titel der Veranstaltung'
         subtitle: 'Motto'
-        description: Beschreibung der Veranstaltung
+        description: Motto der Veranstaltung oder kurze Beschreibung (optional)
         main_url: 'Wie lautet die URL der Veranstaltung?'
 
         date: 'Datum'
@@ -48,7 +48,7 @@ de:
       event:
         title: ''
         subtitle: 'Slogan oder Tagline  der Veranstaltung, wenn vorhanden'
-        description: 'kurze Zusammenfassung'
+        description: 1-2 Sätze
         main_url: 'Link zur Startseite, zB: http://www.conf.com'
 
         date: 'Wann startet die Veranstaltung?'
