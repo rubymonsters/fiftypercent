@@ -64,6 +64,17 @@
         </div>
       <% end %>
 
+      <% if event.tags.any? %>
+        <br>
+        <strong><%= t 'show.event.topic_tags' %></strong><br>
+        <% event.tags.each do |tag| %>
+          <%= link_to tag_path(tag: tag.name) do %>
+            <span class="badge"><%= tag.name %></span>
+          <% end %>
+        <% end %>
+        <br><br>
+      <% end %>
+
 
     </div>
     <% if event.has_all_the_numbers? %>

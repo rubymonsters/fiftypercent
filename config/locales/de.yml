@@ -108,9 +108,10 @@ de:
       website: Webseite
       speaker_list_url: Link zur Speakerliste
       contact_url: Kontakt zur Veranstaltung
-      speaker_count: Anzahl der Speaker
-      speaker_count_statement: "%{total} Sprecherinnen, davon %{women} Frauen"
+      speaker_count: Es sprechen insgesamt
+      speaker_count_statement: "%{total} Personen, davon %{women} Frauen"
       remark: Anmerkung
+      topic_tags: Themen (Tags)
       reporter: Gezählt von
       more: mehr
       comments: Kommentare

@@ -33,6 +33,13 @@ article {
     font-weight: bold;
   }
 
+  .badge {
+    background-color: #bbb;
+    &:hover {
+      background-color: #777;
+    }
+  }
+
   .footer {
     border-top: 1px solid #eee;
     padding-top: 8px;

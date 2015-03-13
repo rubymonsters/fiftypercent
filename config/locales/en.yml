@@ -109,6 +109,7 @@ en:
       speaker_count: Speaker count
       speaker_count_statement: "%{total} speakers total, %{women} of which are women"
       remark: Remark
+      topic_tags: Topics (Tags)
       reporter: Reporter
       more: more
       comments: Comments
