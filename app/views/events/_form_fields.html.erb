@@ -24,7 +24,7 @@
 
 <fieldset>
   <legend><%= t('fieldset.legend.event.topics') %></legend>
-  <%= f.text_field :tag_list %>
+  <%= f.text_field :tag_list, value: f.object.tag_list.to_s %>
 </fieldset>
 
 <fieldset>

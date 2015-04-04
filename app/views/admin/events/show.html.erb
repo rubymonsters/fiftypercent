@@ -58,12 +58,17 @@
     <dd><%= link_to @event.main_url, @event.main_url %></dd>
   </dl>
 
-  <% if @event.body %>
+  <% if @event.body.present? %>
     <h4>Body (Text vom alten wordpress-Blog)</h4>
     <dl class="dl-horizontal">
       <dt>Body</dt>
       <dd><%= simple_format(@event.body) %></dd>
     </dl>
+  <% end %>
+
+  <h4>Tags:</h4>
+  <% @event.tags.each do |tag| %>
+    <span class="badge"><%= tag.name %></span>
   <% end %>
 
   <h4>Wann und wo?</h4>
