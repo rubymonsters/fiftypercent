@@ -1,3 +1,6 @@
+<p>
+  Images should be no wider than <strong>700px</strong> to fit nicely into the layout.
+</p>
 <%= bootstrap_form_for(['admin', @image]) do |f| %>
 
   <% if @image.errors.any? %>
@@ -12,9 +15,9 @@
     </div>
   <% end %>
 
-  <%= f.text_field :name %>
-  <%= f.text_area :description %>
-  <%= f.file_field :file %>
+  <%= f.text_field :name, help: 'helps you to find the image later, maybe include the name of the article or event the image belongs to' %>
+  <%= f.text_area :description, help: 'optional, leave some background information here. what is the source of the picture? are there any copyright or licence informations?' %>
+  <%= f.file_field :file, help: 'Your current file-name will become part of the URL later. So maybe rename the image-file on your machine?' %>
   <%= f.submit 'Save', class: "btn btn-success" %>
 
 <% end %>

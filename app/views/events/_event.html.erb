@@ -34,14 +34,24 @@
 
       <% if is_single_view %>
         <hr>
-        <dl class="">
+        <dl class="dl-horizontal">
           <% if event.main_url.present? %>
             <dt><%= t 'show.event.website' %></dt>
-            <dd><%= link_to event.main_url, event.main_url %></dd>
+            <dd>
+              <%= link_to event.main_url do %>
+                <span class="glyphicon glyphicon-share"></span>
+                Link
+              <% end %>
+            </dd>
           <% end %>
           <% if event.speaker_list_url.present? %>
             <dt><%= t 'show.event.speaker_list_url' %></dt>
-            <dd><%= link_to event.speaker_list_url, event.speaker_list_url %></dd>
+            <dd>
+              <%= link_to event.speaker_list_url do %>
+                <span class="glyphicon glyphicon-share"></span>
+                Link
+              <% end %>
+            </dd>
           <% end %>
           <% if event.contact_url.present? %>
             <dt><%= t 'show.event.contact_url' %></dt>
@@ -104,7 +114,6 @@
         <% end %>
         <% if event.reporter_url.present? %>
           &nbsp; &nbsp;
-          <span class="glyphicon glyphicon-globe"></span>&nbsp;
           <%= linked_contact_info(event.reporter_url).html_safe %>
         <% end %>
         <% if event.reporter_email.present? %>
