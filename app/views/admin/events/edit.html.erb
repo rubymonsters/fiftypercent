@@ -1,11 +1,14 @@
 <%= bootstrap_form_for([:admin, @event]) do |f| %>
 
-  <fieldset>
-    <legend>Body (Text aus dem alten Wordpress Blog - HTML) </legend>
-    <%= f.text_area :body %>
-    <legend>Body (Text aus dem alten Wordpress Blog - Text)</legend>
-    <%= simple_format(@event.body) %>
-  </fieldset>
+
+  <% if f.object.body.present? %>
+    <fieldset>
+      <legend>Body (Text aus dem alten Wordpress Blog - HTML) </legend>
+      <%= f.text_area :body %>
+      <legend>Body (Text aus dem alten Wordpress Blog - Text)</legend>
+      <%= simple_format(@event.body) %>
+    </fieldset>
+  <% end %>
 
 
   <%= render partial: 'events/form_fields', locals: {f: f} %>
