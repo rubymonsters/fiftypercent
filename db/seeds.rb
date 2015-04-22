@@ -76,8 +76,26 @@ event_count = Event.count
     public_contact:   Faker::Internet.url,
     internal_contact: Faker::Internet.email,
     commentable_id:   event_id,
-    commentable_type: Event    
+    commentable_type: Event
   })
 end
 
 User.create(email: 'horst@mail.com', password:'geheim')
+
+5.times do
+  Page.blog_posts.create!({
+    title:            Faker::Lorem.sentence(3, true, 4),
+    body:             Faker::Lorem.paragraphs(rand(6)+1).join("\n\n"),
+    slug:             Faker::Address.postcode
+    })
+end
+
+category = [ "Intern", "ähnliche Projekte", "Erfolge" ]
+
+category.each do | cat |
+  BlogCategory.create!(
+      name:             cat,
+      rank:             Random.rand(99),
+      slug:             Faker::Address.postcode
+      )
+end
