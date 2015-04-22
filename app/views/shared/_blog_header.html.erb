@@ -1,22 +1,11 @@
-<nav class="blog-navbar navbar navbar-default navbar-static-top" role="navigation">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="<%= blog_root_path %>">
-        <%= t 'blog.header.title' %>
-      </a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+<%# admin_header_class = 'admin' if controller_path =~ /admin\// %>
+<header id="blog-header">
+  <%# TODO: hidden <h1>Speakerinnen</h1>%>
+  <%= link_to(root_path, id: 'blog-header__home-link') do %>
+    <%= t(:home, scope: "layouts.application") %>
+    <%= image_tag("logo_header.png", alt: "logo", id: 'blog-header__logo') %>
+  <% end %>
+  <span class="mh" id="blog-header__languages">
+    <%= language_switcher.html_safe %>
+  </span>
+</header>

@@ -4,4 +4,7 @@
     <%= @blog_category.name %>
   </h2>
 <% end %>
-<%= render partial: 'blog_posts/post', collection: @posts, as: :post %>
+
+<div id="blog-content">
+  <%= render partial: 'blog_posts/post', collection: @posts, as: :post %>
+</div>
