@@ -1,3 +1,7 @@
+<h1>
+  Speakerinnen* Blog
+</h1>
+
 <% if @blog_category %>
   <h2>
     <span class="glyphicon glyphicon-folder-open"></span>&nbsp;
@@ -5,6 +9,4 @@
   </h2>
 <% end %>
 
-<div id="blog-content">
-  <%= render partial: 'blog_posts/post', collection: @posts, as: :post %>
-</div>
+<%= render partial: 'blog_posts/post', collection: @posts, as: :post %>

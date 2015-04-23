@@ -66,6 +66,19 @@
 @import 'inuit/settings.defaults';
 @import 'inuit.settings.application';
 
+@import 'inuit/tools.functions';
+@import 'inuit/tools.mixins';
+
+@import 'inuit/generic.box-sizing';
+@import 'inuit/generic.normalize';
+
+@import 'inuit/base.page';
+@import 'inuit/base.headings';
+
+@import 'inuit/objects.layout';
+
 @import 'inuit.components.application';
 
 @import 'inuit/trumps.spacing';
+@import 'inuit/trumps.widths';
+@import 'inuit/trumps.headings';

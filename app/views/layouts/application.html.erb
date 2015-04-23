@@ -11,7 +11,11 @@
   <%= csrf_meta_tags %>
 
 </head>
-<body class="frontend<%= ' blog' if is_blog? %><%= class_for_body_tag %>">
+<% if is_blog? %>
+  <body class="blog">
+<% else %>
+  <body class="frontend<%= class_for_body_tag %>">
+<% end %>
 
 <% if is_blog? %>
   <%= render 'shared/blog_header' %>
@@ -21,27 +25,43 @@
 
 
 
-<div class='container' id='content'>
+<% if is_blog? %>
+  <div id='blog-content'>
+<% else %>
+  <div class='container' id='content'>
+<% end %>
+
   <% if Rails.env.development? %>
     <%= render 'shared/debug' %>
   <% end %>
   <%= flash_messages %>
-  <div class='row'>
 
+<% if is_blog? %>
+<div class="layout-wrapper">
+  <div class='layout layout--center'>
+    <div class='layout__item  3/4'>
+<% else %>
+  <div class='row'>
     <div class='col-sm-8'>
+<% end %>
+
       <%= yield %>
-    </div>
+    </div><!--
+
     <% if layout_needs_sidebar?  %>
-      <div class='col-sm-4' id='sidebar'>
+
         <% if is_blog? %>
-          <%= render 'shared/blog_sidebar' %>
+          --><div class='layout__item  1/4' id='blog-sidebar'>
+            <%= render 'shared/blog_sidebar' %>
         <% else %>
-          <%= render 'shared/sidebar' %>
+          <div class='col-sm-4' id='sidebar'>
+            <%= render 'shared/sidebar' %>
         <% end %>
 
     <% else %>
       <div class='col-sm-4'>&nbsp;</div>
     <% end %>
+
   </div>
 </div>
 

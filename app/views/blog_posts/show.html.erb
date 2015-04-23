@@ -1,3 +1,8 @@
-test
-<h1><%= @post.title %></h1>
-<%= markdown(@post.full_body) %>
+<h1>
+  Speakerinnen* Blog
+</h1>
+
+<article class="pr blog-content__article">
+  <h2><%= @post.title %></h2>
+  <%= markdown(@post.full_body) %>
+</article>
