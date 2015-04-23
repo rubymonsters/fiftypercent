@@ -80,9 +80,11 @@ $layout-width: 940px;
 $inuit-use-fractions: true;
 
 $inuit-enable-margins: true;
-$inuit-enable-paddings--none: true;
-$inuit-enable-paddings: true;
 $inuit-enable-margins--huge: true;
 $inuit-enable-margins--none: true;
+
+$inuit-enable-paddings--none: true;
+$inuit-enable-paddings--small: true;
+$inuit-enable-paddings: true;
 
 $inuit-enable-btn--small: true;
