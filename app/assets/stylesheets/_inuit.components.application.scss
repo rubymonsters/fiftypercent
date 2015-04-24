@@ -80,7 +80,7 @@
 }
 
 .layout-wrapper {
-  width: $layout-width;
+  max-width: $layout-width;
   margin: 0 auto;
   background: $white-smoke;
   padding-left: 20px;
