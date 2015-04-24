@@ -21,10 +21,15 @@
 /* header */
 #blog-header__home-link {
   position: absolute;
-  top: $header-margin-top;
+  /*top: $header-margin-top;*/
   left: 10px;
   text-indent: 99999px;
-  width: 200px;
+  font-size: $inuit-heading-size-3;
+  text-transform: uppercase;
+
+  @include media-query(palm) {
+    text-indent: 10px;
+    }
 }
 
 
@@ -33,6 +38,10 @@
   top: -$header-margin-top;
   left: 0;
   padding-left: 20px;
+
+  @include media-query(palm) {
+    visibility: hidden;
+    }
 }
 
 #blog-header {
