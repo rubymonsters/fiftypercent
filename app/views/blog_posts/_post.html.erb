@@ -3,12 +3,12 @@
     <%= link_to post.title, blog_post_path(post.id) %>
   </h2>
 
-  <span class="glyphicon glyphicon-time"></span>
+  <span class="glyphicon glyphicon-time blog-content__glyphicon"></span>
   <%= post.created_at.to_s(:gdt) %>
 
   <% if post.blog_categories.any? %>
     &nbsp;
-    <span class="glyphicon glyphicon-folder-open"></span>&nbsp;
+    <span class="glyphicon glyphicon-folder-open blog-content__glyphicon"></span>&nbsp;
     <%= post.blog_categories.map {|c| c.name}.join(', ') %>
   <% end %>
 

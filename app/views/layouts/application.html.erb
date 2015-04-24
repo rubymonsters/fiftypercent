@@ -39,7 +39,7 @@
 <% if is_blog? %>
 <div class="layout-wrapper">
   <div class='layout layout--center'>
-    <div class='layout__item  3/4'>
+    <div class='layout__item 3/4 portable-1/1'>
 <% else %>
   <div class='row'>
     <div class='col-sm-8'>
@@ -51,7 +51,7 @@
     <% if layout_needs_sidebar?  %>
 
         <% if is_blog? %>
-          --><div class='layout__item  1/4' id='blog-sidebar'>
+          --><div class='layout__item 1/4 portable-1/1' id='blog-sidebar'>
             <%= render 'shared/blog_sidebar' %>
         <% else %>
           <div class='col-sm-4' id='sidebar'>
