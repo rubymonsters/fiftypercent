@@ -64,10 +64,13 @@
 */
 
 @import 'inuit/settings.defaults';
+@import 'inuit/settings.responsive';
+
 @import 'inuit.settings.application';
 
 @import 'inuit/tools.functions';
 @import 'inuit/tools.mixins';
+@import 'inuit/tools.responsive';
 
 @import 'inuit/generic.box-sizing';
 @import 'inuit/generic.normalize';
