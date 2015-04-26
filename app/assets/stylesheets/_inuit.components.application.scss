@@ -21,21 +21,26 @@
 /* header */
 #blog-header__home-link {
   position: absolute;
-  /*top: $header-margin-top;*/
   left: 10px;
-  text-indent: 99999px;
+  color: white;
   font-size: $inuit-heading-size-3;
   text-transform: uppercase;
 
   @include media-query(palm) {
     text-indent: 10px;
+    color: $link-color;
+    }
+}
+
+#blog-header__home-link:hover {
+  @include media-query(palm) {
+    color: $font-color;
     }
 }
 
 
 #blog-header__logo {
   position: absolute;
-  /*top: -$header-margin-top;*/
   left: 0;
   padding-left: 20px;
 
@@ -61,7 +66,7 @@
 
 /* sidebar */
 #blog-sidebar {
-  background: $dark-grey;
+  background: $dark-grey-transparent;
   padding: 25px;
 }
 
@@ -75,7 +80,7 @@
 
 #blog-sidebar H1 {
 	font-family: $sans-serif;
-  color: $grey;
+  color: $dark-grey;
   font-size: $inuit_base_font_size;
   letter-spacing: 2px;
   margin: 35px 0 12px;
