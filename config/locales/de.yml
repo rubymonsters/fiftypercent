@@ -108,7 +108,7 @@ de:
   show:
     event:
       organizers: Veranstaltet von
-      speaking: "Es sprechen %{percent_male}% Männer."
+      speaking: "Es sprechen %{percent_female}% Frauen."
       website: Webseite
       speaker_list_url: Link zur Speakerliste
       contact_url: Kontakt
