@@ -1,21 +1,25 @@
 .frontend-navbar {
-  background-color: $dark-grey;
+  background: -webkit-linear-gradient(90deg, #e43a15 10%, #e65245 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, #e43a15 10%, #e65245 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #e43a15 10%, #e65245 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #e43a15 10%, #e65245 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #e43a15 10%, #e65245 90%); /* W3C */
   min-height: 100px;
   padding-top: 30px;
-  color: $background-color;
+  color: white;
 
   .navbar-brand {
     font-size: 72px;
     font-family: 'TitilliumWeb Bold';
     text-transform: uppercase;
-    color: #EEE;
+    color: white;
     &:hover {
-      color: #FFF;
+      color: whitesmoke;
     }
   }
-  
+
   a {
-    color: $background-color;
+    color: white;
   }
   li.divider {
     border-bottom: 1px solid #999;
@@ -34,8 +38,8 @@
 }
 
 .navbar-default .navbar-nav > li > a {
-  color: $background-color;
+  color: white;
   &:hover {
-    color: $bright-grey;
+    color: whitesmoke;
   }
 }
