@@ -107,7 +107,7 @@ en:
   show:
     event:
       organizers: Organizers
-      speaking: "Speakers are %{percent_male}% male."
+      speaking: "Speakers are %{percent_female}% female."
       speaker_list_url: Speaker list URL
       contact_url: Event contact
       speaker_count: Speaker count

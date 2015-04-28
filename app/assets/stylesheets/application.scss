@@ -33,20 +33,23 @@
 @import "blog_posts";
 
 .frontend {
-  background-color: $background-color;
+  background-color: white;
   color: $text-grey;
   font-family: Arial, Helvetica,'Open Sans', sans-serif;
 
   a  {
     text-decoration: none;
+    color: $red;
   }
 
   a:hover {
     text-decoration: none;
+    color: $dark-red;
   }
 }
 
 @import "small_screens";
+
 
 /*------------------------------------*\
     #MASTER SCSS
