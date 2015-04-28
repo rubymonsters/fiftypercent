@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-
-
   concern :paginatable do
     get '(page/:page)', :action => :index, :on => :collection, :as => ''
   end
@@ -11,6 +9,7 @@ Rails.application.routes.draw do
     get 'post/:id',  to: 'blog_posts#show',      as: 'blog_post'
     get 'p/:slug',   to: 'blog_pages#show',      as: 'blog_page'
     get 'cat/:slug', to: 'blog_categories#show', as: 'blog_category'
+    match "*path",   to: redirect('/'), via: :all
   end
 
   scope "(:locale)", locale: /de|en/ do
