@@ -46,12 +46,12 @@
 <% end %>
 
       <%= yield %>
-    </div><!--
+    </div>
 
     <% if layout_needs_sidebar?  %>
 
         <% if is_blog? %>
-          --><div class='layout__item 1/4 portable-1/1' id='blog-sidebar'>
+          <div class='layout__item 1/4 portable-1/1' id='blog-sidebar'>
             <%= render 'shared/blog_sidebar' %>
         <% else %>
           <div class='col-sm-4' id='sidebar'>
