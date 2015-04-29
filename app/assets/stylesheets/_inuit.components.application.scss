@@ -17,6 +17,19 @@
 	font-family: $sans-serif;
 }
 
+h1{
+  font-weight: normal;
+  line-height: 60px;
+  margin: 0 0 $inuit-base-spacing-unit;
+}
+
+h2{
+  font-weight: normal;
+}
+
+#blog-content {
+  margin-top: $header-height;
+}
 
 /* header */
 #blog-header__home-link {
@@ -67,7 +80,7 @@
 /* sidebar */
 #blog-sidebar {
   background: $dark-grey-transparent;
-  padding: 25px;
+  padding: 0 25px;
 }
 
 #blog-sidebar a {
@@ -78,12 +91,13 @@
   color: $white;
 }
 
-#blog-sidebar H1 {
+.blog-sidebar__title {
 	font-family: $sans-serif;
   color: $dark-grey;
   font-size: $inuit_base_font_size;
   letter-spacing: 2px;
-  margin: 35px 0 12px;
+  margin-top: 35px;
+  margin-bottom: 0px;
   text-transform: uppercase;
 }
 
@@ -97,7 +111,6 @@
   max-width: $layout-width;
   margin: 0 auto;
   background: $white-smoke;
-  padding-left: 20px;
 }
 
 

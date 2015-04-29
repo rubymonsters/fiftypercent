@@ -57,6 +57,9 @@ $body-bg-color-grey: $white-smoke;
 /* header */
 $inuit-heading-size-1: 48px;
 
+/* layout settings */
+$header-margin-top: 10px;
+$header-height: 70px;
 
 /* border */
 $border-radius: 6px;
@@ -83,6 +86,7 @@ $inuit-use-fractions: true;
 $inuit-enable-margins: true;
 $inuit-enable-margins--huge: true;
 $inuit-enable-margins--none: true;
+$inuit-enable-margins--large: true;
 
 $inuit-enable-paddings--none: true;
 $inuit-enable-paddings--small: true;
