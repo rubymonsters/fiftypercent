@@ -8,8 +8,8 @@ form.new_event, form.new_comment {
     margin-bottom: 3em;
   }
   legend {
-    color: $background-color;
-    background-color: $text-grey;
+    color: $content-background;
+    background-color: $content-text;
     padding: 2px 6px;
   }
   #event_woman, #event_total {

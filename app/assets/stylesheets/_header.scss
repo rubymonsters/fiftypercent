@@ -14,7 +14,7 @@
     text-transform: uppercase;
     color: white;
     &:hover {
-      color: whitesmoke;
+      color: $very-light-grey;
     }
   }
 
@@ -22,7 +22,7 @@
     color: white;
   }
   li.divider {
-    border-bottom: 1px solid #999;
+    border-bottom: 1px solid $grey;
   }
   .language-switcher {
     margin-left: 6px;
@@ -40,6 +40,6 @@
 .navbar-default .navbar-nav > li > a {
   color: white;
   &:hover {
-    color: whitesmoke;
+    color: $very-light-grey;
   }
 }

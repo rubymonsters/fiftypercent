@@ -8,12 +8,12 @@ $admin-link-color: #4682B4; //SteelBlue
 
   .navbar-brand {
     font-weight: bold;
-    color: #ddd;
+    color: $very-light-grey;
   }
 
   .navbar-inverse .navbar-nav{
     a {
-      color: #ddd;
+      color: $very-light-grey;
     }
   }
 
@@ -23,7 +23,7 @@ $admin-link-color: #4682B4; //SteelBlue
       color: white;
     }
     &.btn-default  {
-      color: #333;
+      color: $very-dark-grey;
     }
   }
 }

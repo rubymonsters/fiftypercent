@@ -1,9 +1,25 @@
-$background-color: #DCDEDE;
-$dark-grey:        #444444;
-$bright-grey:      #ABB0B3;
-$text-grey:        #777777;
+/*$background-color: #DCDEDE;*/
+/*$dark-grey:        #444444;*/
+/*$bright-grey:      #ABB0B3;*/
+/*$text-grey: red;*/
 
-$blue: #517FA4;
-$dark-blue: #243949;
-$red: #e43a15;
-$dark-red: #BF3112;
+
+$very-light-grey:    #E8E8E8;
+$light-grey:         #DCDCDC;
+$grey:               #7F7F7F;
+$dark-grey:          #4E4E4E;
+$very-dark-grey:     #333333;
+
+$blue:               #517FA4;
+$dark-blue:          #243949;
+$red:                #e43a15;
+$dark-red:           #BF3112;
+
+
+$content-background: $very-light-grey;
+$content-shadow:     $light-grey;
+
+$content-line:       $grey;
+
+$content-text:       $dark-grey;
+

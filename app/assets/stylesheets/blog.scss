@@ -32,7 +32,7 @@
 @import 'inuit/settings.defaults';
 @import 'inuit/settings.responsive';
 
-@import 'inuit.settings.application';
+@import 'inuit/inuit.settings.application';
 
 @import 'inuit/tools.functions';
 @import 'inuit/tools.mixins';
@@ -47,7 +47,7 @@
 @import 'inuit/objects.layout';
 @import 'inuit/objects.list-bare';
 
-@import 'inuit.components.application';
+@import 'inuit/inuit.components.application';
 
 @import 'inuit/trumps.spacing';
 @import 'inuit/trumps.widths';

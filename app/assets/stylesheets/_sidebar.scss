@@ -2,7 +2,7 @@
 
   min-height: 150px;
   padding: 20px;
-  background-color: whitesmoke;
+  background-color: $content-background;
 
   #tag_cloud {
     line-height: 1.6em;
@@ -24,7 +24,6 @@
   }
 
   h1 {
-    color: $dark-grey;
     font-size: 16px;
     letter-spacing: 2px;
     margin-bottom: 6px;
@@ -33,25 +32,26 @@
 
 
   a {
-    color: #888;
+    color: $grey;
     &:hover {
       text-decoration: underline;
+      color: $dark-grey;
     }
   }
 
   input.form-control {
-    border-color: $bright-grey;
-    background-color: $background-color;
+    border-color: $light-grey;
   }
 
   .btn-sidebar {
-    background-color: $bright-grey;
-    color: $dark-grey;
-    border-color: $bright-grey;
+    background-color: $dark-grey;
+    color: $light-grey;
+    border-color: $light-grey;
     text-decoration: none;
     &:hover{
       color: $dark-grey;
-      background-color: $bright-grey;
+      background-color: $light-grey;
+    border-color: $dark-grey;
       text-decoration: none;
     }
   }
