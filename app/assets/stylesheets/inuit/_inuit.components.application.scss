@@ -31,6 +31,10 @@ h2{
   margin-top: $header-height;
 }
 
+.fa {
+  display: inline;
+}
+
 /* header */
 #blog-header__home-link {
   position: absolute;
@@ -80,7 +84,7 @@ h2{
 /* sidebar */
 #blog-sidebar {
   background: $dark-grey-transparent;
-  padding: 0 25px;
+  padding: 25px 25px;
 }
 
 #blog-sidebar a {

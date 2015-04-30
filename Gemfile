@@ -25,6 +25,8 @@ gem 'country_select',    '~> 2.1.0'
 gem 'redcarpet',         '~> 3.2.2'
 gem 'faker'
 
+gem 'font-awesome-rails'
+
 gem 'capistrano',        '~> 3.2.0'
 gem 'capistrano-rails',  '~> 1.1.0'
 gem 'capistrano-bundler'

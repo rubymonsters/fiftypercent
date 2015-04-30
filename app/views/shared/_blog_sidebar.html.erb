@@ -4,6 +4,7 @@
     <% BlogCategory.order(:rank).includes(:translations).all.each do |blog_category| %>
       <li>
         <%= link_to blog_category_path(blog_category.slug) do %>
+          <i class="fa fa-folder-o"></i>&nbsp;
           <%= blog_category.name %>
         <% end %>
       </li>
@@ -20,6 +21,7 @@
       </li>
     <% end %>
   </ul>
+</aside>
 
 <% Page.blog_sidebar_snippets.order(:rank).includes(:translations).all.each do |snippet| %>
   <aside class="" id="<%# dom_id(snippet) %>">
@@ -28,9 +30,8 @@
   </aside>
 <% end %>
 
-
+<aside>
   <%= link_to admin_root_path, title: "Admin" do %>
-    login
-    <span class="glyphicon glyphicon-cog blog-content__glyphicon"></span>
+    <i class="fa fa-cog fa-fw"></i>&nbsp;
   <% end %>
 </aside>
