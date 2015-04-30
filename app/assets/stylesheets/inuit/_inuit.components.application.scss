@@ -59,6 +59,7 @@ h2{
 #blog-header__logo {
   position: absolute;
   left: 0;
+  top: 0;
   padding-left: 20px;
 
   @include media-query(palm) {
