@@ -108,12 +108,16 @@ de:
   show:
     event:
       organizers: Veranstaltet von
-      speaking: "Es sprechen %{percent_female}% Frauen."
+      speaking: "Dort sprechen %{percent_male}% Männer."
       website: Webseite
       speaker_list_url: Link zur Speakerliste
       contact_url: Kontakt
       speaker_count: Es sprechen insgesamt
-      speaker_count_statement: "%{total} Personen, davon %{women} Frauen"
+      speaker_count_statement: "%{total} Personen, davon "
+      woman: {
+        one: 'eine Frau',
+        other: '%{women} Frauen'
+      }
       remark: Anmerkung
       topic_tags: Themen (Tags)
       reporter: Gezählt von

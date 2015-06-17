@@ -59,7 +59,7 @@
           <% end %>
           <% if event.has_all_the_numbers? %>
             <dt><%= t 'show.event.speaker_count' %></dt>
-            <dd><%= t 'show.event.speaker_count_statement', total: event.total.to_s, women: event.woman.to_s %></dd>
+            <dd><%= t 'show.event.speaker_count_statement', total: event.total.to_s %> <%= t 'show.event.woman', count: event.woman, women: event.woman.to_s %></dd>
           <% end %>
           <% if event.remark.present? %>
             <dt><%= t 'show.event.remark' %></dt>

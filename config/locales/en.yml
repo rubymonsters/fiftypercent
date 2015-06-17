@@ -107,11 +107,15 @@ en:
   show:
     event:
       organizers: Organizers
-      speaking: "Speakers are %{percent_female}% female."
+      speaking: "Speakers are %{percent_male}% male."
       speaker_list_url: Speaker list URL
       contact_url: Event contact
       speaker_count: Speaker count
-      speaker_count_statement: "%{total} speakers total, %{women} of which are women"
+      speaker_count_statement: "%{total} speakers total and "
+      woman: {
+        one: 'one woman',
+        other: '%{women} women'
+      }
       remark: Remark
       topic_tags: Topics (Tags)
       reporter: Reporter
