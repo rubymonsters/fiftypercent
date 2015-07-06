@@ -1,9 +1,8 @@
 <article>
   <h1><%= link_to event.title, event %></h1>
-  <% if event.subtitle.present? %>
-    <div class="subtitle"><%= event.subtitle %></div>
-  <% end %>
-
+      <% if event.description.present? %>
+        <div class="description"><%= simple_format(event.description) %></div>
+      <% end %>
   <% unless event.date.blank? and event.city.blank? %>
     <div class="where-when">
       <span class="glyphicon glyphicon-calendar"></span>
@@ -16,9 +15,6 @@
 
   <div class="main row">
     <div class="col-md-<%= event.has_all_the_numbers? ? '8' : '12' %>">
-      <% if event.description.present? %>
-        <div class="description"><%= simple_format(event.description) %></div>
-      <% end %>
       <% if event.organizers.present? %>
         <div class="organizers">
           <strong><%= t 'show.event.organizers' %>:</strong>
@@ -26,13 +22,10 @@
         </div>
       <% end %>
 
-      <% if event.has_all_the_numbers? %>
-        <div class="who-speaks">
-          <%= t 'show.event.speaking', percent_female: event.percent_female %>
-        </div>
-      <% end %>
-
       <% if is_single_view %>
+        <% if event.subtitle.present? %>
+          <div class="subtitle"><%= event.subtitle %></div>
+        <% end %>
         <hr>
         <dl class="dl-horizontal">
           <% if event.main_url.present? %>
@@ -85,8 +78,15 @@
         <br><br>
       <% end %>
 
+      <% if event.has_all_the_numbers? %>
+        <div class="who-speaks">
+          <%= link_to (t 'show.event.speaking', percent_male: event.percent_male), event %>
+        </div>
+      <% end %>
+
 
     </div>
+
     <% if event.has_all_the_numbers? %>
       <div class="col-md-4">
         <%= render 'events/donut', event: event %>

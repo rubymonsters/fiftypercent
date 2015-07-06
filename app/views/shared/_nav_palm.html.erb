@@ -1,0 +1,17 @@
+<div id="nav__palm">
+
+  <h5 id="nav__palm-menu-trigger" class="sans-serif pl">
+    <%= t(:menu, scope: 'blog.nav') %>
+  </h5>
+
+  <span class="mh" id="blog-header__languages">
+    <%# language_switcher.html_safe %>
+  </span>
+
+  <div id="nav__palm-menu" style="display: none">
+    <ul class="pl0 m0">
+      <li><%= link_to t(:home, scope: 'blog.nav'), root_path, class: "nav__palm-menu-link bb" %></li>
+    <ul>
+  </div>
+
+</div>

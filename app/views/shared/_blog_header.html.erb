@@ -1,11 +1,16 @@
 <%# admin_header_class = 'admin' if controller_path =~ /admin\// %>
 <header id="blog-header">
-  <%# TODO: hidden <h1>Speakerinnen</h1>%>
-  <%= link_to(root_path, id: 'blog-header__home-link') do %>
-    Home
-    <%= image_tag("logo_header.png", alt: "logo", id: 'blog-header__logo') %>
-  <% end %>
-  <span class="mh" id="blog-header__languages">
-    <%# language_switcher.html_safe %>
-  </span>
+
+
+  <%= render 'shared/nav_lap_and_up' %>
+  <%= render 'shared/nav_palm' %>
+
 </header>
+
+<script>
+$( "#nav__palm-menu-trigger" ).click(function() {
+  $( "#nav__palm-menu" ).toggle( 250, function() {
+    // Animation complete.
+  });
+});
+</script>

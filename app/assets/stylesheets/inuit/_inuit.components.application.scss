@@ -1,15 +1,18 @@
+a {
+	text-decoration: none;
+	font-family: $sans-serif;
+}
+
 .blog {
   font-family: $serif;
   color: $font-color;
 }
 
-.blog a {
-	font-family: $sans-serif;
+.blog__link {
 	color: $link-color;
-	text-decoration: none;
 }
 
-.blog a:hover {
+.blog__link:hover {
 	color: $font-color;
 }
 
@@ -35,37 +38,67 @@ h2{
   display: inline;
 }
 
-/* header */
-#blog-header__home-link {
-  position: absolute;
-  left: 10px;
-  color: white;
-  font-size: $inuit-heading-size-3;
-  text-transform: uppercase;
-
-  @include media-query(palm) {
-    text-indent: 10px;
-    color: $link-color;
-    }
+.bb {
+  border-bottom: 1px solid $light-grey;
 }
-
-#blog-header__home-link:hover {
-  @include media-query(palm) {
-    color: $font-color;
-    }
-}
-
 
 #blog-header__logo {
   position: absolute;
   left: 0;
-  top: 0;
   padding-left: 20px;
 
-  @include media-query(palm) {
-    visibility: hidden;
-    }
+  @media only screen and ( max-width: 40em ) /* 640 */{
+    display: none;
+  }
 }
+
+header {
+  text-align: right;
+  line-height: $header-height;
+  box-shadow: 0 1px 11px #999099 inset;
+  width: 100%;
+  background: $body-bg-color;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+}
+
+#nav__lap-and-up {
+  @include media-query(palm) {
+    display: none;
+  }
+}
+
+#nav__palm {
+  text-align: left;
+  @include media-query(lap-and-up) {
+    display: none;
+  }
+}
+
+
+#nav__palm-menu-trigger {
+  cursor: pointer;
+  display: inline;
+}
+
+#nav__palm-menu {
+}
+
+.nav__palm-menu-link {
+  display: block;
+  color: $link-color;
+  background-color: $link-bg-color;
+  text-align: left;
+  padding-left: $inuit-base-spacing-unit;
+  line-height: double($inuit-base-spacing-unit);
+}
+
+.nav__palm-menu-link:hover {
+  color: $link-color-hover;
+  background-color: $link-bg-color-hover;
+}
+
 
 #blog-header {
   text-align: right;

@@ -24,13 +24,12 @@ article {
     padding-top: 8px;
     margin-bottom: 10px;
     font-weight: bold;
-    border-top: 1px solid $content-line;
     font-size: 18px;
   }
 
   .who-speaks {
-    margin-top: 4px;
-    font-size: 18px;
+    padding-top: 65px;
+    font-size: 24px;
     font-weight: bold;
   }
 
@@ -44,6 +43,12 @@ article {
   .footer {
     border-top: 1px solid $content-line;
     padding-top: 8px;
+  }
+
+  hr {
+    border-width: 3px 0px 0px;
+    border-style: dotted none none;
+    border-color: #FFF;
   }
 }
 

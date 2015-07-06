@@ -104,6 +104,9 @@ de:
     sidebar:
       pages: Pages
       categories: Kategorien
+    nav:
+      menu: Menü
+      home: Home
 
   show:
     event:

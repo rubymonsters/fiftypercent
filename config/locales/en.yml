@@ -103,6 +103,9 @@ en:
     sidebar:
       pages: Seiten
       categories: Categoryies
+    nav:
+      menu: Menu
+      home: Home
 
   show:
     event:
