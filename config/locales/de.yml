@@ -111,7 +111,7 @@ de:
   show:
     event:
       organizers: Veranstaltet von
-      speaking: "Dort sprechen %{percent_male}% Männer."
+      speaking: "%{percent_male}% Männer"
       website: Webseite
       speaker_list_url: Link zur Speakerliste
       contact_url: Kontakt
