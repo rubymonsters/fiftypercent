@@ -158,10 +158,14 @@ header {
   padding: 10px 0 40px;
 }
 
-.blog-content__article a:hover {
-  color: $link-color-hover;
-  background-color: $link-bg-color-hover;
-  padding: 0 2px;
+.blog-content__article a {
+  color: $link-color;
+
+  &:hover {
+    color: $link-color-hover;
+    background-color: $link-bg-color-hover;
+    padding: 0 2px;
+  }
 }
 
 .blog-content__glyphicon {
