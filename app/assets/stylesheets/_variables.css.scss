@@ -10,10 +10,14 @@ $red:                #e43a15;
 $dark-red:           #BF3112;
 
 
+$text-color:         $dark-grey;
+
+$link-color:         $grey;
+$link-color-hover:   darken($link-color, 25%);
+
 $content-background: $very-light-grey;
 $content-shadow:     $light-grey;
 
 $content-line:       $grey;
 
-$content-text:       $dark-grey;
 
