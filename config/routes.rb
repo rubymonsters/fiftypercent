@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   scope constraints: {subdomain: 'blog'} do
     get '/',         to: 'blog_posts#index',     as: 'blog_root'
+    get '/export',   to: 'blog_posts#export',    as: 'export'
     get 'post/:id',  to: 'blog_posts#show',      as: 'blog_post'
     get 'p/:slug',   to: 'blog_pages#show',      as: 'blog_page'
     get 'cat/:slug', to: 'blog_categories#show', as: 'blog_category'
