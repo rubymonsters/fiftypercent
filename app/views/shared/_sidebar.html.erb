@@ -29,6 +29,10 @@
            women: woman = Event.pluck(:woman).compact.sum,
            percent: number_with_precision((woman.to_f / total.to_f) * 100, precision: 2)
            }%>
+    <% total = Event.pluck(:total).compact.sum %>
+    <% woman = Event.pluck(:woman).compact.sum %>
+    <% percent_woman= number_with_precision((woman.to_f / total.to_f) * 100, precision: 2) %>
+    <%= render 'events/all_events_donut', percent: percent_woman.to_i %>
   </p>
 </aside>
 

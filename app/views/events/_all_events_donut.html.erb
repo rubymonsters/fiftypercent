@@ -1,0 +1,20 @@
+<div id="all_event_donut" style="height: 200px; text-align:left;"> </div>
+<script>
+
+  Morris.Donut({
+    element: 'all_event_donut',
+    data: [
+      {label: "<%= I18n.t 'show.event.donut.male' %>",
+       value: <%= 100 - percent %>},
+      {label: "<%= I18n.t 'show.event.donut.female' %>",
+       value: <%= percent %>},
+    ],
+    backgroundColor: 'whitesmoke',
+    labelColor: '#4E4E4E',
+    colors: [
+      '#517FA4',
+      '#E43A15'
+    ]
+  });
+
+</script>
