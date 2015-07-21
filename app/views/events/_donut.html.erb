@@ -5,9 +5,9 @@
     element: 'myfirstchart-<%= event.id %>',
     data: [
       {label: "<%= I18n.t 'show.event.donut.male' %>",
-       value: <%= event.total - event.woman %> },
+       value: <%= event.percent_male  %>},
       {label: "<%= I18n.t 'show.event.donut.female' %>",
-       value: <%= event.woman %>},
+       value: <%= event.percent_female %>},
     ],
     backgroundColor: 'whitesmoke',
     labelColor: '#4E4E4E',
