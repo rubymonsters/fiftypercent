@@ -20,5 +20,9 @@ module EventsHelper
 
   end
 
+  def classname_for_event_title(event)
+    event.percent_female >= 50 ? "more-female" : "more-male"
+  end
+
 end
 

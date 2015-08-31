@@ -3,7 +3,9 @@
   <h1><%= link_to event.title + ': ' , event %>
 
     <% if event.has_all_the_numbers? %>
-      <%= link_to (t 'show.event.speaking', percent_male: event.percent_male), event, class: 'event__link--red' %>
+      <%= link_to (t 'show.event.speaking', percent_male: event.percent_male), event,
+        class: "event__link--#{classname_for_event_title(event)}" %>
+      <%# class will be event__link--more-male or more-female %>
     <% end %>
 
   </h1>

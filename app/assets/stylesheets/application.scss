@@ -46,11 +46,19 @@
     }
   }
 
-  .event__link--red {
+  .event__link--more-female {
     color: $red;
 
     &:hover {
       color: darken($red, 5%);
+    }
+  }
+
+  .event__link--more-male {
+    color: $blue;
+
+    &:hover {
+      color: darken($blue, 5%);
     }
   }
 }
