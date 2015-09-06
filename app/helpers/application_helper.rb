@@ -48,7 +48,6 @@ module ApplicationHelper
   def markdown(text, options={})
     render_options = {
       safe_links_only: true,
-      no_images:       true,
       hard_wrap:       true
     }.merge(options)
 
