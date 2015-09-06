@@ -113,7 +113,7 @@ de:
       organizers: Veranstaltet von
       speaking: "%{percent_male}% Männer"
       website: Webseite
-      speaker_list_url: Link zur Speakerliste
+      speaker_list_url: Es reden
       contact_url: Kontakt
       speaker_count: Es sprechen insgesamt
       speaker_count_statement: "%{total} Personen, davon "
