@@ -9,7 +9,7 @@
   <% if post.blog_categories.any? %>
     &nbsp;
     <i class="fa fa-folder-open-o"></i>&nbsp;
-    <%= post.blog_categories.map {|c| c.name}.join(', ') %>
+    <%= raw(post.blog_categories.map {|c| link_to c.name, blog_category_path(c.slug)}.join(', ')) %>
   <% end %>
 
   <% if post.abstract.present? %>
