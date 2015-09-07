@@ -1,12 +1,1 @@
-<h1>
-  Speakerinnen* Blog
-</h1>
-
-<% if @blog_category %>
-  <h2>
-    <i class="fa fa-folder-open-o"></i>&nbsp;
-    <%= @blog_category.name %>
-  </h2>
-<% end %>
-
 <%= render partial: 'blog_posts/post', collection: @posts, as: :post %>

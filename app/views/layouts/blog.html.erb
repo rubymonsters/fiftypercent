@@ -15,20 +15,38 @@
 <body class="blog">
 
   <%= render 'shared/blog_header' %>
-  <div id='blog-content'>
+  <div id="blog-content" class="ph+">
 
-  <% if Rails.env.development? %>
-    <%= render 'shared/debug' %>
-  <% end %>
-  <%= flash_messages %>
+    <% if Rails.env.development? %>
+      <%= render 'shared/debug' %>
+    <% end %>
+    <%= flash_messages %>
 
-  <div class="layout-wrapper layout">
-    <div class='layout__item 3/4 portable-1/1 mt+'>
-      <%= yield %>
-    </div><!--
-    --><div class='layout__item 1/4 portable-1/1' id='blog-sidebar'>
-      <%= render 'shared/blog_sidebar' %>
+    <div class="layout-wrapper pb+ layout">
+
+      <div class="layout__item 1/1">
+        <h1>
+          Speakerinnen* Blog
+        </h1>
+
+        <% if @blog_category %>
+          <h2>
+            <i class="fa fa-folder-open-o"></i>&nbsp;
+            <%= @blog_category.name %>
+          </h2>
+        <% end %>
+
+      </div>
+
+      <div class="layout__item 3/4 portable-1/1">
+        <%= yield %>
+      </div><!--
+
+      --><div class="layout__item 1/4 portable-1/1">
+        <%= render 'shared/blog_sidebar' %>
+      </div>
     </div>
+
   </div>
 
 </body>

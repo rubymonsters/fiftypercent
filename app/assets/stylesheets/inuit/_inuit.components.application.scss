@@ -23,7 +23,6 @@ a {
 h1{
   font-weight: normal;
   line-height: 60px;
-  margin: 0 0 $inuit-base-spacing-unit;
 }
 
 h2{
@@ -116,17 +115,8 @@ header {
 
 
 /* sidebar */
-#blog-sidebar {
-  background: $dark-grey-transparent;
-  padding: 25px 25px;
-}
-
-#blog-sidebar a {
-  color: $light-grey;
-}
-
-#blog-sidebar a:hover {
-  color: $white;
+#blog-sidebar--right {
+  background-color: $white-smoke;
 }
 
 .blog-sidebar__title {
@@ -134,10 +124,8 @@ header {
   color: $dark-grey;
   font-size: $inuit_base_font_size;
   letter-spacing: 2px;
-  margin-top: 35px;
   text-transform: uppercase;
   line-height: 40px;
-  font-weight: bold;
 }
 
 
@@ -147,16 +135,14 @@ header {
 }
 
 .layout-wrapper {
-  max-width: $layout-width;
-  margin: 0 auto;
-  background: $white-smoke;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
 }
-
 
 /* article */
 .blog-content__article {
-  border-top: 1px solid $light-grey;
-  padding: 10px 0 40px;
+  background-color: $white-smoke;
 }
 
 .blog-content__article a {

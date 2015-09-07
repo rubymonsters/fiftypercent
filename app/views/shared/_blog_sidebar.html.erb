@@ -1,4 +1,4 @@
-<aside>
+<aside id="blog-sidebar--right" class="p">
   <h1 class="blog-sidebar__title"><%= t 'blog.sidebar.categories' %></h1>
   <ul class="list-bare">
     <% BlogCategory.order(:rank).includes(:translations).all.each do |blog_category| %>
@@ -21,16 +21,14 @@
       </li>
     <% end %>
   </ul>
-</aside>
 
-<% Page.blog_sidebar_snippets.order(:rank).includes(:translations).all.each do |snippet| %>
-  <aside class="" id="<%# dom_id(snippet) %>">
-    <h1 class="blog-sidebar__title"><%= snippet.title %></h1>
-    <%= markdown(snippet.body) %>
-  </aside>
-<% end %>
+  <% Page.blog_sidebar_snippets.order(:rank).includes(:translations).all.each do |snippet| %>
+    <aside class="" id="<%# dom_id(snippet) %>">
+      <h1 class="blog-sidebar__title"><%= snippet.title %></h1>
+      <%= markdown(snippet.body) %>
+    </aside>
+  <% end %>
 
-<aside>
   <%= link_to admin_root_path, title: "Admin" do %>
     <i class="fa fa-cog fa-fw"></i>&nbsp;
   <% end %>
