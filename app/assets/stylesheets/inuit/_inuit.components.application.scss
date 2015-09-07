@@ -134,7 +134,7 @@ header {
   letter-spacing: 2px;
   text-transform: uppercase;
   line-height: 40px;
-  border-top: solid 1px $link-color;
+  border-top: solid 1px $light-grey;
 }
 
 
@@ -155,8 +155,8 @@ header {
 }
 
 .blog-content__article img{
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .blog-content__article a {
