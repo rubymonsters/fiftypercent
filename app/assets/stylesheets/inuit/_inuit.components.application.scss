@@ -119,6 +119,14 @@ header {
   background-color: $white-smoke;
 }
 
+#blog-sidebar--right a {
+	color: $link-color;
+}
+
+#blog-sidebar--right a:hover {
+	color: $font-color;
+}
+
 .blog-sidebar__title {
 	font-family: $sans-serif;
   color: $dark-grey;
@@ -147,6 +155,7 @@ header {
 
 .blog-content__article img{
   width: 100%;
+  height: 100%;
 }
 
 .blog-content__article a {
