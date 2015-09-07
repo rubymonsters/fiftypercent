@@ -10,17 +10,18 @@
       </li>
     <% end %>
   </ul>
-
+<!-- What does that do?
   <h1 class="blog-sidebar__title"><%# t 'blog.sidebar.pages' %></h1>
   <ul class="list-bare">
-    <% Page.blog_pages.order(:rank).includes(:translations).all.each do |page| %>
+    <%# Page.blog_pages.order(:rank).includes(:translations).all.each do |page| %>
       <li>
-        <%= link_to blog_page_path(page.slug), class: 'blog__link' do %>
-          <%= page.title %>
-        <% end %>
+        <%# link_to blog_page_path(page.slug), class: 'blog__link' do %>
+          <%# page.title %>
+        <%# end %>
       </li>
-    <% end %>
+    <%# end %>
   </ul>
+-->
 
   <% Page.blog_sidebar_snippets.order(:rank).includes(:translations).all.each do |snippet| %>
     <aside class="" id="<%# dom_id(snippet) %>">
