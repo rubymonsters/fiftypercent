@@ -1,16 +1,15 @@
 <%# admin_header_class = 'admin' if controller_path =~ /admin\// %>
 <header id="blog-header">
 
-
   <%= render 'shared/nav_lap_and_up' %>
   <%= render 'shared/nav_palm' %>
 
 </header>
 
 <script>
-$( "#nav__palm-menu-trigger" ).click(function() {
-  $( "#nav__palm-menu" ).toggle( 250, function() {
-    // Animation complete.
+  $( "#nav__palm-menu-trigger" ).click(function() {
+    $( "#nav__palm-menu" ).toggle( 250, function() {
+      // Animation complete.
+    });
   });
-});
 </script>
