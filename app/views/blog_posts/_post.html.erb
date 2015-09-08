@@ -21,4 +21,8 @@
       <%= markdown(post.main_body) %>
     </div>
   <% end %>
+  <p>
+    <%= link_to t('blog.blogarticle.more'), blog_post_path(post.id), class: 'blog__link' %>
+  </p>
+
 </article>

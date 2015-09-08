@@ -101,11 +101,13 @@ en:
     header:
       title: "50 percent speakerinnen blog"
     sidebar:
-      pages: Seiten
-      categories: Categoryies
+      pages: Pages
+      categories: Categories
     nav:
       menu: Menu
       home: Home
+    blogarticle:
+      more: Read more ...
 
   show:
     event:
