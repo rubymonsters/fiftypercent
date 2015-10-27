@@ -17,7 +17,7 @@
     <%= markdown(snippet.body) %>
   <% end %>
 
-  <h1 class="blog-sidebar__title bt"><%= t 'blog.sidebar.categories' %></h1>
+  <h1 class="blog-sidebar__title bt mb"><%= t 'blog.sidebar.categories' %></h1>
   <ul class="list-bare">
     <% BlogCategory.order(:rank).includes(:translations).all.each do |blog_category| %>
       <li>
@@ -29,7 +29,7 @@
     <% end %>
   </ul>
 
-  <%= link_to admin_root_path, title: "Admin" do %>
+  <%= link_to 'https://50prozent.speakerinnen.org/log_in', title: "Admin" do %>
     <i class="fa fa-cog fa-fw"></i>&nbsp;
   <% end %>
 </aside>
