@@ -1,16 +1,4 @@
 <aside id="blog-sidebar--right" class="p">
-  <h1 class="blog-sidebar__title"><%= t 'blog.sidebar.categories' %></h1>
-  <ul class="list-bare">
-    <% BlogCategory.order(:rank).includes(:translations).all.each do |blog_category| %>
-      <li>
-        <%= link_to blog_category_path(blog_category.slug), class: 'blog__link' do %>
-          <i class="fa fa-folder-o"></i>&nbsp;
-          <%= blog_category.name %>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
-
 <% if Page.blog_pages.any? %>
   <h1 class="blog-sidebar__title bt mt"><%= t 'blog.sidebar.pages' %></h1>
   <ul class="list-bare">
@@ -28,6 +16,18 @@
     <h1 class="blog-sidebar__title bt mt"><%= snippet.title %></h1>
     <%= markdown(snippet.body) %>
   <% end %>
+
+  <h1 class="blog-sidebar__title"><%= t 'blog.sidebar.categories' %></h1>
+  <ul class="list-bare">
+    <% BlogCategory.order(:rank).includes(:translations).all.each do |blog_category| %>
+      <li>
+        <%= link_to blog_category_path(blog_category.slug), class: 'blog__link' do %>
+          <i class="fa fa-folder-o"></i>&nbsp;
+          <%= blog_category.name %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
 
   <%= link_to admin_root_path, title: "Admin" do %>
     <i class="fa fa-cog fa-fw"></i>&nbsp;
