@@ -1,11 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 blog_post:
-  slug: MyString
+  slug: MyString1
   title: MyString
   body: MyText
   page_type: blog_post
-  rank: 1
 
 two:
   slug: MyString
