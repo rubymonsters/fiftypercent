@@ -1,6 +1,7 @@
 a {
 	text-decoration: none;
 	font-family: $sans-serif;
+	color: $link-color;
 }
 
 .blog {
@@ -48,8 +49,7 @@ h2{
 /**** header *********/
 
 #blog-header {
-  text-align: right;
-  line-height: $header-height;
+  text-align: center;
   box-shadow: 0 1px 11px #999099 inset;
   width: 100%;
   background: $body-bg-color;
@@ -67,8 +67,15 @@ h2{
   }
 }
 
-#blog-header__languages a{
-  padding: 0 6px;
+#blog-header__home-link {
+  text-align: center;
+  font-size: 18px;
+}
+
+#blog-header__languages {
+  position: absolute;
+  right: 0;
+  padding-right: 20px;
 }
 
 header {

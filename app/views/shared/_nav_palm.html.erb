@@ -1,11 +1,9 @@
 <div id="nav__palm">
 
-  <span class="ml+">
-    <%= link_to '<i class="fa fa-home blog__link pl"></i>'.html_safe, 'http://speakerinnen.org', target: '_blank' %>
-  </span>
+  <%= link_to('Speakerinnen* Blog', root_path, id: 'blog-header__home-link') %>
 
-  <span class="mh" id="blog-header__languages">
-    <%# language_switcher.html_safe %>
+  <span id="blog-header__languages">
+    <%= language_switcher.html_safe %>
   </span>
 
 </div>

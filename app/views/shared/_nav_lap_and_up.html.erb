@@ -1,10 +1,13 @@
 <div id="nav__lap-and-up">
 
-  <%= link_to('http://speakerinnen.org', target: '_blank', id: 'blog-header__home-link') do %>
+  <%= link_to('http://speakerinnen.org', target: '_blank') do %>
     <%= image_tag("logo_header.png", alt: "logo", id: 'blog-header__logo') %>
   <% end %>
-  <span class="mh" id="blog-header__languages">
-    <%# language_switcher.html_safe %>
+
+  <%= link_to('Speakerinnen* Blog', root_path, id: 'blog-header__home-link') %>
+
+  <span id="blog-header__languages">
+    <%= language_switcher.html_safe %>
   </span>
 
 </div>

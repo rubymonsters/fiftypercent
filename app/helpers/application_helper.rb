@@ -42,7 +42,7 @@ module ApplicationHelper
         link_to(lang.to_s.upcase, target_url.sub(/\/(de|en)\//,"/#{lang.to_s}/"))
       end
     end
-    links.join('|')
+    links.join(' | ')
   end
 
   def markdown(text, options={})
