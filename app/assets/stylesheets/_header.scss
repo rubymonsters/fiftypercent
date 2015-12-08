@@ -43,3 +43,7 @@
     color: $very-light-grey;
   }
 }
+
+.navbar-default {
+  border-bottom: 3px solid darken($red, 5%);
+}

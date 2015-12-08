@@ -1,5 +1,4 @@
 .new_comment {
-  padding: 0 18px;
   margin-bottom: 48px;
   #comment_body {
     height: 300px;
@@ -7,6 +6,16 @@
 }
 
 .btn-success {
-  background: $blue;
-  border-color: $dark-blue;
+  background: $dark-grey;
+  border-color: #FFF;
+}
+
+.btn-success:hover {
+  background: #FFF;
+  border-color: $dark-grey;
+  color: $dark-grey;
+}
+
+.help-block {
+  color: $dark-grey;
 }

@@ -4,7 +4,7 @@
   <%= t 'layout.sidebar.add_new_event_html' %>
 <% end %>
 </aside>
-
+<hr>
 <aside class="widget" id="sidebar-search">
   <h1><%= t 'layout.sidebar.search' %></h1>
   <%= form_tag(events_path, method: 'get', class: 'form-inline search', role: 'form') do %>
@@ -18,8 +18,7 @@
     <% end %>
   <% end %>
 </aside>
-
-
+<hr>
 <aside class="widget" id="statistics">
   <h1><%= t 'layout.sidebar.statistics' %></h1>
   <p>
@@ -35,14 +34,14 @@
     <%= render 'events/all_events_donut', percent: percent_woman.to_i %>
   </p>
 </aside>
-
+<hr>
 <% Page.sidebar_snippets.order(:rank).includes(:translations).all.each do |snippet| %>
   <aside class="widget" id="<%= dom_id(snippet) %>">
     <h1><%= snippet.title %></h1>
     <%= markdown(snippet.body) %>
   </aside>
 <% end %>
-
+<hr>
 <aside class="widget" id="page-list">
   <h1><%= t 'layout.sidebar.more' %></h1>
   <ul class="list-unstyled">
@@ -56,7 +55,7 @@
     <% end %>
   </ul>
 </aside>
-
+<hr>
 <aside class="widget" id="tags">
   <h1>Tags</h1>
   <div id='tag_cloud'>
