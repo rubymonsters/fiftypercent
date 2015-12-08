@@ -66,6 +66,8 @@ class EventsController < ApplicationController
                                     :organizers,
                                     :speaker_list_url,
                                     :contact_url,
+                                    :contact_twitter,
+                                    :contact_email,
                                     :woman,
                                     :total,
                                     :remark,

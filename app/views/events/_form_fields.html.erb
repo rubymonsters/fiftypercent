@@ -19,7 +19,9 @@
 <fieldset>
   <legend><%= t('fieldset.legend.event.who') %></legend>
   <%= f.text_area :organizers %>
-  <%= f.text_area :contact_url %>
+  <%= f.text_field :contact_url %>
+  <%= f.text_field :contact_twitter %>
+  <%= f.text_field :contact_email %>
 </fieldset>
 
 <fieldset>

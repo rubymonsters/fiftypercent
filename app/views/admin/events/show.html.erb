@@ -88,8 +88,12 @@
     <dt>Organizers</dt>
     <dd><%= simple_format(@event.organizers) %></dd>
 
-    <dt>Contact</dt>
-    <dd><%= simple_format(@event.contact_url) %></dd>
+    <dt>Organizer Twitter</dt>
+    <dd><%= @event.contact_twitter %></dd>
+    <dt>Organizer Contact URL</dt>
+    <dd><%= @event.contact_url %></dd>
+    <dt>Organizer Mail</dt>
+    <dd><%= @event.contact_email %></dd>
   </dl>
 
   <h4>Sprecher_innen</h4>

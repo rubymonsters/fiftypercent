@@ -18,7 +18,9 @@ en:
         country_code: 'In what country is this?'
 
         organizers: 'Organizers'
-        contact_url: 'How can the organizers be contacted?'
+        contact_url: 'How can the organizers be contacted? (Website)'
+        contact_email: 'The email adress of the organizer.'
+        contact_twitter: 'The twitter account of the organizer.'
 
         tag_list: "Tag-List"
 
@@ -55,7 +57,8 @@ en:
         country_code: 'Please select a country from the list.'
 
         organizers: 'Organisation(s) running the event, one per line. Have URLs for the organizers? Use markdown-syntax to make them clickable links: [Organiser Name](http://www.organizer-website.org/)'
-        contact_url: 'e.g.: @superconf (twitter) or http://www.conf.com/contact.html or e-mail'
+        contact_url: 'e.g.: http://www.conf.com/contact.html'
+        contact_twitter: 'e.g.: @superconf'
 
         tag_list: "comma-separated list of topics, e.g.: fruit, vegetable, dessert"
 

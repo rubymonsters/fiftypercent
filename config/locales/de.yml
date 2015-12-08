@@ -18,7 +18,9 @@ de:
         country_code: 'In welchem Land liegt das?'
 
         organizers: Veranstaltet von
-        contact_url: Wie kann die Veranstaltung kontaktiert werden?
+        contact_url: Wie kann die Veranstaltung kontaktiert werden? (Webseite)
+        contact_email: Die Mail Adresse des Veranstalters?
+        contact_twitter: Der Twitter Account des Veranstalters?
 
         tag_list: Themen (Tags)
 
@@ -56,7 +58,8 @@ de:
         country_code: 'Bitte wähle ein Land aus der Liste'
 
         organizers: 'Organisation(en) hinter der Veranstaltung, eine pro Zeile. Du hast URLs für die Organisationen? Klickbare Links bitte so eintragen: [Name der Organisation](http://www.organizer-website.org/)'
-        contact_url: 'Z.B. @superconf (Twitter) oder http://www.conf.com/contact.html oder E-Mail'
+        contact_url: 'Z.B. http://www.conf.com/contact.html'
+        contact_twitter: 'Z.B. @superconf'
 
         tag_list: 'Die zwei bis vier wichtigsten Themen der Veranstaltung, z.B.: "Medien, IT, Wirtschaft" - mit Kommas getrennt'
 
