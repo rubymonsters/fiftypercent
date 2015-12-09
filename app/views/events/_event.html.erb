@@ -13,18 +13,18 @@
     <div class="description"><%= simple_format(event.description) %></div>
   <% end %>
 
-  <% unless event.date.blank? and event.city.blank? %>
-    <div class="where-when">
-      <span class="glyphicon glyphicon-calendar"></span>
-      <%= event.date.to_s(:gd) if event.date %>
-      &nbsp; &nbsp;
-      <span class="glyphicon glyphicon-home"></span>&nbsp;
-      <%= event.city %>
-    </div>
-  <% end %>
-
   <div class="main row">
     <div class="col-md-<%= event.has_all_the_numbers? ? '8' : '12' %>">
+
+      <% unless event.date.blank? and event.city.blank? %>
+        <div class="where-when">
+          <span class="glyphicon glyphicon-calendar"></span>
+          <%= event.date.to_s(:gd) if event.date %>
+          &nbsp; &nbsp;
+          <span class="glyphicon glyphicon-home"></span>&nbsp;
+          <%= event.city %>
+        </div>
+      <% end %>
 
       <% if is_single_view %>
         <dl class="dl-horizontal">
@@ -117,7 +117,7 @@
 
 
   </div>
-<hr>
+<hr class="m0">
   <% if is_single_view %>
     <div class="footer single row">
       <div class="col-md-12">

@@ -63,4 +63,12 @@
   }
 }
 
+hr {
+  border-color: $grey;
+}
+
+.m0 {
+  margin: 0px;
+}
+
 @import "small_screens";

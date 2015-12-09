@@ -4,7 +4,7 @@
   <%= t 'layout.sidebar.add_new_event_html' %>
 <% end %>
 </aside>
-<hr>
+
 <aside class="widget" id="sidebar-search">
   <h1><%= t 'layout.sidebar.search' %></h1>
   <%= form_tag(events_path, method: 'get', class: 'form-inline search', role: 'form') do %>
@@ -18,7 +18,7 @@
     <% end %>
   <% end %>
 </aside>
-<hr>
+
 <aside class="widget" id="statistics">
   <h1><%= t 'layout.sidebar.statistics' %></h1>
   <p>
