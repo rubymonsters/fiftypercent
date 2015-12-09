@@ -3,11 +3,11 @@ class BlogPostsController < ApplicationController
   layout 'blog'
 
   def index
-    @posts = Page.blog_posts.order('created_at DESC').limit(12).all
+    @posts = Page.blog_posts.is_public.order('created_at DESC').limit(12).all
   end
 
   def show
-    @post = Page.find(params[:id])
+    @post = Page.is_public.find(params[:id])
   end
 
   def export

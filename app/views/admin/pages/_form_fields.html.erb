@@ -1,3 +1,14 @@
+<% if f.object.page_type == 'blog_post' %>
+  <div class="form-group">
+    <label for="" class="control-label col-sm-2">
+      <%= f.label "Public" %>
+    </label>
+    <div class="existing-ranks col-sm-10">
+      <%= f.check_box :public %>
+    </div>
+  </div>
+<% end %>
+
 <%= f.text_field :slug, label: 'Slug',
                         help: 'uniq identifyer, part of URL, only: a-z0-9_',
                         control_col: "col-sm-4" %>

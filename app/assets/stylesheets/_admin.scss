@@ -22,6 +22,9 @@ $admin-link-color: #4682B4; //SteelBlue
     &.btn {
       color: white;
     }
+    &.btn:hover {
+      color: $very-dark-grey;
+    }
     &.btn-default  {
       color: $very-dark-grey;
     }

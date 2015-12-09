@@ -79,6 +79,7 @@ class Admin::PagesController < Admin::BaseController
     params.require(:page).permit(:slug,
                                  :page_type,
                                  :rank,
+                                 :public,
                                  { blog_category_ids: [] },
                                  {translations_attributes: [:id, :title, :body, :locale]}
                                  )

@@ -45,7 +45,7 @@ class Admin::BlogCategoriesController < Admin::BaseController
   end
 
   private
-  
+
     def build_empty_locales_for_form(object)
       %w(de en).each do |language|
         unless object.translated_locales.include?(language.to_sym)
@@ -53,14 +53,14 @@ class Admin::BlogCategoriesController < Admin::BaseController
         end
       end
     end
-  
+
     def set_blog_category
       @blog_category = BlogCategory.find(params[:id])
     end
 
     def blog_category_params
-      params.require(:blog_category).permit(:slug, 
-                                            :rank, 
+      params.require(:blog_category).permit(:slug,
+                                            :rank,
                                             translations_attributes: [:id, :name, :locale])
     end
 end

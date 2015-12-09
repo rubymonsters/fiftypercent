@@ -13,6 +13,7 @@ class Page < ActiveRecord::Base
   validates :rank, uniqueness: {scope: 'page_type'}, allow_nil: true
 
   scope :blog_posts,            -> { where( page_type: 'blog_post') }
+  scope :is_public,             -> { where( public:     true ) }
   scope :blog_pages,            -> { where( page_type: 'blog_page') }
   scope :blog_sidebar_snippets, -> { where( page_type: 'blog_sidebar_snippet') }
   scope :sidebar_snippets,      -> { where( page_type: 'sidebar_snippet') }

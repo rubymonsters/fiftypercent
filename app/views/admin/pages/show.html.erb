@@ -23,6 +23,8 @@
   </div>
 </div>
 <dl class="dl-horizontal">
+  <dt>Public</dt>
+  <dd><%= 'Public' if @page.public? %></dd>
   <dt>Slug</dt>
   <dd><%= @page.slug %></dd>
   <dt>Page Type</dt>
@@ -48,5 +50,5 @@
     <dt>Body</dt>
     <dd><%= markdown(@page.translation_for(locale).body) %></dd>
   <% end %>
-  
+
 </dl>
