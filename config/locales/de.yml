@@ -26,7 +26,7 @@ de:
 
         speaker_list_url: 'Gibt es einen direkten Link zur gesamten Liste der Speaker*innen?'
         woman: 'Wie viele Frauen* stehen im Programm?'
-        total: 'Wie viele Personen reden insgesamt?'
+        total_html: Wie viele Personen reden <u>insgesamt</u>?
         remark: Anmerkung
 
         reporter: 'Dein / Ihr Name'

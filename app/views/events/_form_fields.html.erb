@@ -32,7 +32,7 @@
 <fieldset>
   <legend><%= t('fieldset.legend.event.speakers') %></legend>
   <%= f.number_field :woman, min: 0 %>
-  <%= f.number_field :total, min: 0 %>
+  <%= f.number_field :total, min: 0, label: t('helpers.label.event.total_html') %>
   <%= f.url_field :speaker_list_url %>
   <%= f.text_field :remark %>
 </fieldset>
