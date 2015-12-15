@@ -133,7 +133,10 @@ header {
 
 #blog-sidebar--right a {
 	color: $link-color;
-  font-size: 14px;
+  background: linear-gradient(gray, gray) no-repeat;
+	background-size: 100% 1px;
+	background-position: 0 1.19em;
+	text-shadow: .05em 0 white, -.05em 0 white, 0.1em 0 white;
 }
 
 #blog-sidebar--right a:hover {
