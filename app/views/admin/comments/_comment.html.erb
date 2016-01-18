@@ -57,7 +57,13 @@
     <br>
     <%= comment.created_at.to_s(:gdt) %>
   </td>
-  <td class="last">
+  <td>
     <%= simple_format(comment.body) %>
   </td>
+  <td class="last">
+    <%= link_to admin_comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: 'btn btn-danger pull-right delete_comment' do %>
+      <span class="glyphicon glyphicon-trash"></span>
+    <% end %>
+  </td>
+
 </tr>

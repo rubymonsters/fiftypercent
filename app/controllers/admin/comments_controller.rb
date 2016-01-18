@@ -44,7 +44,12 @@ class Admin::CommentsController < Admin::BaseController
 
   def destroy
     @comment.destroy
-    redirect_to admin_comments_path, flash: {success: "Successfully deleted event: <strong>\"#{@comment.title}\" by #{@comment.author}</strong>"}
+
+    respond_to do |format|
+      format.html { redirect_to admin_comments_path, flash: {success: "Successfully deleted comment: <strong>\"#{@comment.title}\" by #{@comment.author}</strong>" } }
+      format.json { head :no_content }
+      format.js   { render layout: false }
+    end
   end
 
   def publish

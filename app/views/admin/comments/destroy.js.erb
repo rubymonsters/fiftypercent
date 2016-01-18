@@ -1,0 +1,4 @@
+$('.delete_comment').bind('ajax:success', function() {
+        $(this).closest('tr').find('td').css("background-color", "darkgrey");
+        $(this).closest('td').find('a').removeClass("btn-danger").attr('disabled', true);
+});
