@@ -30,10 +30,6 @@ h2{
   font-weight: normal;
 }
 
-#blog-content {
-  margin-top: $header-height;
-}
-
 .fa {
   display: inline;
 }
@@ -156,12 +152,14 @@ header {
 /********* layout **************/
 #blog-content {
   margin-top: $header-height;
-}
+  padding: 0 $inuit-base-spacing-unit;
+  @include media-query(palm) {
+    padding: 0;
+
+}}
 
 .layout-wrapper {
   max-width: 1440px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 /* article */
