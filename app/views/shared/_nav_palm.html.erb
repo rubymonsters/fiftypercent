@@ -1,6 +1,8 @@
 <div id="nav__palm">
 
-  <%= link_to('Speakerinnen* Blog', root_path, id: 'blog-header__home-link') %>
+  <span>
+    <%= link_to '<i class="fa fa-home"></i>'.html_safe, root_path %>
+  </span>
 
   <span id="blog-header__languages">
     <%= language_switcher.html_safe %>
