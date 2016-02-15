@@ -35,6 +35,7 @@ class EventsController < ApplicationController
     if  @event.save
       (session[:reported_events_ids] ||= []).push(@event.id)
       redirect_to @event, notice: 'Event was successfully created.'
+      NotificationsMailer.new_event(@event).deliver
     else
       flash[:error] = 'The event could not be saved.'
       render :new
