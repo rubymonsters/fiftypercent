@@ -1,11 +1,21 @@
-<div id="nav__palm">
+<div id="nav__palm ml">
 
   <span>
     <%= link_to '<i class="fa fa-home"></i>'.html_safe, root_path %>
   </span>
 
+  <i id="nav__palm-menu-trigger" class="fa fa-bars pl"></i>
+
   <span id="blog-header__languages">
     <%= language_switcher.html_safe %>
   </span>
+
+  <div id="nav__palm-menu" style="display: none">
+    <ul class="pl0 m0 list--style-none">
+      <li><%= link_to 'Speakerinnen', 'https://speakerinnen.org/', target: '_blank', class: 'nav__palm-menu-link bb' %></li>
+      <li><%= link_to 'Fiftypercent', "https://50prozent.speakerinnen.org/", target: '_blank', class: 'nav__palm-menu-link bb' %></li>
+    <ul>
+  </div>
+
 
 </div>

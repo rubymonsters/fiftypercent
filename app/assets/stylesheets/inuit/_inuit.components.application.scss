@@ -42,6 +42,10 @@ h2{
   border-top: 1px solid $light-grey;
 }
 
+.list--style-none {
+  list-style-type: none;
+}
+
 /**** header *********/
 
 #blog-header {
@@ -99,11 +103,6 @@ header {
   }
 }
 
-#nav__palm-menu-trigger {
-  cursor: pointer;
-  display: inline;
-}
-
 #nav__palm-menu {
 }
 
@@ -121,6 +120,20 @@ header {
   background-color: $link-bg-color-hover;
 }
 
+#nav__palm-menu-trigger, #nav__lap_and_up-menu-trigger, #detailed-search-trigger {
+  cursor: pointer;
+  display: inline;
+	color: $link-color;
+	text-decoration: none;
+
+  &:hover {
+    color: $font-color;
+  }
+}
+
+.nav__lap_and_up-menu-link {
+  line-height: $inuit-base-spacing-unit;
+}
 
 /************* sidebar **********/
 #blog-sidebar--right {
