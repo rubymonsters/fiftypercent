@@ -97,7 +97,6 @@ header {
 }
 
 #nav__palm {
-  text-align: left;
   @include media-query(lap-and-up) {
     display: none;
   }
