@@ -73,7 +73,7 @@ Rails.application.configure do
     port:                 465,
     domain:               'speakerinnen.org',
     user_name:            'admina@speakerinnen.org',
-    password:             Rails.application.secrets.password,
+    password:             Rails.application.secrets.mail_password,
     authentication:       'plain',
     enable_starttls_auto: true  }
 
