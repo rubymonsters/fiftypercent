@@ -1,5 +1,5 @@
 class NotificationsMailer < ActionMailer::Base
-  default from: 'speakerInnen@gmail.com'
+  #default from: 'speakerInnen@gmail.com'
 
   def new_event(event)
     @event = event
