@@ -3,8 +3,8 @@ class NotificationsMailer < ActionMailer::Base
 
   def new_event(event)
     @event = event
-    @url = 'nix'
-    mail(to: 'tyranja@speakerinnen.org', subject: 'New Event in 50 percent')
+    @url = 'https://50prozent.speakerinnen.org/log_in'
+    mail(to: 'admina@speakerinnen.org, anne@speakerinnen.org', subject: 'New Event in 50 percent')
   end
 
 end
