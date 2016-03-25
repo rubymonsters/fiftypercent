@@ -154,3 +154,5 @@ en:
           Thanks for you cooperation.
           Even after saving <strong>you</strong> can still edit the events data for 20 more minutes.
         </p>
+    blog_post:
+      body_help: Use markdown for text formating. On blog-posts, if you want an abstract (or teaser), put [---] (three dashes inside square brackets) where you want the abstract to end. If a blog-post does not have an abstract, the whole post is displayed in the list.

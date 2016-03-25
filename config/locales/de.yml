@@ -158,3 +158,15 @@ de:
           Danke für den Beitrag!
           Nach dem Speichern können die eingegebenen Daten noch 20 Minuten weiter bearbeitet werden.
         </p>
+    blog_post:
+      body_help: "Du kannst Markdown benutzen, um den Text zu formatieren.Wenn Du einen Teaser nutzen möchtest, setze ein [---] (drei Striche in einer eckigen Klammer) am Ende des Teasers.
+      <br>
+      <br>
+      Link: [linkname](http://link.io)
+      <br>
+      Bild: ![Minion](http://octodex.github.com/images/minion.png)
+      <br>
+      Textformatierungen: <b>**rendered as bold text**</b>, <i>_rendered as italicized text_</i>, <b># h1 Überschrift</b>
+      <br>
+      <a href='http://assemble.io/docs/Cheatsheet-Markdown.html'> mehr Formatierungen</a>
+      "

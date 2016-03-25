@@ -48,8 +48,7 @@
   </h4>
   <%= translation.hidden_field :locale %>
   <%= translation.text_field :title %>
-  <%= translation.text_area :body, help: 'Use markdown for text formating. On blog-posts, if you want an abstract (or teaser), put [---] (three dashes inside square brackets) where you want the abstract to end. If a blog-post does not have an abstract, the whole post is displayed in the list.' %>
-  <hr>
+  <%= translation.text_area :body, help: (I18n.t 'new.blog_post.body_help').html_safe %>
 <% end %>
 
 
