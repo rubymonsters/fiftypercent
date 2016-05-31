@@ -64,4 +64,22 @@ class Event < ActiveRecord::Base
   def has_all_the_numbers?
     woman.is_a?(Integer) and total.is_a?(Integer)
   end
+
+  def self.to_csv(options = {})
+    CSV.generate(options) do |csv|
+      csv << permitted_columns
+      all.each do |event|
+        csv << event.attributes.values_at(*permitted_columns)
+      end
+    end
+  end
+
+  def self.permitted_columns
+    ["title", "date", "city", "country_code", "main_url", "woman", "total" ]
+  end
+
+  def as_json(options={})
+    super(:only => [ :date, :title, :city, :country_code, :woman, :total, :main_url ]
+    )
+  end
 end

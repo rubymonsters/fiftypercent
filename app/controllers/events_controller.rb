@@ -8,6 +8,11 @@ class EventsController < ApplicationController
       @events = Event.includes(:comments).published.order(created_at: :desc).page(params[:page])
     end
     @tags = ActsAsTaggableOn::Tag.all
+    respond_to do |format|
+      format.html
+      format.json { render json: @events.as_json }
+      format.csv { send_data @events.to_csv }
+    end
   end
 
   def show
@@ -83,4 +88,5 @@ class EventsController < ApplicationController
   def tag_cloud
     @tags = Event.tag_counts_on(:tags)
   end
+
 end
