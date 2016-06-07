@@ -35,11 +35,6 @@
   </p>
 </aside>
 <hr>
-<aside class="widget" id="download">
-Download:
-  <%= link_to "CSV", events_path(format: "csv") %> |
-</aside>
-<hr>
 <% Page.sidebar_snippets.order(:rank).includes(:translations).all.each do |snippet| %>
   <aside class="widget" id="<%= dom_id(snippet) %>">
     <h1><%= snippet.title %></h1>
@@ -74,4 +69,9 @@ Download:
   <%= link_to admin_root_path, title: "Admin" do %>
     <span class="glyphicon glyphicon-cog"></span>
   <% end %>
+</aside>
+<hr>
+<aside class="widget" id="download">
+Download:
+  <%= link_to "CSV", events_path(format: "csv") %>
 </aside>
