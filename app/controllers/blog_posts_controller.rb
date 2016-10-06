@@ -12,7 +12,7 @@ class BlogPostsController < ApplicationController
 
   def export
     respond_to do |format|
-      @posts = Page.blog_posts.order('created_at DESC').limit(12).all
+      @posts = Page.blog_posts.is_public.order('created_at DESC').limit(12).all
       @posts_to_export = @posts.map{|post| {title: post.title,
                                              body: post.body,
                                               url: blog_post_url(post),
