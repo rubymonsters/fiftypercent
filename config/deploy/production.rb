@@ -3,11 +3,20 @@
 # Supports bulk-adding hosts to roles, the primary server in each group
 # is considered to be the first unless any hosts have the primary
 # property set.  Don't declare `role :all`, it's a meta role.
+# role :app, %w{fiftypercent@kvm15.so36.net}
+# role :web, %w{fiftypercent@kvm15.so36.net}
+# role :db,  %w{fiftypercent@kvm15.so36.net}
 
-role :app, %w{fiftypercent@kvm06.so36.net}
-role :web, %w{fiftypercent@kvm06.so36.net}
-role :db,  %w{fiftypercent@kvm06.so36.net}
+require 'net/ssh/proxy/command'
 
+server 'kvm15.so36.net',
+  roles: %w(app web db),
+  user: 'fiftypercent',
+  primary: true,
+  ssh_options: {
+    port: 1036, # This didn't honored the global ssh_options
+    proxy: Net::SSH::Proxy::Command.new('ssh shell -W %h:%p'),
+  }
 
 # Extended Server Syntax
 # ======================

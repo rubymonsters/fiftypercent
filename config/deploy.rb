@@ -1,8 +1,11 @@
 # config valid only for Capistrano 3.1
-lock '3.2.1'
+lock '3.6.1'
 
 set :application, 'fiftypercent'
 set :repo_url, 'git@git.codecoop.org:tyranja/fiftypercent.git'
+set :stage,           :production
+set :deploy_via,      :remote_cache
+
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
