@@ -9,9 +9,9 @@
   <% end %>
   <hr>
 
-  <h2>
+  <h1>
     <%= link_to post.title, blog_post_path(post.id), class: 'blog__link' %>
-  </h2>
+  </h1>
   <% if post.abstract.present? %>
     <div class="abstract">
       <%= markdown(post.abstract) %>
@@ -20,7 +20,7 @@
       <%= link_to t('blog.blogarticle.more'), blog_post_path(post.id), class: 'blog__link' %>
     </p>
   <% else %>
-    <div class="pt-">
+    <div>
       <%= markdown(post.main_body) %>
     </div>
   <% end %>
