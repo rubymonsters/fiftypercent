@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.0'
+gem 'rails', '4.2.7.1'
 
 gem 'pg'
 
@@ -8,7 +8,7 @@ gem 'sass-rails', '~> 4.0.5'
 gem 'jquery-rails'
 gem 'uglifier', '>= 2.7.0'
 gem 'execjs'
-gem 'therubyracer',  platforms: :ruby
+# gem 'therubyracer',  platforms: :ruby
 
 gem 'bcrypt',            '~> 3.1.7'
 gem 'rails-i18n'
@@ -23,14 +23,8 @@ gem 'morrisjs-rails'
 gem 'raphael-rails'
 gem 'country_select',    '~> 2.1.0'
 gem 'redcarpet',         '~> 3.2.2'
-gem 'faker'
 
 gem 'font-awesome-rails'
-
-gem 'capistrano',        '~> 3.2.0'
-gem 'capistrano-rails',  '~> 1.1.0'
-gem 'capistrano-bundler'
-
 gem 'nokogiri'
 
 gem 'rack-attack',       '~> 4.2.0'
@@ -41,6 +35,9 @@ gem 'rack-attack',       '~> 4.2.0'
 group :development do
   gem 'puma'
   gem 'quiet_assets'
+  gem 'capistrano',       '~> 3.4', require: false
+  gem 'capistrano-rails', '~> 1.1', require: false
+  gem 'capistrano-passenger', require: false
 end
 
 group :test do
@@ -50,4 +47,5 @@ end
 group :test, :development do
   gem 'pry-rails'
   gem 'spring'
+  gem 'faker'
 end
