@@ -4,7 +4,7 @@ gem 'rails', '4.2.7.1'
 
 gem 'pg'
 
-gem 'sass-rails', '~> 4.0.5'
+gem 'sass-rails', '~> 5.0.6'
 gem 'jquery-rails'
 gem 'uglifier', '>= 2.7.0'
 gem 'execjs'
@@ -17,7 +17,7 @@ gem 'kaminari',          '~> 0.16.1'
 gem 'acts-as-taggable-on'
 gem 'carrierwave',       '~> 0.10.0'
 
-gem 'bootstrap-sass',     '~> 3.3.0'
+gem 'bootstrap-sass',     '~> 3.3.7'
 gem 'bootstrap_form',     '~> 2.3.0'
 gem 'morrisjs-rails'
 gem 'raphael-rails'
