@@ -1,9 +1,0 @@
-# https://gist.github.com/dvessel/1478685
-
-
-myExtraExcludes       = "log,vendor,tmp,.sass-cache,.DS_Store,public/assets"
-
-excludeDirectories    = "{$excludeDirectories,$myExtraExcludes}"
-excludeInFolderSearch = "{$excludeInFolderSearch,$myExtraExcludes}"
-
-# TM_RUBY = '/Users/work/.rvm/bin/textmate_ruby'

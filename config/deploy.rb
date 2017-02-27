@@ -1,5 +1,5 @@
 # config valid only for Capistrano 3.1
-lock '3.6.1'
+lock '3.7.1'
 
 set :application, 'fiftypercent'
 set :repo_url, 'git@git.codecoop.org:tyranja/fiftypercent.git'
