@@ -3,7 +3,7 @@ require 'test_helper'
 class NotificationsMailerTest < ActionMailer::TestCase
   test "send admin notices mail" do
     # Send the email, then test that it got queued
-    email = NotificationsMailer.new_event(events(:car_show)).deliver
+    email = NotificationsMailer.new_event(events(:car_show)).deliver_now
     assert_not ActionMailer::Base.deliveries.empty?
 
     # Test the body of the sent email contains what we expect it to

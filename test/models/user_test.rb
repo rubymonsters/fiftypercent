@@ -6,7 +6,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "a user can NOT be authenticated with the wrong password" do
-    assert_equal User.authenticate(users(:horst).email, 'nicht_das_passwort'), nil
+    assert_nil User.authenticate(users(:horst).email, 'nicht_das_passwort')
   end
 
   test "a users password is hashed with salt and the right format" do

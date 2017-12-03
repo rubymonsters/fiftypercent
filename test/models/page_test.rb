@@ -27,13 +27,13 @@ class PageTest < ActiveSupport::TestCase
   test "abstract is nil if body has no separator" do
     p = Page.new(slug: 'a_slug', page_type: 'blog_post', body: 'abcdef')
     p.save!
-    assert_equal nil, p.abstract
+    assert_nil p.abstract
   end
 
   test "still works if the body is empty" do
     p = Page.new(slug: 'a_slug', page_type: 'blog_post', body: nil)
     p.save!
-    assert_equal nil, p.abstract
+    assert_nil p.abstract
   end
 
 
@@ -53,6 +53,6 @@ class PageTest < ActiveSupport::TestCase
   test "still works if the body is nil" do
     p = Page.new(slug: 'a_slug', page_type: 'blog_post', body: nil)
     p.save!
-    assert_equal nil, p.main_body
+    assert_nil p.main_body
   end
 end
