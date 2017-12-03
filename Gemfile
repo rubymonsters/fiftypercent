@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.10'
 
-gem 'pg'
+gem 'pg',  '0.20.0'
 
 gem 'sass-rails', '~> 5.0.6'
 gem 'jquery-rails'
