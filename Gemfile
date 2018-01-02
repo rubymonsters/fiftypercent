@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.7.1'
+gem 'rails', '4.2.10'
 
-gem 'pg'
+gem 'pg',  '0.20.0'
 
 gem 'sass-rails', '~> 5.0.6'
 gem 'jquery-rails'
@@ -10,10 +10,10 @@ gem 'uglifier', '>= 2.7.0'
 gem 'execjs'
 # gem 'therubyracer',  platforms: :ruby
 
-gem 'bcrypt',            '~> 3.1.7'
+gem 'bcrypt'
 gem 'rails-i18n'
 gem 'globalize',         '~> 5.0.0'
-gem 'kaminari',          '~> 0.16.1'
+gem 'kaminari'
 gem 'acts-as-taggable-on'
 gem 'carrierwave',       '~> 0.10.0'
 
