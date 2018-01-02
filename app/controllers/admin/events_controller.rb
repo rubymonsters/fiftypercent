@@ -19,7 +19,7 @@ class Admin::EventsController < Admin::BaseController
     end
 
     case params[:order_date]
-    when 'create_at'
+    when 'created_at'
       @events = @events.order(created_at: :desc)
     when 'date'
       @events = @events.order(date: :desc)
