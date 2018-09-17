@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
+ruby '2.4.2'
 
-gem 'rails', '4.2.10'
+gem 'rails', '~> 5.2', '>= 5.2.1'
+# gem 'rails', '5.0.0'
 
 gem 'pg',  '0.20.0'
 
@@ -12,13 +14,14 @@ gem 'execjs'
 
 gem 'bcrypt'
 gem 'rails-i18n'
-gem 'globalize',         '~> 5.0.0'
+gem 'globalize', git: 'https://github.com/globalize/globalize'
 gem 'kaminari'
-gem 'acts-as-taggable-on'
+gem 'acts-as-taggable-on', git: 'https://github.com/Fodoj/acts-as-taggable-on.git', branch: 'rails-5.2'  # temporary: https://github.com/mbleigh/acts-as-taggable-on/issues/874
+# gem 'acts-as-taggable-on'
 gem 'carrierwave',       '~> 0.10.0'
 
 gem 'bootstrap-sass',     '~> 3.3.7'
-gem 'bootstrap_form',     '~> 2.3.0'
+gem 'bootstrap_form',     '~> 2.7.0'
 gem 'morrisjs-rails'
 gem 'raphael-rails'
 gem 'country_select',    '~> 2.1.0'
@@ -34,7 +37,7 @@ gem 'rack-attack',       '~> 4.2.0'
 
 group :development do
   gem 'puma'
-  gem 'quiet_assets'
+  # gem 'quiet_assets'
   gem 'capistrano',       '~> 3.4', require: false
   gem 'capistrano-rails', '~> 1.1', require: false
   gem 'capistrano-passenger', require: false
