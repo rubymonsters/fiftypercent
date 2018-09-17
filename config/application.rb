@@ -21,6 +21,7 @@ module Fiftypercent
     config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :de
     config.i18n.fallbacks = true
+    config.load_defaults 5.0
 
     Globalize.fallbacks = {:en => [:en, :de], :de => [:de, :en]}
 
