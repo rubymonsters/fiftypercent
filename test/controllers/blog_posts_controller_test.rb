@@ -5,7 +5,7 @@ class BlogPostsControllerTest < ActionController::TestCase
     blog_post = Page.new(slug: 'a_slug', page_type: 'blog_post', body: 'abc[---]def', public: true)
     blog_post.save!
 
-    get :show, id: blog_post.id
+    get :show, params: { id: blog_post.id }
     assert_response :success
     assert_not_nil assigns(:post)
     assert_template :show
@@ -15,7 +15,7 @@ class BlogPostsControllerTest < ActionController::TestCase
     blog_post = Page.new(slug: 'a_slug', page_type: 'blog_post', body: 'abc[---]def', public: true)
     blog_post.save!
 
-    get :show, id: blog_post.id
+    get :show, params: { id: blog_post.id }
     assert_equal assigns(:post), blog_post
   end
 
