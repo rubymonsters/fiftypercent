@@ -2,7 +2,9 @@ source 'https://rubygems.org'
 ruby '2.4.2'
 
 gem 'rails', '~> 5.2', '>= 5.2.1'
-# gem 'rails', '5.0.0'
+
+# used in the rail 5.2 version
+gem 'bootsnap', '~> 1.3'
 
 gem 'pg',  '0.20.0'
 
