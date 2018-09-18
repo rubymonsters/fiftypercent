@@ -26,7 +26,7 @@ gem 'bootstrap-sass',     '~> 3.3.7'
 gem 'bootstrap_form',     '~> 2.7.0'
 gem 'morrisjs-rails'
 gem 'raphael-rails'
-gem 'country_select',    '~> 2.1.0'
+gem 'country_select',    '~> 3.1.0'
 gem 'redcarpet',         '~> 3.2.2'
 
 gem 'font-awesome-rails'
@@ -43,6 +43,7 @@ group :development do
   gem 'capistrano',       '~> 3.4', require: false
   gem 'capistrano-rails', '~> 1.1', require: false
   gem 'capistrano-passenger', require: false
+  gem 'listen'
 end
 
 group :test do
@@ -52,6 +53,6 @@ end
 
 group :test, :development do
   gem 'pry-rails'
-  gem 'spring'
+  # gem 'spring'
   gem 'faker'
 end
