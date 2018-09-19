@@ -40,6 +40,9 @@ set :default_env, { path: "/opt/ruby/bin:$PATH" }
 # Default value for keep_releases is 5
 set :keep_releases, 5
 
+# If you want to restart using `touch tmp/restart.txt`, add this to your config/deploy.rb:
+set :passenger_restart_with_touch, true
+
 namespace :deploy do
 
   desc 'Restart application'
