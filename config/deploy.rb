@@ -1,5 +1,5 @@
 # config valid only for Capistrano 3.1
-lock '3.10.0'
+lock '3.11.0'
 
 set :application, 'fiftypercent'
 set :repo_url, 'git@git.codecoop.org:tyranja/fiftypercent.git'
@@ -9,6 +9,7 @@ set :deploy_via,      :remote_cache
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
+set :branch, ENV['BRANCH'] if ENV['BRANCH']
 
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/home/fiftypercent'
@@ -39,6 +40,9 @@ set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
 # Default value for keep_releases is 5
 set :keep_releases, 5
+
+# If you want to restart using `touch tmp/restart.txt`, add this to your config/deploy.rb:
+set :passenger_restart_with_touch, true
 
 namespace :deploy do
 

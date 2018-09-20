@@ -15,7 +15,7 @@ server 'kvm15.so36.net',
   primary: true,
   ssh_options: {
     port: 1036, # This didn't honored the global ssh_options
-    proxy: Net::SSH::Proxy::Command.new('ssh shell -W %h:%p'),
+    # proxy: Net::SSH::Proxy::Command.new('ssh shell -W %h:%p'),
   }
 
 # Extended Server Syntax
