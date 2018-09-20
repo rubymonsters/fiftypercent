@@ -1,0 +1,48 @@
+/*fonts*/
+
+@font-face {
+  font-family: 'OpenSans';
+  src: font_url('OpenSans/OpenSans-Regular-webfont.eot');
+  src: font_url('OpenSans/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+  font_url('OpenSans/OpenSans-Regular-webfont.woff') format('woff'),
+  font_url('OpenSans/OpenSans-Regular-webfont.ttf') format('truetype'),
+  font_url('OpenSans/OpenSans-Regular-webfont.svg#open_sansbold') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: font_url('OpenSans/OpenSans-Bold-webfont.eot');
+  src: font_url('OpenSans/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+  font_url('OpenSans/OpenSans-Bold-webfont.woff') format('woff'),
+  font_url('OpenSans/OpenSans-Bold-webfont.ttf') format('truetype'),
+  font_url('OpenSans/OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* colors */
+$very-light-grey:    #E8E8E8;
+$light-grey:         #DCDCDC;
+$grey:               #7F7F7F;
+$dark-grey:          #4E4E4E;
+$very-dark-grey:     #333333;
+
+$blue:               #375E97;
+$dark-blue:          darken($blue, 50%);
+$red:                #e43a15;
+$dark-red:           #BF3112;
+
+$yellow:             #FFBB00;
+
+$text-color:         $dark-grey;
+
+$link-color:         $grey;
+$link-color-hover:   darken($link-color, 25%);
+
+$background:         #FFF;
+$content-background: $very-light-grey;
+$content-shadow:     $light-grey;
+
+$content-line:       $grey;

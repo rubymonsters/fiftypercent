@@ -37,7 +37,7 @@ module ApplicationHelper
     end
     links = [:de, :en].map do |lang|
       if lang == I18n.locale
-        link_to(lang.to_s.upcase, target_url, class: 'active')
+        link_to(lang.to_s.upcase, target_url, class: 'nav-link active')
       else
         link_to(lang.to_s.upcase, target_url.sub(/\/(de|en)\//,"/#{lang.to_s}/"))
       end

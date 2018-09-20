@@ -1,0 +1,55 @@
+#header {
+  background: #c5141c;
+  color: white;
+
+  .navbar-brand {
+    font-family: 'TitilliumWeb Bold';
+    &:hover {
+      color: $very-light-grey;
+    }
+  }
+  .navbar-brand a {
+    text-transform: uppercase;
+  }
+
+  .navbar-brand small {
+    font-size: 1.3rem;
+  }
+
+  a {
+    color: white;
+  }
+
+  li.divider {
+    border-bottom: 0.5px solid $white;
+  }
+
+  .language-switcher {
+    margin-left: 6px;
+    a {
+      display: inline-block;
+      padding-left:  6px;
+      padding-right: 6px;
+      &.active {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+button.navbar-toggler {
+  background: $very-light-grey;
+}
+
+
+@include media-breakpoint-up(lg) {
+  #nav-only-mobile  {
+    display: none;
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  #nav-only-screen  {
+    display: none;
+  }
+}

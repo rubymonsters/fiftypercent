@@ -11,7 +11,7 @@
   <%= csrf_meta_tags %>
 
 </head>
-<body class="frontend<%= class_for_body_tag %>">
+<body class="<%= class_for_body_tag %>">
   <%= render 'shared/header' %>
   <div class='container' id='content'>
     <% if Rails.env.development? %>
@@ -20,15 +20,15 @@
     <%= flash_messages %>
 
     <div class='row'>
-      <div class='col-sm-8'>
+      <div class='col-md-12 col-lg-8'>
         <%= yield %>
       </div>
       <% if layout_needs_sidebar?  %>
-        <div class='col-sm-4' id='sidebar'>
+        <div class='col-md-12 col-lg-4' id='sidebar'>
           <%= render 'shared/sidebar' %>
         </div>
       <% else %>
-        <div class='col-sm-4'>&nbsp;</div>
+        <div class='col-md-12 col-lg-4'>&nbsp;</div>
       <% end %>
     </div>
   </div>
