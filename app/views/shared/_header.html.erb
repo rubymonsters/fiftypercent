@@ -1,11 +1,12 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="header">
   <div class="container">
     <a class="navbar-brand" href="<%= root_path %>/">
-      <h1 class="display-1">
+      <h1 class="display-3">
         <%= t 'layout.header.title' %>
         <small><%= t 'layout.header.claim' %></small>
       </h1>
     </a>
+
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -87,3 +88,25 @@
   </div>
 
 </nav>
+
+<a onclick="topFunction()" id="btn-top" title="Go to top"><i class="fa fa-arrow-circle-up"></i></a>
+
+<!-- javascript for the tag_cloud search -->
+<script type="text/javascript" charset="utf-8">
+  // When the user scrolls down 100px from the top of the document, show the button
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+      if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+          document.getElementById("btn-top").style.display = "block";
+      } else {
+          document.getElementById("btn-top").style.display = "none";
+      }
+  }
+
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
+</script>

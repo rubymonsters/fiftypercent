@@ -1,6 +1,7 @@
 #header {
-  background: #c5141c;
+  background: $red;
   color: white;
+  padding: 0px;
 
   .navbar-brand {
     font-family: 'TitilliumWeb Bold';
@@ -10,6 +11,7 @@
   }
   .navbar-brand a {
     text-transform: uppercase;
+    padding: 0;
   }
 
   .navbar-brand small {
@@ -41,6 +43,20 @@ button.navbar-toggler {
   background: $very-light-grey;
 }
 
+#btn-top {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    color: $red; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    font-size: 40px; /* Increase font size */
+}
+
+#btn-top:hover {
+    color: $dark-grey; /* Add a dark-grey background on hover */
+}
 
 @include media-breakpoint-up(lg) {
   #nav-only-mobile  {
