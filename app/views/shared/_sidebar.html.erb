@@ -1,26 +1,26 @@
 <aside class="widget">
-<%= link_to new_event_path, class: 'btn btn-sidebar', style: 'width: 100%;' do %>
-  <span class="fa fa-plus-sign"></span>
-  <%= t 'layout.sidebar.add_new_event_html' %>
-<% end %>
+  <%= link_to new_event_path, class: 'btn btn-primary btn-block' do %>
+    <span class="fa fa-plus-circle"></span>
+    <%= t 'layout.sidebar.add_new_event_html' %>
+  <% end %>
 </aside>
 
 <aside class="widget" id="sidebar-search">
-  <h1><%= t 'layout.sidebar.search' %></h1>
+  <h6><%= t 'layout.sidebar.search' %></h6>
   <%= form_tag(events_path, method: 'get', class: 'form-inline search', role: 'form') do %>
     <div class="form-group">
       <%= text_field_tag(:q, params[:q],  {class: 'form-control',
                                            placeholder: t('layout.sidebar.searchterm')
                                            }) %>
-    </div>
-    <%= button_tag( :class => "btn btn-sidebar") do %>
+      <%= button_tag( class: "btn btn-primary") do %>
       <span class="fa fa-search"></span>
+    </div>
     <% end %>
   <% end %>
 </aside>
 
 <aside class="widget" id="statistics">
-  <h1><%= t 'layout.sidebar.statistics' %></h1>
+  <h6><%= t 'layout.sidebar.statistics' %></h6>
   <p>
     <%= t 'layout.sidebar.statistics_statement_html',
           {event_count: Event.published.count,
@@ -37,13 +37,13 @@
 <hr>
 <% Page.sidebar_snippets.order(:rank).includes(:translations).all.each do |snippet| %>
   <aside class="widget" id="<%= dom_id(snippet) %>">
-    <h1><%= snippet.title %></h1>
+    <h6><%= snippet.title %></h6>
     <%= markdown(snippet.body) %>
   </aside>
 <% end %>
 <hr>
 <aside class="widget" id="page-list">
-  <h1><%= t 'layout.sidebar.more' %></h1>
+  <h6><%= t 'layout.sidebar.more' %></h6>
   <ul class="list-unstyled">
     <% Page.menu_pages.order(:rank).includes(:translations).all.each do |page| %>
       <li>
@@ -57,7 +57,7 @@
 </aside>
 <hr>
 <aside class="widget" id="tags">
-  <h1>Tags</h1>
+  <h6>Tags</h6>
   <div id='tag_cloud'>
     <% tag_cloud Event.tag_counts, %w[s m l] do |tag, css_class| %>
       <%= link_to tag.name, tag_path(tag.name), class: css_class %>

@@ -69,3 +69,13 @@ button.navbar-toggler {
     display: none;
   }
 }
+@include media-breakpoint-down(md) {
+  .display-3 {
+    font-size: 3.5rem;
+  }
+}
+@include media-breakpoint-down(sm) {
+  .display-3 {
+    font-size: 2.5rem;
+  }
+}

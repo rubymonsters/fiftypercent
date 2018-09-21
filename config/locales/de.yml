@@ -94,7 +94,7 @@ de:
       title: 50 Prozent
       claim: sind die Hälfte.
     sidebar:
-      add_new_event_html: 'Neue Veranstaltung <span class="hidden-sm">eintragen</span>'
+      add_new_event_html: 'Neue Veranstaltung <span class="d-none d-md-inline-block">eintragen</span>'
       more: Mehr
       search: Suchen
       searchterm: 'Suchbegriff..'
