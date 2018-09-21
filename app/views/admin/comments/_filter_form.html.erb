@@ -7,17 +7,17 @@
     </label>
     <label class="btn btn-default <%= 'active' if params[:mod_state] == 'unchecked' %>">
       <input type="radio" value="unchecked" name="mod_state" id="mod_state_unchecked" autocomplete="off" <%= 'checked' if params[:mod_state] == 'unchecked' %>>
-      <span class="glyphicon glyphicon-question-sign"></span>
+      <span class="fa fa-question-sign"></span>
       unchecked
     </label>
     <label class="btn btn-default <%= 'active' if params[:mod_state] == 'published' %>">
       <input type="radio" value="published" name="mod_state" id="mod_state_published" autocomplete="off" <%= 'checked' if params[:mod_state] == 'published' %>>
-      <span class="glyphicon glyphicon-thumbs-up"></span>
+      <span class="fa fa-thumbs-up"></span>
       published
     </label>
     <label class="btn btn-default <%= 'active' if params[:mod_state] == 'hidden' %>">
       <input type="radio" value="hidden" name="mod_state" id="mod_state_hidden" autocomplete="off" <%= 'checked' if params[:mod_state] == 'hidden' %>>
-      <span class="glyphicon glyphicon-thumbs-down"></span>
+      <span class="fa fa-thumbs-down"></span>
       hidden
     </label>
   </div>

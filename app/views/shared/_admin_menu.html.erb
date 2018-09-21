@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
       </button>
       <%= link_to admin_root_path, class: 'navbar-brand' do %>
-        <span class="glyphicon glyphicon-list"></span>
+        <span class="fa fa-list"></span>
         50percent
       <% end %>
     </div>
@@ -19,33 +19,33 @@
         <li>
           <% frontend_url = Rails.env.development? ? root_path : 'https://50prozent.speakerinnen.org/' %>
           <%= link_to frontend_url do %>
-            <span class="glyphicon glyphicon-globe"></span>
+            <span class="fa fa-globe"></span>
             Visit Frontend
           <% end %>
         </li>
         <li>
           <%= link_to 'http://blog.speakerinnen.org', target: '_blank' do %>
-            <span class="glyphicon glyphicon-leaf"></span>
+            <span class="fa fa-leaf"></span>
             Visit Blog
           <% end %>
         </li>
         <li>
           <%= link_to admin_events_path do %>
-            <span class="glyphicon glyphicon-calendar"></span>
+            <span class="fa fa-calendar"></span>
             Events
           <% end %>
         </li>
         <li>
           <%= link_to admin_comments_path do %>
-            <span class="glyphicon glyphicon-comment"></span>
+            <span class="fa fa-comment"></span>
             Comments
           <% end %>
         </li>
         <li>
           <%= link_to log_out_path do %>
-            <span class="glyphicon glyphicon-user"></span>
+            <span class="fa fa-user"></span>
             <%= current_user.email %>
-            <span class="glyphicon glyphicon-log-in"></span>
+            <span class="fa fa-log-in"></span>
             Log out
           <% end %>
         </li>

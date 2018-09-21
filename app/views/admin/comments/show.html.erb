@@ -1,5 +1,5 @@
 <h2>
-  <span class="glyphicon glyphicon-comment"></span>
+  <span class="fa fa-comment"></span>
   <%= @comment.title %>
   <small>id: <%= @comment.id %></small>
 </h2>
@@ -29,16 +29,16 @@
 </dl>
 
 <%= link_to admin_comments_path, class: 'btn btn-default' do %>
-  <span class="glyphicon glyphicon-list"></span>
+  <span class="fa fa-list"></span>
   Back to list of comments
 <% end %>
 
 <%= link_to edit_admin_comment_path(@comment), class: 'btn btn-default' do %>
-  <span class="glyphicon glyphicon-edit"></span>
+  <span class="fa fa-edit"></span>
   Edit this comment
 <% end %>
 
 <%= link_to admin_comment_path(@comment), method: 'delete', class: 'btn btn-danger pull-right' do %>
-  <span class="glyphicon glyphicon-remove"></span>
+  <span class="fa fa-remove"></span>
   Delete this comment
 <% end %>

@@ -11,42 +11,42 @@
       <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
         <li>
           <%= link_to admin_pages_path(page_type: 'blog_post') do %>
-            <span class="glyphicon glyphicon-leaf"></span>
+            <span class="fa fa-leaf"></span>
             Blog Posts
             (<%= Page.blog_posts.count %>)
           <% end %>
         </li>
         <li>
           <%= link_to admin_pages_path(page_type: 'blog_page') do %>
-            <span class="glyphicon glyphicon-file"></span>
+            <span class="fa fa-file"></span>
             Blog Pages
             (<%= Page.blog_pages.count %>)
           <% end %>
         </li>
         <li>
           <%= link_to admin_pages_path(page_type: 'blog_sidebar_snippet') do %>
-            <span class="glyphicon glyphicon-align-justify"></span>
+            <span class="fa fa-align-justify"></span>
             Blog sidebar_snippets
             (<%= Page.blog_sidebar_snippets.count %>)
           <% end %>
         </li>
         <li>
           <%= link_to admin_pages_path(page_type: 'sidebar_snippet') do %>
-            <span class="glyphicon glyphicon-align-justify"></span>
+            <span class="fa fa-align-justify"></span>
             sidebar_snippets
             (<%= Page.sidebar_snippets.count %>)
           <% end %>
         </li>
         <li>
           <%= link_to admin_pages_path(page_type: 'menu_page') do %>
-            <span class="glyphicon glyphicon-file"></span>
+            <span class="fa fa-file"></span>
             menu_pages
             (<%= Page.menu_pages.count %>)
           <% end %>
         </li>
         <li>
           <%= link_to admin_blog_categories_path do %>
-            <span class="glyphicon glyphicon-folder-open"></span>&nbsp;
+            <span class="fa fa-folder-open"></span>&nbsp;
             Categories (Blog)
             (<%= BlogCategory.count %>)
           <% end %>
@@ -56,12 +56,12 @@
   </div>
   <div class="col-sm-5 text-right">
     <%= link_to new_admin_page_path(page_type: 'blog_post'), class: 'btn btn-success' do %>
-      <span class="glyphicon glyphicon-leaf"></span>
+      <span class="fa fa-leaf"></span>
       add new blog post
     <% end %>
     &nbsp;
     <%= link_to new_admin_page_path, class: 'btn btn-success' do %>
-      <span class="glyphicon glyphicon-file"></span>
+      <span class="fa fa-file"></span>
       add new page/snippet
     <% end %>
   </div>

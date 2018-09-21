@@ -1,6 +1,6 @@
 <aside class="widget">
 <%= link_to new_event_path, class: 'btn btn-sidebar', style: 'width: 100%;' do %>
-  <span class="glyphicon glyphicon-plus-sign"></span>
+  <span class="fa fa-plus-sign"></span>
   <%= t 'layout.sidebar.add_new_event_html' %>
 <% end %>
 </aside>
@@ -14,7 +14,7 @@
                                            }) %>
     </div>
     <%= button_tag( :class => "btn btn-sidebar") do %>
-      <span class="glyphicon glyphicon-search"></span>
+      <span class="fa fa-search"></span>
     <% end %>
   <% end %>
 </aside>
@@ -48,7 +48,7 @@
     <% Page.menu_pages.order(:rank).includes(:translations).all.each do |page| %>
       <li>
         <%= link_to page_path(page.slug) do %>
-          <span class="glyphicon glyphicon-file"></span>
+          <span class="fa fa-file"></span>
           <%= page.title %>
         <% end %>
       </li>
@@ -67,6 +67,6 @@
 
 <aside class="widget text-right">
   <%= link_to admin_root_path, title: "Admin" do %>
-    <span class="glyphicon glyphicon-cog"></span>
+    <span class="fa fa-cog"></span>
   <% end %>
 </aside>

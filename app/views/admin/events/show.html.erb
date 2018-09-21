@@ -6,19 +6,19 @@
     <div class="btn-group btn-group-sm" role="group" aria-label="...">
       <% unless @event.unchecked? %>
         <%= link_to uncheck_admin_event_path(@event), class: 'btn btn-default', method: 'patch' do %>
-          <span class="glyphicon glyphicon-question-sign"></span>
+          <span class="fa fa-question-sign"></span>
           uncheck
         <% end %>
       <% end %>
       <% unless @event.published? %>
         <%= link_to publish_admin_event_path(@event), class: 'btn btn-default', method: 'patch' do %>
-          <span class="glyphicon glyphicon-thumbs-up"></span>
+          <span class="fa fa-thumbs-up"></span>
           publish
         <% end %>
       <% end %>
       <% unless @event.hidden? %>
         <%= link_to hide_admin_event_path(@event), class: 'btn btn-default', method: 'patch' do %>
-          <span class="glyphicon glyphicon-thumbs-down"></span>
+          <span class="fa fa-thumbs-down"></span>
           hide
         <% end %>
       <% end %>
@@ -26,19 +26,19 @@
   </div>
   <div class="col-sm-6">
     <%= link_to edit_admin_event_path, class: 'btn btn-success' do  %>
-      <span class="glyphicon glyphicon-edit"></span>
+      <span class="fa fa-edit"></span>
       edit
     <% end %>
     <%= link_to admin_event_path, method: 'delete', data: {confirm: 'Are you sure? You cannot undo this! Will also destroy the associated comments.'}, class: 'btn btn-danger' do  %>
-      <span class="glyphicon glyphicon-remove"></span>
+      <span class="fa fa-remove"></span>
       delete
     <% end %>
     <%= link_to admin_events_path, class: 'btn btn-default' do  %>
-      <span class="glyphicon glyphicon-list"></span>
+      <span class="fa fa-list"></span>
       back to list
     <% end %>
     <%= link_to admin_comments_path(commentable_type: 'Event', commentable_id: @event.id), class: 'btn btn-default', title: 'Comments' do  %>
-      <span class="glyphicon glyphicon-comment"></span>
+      <span class="fa fa-comment"></span>
       <%= @event.comments.count %>
     <% end %>
 

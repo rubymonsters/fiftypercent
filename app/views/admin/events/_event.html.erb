@@ -2,7 +2,7 @@
   <td class="title">
     <% if event.recently_created? %>
       &nbsp;
-      <span style="color: #cc3333;" class="glyphicon glyphicon-user" title="User can edit for <%= (event.remaining_edit_time / 60.0).to_i %> more minutes"></span>
+      <span style="color: #cc3333;" class="fa fa-user" title="User can edit for <%= (event.remaining_edit_time / 60.0).to_i %> more minutes"></span>
     <% end %>
     <%= link_to event.title, admin_event_path(event) %>
   </td>
@@ -15,14 +15,14 @@
   <td class="mod-buttons">
     <div class="btn-group btn-group-xs">
       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-        <span class="glyphicon glyphicon-cog"></span>
+        <span class="fa fa-cog"></span>
         <span class="caret"></span>
       </button>
       <ul class="dropdown-menu" role="menu">
         <% unless event.unchecked? %>
           <li>
             <%= link_to uncheck_admin_event_path(event), method: 'patch', remote: true do %>
-              <span class="glyphicon glyphicon-question-sign"></span>
+              <span class="fa fa-question-sign"></span>
               mark unchecked
             <% end %>
           </li>
@@ -30,7 +30,7 @@
         <% unless event.published? %>
           <li>
             <%= link_to publish_admin_event_path(event), method: 'patch', remote: true do %>
-              <span class="glyphicon glyphicon-thumbs-up"></span>
+              <span class="fa fa-thumbs-up"></span>
               publish
             <% end %>
           </li>
@@ -38,7 +38,7 @@
         <% unless event.hidden? %>
           <li>
             <%= link_to hide_admin_event_path(event), method: 'patch', remote: true do %>
-              <span class="glyphicon glyphicon-thumbs-down"></span>
+              <span class="fa fa-thumbs-down"></span>
               hide
             <% end %>
           </li>
@@ -53,7 +53,7 @@
   <td>
     <% if event.comments.any? %>
       <%= link_to admin_comments_path(commentable_type: 'Event', commentable_id: event.id) do %>
-        <span class="glyphicon glyphicon-comment"></span>
+        <span class="fa fa-comment"></span>
         <%= event.comments.size %>
       <% end %>
     <% end %>
@@ -67,11 +67,11 @@
           data-html="true"
           data-content="<strong>User:</strong><br><%= event.internal_user_info %><hr><strong>Admin:</strong><br><%= event.internal_admin_info %><hr><a href='<%= edit_admin_event_path(event) %>#internal'>Edit</a>"
          >
-        <span class="glyphicon glyphicon-info-sign"></span>
+        <span class="fa fa-info-sign"></span>
       </a>
     <% end %>
     <%= link_to edit_admin_event_path(event) do %>
-      <span class="glyphicon glyphicon-edit"></span>
+      <span class="fa fa-edit"></span>
     <% end %>
   </td>
 </tr>

@@ -8,7 +8,7 @@
   </td>
   <td>
     <% if page.blog_categories.any? %>
-      <span class="glyphicon glyphicon-folder-open"
+      <span class="fa fa-folder-open"
       title="<%= page.blog_categories.sort_by(&:rank).map{|c| "#{c.name}"}.join(', ').html_safe %>"
       ></span>
     <% else %>
@@ -27,12 +27,12 @@
   </td>
   <td>
     <% if page.public %>
-      <span class="glyphicon glyphicon-thumbs-up"></span>
+      <span class="fa fa-thumbs-up"></span>
     <% end %>
   </td>
   <td>
     <%= link_to edit_admin_page_path(page) do %>
-      <span class="glyphicon glyphicon-edit"></span> edit
+      <span class="fa fa-edit"></span> edit
     <% end %>
   </td>
 </tr>

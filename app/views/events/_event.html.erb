@@ -18,10 +18,10 @@
 
       <% unless event.date.blank? and event.city.blank? %>
         <div class="where-when">
-          <span class="glyphicon glyphicon-calendar"></span>
+          <span class="fa fa-calendar"></span>
           <%= event.date.to_s(:gd) if event.date %>
           &nbsp; &nbsp;
-          <span class="glyphicon glyphicon-home"></span>&nbsp;
+          <span class="fa fa-home"></span>&nbsp;
           <%= event.city %>
         </div>
       <% end %>
@@ -37,7 +37,7 @@
             <dt><%= t 'show.event.website' %>:</dt>
             <dd>
               <%= link_to event.main_url do %>
-                <span class="glyphicon glyphicon-share"></span>
+                <span class="fa fa-share"></span>
                 Link
               <% end %>
             </dd>
@@ -46,7 +46,7 @@
             <dt><%= t 'show.event.speaker_list_url' %>:</dt>
             <dd>
               <%= link_to event.speaker_list_url do %>
-                <span class="glyphicon glyphicon-share"></span>
+                <span class="fa fa-share"></span>
                 Link
               <% end %>
             </dd>
@@ -54,7 +54,7 @@
           <dt><%= t 'show.event.contact_url' %>:</dt>
           <% if event.contact_twitter.present? %>
             <dd>
-            <span class="glyphicon glyphicon-bullhorn"></span>&nbsp;
+            <span class="fa fa-bullhorn"></span>&nbsp;
             <%= linked_contact_info(event.contact_twitter).html_safe %>
             </dd>
           <% end %>
@@ -65,7 +65,7 @@
           <% end %>
           <% if event.contact_email.present? %>
           <dd>
-            <span class="glyphicon glyphicon-envelope"></span>&nbsp;
+            <span class="fa fa-envelope"></span>&nbsp;
             <%= linked_contact_info(event.contact_email).html_safe %>
           </dd>
           <% end %>
@@ -124,7 +124,7 @@
         <% if event.reporter.present? %>
           <strong><%= t 'show.event.reporter' %>:</strong>
           &nbsp;
-          <span class="glyphicon glyphicon-eye-open"></span>&nbsp;
+          <span class="fa fa-eye-open"></span>&nbsp;
           <%= event.reporter %>
         <% end %>
 
@@ -132,7 +132,7 @@
 
         <% if event.reporter_twitter.present? %>
           &nbsp; &nbsp;
-          <span class="glyphicon glyphicon-bullhorn"></span>&nbsp;
+          <span class="fa fa-bullhorn"></span>&nbsp;
           <%= linked_contact_info(event.reporter_twitter).html_safe %>
         <% end %>
         <% if event.reporter_url.present? %>
@@ -141,7 +141,7 @@
         <% end %>
         <% if event.reporter_email.present? %>
           &nbsp; &nbsp;
-          <span class="glyphicon glyphicon-envelope"></span>&nbsp;
+          <span class="fa fa-envelope"></span>&nbsp;
           <%= linked_contact_info(event.reporter_email).html_safe %>
         <% end %>
       </div>
@@ -154,7 +154,7 @@
       <div class="col-md-9">
         <% if event.comments.select{|c| c.published?}.any? %>
           <%= link_to event_path(event, anchor: 'comments'), title: t('show.event.comments') do %>
-            <span class="glyphicon glyphicon-comment"></span>
+            <span class="fa fa-comment"></span>
             <%= event.comments.select{|c| c.published?}.size %>
           <% end %>
         <% end %>
@@ -163,13 +163,13 @@
         <% if current_user %>
           <%= link_to edit_admin_event_path(event) do %>
             admin-edit
-            <span class="glyphicon glyphicon-edit"></span>
+            <span class="fa fa-edit"></span>
           <% end %>
           &nbsp; &nbsp;
         <% end %>
         <%= link_to event_path(event) do %>
           <%= t 'show.event.more' %>
-          <span class="glyphicon glyphicon-arrow-right"></span>
+          <span class="fa fa-arrow-right"></span>
         <% end %>
       </div>
     </div>

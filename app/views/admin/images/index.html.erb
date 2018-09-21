@@ -4,7 +4,7 @@
   </div>
   <div class="col-sm-8 text-right">
     <%= link_to new_admin_image_path, class: 'btn btn-success' do %>
-      <span class="glyphicon glyphicon-plus-sign"></span>
+      <span class="fa fa-plus-sign"></span>
       add a image
     <% end %>
   </div>
@@ -33,13 +33,13 @@
 
         <td class="text-right">
           <%= link_to edit_admin_image_path(image) do %>
-            <span class="glyphicon glyphicon-edit"></span>
+            <span class="fa fa-edit"></span>
             edit
           <% end %>
         </td>
         <td class="text-right">
           <%= link_to admin_image_path(image), method: :delete, data: { confirm: 'Are you sure?' } do %>
-            <span class="glyphicon glyphicon-remove"></span>
+            <span class="fa fa-remove"></span>
             destroy
           <% end %>
         </td>

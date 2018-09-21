@@ -6,18 +6,18 @@
   </h3>
   <div class="col-sm-4">
     <%= link_to edit_admin_page_path(@page), class: 'btn btn-success' do %>
-      <span class="glyphicon glyphicon-edit"></span>
+      <span class="fa fa-edit"></span>
       edit
     <% end %>
     &nbsp;
     <%= link_to admin_pages_path, class: 'btn btn-default' do %>
-      <span class="glyphicon glyphicon-list"></span>
+      <span class="fa fa-list"></span>
       back to list
     <% end %>
   </div>
   <div class="col-sm-4 text-right">
     <%= link_to admin_page_path(@page), method: 'delete', data: {confirm: 'Are you sure? There is no UNDO!'}, class: 'btn btn-danger' do %>
-      <span class="glyphicon glyphicon-remove"></span>
+      <span class="fa fa-remove"></span>
       delete
     <% end %>
   </div>
