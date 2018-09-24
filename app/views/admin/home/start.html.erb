@@ -1,30 +1,30 @@
 <div class="row overview">
 
-  <div class="col-sm-4">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h2 class="panel-title">
+  <div class="col-lg-4">
+    <div class="card">
+      <div class="card-header">
+        <h2>
           <span class="fa fa-calendar"></span>
           Events
         </h2>
       </div>
-      <div class="panel-body">
-        <ul class="nav nav-pills nav-stacked">
-          <li>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
             <%= link_to admin_events_path(mod_state: 'unchecked') do %>
-              <span class="fa fa-question-sign"></span>
+              <span class="fa fa-question-circle"></span>
               unchecked
               (<%= Event.unchecked.count %>)
             <% end %>
           </li>
-          <li>
+          <li class="list-group-item">
             <%= link_to admin_events_path(mod_state: 'published') do %>
               <span class="fa fa-thumbs-up"></span>
               published
               (<%= Event.published.count %>)
             <% end %>
           </li>
-          <li>
+          <li class="list-group-item">
             <%= link_to admin_events_path(mod_state: 'hidden') do %>
               <span class="fa fa-thumbs-down"></span>
               hidden
@@ -36,31 +36,31 @@
     </div>
   </div>
 
-  <div class="col-sm-4">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h2 class="panel-title">
+  <div class="col-lg-4">
+    <div class="card">
+      <div class="card-header">
+        <h2>
           <span class="fa fa-comment"></span>
           Comments
         </h2>
       </div>
-      <div class="panel-body">
-        <ul class="nav nav-pills nav-stacked">
-          <li>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
             <%= link_to admin_comments_path(mod_state: 'unchecked') do %>
-              <span class="fa fa-question-sign"></span>
+              <span class="fa fa-question-circle"></span>
               unchecked
               (<%= Comment.unchecked.count %>)
             <% end %>
           </li>
-          <li>
+          <li class="list-group-item">
             <%= link_to admin_comments_path(mod_state: 'published') do %>
               <span class="fa fa-thumbs-up"></span>
               published
               (<%= Comment.published.count %>)
             <% end %>
           </li>
-          <li>
+          <li class="list-group-item">
             <%= link_to admin_comments_path(mod_state: 'hidden') do %>
               <span class="fa fa-thumbs-down"></span>
               hidden
@@ -73,61 +73,61 @@
     </div>
   </div>
 
-  <div class="col-sm-4">
-    <div class="panel panel-default">
-      <div class="panel-heading">
+  <div class="col-lg-4">
+    <div class="card">
+      <div class="card-header">
         <h2 class="panel-title">
           <span class="fa fa-file"></span>
           Pages
         </h2>
       </div>
-      <div class="panel-body">
-        <ul class="nav nav-pills nav-stacked">
-          <li>
+      <div class="card-body">
+        <ul class="nav list-group list-group-flush">
+          <li class="list-group-item">
             <%= link_to admin_pages_path(page_type: 'blog_post') do %>
               <span class="fa fa-leaf"></span>
               Blog Posts
               (<%= Page.blog_posts.count %>)
             <% end %>
           </li>
-          <li>
+          <li class="list-group-item">
             <%= link_to admin_pages_path(page_type: 'blog_page') do %>
               <span class="fa fa-file"></span>
               Blog Pages
               (<%= Page.blog_pages.count %>)
             <% end %>
           </li>
-          <li>
+          <li class="list-group-item">
             <%= link_to admin_pages_path(page_type: 'blog_sidebar_snippet') do %>
               <span class="fa fa-align-justify"></span>
               Blog sidebar_snippets
               (<%= Page.blog_sidebar_snippets.count %>)
             <% end %>
           </li>
-          <li>
+          <li class="list-group-item">
             <%= link_to admin_pages_path(page_type: 'sidebar_snippet') do %>
               <span class="fa fa-align-justify"></span>
               sidebar_snippets
               (<%= Page.sidebar_snippets.count %>)
             <% end %>
           </li>
-          <li>
+          <li class="list-group-item">
             <%= link_to admin_pages_path(page_type: 'menu_page') do %>
               <span class="fa fa-file"></span>
               menu_pages
               (<%= Page.menu_pages.count %>)
             <% end %>
           </li>
-          <li>
+          <li class="list-group-item">
             <%= link_to admin_blog_categories_path do %>
               <span class="fa fa-folder-open"></span>&nbsp;
               Categories (Blog)
               (<%= BlogCategory.count %>)
             <% end %>
           </li>
-          <li>
+          <li class="list-group-item">
             <%= link_to admin_images_path do %>
-              <span class="fa fa-picture"></span>&nbsp;
+              <span class="fa fa-image"></span>&nbsp;
               Images
               (<%= Image.count %>)
             <% end %>
