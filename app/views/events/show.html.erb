@@ -10,7 +10,7 @@
   </p>
   <%= link_to raw('<span class="fa fa-pencil"></span> Edit'),
               edit_event_path(@event),
-              class: 'btn btn-default' %>
+              class: 'btn btn-primary' %>
 <% end %>
 
 <% if @event.comments.published.any? %>
@@ -25,7 +25,7 @@
 <% end %>
 
 <% if current_user %>
-  <%= link_to edit_admin_event_path(@event), class: 'btn btn-default' do %>
+  <%= link_to edit_admin_event_path(@event), class: 'btn btn-primary' do %>
     Admin:
     <span class="fa fa-cog"></span>
     edit

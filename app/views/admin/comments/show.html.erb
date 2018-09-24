@@ -28,12 +28,12 @@
   <dd><%= link_to @comment.commentable.title, polymorphic_path([:admin, @comment.commentable]) %></dd>
 </dl>
 
-<%= link_to admin_comments_path, class: 'btn btn-default' do %>
+<%= link_to admin_comments_path, class: 'btn btn-primary' do %>
   <span class="fa fa-list"></span>
   Back to list of comments
 <% end %>
 
-<%= link_to edit_admin_comment_path(@comment), class: 'btn btn-default' do %>
+<%= link_to edit_admin_comment_path(@comment), class: 'btn btn-primary' do %>
   <span class="fa fa-edit"></span>
   Edit this comment
 <% end %>

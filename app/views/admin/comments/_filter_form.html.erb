@@ -1,21 +1,21 @@
 <%= form_tag(admin_comments_path, method: 'get', class: 'form-inline row', id: 'filter-form', role: 'form') do %>
 
   <div class="btn-group col-sm-6" data-toggle="buttons">
-    <label class="btn btn-default <%= 'active' if params[:mod_state] == 'all' or params[:mod_state] == nil %>">
+    <label class="btn btn-primary <%= 'active' if params[:mod_state] == 'all' or params[:mod_state] == nil %>">
       <input type="radio" value="all" name="mod_state" id="mod_state_all" autocomplete="off" <%= 'checked' if params[:mod_state] == 'all' or params[:mod_state] == nil %>>
       All
     </label>
-    <label class="btn btn-default <%= 'active' if params[:mod_state] == 'unchecked' %>">
+    <label class="btn btn-primary <%= 'active' if params[:mod_state] == 'unchecked' %>">
       <input type="radio" value="unchecked" name="mod_state" id="mod_state_unchecked" autocomplete="off" <%= 'checked' if params[:mod_state] == 'unchecked' %>>
       <span class="fa fa-question-sign"></span>
       unchecked
     </label>
-    <label class="btn btn-default <%= 'active' if params[:mod_state] == 'published' %>">
+    <label class="btn btn-primary <%= 'active' if params[:mod_state] == 'published' %>">
       <input type="radio" value="published" name="mod_state" id="mod_state_published" autocomplete="off" <%= 'checked' if params[:mod_state] == 'published' %>>
       <span class="fa fa-thumbs-up"></span>
       published
     </label>
-    <label class="btn btn-default <%= 'active' if params[:mod_state] == 'hidden' %>">
+    <label class="btn btn-primary <%= 'active' if params[:mod_state] == 'hidden' %>">
       <input type="radio" value="hidden" name="mod_state" id="mod_state_hidden" autocomplete="off" <%= 'checked' if params[:mod_state] == 'hidden' %>>
       <span class="fa fa-thumbs-down"></span>
       hidden
