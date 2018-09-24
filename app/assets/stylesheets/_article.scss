@@ -30,17 +30,14 @@ article {
     padding: 10px 0;
     font-size: 24px;
     font-weight: bold;
-  }
+    }
 
   .badge {
     background-color: $grey;
+    color: white;
     &:hover {
       background-color: $text-color;
     }
-  }
-
-  .footer {
-    padding-top: 8px;
   }
 
   .bt {
@@ -49,35 +46,12 @@ article {
   }
 }
 
-ul.pagination {
-  margin-top: 0;
-}
-
-.pagination>li>a,.pagination>li>span{
-	color:$dark-grey;
-}
-
-.pagination > .active > a {
-  color: $light-grey;
-  background: $dark-grey;
-}
-
-.pagination>li>a:hover,.pagination>li>a:focus,.pagination>li>span:hover,.pagination>li>span:focus{
-	color: $dark-grey;
-	background: $light-grey;
-}
-
-.pagination>.active>a,.pagination>.active>a:hover,.pagination>.active>a:focus,.pagination>.active>span,.pagination>.active>span:hover,.pagination>.active>span:focus{
-	color:white;
-	background-color: $dark-grey;
-	border-color: $dark-grey;
-}
 
 .comment {
   padding: 16px;
   background-color: white;
   margin-bottom: 12px;
-  
+
   h3 {
     margin-top: 4px;
     font-size: 18px;
