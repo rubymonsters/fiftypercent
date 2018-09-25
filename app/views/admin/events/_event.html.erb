@@ -22,7 +22,7 @@
         <% unless event.unchecked? %>
           <li class="dropdown-item">
             <%= link_to uncheck_admin_event_path(event), method: 'patch', remote: true do %>
-              <span class="fa fa-question-sign"></span>
+              <span class="fa fa-question-circle"></span>
               mark unchecked
             <% end %>
           </li>
