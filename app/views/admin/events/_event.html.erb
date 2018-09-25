@@ -13,14 +13,14 @@
     <%= event.city %>
   </td>
   <td class="mod-buttons">
-    <div class="btn-group btn-group-xs">
-      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+    <div class="btn-group btn-group-xs dropdown">
+      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
         <span class="fa fa-cog"></span>
         <span class="caret"></span>
       </button>
       <ul class="dropdown-menu" role="menu">
         <% unless event.unchecked? %>
-          <li>
+          <li class="dropdown-item">
             <%= link_to uncheck_admin_event_path(event), method: 'patch', remote: true do %>
               <span class="fa fa-question-sign"></span>
               mark unchecked
@@ -28,7 +28,7 @@
           </li>
         <% end %>
         <% unless event.published? %>
-          <li>
+          <li class="dropdown-item">
             <%= link_to publish_admin_event_path(event), method: 'patch', remote: true do %>
               <span class="fa fa-thumbs-up"></span>
               publish
@@ -36,7 +36,7 @@
           </li>
         <% end %>
         <% unless event.hidden? %>
-          <li>
+          <li class="dropdown-item">
             <%= link_to hide_admin_event_path(event), method: 'patch', remote: true do %>
               <span class="fa fa-thumbs-down"></span>
               hide
