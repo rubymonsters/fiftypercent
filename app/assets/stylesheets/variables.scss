@@ -33,6 +33,7 @@ $blue:               #375E97;
 $dark-blue:          darken($blue, 50%);
 $red:                #c5141c;
 $dark-red:           #BF3112;
+$admin-steel-blue:   #4682B4;
 
 $yellow:             #FFBB00;
 
@@ -47,4 +48,5 @@ $content-shadow:     $light-grey;
 
 $content-line:       $grey;
 
-$primary: $dark-grey;
+$primary:            $dark-grey;
+$secondary:          $admin-steel-blue;

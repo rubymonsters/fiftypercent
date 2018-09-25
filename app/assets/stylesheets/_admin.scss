@@ -1,4 +1,4 @@
-$admin-link-color: #4682B4; //SteelBlue
+$admin-link-color: $admin-steel-blue;
 
 .admin {
 
@@ -21,4 +21,7 @@ $admin-link-color: #4682B4; //SteelBlue
     }
   }
 
+  .btn-secondary {
+    background-color: $admin-steel-blue;
+  }
 }
