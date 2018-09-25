@@ -47,5 +47,14 @@ a.internal-info {
 .event-properties {
   h4 {
     border-bottom: 1px solid gray;
+    color: gray;
+    margin-top: 20px;
+  }
+  dl {
+    // margin-left: 20px;
+  }
+  dd {
+    background-color: $very-light-grey;
+    padding: 5px;
   }
 }

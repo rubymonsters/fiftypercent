@@ -1,135 +1,137 @@
-<div class="action-bar row">
-  <div class="col-sm-3">
-    <h4><%= event_mod_state_title(@event) %></h4>
-  </div>
-  <div class="col-sm-3">
-    <div class="btn-group btn-group-sm" role="group" aria-label="...">
-      <% unless @event.unchecked? %>
-        <%= link_to uncheck_admin_event_path(@event), class: 'btn btn-primary', method: 'patch' do %>
-          <span class="fa fa-question-sign"></span>
-          uncheck
+<div class="container mb-5">
+  <div class="action-bar row">
+    <div class="col-sm-3">
+      <h4><%= event_mod_state_title(@event) %></h4>
+    </div>
+    <div class="col-sm-3">
+      <div class="btn-group btn-group-sm" role="group" aria-label="...">
+        <% unless @event.unchecked? %>
+          <%= link_to uncheck_admin_event_path(@event), class: 'btn btn-secondary', method: 'patch' do %>
+            <span class="fa fa-question-circle"></span>
+            uncheck
+          <% end %>
         <% end %>
-      <% end %>
-      <% unless @event.published? %>
-        <%= link_to publish_admin_event_path(@event), class: 'btn btn-primary', method: 'patch' do %>
-          <span class="fa fa-thumbs-up"></span>
-          publish
+        <% unless @event.published? %>
+          <%= link_to publish_admin_event_path(@event), class: 'btn btn-secondary mr-1', method: 'patch' do %>
+            <span class="fa fa-thumbs-up"></span>
+            publish
+          <% end %>
         <% end %>
-      <% end %>
-      <% unless @event.hidden? %>
-        <%= link_to hide_admin_event_path(@event), class: 'btn btn-primary', method: 'patch' do %>
-          <span class="fa fa-thumbs-down"></span>
-          hide
+        <% unless @event.hidden? %>
+          <%= link_to hide_admin_event_path(@event), class: 'btn btn-secondary', method: 'patch' do %>
+            <span class="fa fa-thumbs-down"></span>
+            hide
+          <% end %>
         <% end %>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <%= link_to edit_admin_event_path, class: 'btn btn-secondary' do  %>
+        <span class="fa fa-edit"></span>
+        edit
       <% end %>
+      <%= link_to admin_event_path, method: 'delete', data: {confirm: 'Are you sure? You cannot undo this! Will also destroy the associated comments.'}, class: 'btn btn-danger' do  %>
+        <span class="fa fa-remove"></span>
+        delete
+      <% end %>
+      <%= link_to admin_events_path, class: 'btn btn-secondary' do  %>
+        <span class="fa fa-list"></span>
+        back to list
+      <% end %>
+      <%= link_to admin_comments_path(commentable_type: 'Event', commentable_id: @event.id), class: 'btn btn-secondary', title: 'Comments' do  %>
+        <span class="fa fa-comment"></span>
+        <%= @event.comments.count %>
+      <% end %>
+
     </div>
   </div>
-  <div class="col-sm-6">
-    <%= link_to edit_admin_event_path, class: 'btn btn-success' do  %>
-      <span class="fa fa-edit"></span>
-      edit
-    <% end %>
-    <%= link_to admin_event_path, method: 'delete', data: {confirm: 'Are you sure? You cannot undo this! Will also destroy the associated comments.'}, class: 'btn btn-danger' do  %>
-      <span class="fa fa-remove"></span>
-      delete
-    <% end %>
-    <%= link_to admin_events_path, class: 'btn btn-primary' do  %>
-      <span class="fa fa-list"></span>
-      back to list
-    <% end %>
-    <%= link_to admin_comments_path(commentable_type: 'Event', commentable_id: @event.id), class: 'btn btn-primary', title: 'Comments' do  %>
-      <span class="fa fa-comment"></span>
-      <%= @event.comments.count %>
-    <% end %>
 
-  </div>
-</div>
+  <div class="event-properties">
+    <h4>Was?</h4>
+    <dl>
+      <dt>Title:</dt>
+      <dd><%= @event.title %></dd>
 
-<div class="event-properties">
-  <h4>Was?</h4>
-  <dl class="dl-horizontal">
-    <dt>Title</dt>
-    <dd><%= @event.title %></dd>
+      <dt>Description</dt>
+      <dd><%= @event.description %></dd>
 
-    <dt>Description</dt>
-    <dd><%= @event.description %></dd>
-
-    <dt>Main URL</dt>
-    <dd><%= link_to @event.main_url, @event.main_url %></dd>
-  </dl>
-
-  <% if @event.body.present? %>
-    <h4>Body (Text vom alten wordpress-Blog)</h4>
-    <dl class="dl-horizontal">
-      <dt>Body</dt>
-      <dd><%= simple_format(@event.body) %></dd>
+      <dt>Main URL</dt>
+      <dd><%= link_to @event.main_url, @event.main_url %></dd>
     </dl>
-  <% end %>
 
-  <h4>Tags:</h4>
-  <% @event.tags.each do |tag| %>
-    <span class="badge"><%= tag.name %></span>
-  <% end %>
+    <% if @event.body.present? %>
+      <h4>Body (Text vom alten wordpress-Blog)</h4>
+      <dl>
+        <dt>Body</dt>
+        <dd><%= simple_format(@event.body) %></dd>
+      </dl>
+    <% end %>
 
-  <h4>Wann und wo?</h4>
-  <dl class="dl-horizontal">
-    <dt>Date</dt>
-    <dd><%= @event.date.to_s(:gd) if @event.date %></dd>
+    <h4>Tags:</h4>
+    <% @event.tags.each do |tag| %>
+      <span class="badge badge-primary"><%= tag.name %></span>
+    <% end %>
 
-    <dt>City</dt>
-    <dd><%= @event.city %></dd>
+    <h4>Wann und wo?</h4>
+    <dl>
+      <dt>Date</dt>
+      <dd><%= @event.date.to_s(:gd) if @event.date %></dd>
 
-    <dt>Country</dt>
-    <dd><%= @event.country_name %></dd>
-  </dl>
+      <dt>City</dt>
+      <dd><%= @event.city %></dd>
 
-  <h4>Wer?</h4>
-  <dl class="dl-horizontal">
-    <dt>Organizers</dt>
-    <dd><%= simple_format(@event.organizers) %></dd>
+      <dt>Country</dt>
+      <dd><%= @event.country_name %></dd>
+    </dl>
 
-    <dt>Organizer Twitter</dt>
-    <dd><%= @event.contact_twitter %></dd>
-    <dt>Organizer Contact URL</dt>
-    <dd><%= @event.contact_url %></dd>
-    <dt>Organizer Mail</dt>
-    <dd><%= @event.contact_email %></dd>
-  </dl>
+    <h4>Wer?</h4>
+    <dl>
+      <dt>Organizers</dt>
+      <dd class="col-10"><%= simple_format(@event.organizers) %></dd>
 
-  <h4>Sprecher_innen</h4>
-  <dl class="dl-horizontal">
-    <dt>Speaker_list_url</dt>
-    <dd><%= @event.speaker_list_url %></dd>
+      <dt>Organizer Twitter</dt>
+      <dd><%= @event.contact_twitter %></dd>
+      <dt>Organizer Contact URL</dt>
+      <dd><%= @event.contact_url %></dd>
+      <dt>Organizer Mail</dt>
+      <dd><%= @event.contact_email %></dd>
+    </dl>
 
-    <dt>Woman</dt>
-    <dd><%= @event.woman %></dd>
+    <h4>Sprecher_innen</h4>
+    <dl>
+      <dt>Speaker_list_url</dt>
+      <dd><%= @event.speaker_list_url %></dd>
 
-    <dt>Total</dt>
-    <dd><%= @event.total %></dd>
+      <dt>Woman</dt>
+      <dd><%= @event.woman %></dd>
 
-    <dt>Anmerkung</dt>
-    <dd><%= @event.remark %></dd>
-  </dl>
+      <dt>Total</dt>
+      <dd><%= @event.total %></dd>
 
-  <h4>Gezählt von</h4>
-  <dl class="dl-horizontal">
-    <dt>Gezählt von</dt>
-    <dd><%= @event.reporter %></dd>
+      <dt>Anmerkung</dt>
+      <dd><%= @event.remark %></dd>
+    </dl>
 
-    <dt>Contact twitter</dt>
-    <dd><%= @event.reporter_twitter %></dd>
-    <dt>Contact URL</dt>
-    <dd><%= @event.reporter_url %></dd>
-    <dt>Contact Mail</dt>
-    <dd><%= @event.reporter_email %></dd>
-  </dl>
+    <h4>Gezählt von</h4>
+    <dl class="dl-horizontal">
+      <dt>Gezählt von</dt>
+      <dd><%= @event.reporter %></dd>
 
-  <h4>Internal notes <small>(not visible on site)</small></h4>
-  <dl class="dl-horizontal">
-    <dt>User-Notes</dt>
-    <dd><%= @event.internal_user_info %></dd>
+      <dt>Contact twitter</dt>
+      <dd><%= @event.reporter_twitter %></dd>
+      <dt>Contact URL</dt>
+      <dd><%= @event.reporter_url %></dd>
+      <dt>Contact Mail</dt>
+      <dd><%= @event.reporter_email %></dd>
+    </dl>
 
-    <dt>Admin-Notes</dt>
-    <dd><%= @event.internal_admin_info %></dd>
-  </dl>
+    <h4>Internal notes <small>(not visible on site)</small></h4>
+    <dl class="dl-horizontal">
+      <dt>User-Notes</dt>
+      <dd><%= @event.internal_user_info %></dd>
+
+      <dt>Admin-Notes</dt>
+      <dd><%= @event.internal_admin_info %></dd>
+    </dl>
+  </div>
 </div>

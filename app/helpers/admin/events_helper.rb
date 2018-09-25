@@ -11,7 +11,7 @@ module Admin::EventsHelper
     icon = case event.mod_state
     when 'ok'     then 'thumbs-up'
     when 'hidden' then 'thumbs-down'
-    else 'question-sign'
+    else 'question-circle'
     end
     "<span class=\"fa fa-#{icon}\"></span>&nbsp; mod.-state: <strong>#{event.mod_state}</strong>".html_safe
   end
