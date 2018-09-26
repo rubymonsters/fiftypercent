@@ -1,6 +1,23 @@
 body {
-	// font-family: $sans-serif;
-	// color: $font-color;
 	margin-top: 120px;
-	// background-color: $white-smoke;
+}
+
+.dl-horizontal dt {
+  float: left;
+  width: 160px;
+  clear: left;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dl-horizontal dd {
+  margin-left: 180px;
+}
+
+.dl-horizontal > dd:after {
+  display: table;
+  content: "";
+  clear: both;
 }

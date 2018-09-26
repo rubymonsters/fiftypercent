@@ -1,6 +1,6 @@
 <% if f.object.page_type == 'blog_post' %>
-  <div class="form-group">
-    <label for="" class="control-label col-sm-2">
+  <div class="form-group row form-horizontal">
+    <label for="" class="col-form-label col-sm-2">
       <%= f.label "Public" %>
     </label>
     <div class="existing-ranks col-sm-10">
@@ -12,7 +12,7 @@
 <%= f.text_field :slug, label: 'Slug',
                         help: 'uniq identifyer, part of URL, only: a-z0-9_',
                         control_col: "col-sm-4" %>
-<div class="<%= 'hide' if @is_new_blog_post %>">
+<div class="<%= 'd-none' if @is_new_blog_post %>">
   <%= f.form_group :page_type, label: { text: "Text-Type" }, help: "Where and how to display the text?" do %>
     <%= f.radio_button :page_type, "blog_post",            label: "Blog Post",            inline: true %>
     <%= f.radio_button :page_type, "blog_page",            label: "Blog Page",            inline: true %>
@@ -26,7 +26,7 @@
                             help: 'Order to sort elements in menu or sidebar',
                             control_col: "col-sm-2"} %>
   <div class="form-group">
-    <label for="" class="control-label col-sm-2">
+    <label for="" class="col-form-label col-sm-2">
       &nbsp;
     </label>
     <div class="existing-ranks col-sm-10">
@@ -40,7 +40,7 @@
 <% if f.object.page_type == 'blog_post' %>
   <%= f.collection_check_boxes :blog_category_ids, BlogCategory.order(:rank).all, :id, :name, inline: true %>
 <% end %>
-
+<hr>
 <%= f.fields_for :translations, f.object.translations.sort_by(&:locale) do |translation| %>
   <h4>
     <%= image_tag "flags/#{translation.object.locale.to_s}.png" %>
@@ -51,5 +51,3 @@
   <%= translation.text_area :body, help: (I18n.t 'new.blog_post.body_help').html_safe %>
   <hr>
 <% end %>
-
-

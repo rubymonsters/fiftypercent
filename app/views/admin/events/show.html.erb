@@ -1,5 +1,5 @@
 <div class="container mb-5">
-  <div class="action-bar row">
+  <div class="action-bar row border-bottom pb-3">
     <div class="col-sm-3">
       <h4><%= event_mod_state_title(@event) %></h4>
     </div>
@@ -48,7 +48,7 @@
 
   <div class="event-properties">
     <h4>Was?</h4>
-    <dl>
+    <dl class="dl-horizontal">
       <dt>Title:</dt>
       <dd><%= @event.title %></dd>
 
@@ -61,7 +61,7 @@
 
     <% if @event.body.present? %>
       <h4>Body (Text vom alten wordpress-Blog)</h4>
-      <dl>
+      <dl class="dl-horizontal">
         <dt>Body</dt>
         <dd><%= simple_format(@event.body) %></dd>
       </dl>
@@ -73,7 +73,7 @@
     <% end %>
 
     <h4>Wann und wo?</h4>
-    <dl>
+    <dl class="dl-horizontal">
       <dt>Date</dt>
       <dd><%= @event.date.to_s(:gd) if @event.date %></dd>
 
@@ -85,7 +85,7 @@
     </dl>
 
     <h4>Wer?</h4>
-    <dl>
+    <dl class="dl-horizontal">
       <dt>Organizers</dt>
       <dd class="col-10"><%= simple_format(@event.organizers) %></dd>
 
@@ -98,7 +98,7 @@
     </dl>
 
     <h4>Sprecher_innen</h4>
-    <dl>
+    <dl class="dl-horizontal">
       <dt>Speaker_list_url</dt>
       <dd><%= @event.speaker_list_url %></dd>
 

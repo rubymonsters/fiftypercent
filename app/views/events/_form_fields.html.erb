@@ -10,7 +10,7 @@
   <%= f.date_select :date, start_year: 2016 %>
   <%= f.text_field :city %>
   <div class="form-group">
-    <%= label_tag 'event_country_code', t('helpers.label.event.country_code'), class: 'control-label' %>
+    <%= label_tag 'event_country_code', t('helpers.label.event.country_code'), class: 'col-form-label' %>
     <%= country_select :event, :country_code, {priority_countries: %w(DE AU CH FR NL GB US)}, {class: 'form-control'} %>
     <span class="help-block"><%= t('activerecord.help.event.country_code') %></span>
   </div>

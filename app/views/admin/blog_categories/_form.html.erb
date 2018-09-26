@@ -1,4 +1,4 @@
-<%= bootstrap_form_for([:admin, @blog_category], layout: :horizontal, html: {class: 'blog-category-form'}) do |f| %>
+<%= bootstrap_form_for([:admin, @blog_category], layout: :horizontal, html: {class: 'my-3'}) do |f| %>
 
   <% if @blog_category.errors.any? %>
     <div id="error_explanation">
@@ -30,8 +30,6 @@
                             help: 'Order to sort elements in menu or sidebar',
                             control_col: "col-sm-2"} %>
 
-  <div class="col-sm-6 text-right">
-    <%= f.submit 'Save', class: "btn btn-secondary" %>
-  </div>
+  <%= f.submit 'Save', class: "btn btn-secondary" %>
 
 <% end %>
