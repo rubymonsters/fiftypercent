@@ -12,6 +12,7 @@ gem 'jquery-rails'
 gem 'uglifier', '>= 2.7.0'
 gem 'execjs'
 # gem 'therubyracer',  platforms: :ruby
+gem 'mini_racer'
 
 gem 'bcrypt'
 gem 'rails-i18n'

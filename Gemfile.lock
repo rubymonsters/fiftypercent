@@ -127,6 +127,7 @@ GEM
       activerecord
       kaminari-core (= 1.1.1)
     kaminari-core (1.1.1)
+    libv8 (6.7.288.46.1)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -145,6 +146,8 @@ GEM
     mimemagic (0.3.2)
     mini_mime (1.0.1)
     mini_portile2 (2.3.0)
+    mini_racer (0.2.2)
+      libv8 (>= 6.3)
     minitest (5.11.3)
     minitest-reporters (1.3.4)
       ansi
@@ -273,6 +276,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   listen
+  mini_racer
   minitest-reporters
   morrisjs-rails
   nokogiri
