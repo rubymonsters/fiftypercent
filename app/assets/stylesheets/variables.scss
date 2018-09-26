@@ -1,6 +1,12 @@
 /*fonts*/
 
 @font-face {
+  font-family: 'TitilliumWeb Bold';
+  src:font-url('TitilliumWeb-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
   font-family: 'OpenSans';
   src: font_url('OpenSans/OpenSans-Regular-webfont.eot');
   src: font_url('OpenSans/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
@@ -39,8 +45,11 @@ $yellow:             #FFBB00;
 
 $text-color:         $dark-grey;
 
+// is a bootsrap var that sets all links
 $link-color:         $grey;
-$link-color-hover:   darken($link-color, 25%);
+$link-hover-color:   darken($link-color, 25%);
+// is a bootsrap var that sets the text color
+$body-color:         $dark-grey;
 
 $background:         #FFF;
 $content-background: $very-light-grey;

@@ -5,17 +5,8 @@ article {
   box-shadow: 0px 3px 0px $content-shadow;
   background-color: $content-background;
 
-
   h1 {
-    font-size: 32px;
     font-family: 'TitilliumWeb Bold';
-    /*a {*/
-      /*color: #555;*/
-      /*&:hover {*/
-        /*color: #888;*/
-      /*}*/
-    /*}*/
-
   }
 
   .where-when {
@@ -45,7 +36,6 @@ article {
     border-top: 1px solid $content-line;
   }
 }
-
 
 .comment {
   padding: 16px;

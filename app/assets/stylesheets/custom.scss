@@ -4,7 +4,7 @@ body {
 
 .dl-horizontal dt {
   float: left;
-  width: 160px;
+  width: 165px;
   clear: left;
   text-align: right;
   overflow: hidden;
@@ -20,4 +20,12 @@ body {
   display: table;
   content: "";
   clear: both;
+}
+
+.event__link--more-male {
+    color: $blue;
+}
+
+.event__link--more-female {
+    color: $red;
 }
