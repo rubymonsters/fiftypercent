@@ -24,8 +24,10 @@
         <%= yield %>
       </div>
       <% if layout_needs_sidebar?  %>
-        <div class='col-md-12 col-lg-4' id='sidebar'>
-          <%= render 'shared/sidebar' %>
+        <div class='col-md-12 col-lg-4'>
+          <section id='sidebar'>
+            <%= render 'shared/sidebar' %>
+          </section>
         </div>
       <% else %>
         <div class='col-md-12 col-lg-4'>&nbsp;</div>
