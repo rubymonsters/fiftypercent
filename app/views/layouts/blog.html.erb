@@ -15,16 +15,16 @@
 <body class="blog">
 
   <%= render 'shared/blog_header' %>
-  <div id="blog-content">
+  <div id="blog-content" class="container">
 
     <% if Rails.env.development? %>
       <%= render 'shared/debug' %>
     <% end %>
     <%= flash_messages %>
 
-    <div class="layout-wrapper pb+ layout">
+    <div class="row">
 
-      <div class="layout__item 1/1">
+      <div class="col-sm-12">
         <% if @blog_category %>
           <h2>
             <i class="fa fa-folder-open-o"></i>&nbsp;
@@ -34,11 +34,11 @@
 
       </div>
 
-      <div class="layout__item 3/4 portable-1/1">
+      <div class="col-sm-12 col-md-8">
         <%= yield %>
       </div><!--
 
-      --><div class="layout__item 1/4 portable-1/1">
+      --><div class="col-sm-12 col-md-4">
         <%= render 'shared/blog_sidebar' %>
       </div>
     </div>
