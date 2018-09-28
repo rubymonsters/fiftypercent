@@ -1,4 +1,4 @@
-<article class="blog-content__article p mb">
+<article class="blog-content__article mb-3">
   <hr>
   <i class="fa fa-clock-o"></i>&nbsp;
   <%= post.created_at.to_s(:gdt) %>
@@ -10,14 +10,14 @@
   <hr>
 
   <h1>
-    <%= link_to post.title, blog_post_path(post.id), class: 'blog__link' %>
+    <%= link_to post.title, blog_post_path(post.id) %>
   </h1>
   <% if post.abstract.present? %>
     <div class="abstract">
       <%= markdown(post.abstract) %>
     </div>
     <p>
-      <%= link_to t('blog.blogarticle.more'), blog_post_path(post.id), class: 'blog__link' %>
+      <%= link_to t('blog.blogarticle.more'), blog_post_path(post.id) %>
     </p>
   <% else %>
     <div>

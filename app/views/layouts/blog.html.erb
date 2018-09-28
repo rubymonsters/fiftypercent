@@ -23,22 +23,16 @@
     <%= flash_messages %>
 
     <div class="row">
-
-      <div class="col-sm-12">
+      <div class="col-md-12 col-lg-8">
         <% if @blog_category %>
           <h2>
             <i class="fa fa-folder-open-o"></i>&nbsp;
             <%= @blog_category.name %>
           </h2>
         <% end %>
-
-      </div>
-
-      <div class="col-sm-12 col-md-8">
         <%= yield %>
-      </div><!--
-
-      --><div class="col-sm-12 col-md-4">
+      </div>
+      <div class="col-md-12 col-lg-4">
         <%= render 'shared/blog_sidebar' %>
       </div>
     </div>

@@ -23,30 +23,17 @@
 @import "font-awesome";
 @import "bootstrap";
 
-#blog-header {
-  background: $bg-color-grey;
-}
-
 body {
 	margin-top: 120px;
 }
 
-#blog-header__home-link {
-  font-size: 1.8rem;
+/* header */
+#blog-header {
+  background: $bg-color-grey;
 }
 
-article.blog-post {
-  h2 {
-    border-bottom: 1px solid #ccc;
-    margin-top: 0;
-    margin-bottom: 2px;
-    padding-bottom: 4px;
-  }
-  .byline {
-    margin-top: 0;
-    margin-bottom: 6px;
-    color: #aaa;
-  }
+#blog-header__home-link {
+  font-size: 1.8rem;
 }
 
 /* article */
@@ -55,7 +42,7 @@ article.blog-post {
   padding: 5px 15px;
 }
 
-.blog-content__article img{
+.blog-content__article img {
   max-width: 100%;
   max-height: 100%;
 }

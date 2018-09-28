@@ -38,3 +38,4 @@ $body-color:         $dark-grey;
 // Bootsrap Settings for the link element.
 $link-color:         $blue;
 $link-hover-color:   darken($link-color, 25%);
+$link-hover-decoration: none !default;
