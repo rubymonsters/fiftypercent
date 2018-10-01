@@ -1,52 +1,41 @@
 <%# admin_header_class = 'admin' if controller_path =~ /admin\// %>
 <header>
 
-  <nav class="navbar-expand-lg navbar-light fixed-top pr-5 py-0 border-bottom" id=<%= controller_path =~ /admin\// ? "admin__header--color" : "blog-header" %> >
-    <div class="container-fluid">
-      <div class="row flex-nowrap justify-content-between align-items-center">
-        <div class="pl-5">
-          <%= link_to(root_path, id: 'header__home-link', class: 'navbar-brand p-0 d-none d-md-inline-block') do %>
-            <%= image_tag('logo_header.png', alt: 'logo', id: 'header__logo') %>
-          <% end %>
-        </div>
+  <nav class="navbar navbar-expand-md navbar-light fixed-top pr-5 py-0 border-bottom" style="justify-content: space-between;" id=<%= controller_path =~ /admin\// ? "admin__header--color" : "blog-header" %> >
+    <%= link_to(root_path, id: 'header__home-link', class: 'navbar-brand p-0 d-none d-md-inline-block') do %>
+      <%= image_tag('logo_header.png', alt: 'logo', id: 'header__logo') %>
+    <% end %>
 
-        <div>
-          <%= link_to('Speakerinnen* Blog', root_path, id: 'blog-header__home-link') %>
-        </div>
+    <%= link_to('Speakerinnen* Blog', root_path, id: 'blog-header__home-link', class: 'mr-auto') %>
 
-        <div class="d-flex justify-content-end align-items-center dropdown ">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="fa fa-bars"></span>
+    </button>
 
-          <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="fa fa-bars"></span>
-          </button>
-
-          <div class="collapse navbar-collapse justify-content-end dropdown-menu" id="navbarNavDropdown">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item pl-3">
-                <a class="dropdown-toggle nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  More
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <%= link_to 'Speakerinnen.org', 'https://speakerinnen.org/', target: '_blank', class: 'dropdown-item' %>
-                  <%= link_to 'Fiftypercent', 'https://50prozent.speakerinnen.org/', target: '_blank', class: 'dropdown-item'%>
-                  <%= link_to t(:contact, scope: 'pages.home.footer'), "https://speakerinnen.org/#{I18n.locale}/contact", class: 'dropdown-item'%>
-                </div>
-              </li>
-              <li class="nav-item pl-3">
-                <a class="dropdown-toggle" href="#" id="navbarDropdownMenuLinkLang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span class="fa fa-globe"></span>
-                </a>
-                <div class="dropdown-menu sans-serif" aria-labelledby="navbarDropdownMenuLinkLang" id="DropdownLanguages">
-                  <%= link_to 'EN', {locale: :en}, class: "dropdown-item #{'active' if I18n.locale == :en }" %>
-                  <%= link_to 'DE', {locale: :de}, class: "dropdown-item #{'active' if I18n.locale == :de }" %>
-                </div>
-              </li>
-            </ul>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-md-auto d-md-flex">
+        <li class="nav-item dropdown pl-3">
+          <a class="dropdown-toggle nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            More
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <%= link_to 'Speakerinnen.org', 'https://speakerinnen.org/', target: '_blank', class: 'dropdown-item' %>
+            <%= link_to 'Fiftypercent', 'https://50prozent.speakerinnen.org/', target: '_blank', class: 'dropdown-item'%>
+            <%= link_to t(:contact, scope: 'pages.home.footer'), "https://speakerinnen.org/#{I18n.locale}/contact", class: 'dropdown-item'%>
           </div>
-        </div> <!-- d-flex -->
+        </li>
+        <li class="nav-item dropdown pl-3">
+          <a class="dropdown-toggle nav-link" href="#" id="navbarDropdownMenuLinkLang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="fa fa-globe"></span>
+          </a>
+          <div class="dropdown-menu sans-serif" aria-labelledby="navbarDropdownMenuLinkLang" id="DropdownLanguages">
+            <%= link_to 'EN', {locale: :en}, class: "dropdown-item #{'active' if I18n.locale == :en }" %>
+            <%= link_to 'DE', {locale: :de}, class: "dropdown-item #{'active' if I18n.locale == :de }" %>
+          </div>
+        </li>
+      </ul>
+    </div>
 
-      </div> <!-- row -->
-    </div> <!-- container-fluid -->
   </nav>
 
   <!-- Anchor for top -->
