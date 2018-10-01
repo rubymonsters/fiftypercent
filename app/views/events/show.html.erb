@@ -8,9 +8,9 @@
     Counting from the moment, this page was loaded by
     you browser.
   </p>
-  <%= link_to raw('<span class="glyphicon glyphicon-pencil"></span> Edit'),
+  <%= link_to raw('<span class="fa fa-pencil"></span> Edit'),
               edit_event_path(@event),
-              class: 'btn btn-default' %>
+              class: 'btn btn-primary' %>
 <% end %>
 
 <% if @event.comments.published.any? %>
@@ -25,9 +25,9 @@
 <% end %>
 
 <% if current_user %>
-  <%= link_to edit_admin_event_path(@event), class: 'btn btn-default' do %>
+  <%= link_to edit_admin_event_path(@event), class: 'btn btn-primary' do %>
     Admin:
-    <span class="glyphicon glyphicon-cog"></span>
+    <span class="fa fa-cog"></span>
     edit
   <% end %>
 

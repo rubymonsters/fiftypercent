@@ -1,51 +1,46 @@
-<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" role="navigation">
   <div class="container">
+    <%= link_to admin_root_path, class: 'navbar-brand pr-5' do %>
+      <span class="fa fa-list"></span>
+      50percent
+    <% end %>
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to admin_root_path, class: 'navbar-brand' do %>
-        <span class="glyphicon glyphicon-list"></span>
-        50percent
-      <% end %>
-    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="nav navbar-nav justify-content-end">
+        <li class="nav-item">
           <% frontend_url = Rails.env.development? ? root_path : 'https://50prozent.speakerinnen.org/' %>
-          <%= link_to frontend_url do %>
-            <span class="glyphicon glyphicon-globe"></span>
+          <%= link_to frontend_url, class: "nav-link"  do %>
+            <span class="fa fa-globe"></span>
             Visit Frontend
           <% end %>
         </li>
-        <li>
-          <%= link_to 'http://blog.speakerinnen.org', target: '_blank' do %>
-            <span class="glyphicon glyphicon-leaf"></span>
+        <li class="nav-item">
+          <%= link_to 'http://blog.speakerinnen.org', target: '_blank', class: "nav-link"  do %>
+            <span class="fa fa-leaf"></span>
             Visit Blog
           <% end %>
         </li>
-        <li>
-          <%= link_to admin_events_path do %>
-            <span class="glyphicon glyphicon-calendar"></span>
+        <li class="nav-item">
+          <%= link_to admin_events_path, class: "nav-link"  do %>
+            <span class="fa fa-calendar"></span>
             Events
           <% end %>
         </li>
-        <li>
-          <%= link_to admin_comments_path do %>
-            <span class="glyphicon glyphicon-comment"></span>
+        <li class="nav-item">
+          <%= link_to admin_comments_path, class: "nav-link"  do %>
+            <span class="fa fa-comment"></span>
             Comments
           <% end %>
         </li>
-        <li>
-          <%= link_to log_out_path do %>
-            <span class="glyphicon glyphicon-user"></span>
+        <li class="nav-item">
+          <%= link_to log_out_path, class: "nav-link"  do %>
+            <span class="fa fa-user"></span>
             <%= current_user.email %>
-            <span class="glyphicon glyphicon-log-in"></span>
+            <span class="fa fa-log-in"></span>
             Log out
           <% end %>
         </li>

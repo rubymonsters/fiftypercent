@@ -1,22 +1,24 @@
+<div class="container">
 <% if @is_new_blog_post %>
   <h2>Write new blog post:</h2>
 <% else %>
   <h2>Write new page or snippet:</h2>
 <% end %>
 
-<%= bootstrap_form_for([:admin, @page], layout: :horizontal, html: {class: 'page-form'}) do |f| %>
+<%= bootstrap_form_for([:admin, @page], layout: :horizontal, html: {class: 'pt-3 page-form form-horizontal'}) do |f| %>
   <%= render partial: 'form_fields', locals: {f: f} %>
   <div class="row">
     <div class="col-sm-6">
       <div class="syntax-help-link">
         <%= link_to 'http://daringfireball.net/projects/markdown/syntax', target: '_blank' do %>
-          <span class="glyphicon glyphicon-question-sign"></span>
+          <span class="fa fa-question-circle"></span>
           Markdown Syntax Help
         <% end %>
       </div>
     </div>
     <div class="col-sm-6 text-right">
-      <%= f.submit 'Save', class: "btn btn-success" %>
+      <%= f.submit 'Save', class: "btn btn-secondary" %>
     </div>
   </div>
 <% end %>
+  </div>

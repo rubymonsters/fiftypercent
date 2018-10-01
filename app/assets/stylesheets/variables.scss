@@ -1,0 +1,61 @@
+/*fonts*/
+
+@font-face {
+  font-family: 'TitilliumWeb Bold';
+  src:font-url('TitilliumWeb-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OpenSans';
+  src: font_url('OpenSans/OpenSans-Regular-webfont.eot');
+  src: font_url('OpenSans/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+  font_url('OpenSans/OpenSans-Regular-webfont.woff') format('woff'),
+  font_url('OpenSans/OpenSans-Regular-webfont.ttf') format('truetype'),
+  font_url('OpenSans/OpenSans-Regular-webfont.svg#open_sansbold') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: font_url('OpenSans/OpenSans-Bold-webfont.eot');
+  src: font_url('OpenSans/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+  font_url('OpenSans/OpenSans-Bold-webfont.woff') format('woff'),
+  font_url('OpenSans/OpenSans-Bold-webfont.ttf') format('truetype'),
+  font_url('OpenSans/OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* colors */
+$very-light-grey:    #f5f5f5;
+$light-grey:         #DCDCDC;
+$grey:               #7F7F7F;
+$dark-grey:          #4E4E4E;
+$very-dark-grey:     #333333;
+
+$blue:               #375E97;
+$dark-blue:          darken($blue, 50%);
+$red:                #c5141c;
+$dark-red:           #BF3112;
+$admin-steel-blue:   #4682B4;
+
+$yellow:             #FFBB00;
+
+$text-color:         $dark-grey;
+
+// is a bootsrap var that sets all links
+$link-color:         $grey;
+$link-hover-color:   darken($link-color, 25%);
+// is a bootsrap var that sets the text color
+$body-color:         $dark-grey;
+
+$background:         #FFF;
+$content-background: $very-light-grey;
+$content-shadow:     $light-grey;
+
+$content-line:       $grey;
+
+$primary:            $dark-grey;
+$secondary:          $admin-steel-blue;

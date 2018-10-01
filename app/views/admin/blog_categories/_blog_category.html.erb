@@ -1,7 +1,7 @@
 <tr id="<%= dom_id(blog_category) %>">
   <td>
     <%= link_to admin_blog_category_path(blog_category) do %>
-      <span class="glyphicon glyphicon-folder-open"></span>
+      <span class="fa fa-folder-open"></span>
       &nbsp;
       <%= blog_category.slug %>
     <% end %>
@@ -15,7 +15,7 @@
   <% end %>
   <td>
     <%= link_to edit_admin_blog_category_path(blog_category) do %>
-      <span class="glyphicon glyphicon-edit"></span> edit
+      <span class="fa fa-edit"></span> edit
     <% end %>
   </td>
 </tr>

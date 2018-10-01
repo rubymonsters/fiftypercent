@@ -1,54 +1,57 @@
-<div class="row">
-  <h3 class="col-sm-4">
-    <%= logo_for_page(@page) %>&nbsp;
-    <%= @page.page_type %><br>
-    <br>
-  </h3>
-  <div class="col-sm-4">
-    <%= link_to edit_admin_page_path(@page), class: 'btn btn-success' do %>
-      <span class="glyphicon glyphicon-edit"></span>
-      edit
-    <% end %>
-    &nbsp;
-    <%= link_to admin_pages_path, class: 'btn btn-default' do %>
-      <span class="glyphicon glyphicon-list"></span>
-      back to list
-    <% end %>
+<div class="container mb-5">
+  <div class="row border-bottom mb-3">
+    <h3 class="col-sm-4">
+      <%= logo_for_page(@page) %>&nbsp;
+      <%= @page.page_type %><br>
+      <br>
+    </h3>
+    <div class="col-sm-4">
+      <%= link_to edit_admin_page_path(@page), class: 'btn btn-secondary' do %>
+        <span class="fa fa-edit"></span>
+        edit
+      <% end %>
+      &nbsp;
+      <%= link_to admin_pages_path, class: 'btn btn-secondary' do %>
+        <span class="fa fa-list"></span>
+        back to list
+      <% end %>
+    </div>
+    <div class="col-sm-4 text-right">
+      <%= link_to admin_page_path(@page), method: 'delete', data: {confirm: 'Are you sure? There is no UNDO!'}, class: 'btn btn-danger' do %>
+        <span class="fa fa-remove"></span>
+        delete
+      <% end %>
+    </div>
   </div>
-  <div class="col-sm-4 text-right">
-    <%= link_to admin_page_path(@page), method: 'delete', data: {confirm: 'Are you sure? There is no UNDO!'}, class: 'btn btn-danger' do %>
-      <span class="glyphicon glyphicon-remove"></span>
-      delete
-    <% end %>
-  </div>
-</div>
-<dl class="dl-horizontal">
-  <dt>Public</dt>
-  <dd><%= 'Public' if @page.public? %></dd>
-  <dt>Slug</dt>
-  <dd><%= @page.slug %></dd>
-  <dt>Page Type</dt>
-  <dd><%= @page.page_type %></dd>
-  <dt>Sort Rank</dt>
-  <dd><%= @page.rank %></dd>
-  <% if @page.page_type == 'blog_post' %>
-    <dt>Blog Categories</dt>
-    <dd><%= @page.blog_categories.sort_by(&:rank).map{|c| "<span class=\"badge\">#{c.name}</span>"}.join(' ').html_safe %></dd>
-  <% end %>
-  <dt>&nbsp;</dt><dd>&nbsp;</dd>
-  <dt>Created</dt>
-  <dd><%= @page.created_at.to_s(:gdt) %></dd>
-  <dt>Last Update</dt>
-  <dd><%= @page.updated_at.to_s(:gdt) %></dd>
-  <% [:de, :en].each do |locale| %>
-    <dt>&nbsp;</dt><dd>&nbsp;</dd>
-    <dt><%= image_tag("flags/#{locale.to_s}.png") %></dt>
-    <dd><big><%= locale %></big></dd>
-    <dt>Title</dt>
-    <dd><%= @page.translation_for(locale).title %></dd>
-    <dt>&nbsp;</dt><dd>&nbsp;</dd>
-    <dt>Body</dt>
-    <dd><%= markdown(@page.translation_for(locale).body) %></dd>
-  <% end %>
 
-</dl>
+  <dl class="dl-horizontal">
+    <dt>Public</dt>
+    <dd><%= 'Public' if @page.public? %></dd>
+    <dt>Slug</dt>
+    <dd><%= @page.slug %></dd>
+    <dt>Page Type</dt>
+    <dd><%= @page.page_type %></dd>
+    <dt>Sort Rank</dt>
+    <dd><%= @page.rank %></dd>
+    <% if @page.page_type == 'blog_post' %>
+      <dt>Blog Categories</dt>
+      <dd><%= @page.blog_categories.sort_by(&:rank).map{|c| "<span class=\"badge\">#{c.name}</span>"}.join(' ').html_safe %></dd>
+    <% end %>
+    <dt>&nbsp;</dt><dd>&nbsp;</dd>
+    <dt>Created</dt>
+    <dd><%= @page.created_at.to_s(:gdt) %></dd>
+    <dt>Last Update</dt>
+    <dd><%= @page.updated_at.to_s(:gdt) %></dd>
+    <% [:de, :en].each do |locale| %>
+      <dt>&nbsp;</dt><dd>&nbsp;</dd>
+      <dt><%= image_tag("flags/#{locale.to_s}.png") %></dt>
+      <dd><big><%= locale %></big></dd>
+      <dt>Title</dt>
+      <dd><%= @page.translation_for(locale).title %></dd>
+      <dt>&nbsp;</dt><dd>&nbsp;</dd>
+      <dt>Body</dt>
+      <dd><%= markdown(@page.translation_for(locale).body) %></dd>
+    <% end %>
+
+  </dl>
+</div>

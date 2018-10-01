@@ -1,21 +1,21 @@
 <div class="row">
   <h3 class="col-sm-4">
-    <span class="glyphicon glyphicon-folder-open"></span>
+    <span class="fa fa-folder-open"></span>
     Blog Category: <strong><%= @blog_category.slug %></strong>
     <br>
   </h3>
   <div class="col-sm-8 text-right">
     <%= link_to edit_admin_blog_category_path(@blog_category), class: 'btn btn-success' do %>
-      <span class="glyphicon glyphicon-edit"></span>
+      <span class="fa fa-edit"></span>
       edit
     <% end %>
     &nbsp;
-    <%= link_to admin_blog_categories_path, class: 'btn btn-default' do %>
-      <span class="glyphicon glyphicon-list"></span>
+    <%= link_to admin_blog_categories_path, class: 'btn btn-primary' do %>
+      <span class="fa fa-list"></span>
       back to list
     <% end %>
     <%= link_to admin_blog_category_path(@blog_category), method: 'delete', data: {confirm: 'Are you sure? There is no UNDO!'}, class: 'btn btn-danger' do %>
-      <span class="glyphicon glyphicon-remove"></span>
+      <span class="fa fa-remove"></span>
       delete
     <% end %>
   </div>

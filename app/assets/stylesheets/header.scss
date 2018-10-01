@@ -1,0 +1,78 @@
+#header {
+  background: $red;
+  color: white;
+  padding: 0px;
+
+  .navbar-brand {
+    font-family: 'TitilliumWeb Bold';
+    &:hover {
+      color: $very-light-grey;
+    }
+  }
+  .navbar-brand a {
+    text-transform: uppercase;
+    padding: 0;
+  }
+
+  .navbar-brand small {
+    font-size: 1.3rem;
+  }
+
+  a {
+    color: white;
+  }
+
+  li.divider {
+    border-bottom: 0.5px solid $white;
+  }
+
+  .language-switcher {
+    margin-left: 6px;
+    a {
+      display: inline-block;
+      padding-left:  6px;
+      padding-right: 6px;
+      &.active {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+button.navbar-toggler {
+  background: $very-light-grey;
+}
+
+#btn-top {
+  display: none; /* Hidden by default */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  font-size: 35px; /* Increase font size */
+  padding-right: 20px;
+}
+
+#btn-top:hover {
+  color: $dark-grey; /* Add a dark-grey background on hover */
+}
+
+@include media-breakpoint-up(lg) {
+  #nav-only-mobile  {
+    display: none;
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  #nav-only-screen  {
+    display: none;
+  }
+}
+@include media-breakpoint-down(md) {
+  .display-3 {
+    font-size: 3.5rem;
+  }
+}
+@include media-breakpoint-down(sm) {
+  .display-3 {
+    font-size: 2.5rem;
+  }
+}

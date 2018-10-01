@@ -1,11 +1,12 @@
 
 .overview {
   margin-top: 50px;
-  .panel-title {
-    color: #aaa;
-    font-size: 230%;
-  }
-  .panel-body .nav-pills li a {
+  .card-body li a {
     font-size: 130%;
+    padding: 10px 15px;
+    &:hover {
+      text-decoration: none;
+      background-color: #eeeeee;
+    }
   }
 }

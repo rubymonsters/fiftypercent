@@ -11,7 +11,7 @@ module EventsHelper
     when /^@/
       link_to(contact_info, "https://twitter.com/#{contact_info.gsub(/@/,'')}")
     when /^http/
-      link_to('<span class="glyphicon glyphicon-share"></span> Link'.html_safe, contact_info)
+      link_to('<span class="fa fa-share"></span> Link'.html_safe, contact_info)
     when /.+@.+/
       contact_info.sub(/@/, '(-ät-)')
     else

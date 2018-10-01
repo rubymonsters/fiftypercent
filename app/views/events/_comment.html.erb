@@ -1,17 +1,17 @@
 <div class="comment">
   <h3>
-    <span class="glyphicon glyphicon-comment"></span>
+    <span class="fa fa-comment"></span>
     <%= comment.title %>
   </h3>
   <p class="byline">
-    <span class="glyphicon glyphicon-time"></span>
+    <span class="fa fa-time"></span>
     <%= comment.created_at.to_s(:gdt) %>
     &nbsp;
-    <span class="glyphicon glyphicon-user"></span>
+    <span class="fa fa-user"></span>
     <%= comment.author %>
     <% if comment.public_contact %>
       &nbsp;
-      <span class="glyphicon glyphicon-envelope"></span>
+      <span class="fa fa-envelope"></span>
       <%= linked_contact_info(comment.public_contact).html_safe %>
     <% end %>
   </p>

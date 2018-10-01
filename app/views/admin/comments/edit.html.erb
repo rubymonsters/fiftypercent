@@ -13,10 +13,10 @@
     <%= f.text_field :internal_contact %>
   </fieldset>
 
-  <%= f.submit 'Safe', class: "btn btn-success" %>
+  <%= f.submit 'Safe', class: "btn btn-secondary" %>
 <% end %>
 
-<%= link_to admin_comment_path(@comment), class: 'btn btn-default pull-right' do %>
-  <span class="glyphicon glyphicon-comment"></span>
+<%= link_to admin_comment_path(@comment), class: 'btn btn-secondary pull-right' do %>
+  <span class="fa fa-comment"></span>
   Cancel / Back
 <% end %>

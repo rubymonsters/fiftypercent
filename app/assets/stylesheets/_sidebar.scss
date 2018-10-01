@@ -1,5 +1,4 @@
 #sidebar {
-
   min-height: 150px;
   padding: 20px;
   background-color: $content-background;
@@ -11,66 +10,13 @@
     .s { font-size: 0.8em; }
     .m { font-size: 1.2em; }
     .l { font-size: 1.8em; }
-    a {
-      text-decoration: none;
-    }
   }
 
-  #page-list ul li {
-    font-size: 16px;
-  }
-
-  aside {
-    /*margin-bottom: 32px;*/
-  }
-
-  h1 {
+  h6 {
     color: $very-dark-grey;
-    font-size: 16px;
-    letter-spacing: 2px;
     margin-bottom: 6px;
     text-transform: uppercase;
-    padding-top: 10px;
+    padding-top: 30px;
   }
 
-
-  a {
-    color: $grey;
-    &:hover {
-      text-decoration: underline;
-      color: $dark-grey;
-    }
-  }
-
-  input.form-control {
-    border-color: $light-grey;
-  }
-
-  .btn-sidebar {
-    background-color: $dark-grey;
-    color: $light-grey;
-    border-color: $light-grey;
-    text-decoration: none;
-    &:hover{
-      color: $dark-grey;
-      background-color: $light-grey;
-    border-color: $dark-grey;
-      text-decoration: none;
-    }
-  }
-  form.search input {
-      width: 300px;
-  }
 }
-
-@media (max-width: 1180px) {
-  #sidebar form.search input {
-      width: 238px;
-  }
-}
-@media (max-width: 990px) {
-  #sidebar form.search input {
-      width: 166px;
-  }
-}
-

@@ -94,7 +94,7 @@ de:
       title: 50 Prozent
       claim: sind die Hälfte.
     sidebar:
-      add_new_event_html: 'Neue Veranstaltung <span class="hidden-sm">eintragen</span>'
+      add_new_event_html: 'Neue Veranstaltung <span class="d-none d-md-inline-block">eintragen</span>'
       more: Mehr
       search: Suchen
       searchterm: 'Suchbegriff..'
@@ -120,7 +120,7 @@ de:
       website: Webseite
       speaker_list_url: Es reden
       contact_url: Kontakt
-      speaker_count: Es sprechen insgesamt
+      speaker_count: "Insgesamt sprechen:"
       speaker_count_statement: "%{total} Personen, davon "
       woman: {
         one: 'eine Frau',

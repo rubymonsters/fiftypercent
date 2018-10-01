@@ -1,53 +1,56 @@
-<div class="row">
-  <h3 class="col-sm-4">
-    <span class="glyphicon glyphicon-picture"></span>
-    Image:
-    <br>
-  </h3>
-  <div class="col-sm-8 text-right">
-    <%= link_to edit_admin_image_path(@image), class: 'btn btn-success' do %>
-      <span class="glyphicon glyphicon-edit"></span>
-      edit
-    <% end %>
-    &nbsp;
-    <%= link_to admin_images_path, class: 'btn btn-default' do %>
-      <span class="glyphicon glyphicon-list"></span>
-      back to list
-    <% end %>
-    <%= link_to admin_image_path(@image), method: 'delete', data: {confirm: 'Are you sure? There is no UNDO!'}, class: 'btn btn-danger' do %>
-      <span class="glyphicon glyphicon-remove"></span>
-      delete
-    <% end %>
+<div class="container">
+  <div class="row">
+    <h3 class="col-sm-4">
+      <span class="fa fa-image"></span>
+      Image:
+      <br>
+    </h3>
+    <div class="col-sm-8 text-right">
+      <%= link_to edit_admin_image_path(@image), class: 'btn btn-secondary' do %>
+        <span class="fa fa-edit"></span>
+        edit
+      <% end %>
+      &nbsp;
+      <%= link_to admin_images_path, class: 'btn btn-secondary' do %>
+        <span class="fa fa-list"></span>
+        back to list
+      <% end %>
+      <%= link_to admin_image_path(@image), method: 'delete', data: {confirm: 'Are you sure? There is no UNDO!'}, class: 'btn btn-danger' do %>
+        <span class="fa fa-remove"></span>
+        delete
+      <% end %>
+    </div>
   </div>
+
+  <hr>
+  <p>
+    <strong>Name:</strong><br>
+    <%= @image.name %>
+  </p>
+
+  <p>
+    <strong>Description:</strong><br>
+    <%= @image.description %>
+  </p>
+
+  <p>
+    <strong>URL:</strong><br>
+    <%= "http://blog.speakerinnen.org#{@image.file_url}" %>
+  </p>
+
+  <p>
+    <strong>HTML-Image-Tag:</strong><br>
+    <%= text_field_tag('html', "<img src=\"//blog.speakerinnen.org#{@image.file_url}\" alt=\"img desc\">", style: 'width: 760px') %>
+  </p>
+
+  <p>
+    <strong>markdown-Image-Tag:</strong><br>
+    <%= text_field_tag('html', "![alt img desc](//blog.speakerinnen.org#{@image.file_url})", style: 'width: 760px') %>
+  </p>
+
+  <p>
+    <strong>File:</strong><br>
+    <%= image_tag @image.file_url %>
+  </p>
+
 </div>
-
-
-<p>
-  <strong>Name:</strong><br>
-  <%= @image.name %>
-</p>
-
-<p>
-  <strong>Description:</strong><br>
-  <%= @image.description %>
-</p>
-
-<p>
-  <strong>URL:</strong><br>
-  <%= "http://blog.speakerinnen.org#{@image.file_url}" %>
-</p>
-
-<p>
-  <strong>HTML-Image-Tag:</strong><br>
-  <%= text_field_tag('html', "<img src=\"//blog.speakerinnen.org#{@image.file_url}\" alt=\"img desc\">", style: 'width: 760px') %>
-</p>
-
-<p>
-  <strong>markdown-Image-Tag:</strong><br>
-  <%= text_field_tag('html', "![alt img desc](//blog.speakerinnen.org#{@image.file_url})", style: 'width: 760px') %>
-</p>
-
-<p>
-  <strong>File:</strong><br>
-  <%= image_tag @image.file_url %>
-</p>

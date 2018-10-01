@@ -1,20 +1,11 @@
-
-
-$admin-link-color: #4682B4; //SteelBlue
+$admin-link-color: $admin-steel-blue;
 
 .admin {
 
   @import "admin/*";
-
-  .navbar-brand {
-    font-weight: bold;
-    color: $very-light-grey;
-  }
-
-  .navbar-inverse .navbar-nav{
-    a {
-      color: $very-light-grey;
-    }
+    .nav-item a.nav-link {
+    color: white;
+    margin: 0 20px;
   }
 
   a {
@@ -25,8 +16,12 @@ $admin-link-color: #4682B4; //SteelBlue
     &.btn:hover {
       color: $very-dark-grey;
     }
-    &.btn-default  {
+    &.btn-primary  {
       color: $very-dark-grey;
     }
+  }
+
+  .btn-secondary {
+    background-color: $admin-steel-blue;
   }
 }

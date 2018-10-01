@@ -1,0 +1,31 @@
+body {
+	margin-top: 120px;
+}
+
+.dl-horizontal dt {
+  float: left;
+  width: 165px;
+  clear: left;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dl-horizontal dd {
+  margin-left: 180px;
+}
+
+.dl-horizontal > dd:after {
+  display: table;
+  content: "";
+  clear: both;
+}
+
+.event__link--more-male {
+    color: $blue;
+}
+
+.event__link--more-female {
+    color: $red;
+}

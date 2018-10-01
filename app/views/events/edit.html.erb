@@ -10,9 +10,9 @@
 <%= bootstrap_form_for(@event) do |f| %>
   <%= render partial: 'form_fields', locals: {f: f} %>
   <%= f.submit  'Update', class: 'btn btn-success'%>
-  <%= link_to raw('<span class="glyphicon glyphicon-ban-circle"></span> Cancel'),
+  <%= link_to raw('<span class="fa fa-ban-circle"></span> Cancel'),
               event_path(@event),
-              class: 'btn btn-default' %>
+              class: 'btn btn-primary' %>
 <% end %>
 
 <p>

@@ -12,6 +12,7 @@ gem 'jquery-rails'
 gem 'uglifier', '>= 2.7.0'
 gem 'execjs'
 # gem 'therubyracer',  platforms: :ruby
+gem 'mini_racer'
 
 gem 'bcrypt'
 gem 'rails-i18n'
@@ -20,17 +21,14 @@ gem 'kaminari'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'carrierwave',       '~> 0.10.0'
 
-# gem 'bootstrap', '~> 4.1.1'
-# gem "bootstrap_form", ">= 4.0.0.alpha1"
+gem 'bootstrap', '~> 4.1.1'
+gem "bootstrap_form", ">= 4.0.0.alpha1"
 gem 'font-awesome-rails', '~> 4.7.0.3'
 gem 'sass-rails', '~> 5.0.6'
 gem 'morrisjs-rails'
 gem 'raphael-rails'
 gem 'country_select',    '~> 3.1.0'
 gem 'redcarpet',         '~> 3.2.2'
-
-gem 'bootstrap-sass',     '~> 3.3.7'
-gem 'bootstrap_form',     '~> 2.7.0'
 
 gem 'nokogiri'
 
