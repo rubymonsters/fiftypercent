@@ -1,7 +1,7 @@
 <%# admin_header_class = 'admin' if controller_path =~ /admin\// %>
 <header>
 
-  <nav class="navbar-expand-md navbar-light fixed-top pr-5 py-0 border-bottom" id=<%= controller_path =~ /admin\// ? "admin__header--color" : "blog-header" %> >
+  <nav class="navbar-expand-lg navbar-light fixed-top pr-5 py-0 border-bottom" id=<%= controller_path =~ /admin\// ? "admin__header--color" : "blog-header" %> >
     <div class="container-fluid">
       <div class="row flex-nowrap justify-content-between align-items-center">
         <div class="pl-5">
@@ -14,16 +14,16 @@
           <%= link_to('Speakerinnen* Blog', root_path, id: 'blog-header__home-link') %>
         </div>
 
-        <div class="d-flex justify-content-end align-items-center ">
+        <div class="d-flex justify-content-end align-items-center dropdown ">
 
           <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="fa fa-bars"></span>
           </button>
 
-          <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item dropdown pl-3">
-                <a class="dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <div class="collapse navbar-collapse justify-content-end dropdown-menu" id="navbarNavDropdown">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item pl-3">
+                <a class="dropdown-toggle nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   More
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -32,7 +32,7 @@
                   <%= link_to t(:contact, scope: 'pages.home.footer'), "https://speakerinnen.org/#{I18n.locale}/contact", class: 'dropdown-item'%>
                 </div>
               </li>
-              <li class="nav-item dropdown pl-3">
+              <li class="nav-item pl-3">
                 <a class="dropdown-toggle" href="#" id="navbarDropdownMenuLinkLang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span class="fa fa-globe"></span>
                 </a>
