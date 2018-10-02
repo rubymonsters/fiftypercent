@@ -2,6 +2,12 @@
 
 *It is a rail application. Maintained by the rubymonstas.*
 
+Blog:
+https://blog.speakerinnen.org
+Fiftypercent:
+https://50prozent.speakerinnen.org/
+
+
 
 **How to set it up:**
 
