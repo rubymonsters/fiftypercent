@@ -6,7 +6,7 @@
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <title>Speakerinnen Blog</title>
 
-  <%= stylesheet_link_tag    'blog', media: 'all' %>
+  <%= stylesheet_link_tag 'blog', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 
@@ -15,30 +15,24 @@
 <body class="blog">
 
   <%= render 'shared/blog_header' %>
-  <div id="blog-content">
+  <div id="blog-content" class="container">
 
     <% if Rails.env.development? %>
       <%= render 'shared/debug' %>
     <% end %>
     <%= flash_messages %>
 
-    <div class="layout-wrapper pb+ layout">
-
-      <div class="layout__item 1/1">
+    <div class="row">
+      <div class="col-md-12 col-lg-8">
         <% if @blog_category %>
           <h2>
             <i class="fa fa-folder-open-o"></i>&nbsp;
             <%= @blog_category.name %>
           </h2>
         <% end %>
-
-      </div>
-
-      <div class="layout__item 3/4 portable-1/1">
         <%= yield %>
-      </div><!--
-
-      --><div class="layout__item 1/4 portable-1/1">
+      </div>
+      <div class="col-md-12 col-lg-4">
         <%= render 'shared/blog_sidebar' %>
       </div>
     </div>

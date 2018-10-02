@@ -1,10 +1,10 @@
 <aside id="blog-sidebar--right" class="p">
 <% if Page.blog_pages.any? %>
-  <h1 class="blog-sidebar__title bt mt"><%= t 'blog.sidebar.pages' %></h1>
-  <ul class="list-bare">
+  <h4 class="blog-sidebar__title"><%= t 'blog.sidebar.pages' %></h4>
+  <ul class="list-unstyled">
     <% Page.blog_pages.order(:rank).includes(:translations).all.each do |page| %>
       <li>
-        <% link_to blog_page_path(page.slug), class: 'blog__link' do %>
+        <% link_to blog_page_path(page.slug) do %>
           <%= page.title %>
         <% end %>
       </li>
@@ -13,15 +13,15 @@
 <% end %>
 
   <% Page.blog_sidebar_snippets.order(:rank).includes(:translations).all.each do |snippet| %>
-    <h1 class="blog-sidebar__title bt mt"><%= snippet.title %></h1>
+    <h4 class="blog-sidebar__title"><%= snippet.title %></h4>
     <%= markdown(snippet.body) %>
   <% end %>
 
-  <h1 class="blog-sidebar__title bt mb"><%= t 'blog.sidebar.categories' %></h1>
-  <ul class="list-bare">
+  <h4 class="blog-sidebar__title"><%= t 'blog.sidebar.categories' %></h4>
+  <ul class="list-unstyled">
     <% BlogCategory.order(:rank).includes(:translations).all.each do |blog_category| %>
       <li>
-        <%= link_to blog_category_path(blog_category.slug), class: 'blog__link' do %>
+        <%= link_to blog_category_path(blog_category.slug) do %>
           <i class="fa fa-folder-o"></i>&nbsp;
           <%= blog_category.name %>
         <% end %>

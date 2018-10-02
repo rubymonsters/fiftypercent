@@ -18,40 +18,41 @@
     #MASTER SCSS
 \*------------------------------------*/
 
-/* Because inuitcss is broken apart into lots of small, composable modules, it is important that you as the developer piece things together in the correct order. That order is:
-*
-* Settings: Global variables, site-wide settings, config switches, etc.
-* Tools: Site-wide mixins and functions.
-* Generic: Low-specificity, far-reaching rulesets (e.g. resets).
-* Base: Unclassed HTML elements (e.g. a {}, blockquote {}, address {}).
-* Objects: Objects, abstractions, and design patterns (e.g. .media {}).
-* Components: Discrete, complete chunks of UI (e.g. .carousel {}). This is the one layer that inuitcss doesn’t get involved with.
-* Trumps: High-specificity, very explicit selectors. Overrides and helper classes (e.g. .hidden {}).
-*/
 
-@import 'inuit/settings.defaults';
-@import 'inuit/settings.responsive';
+@import "blog-variables";
+@import "font-awesome";
+@import "bootstrap";
 
-@import 'inuit/inuit.settings.application';
+body {
+	margin-top: 120px;
+}
 
-@import 'inuit/tools.functions';
-@import 'inuit/tools.mixins';
-@import 'inuit/tools.responsive';
+/* header */
+#blog-header {
+  background: $bg-color-grey;
+}
 
-@import 'inuit/generic.box-sizing';
-@import 'inuit/generic.normalize';
+#blog-header__home-link {
+  font-size: 1.8rem;
+}
 
-@import 'inuit/base.page';
-@import 'inuit/base.headings';
+@include media-breakpoint-down(sm) {
+	#blog-header__home-link {
+    font-size: 1.2rem;
+  }
+}
 
-@import 'inuit/objects.layout';
-@import 'inuit/objects.list-bare';
+/* article */
+.blog-content__article {
+  background-color: $bg-color-grey;
+  padding: 5px 15px;
+}
 
-@import 'font-awesome';
+.blog-content__article img {
+  max-width: 100%;
+  max-height: 100%;
+}
 
-@import 'inuit/inuit.components.application';
-
-@import 'inuit/trumps.spacing';
-@import 'inuit/trumps.widths';
-@import 'inuit/trumps.widths-responsive';
-@import 'inuit/trumps.headings';
+.blog-content__fa {
+  position: static;
+}
