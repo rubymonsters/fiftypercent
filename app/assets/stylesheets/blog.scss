@@ -36,6 +36,12 @@ body {
   font-size: 1.8rem;
 }
 
+@include media-breakpoint-down(sm) {
+	#blog-header__home-link {
+    font-size: 1.2rem;
+  }
+}
+
 /* article */
 .blog-content__article {
   background-color: $bg-color-grey;

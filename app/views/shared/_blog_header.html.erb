@@ -1,19 +1,19 @@
 <%# admin_header_class = 'admin' if controller_path =~ /admin\// %>
 <header>
 
-  <nav class="navbar navbar-expand-md navbar-light fixed-top pr-5 py-0 border-bottom" style="justify-content: space-between;" id=<%= controller_path =~ /admin\// ? "admin__header--color" : "blog-header" %> >
+  <nav class="navbar navbar-expand-md navbar-light fixed-top py-1 border-bottom" style="justify-content: space-between;" id=<%= controller_path =~ /admin\// ? "admin__header--color" : "blog-header" %> >
     <%= link_to(root_path, id: 'header__home-link', class: 'navbar-brand p-0 d-none d-md-inline-block') do %>
       <%= image_tag('logo_header.png', alt: 'logo', id: 'header__logo') %>
     <% end %>
 
-    <%= link_to('Speakerinnen* Blog', root_path, id: 'blog-header__home-link', class: 'mr-auto') %>
+    <%= link_to('Speakerinnen* Blog', root_path, id: 'blog-header__home-link', class: 'ml-1 ml-sm-5') %>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="fa fa-bars"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav ml-md-auto d-md-flex">
+      <ul class="navbar-nav ml-md-auto">
         <li class="nav-item dropdown pl-3">
           <a class="dropdown-toggle nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             More
