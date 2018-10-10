@@ -8,7 +8,7 @@ class EventsController < ApplicationController
       @events = Event.published
     end
 
-    case params[:order_date]
+    case params[:order_by]
     when 'created_at'
       @events = @events.order(created_at: :desc)
     when 'date'

@@ -3,12 +3,12 @@
   <div class="col-sm-12 text-right">
 
     <div class="btn-group btn-group-toggle" data-toggle="buttons">
-      <label class="btn btn-outline-primary <%= 'active' if params[:order_date] == 'date' %>">
-        <input type="radio" value="date" name="order_date" id="order_date_date" autocomplete="off" <%= 'checked' if params[:order_date] == 'date' %>>
+      <label class="btn btn-outline-primary <%= 'active' if params[:order_by] == 'date' %>">
+        <input type="radio" value="date" name="order_by" id="order_by_date" autocomplete="off" <%= 'checked' if params[:order_by] == 'date' %>>
         Nach Event Datum
       </label>
-      <label class="btn btn-outline-primary <%= 'active' if params[:order_date] == 'created_at' or params[:order_date] == nil %>">
-        <input type="radio" value="created_at" name="order_date" id="order_date_created_at" autocomplete="off" <%= 'checked' if params[:order_date] == 'created_at' or params[:order_date] == nil %>>
+      <label class="btn btn-outline-primary <%= 'active' if params[:order_by] == 'created_at' or params[:order_by] == nil %>">
+        <input type="radio" value="created_at" name="order_by" id="order_by_created_at" autocomplete="off" <%= 'checked' if params[:order_by] == 'created_at' or params[:order_by] == nil %>>
         Nach Erstellungsdatum
       </label>
     </div>

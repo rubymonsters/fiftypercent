@@ -112,7 +112,10 @@ de:
       home: Home
     blogarticle:
       more: Mehr lesen ...
-
+  index:
+    sort: "Sortieren nach: "
+    created_at: ' Sortieren nach Erstellungsdatum'
+    date: " Sortieren nach Veranstaltungsdatum"
   show:
     event:
       organizers: Veranstaltet von
