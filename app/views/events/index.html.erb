@@ -1,5 +1,8 @@
 <%= render partial: 'tag_or_search_summery' %>
 
+<%= link_to 'created_at', events_path(order_date: "created_at") %>
+<%= link_to 'date', events_path(order_date: "date") %>
+
 <%= render @events %>
 
 <% if @events.any? %>
