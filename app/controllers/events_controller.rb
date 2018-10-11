@@ -13,6 +13,7 @@ class EventsController < ApplicationController
       @events = @events.order(created_at: :desc)
     when 'date'
       @events = @events.order(date: :desc)
+      @events = @events.partition{ |e| e.date.present? }.flatten
     else
       @events = @events.order(created_at: :desc)
     end
