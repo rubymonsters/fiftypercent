@@ -1,5 +1,14 @@
 <%= render partial: 'tag_or_search_summery' %>
 
+<div class="row m-0 mb-3 sorting">
+  <div class="col">
+    <%= link_to_unless(params[:order_by] == "date", '<i class="fa fa-sort"></i>'.html_safe + t('index.date').html_safe, events_path(order_by: "date"), class:'pr-3' ) %>
+  </div>
+  <div class="col">
+  <%= link_to_unless(params[:order_by] == "created_at" || params[:order_by] == nil, '<i class="fa fa-sort"></i>'.html_safe + t('index.created_at').html_safe, events_path(order_by: "created_at"), class:'pl-3' ) %>
+  </div>
+</div>
+
 <%= render @events %>
 
 <% if @events.any? %>

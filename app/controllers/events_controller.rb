@@ -1,12 +1,24 @@
 class EventsController < ApplicationController
   def index
     if params[:tag].present?
-      @events = Event.includes(:comments).published.order(created_at: :desc).tagged_with(params[:tag]).page(params[:page])
+      @events = Event.published.tagged_with(params[:tag])
     elsif params[:q].present?
-      @events = Event.includes(:comments).published.order(created_at: :desc).search(params[:q]).page(params[:page])
+      @events = Event.published.search(params[:q])
     else
-      @events = Event.includes(:comments).published.order(created_at: :desc).page(params[:page])
+      @events = Event.published
     end
+
+    case params[:order_by]
+    when 'created_at'
+      @events = @events.order(created_at: :desc)
+    when 'date'
+      @events = @events.order(date: :desc)
+    else
+      @events = @events.order(created_at: :desc)
+    end
+
+    @events = @events.includes(:comments).page(params[:page])
+
     @tags = ActsAsTaggableOn::Tag.all
     @all_events = Event.published.order(date: :desc).all
     respond_to do |format|
@@ -14,6 +26,7 @@ class EventsController < ApplicationController
       format.json { render json: @all_events.as_json }
       format.csv { send_data @all_events.to_csv }
     end
+
   end
 
   def show

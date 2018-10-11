@@ -29,3 +29,14 @@ body {
 .event__link--more-female {
     color: $red;
 }
+
+.sorting {
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid $light-grey;
+  background-color: $content-background;
+
+	a {
+		text-decoration: underline;
+	}
+}

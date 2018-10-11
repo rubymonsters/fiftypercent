@@ -112,6 +112,10 @@ en:
     blogarticle:
       more: Read more ...
 
+  index:
+    sort: "Sort: "
+    created_at: " Sort by event created at"
+    date: " Sort by date of the event"
   show:
     event:
       organizers: Organizers
