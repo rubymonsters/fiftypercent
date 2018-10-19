@@ -32,7 +32,7 @@ gem 'redcarpet',         '~> 3.2.2'
 
 gem 'nokogiri'
 
-gem 'rack-attack',       '~> 4.2.0'
+gem 'rack-attack',       '~> 5.4.1'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.0'
