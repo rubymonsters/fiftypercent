@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/rubymonsters/fiftypercent.svg?branch=master)](https://travis-ci.com/rubymonsters/fiftypercent)
+
 # Welcome to fiftypercent \o/
 
 *It is a rail application. Maintained by the rubymonstas.*
