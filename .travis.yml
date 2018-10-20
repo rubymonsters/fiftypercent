@@ -1,4 +1,9 @@
 language: ruby
 rvm: 2.4.2
+services:
+  - postgresql
+before_script:
+  - psql -c 'create database travis_test;' -U postgres
+  - bundle exec rake db:migrate
 script:
   - bundle exec rake test
