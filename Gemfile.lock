@@ -212,7 +212,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
-    redcarpet (3.2.3)
+    redcarpet (3.4.0)
     request_store (1.4.1)
       rack (>= 1.4)
     ruby-progressbar (1.10.0)
@@ -286,7 +286,7 @@ DEPENDENCIES
   rails-controller-testing
   rails-i18n
   raphael-rails
-  redcarpet (~> 3.2.2)
+  redcarpet (~> 3.4.0)
   sass-rails (~> 5.0.6)
   uglifier (>= 2.7.0)
 
