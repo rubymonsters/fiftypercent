@@ -1,4 +1,4 @@
-class CreateBlogCategories < ActiveRecord::Migration
+class CreateBlogCategories < ActiveRecord::Migration[4.2]
   
   def up
     create_table :blog_categories do |t|
