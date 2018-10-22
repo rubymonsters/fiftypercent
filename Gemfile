@@ -6,7 +6,7 @@ gem 'rails', '~> 5.2', '>= 5.2.1'
 # used in the rail 5.2 version
 gem 'bootsnap', '~> 1.3'
 
-gem 'pg',  '0.20.0'
+gem 'pg',  '1.1.3'
 
 gem 'jquery-rails'
 gem 'uglifier', '>= 2.7.0'
