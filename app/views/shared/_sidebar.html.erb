@@ -23,13 +23,13 @@
   <h6><%= t 'layout.sidebar.statistics' %></h6>
   <p>
     <%= t 'layout.sidebar.statistics_statement_html',
-          {event_count: Event.published.count,
-           total: total = Event.published.pluck(:total).compact.sum,
-           women: woman = Event.published.pluck(:woman).compact.sum,
+          {event_count: Event.published.counted.count,
+           total: total = Event.published.counted.pluck(:total).compact.sum,
+           women: woman = Event.published.counted.pluck(:woman).compact.sum,
            percent: number_with_precision((woman.to_f / total.to_f) * 100, precision: 2)
            }%>
-    <% total = Event.published.pluck(:total).compact.sum %>
-    <% woman = Event.published.pluck(:woman).compact.sum %>
+    <% total = Event.published.counted.pluck(:total).compact.sum %>
+    <% woman = Event.published.counted.pluck(:woman).compact.sum %>
     <% percent_woman= number_with_precision((woman.to_f / total.to_f) * 100, precision: 2) %>
     <%= render 'events/all_events_donut', percent: percent_woman.to_i %>
   </p>
