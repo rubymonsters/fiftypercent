@@ -23,8 +23,8 @@ class EventsController < ApplicationController
     @all_events = Event.published.order(date: :desc).all
     respond_to do |format|
       format.html
-      format.json { render json: @all_events.as_json }
-      format.csv { send_data @all_events.to_csv }
+      format.json { render json: @all_events.counted.as_json }
+      format.csv { send_data @all_events.counted.to_csv }
     end
 
   end

@@ -5,8 +5,7 @@ class EventsControllerTest < ActionController::TestCase
     get :index
     assert_response :success
     assert_not_nil assigns(:events)
-    # there are two events in the fixtures
-    assert_equal assigns(:events).size, 2
+    assert_equal assigns(:events).size, 3
   end
 
   test "index should only show published events" do
@@ -14,8 +13,6 @@ class EventsControllerTest < ActionController::TestCase
     assert_includes assigns(:events), events(:car_show)
     assert_not_includes assigns(:events), events(:cebit)
   end
-
-
 
   test "show action loads the right event" do
     get :show, params: { id: events(:car_show).id }
@@ -39,8 +36,6 @@ class EventsControllerTest < ActionController::TestCase
     get :show, params: { id: event.id }, session: { reported_events_ids: [event.id] }
     assert_redirected_to events_path
   end
-
-
 
   test "search should show published events" do
     get :index, params: { q: "car" }

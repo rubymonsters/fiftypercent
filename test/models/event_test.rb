@@ -39,7 +39,6 @@ class EventTest < ActiveSupport::TestCase
     assert_equal Event.search('such').first, events(:car_show)
   end
 
-
   test "events without a mod_state are unchecked" do
     assert Event.new.unchecked?
     refute Event.new(mod_state: 'anything').unchecked?
@@ -56,7 +55,7 @@ class EventTest < ActiveSupport::TestCase
   end
 
   test "Event.published finds all published events" do
-    assert_equal Event.published.size, 2
+    assert_equal Event.published.size, 3
     assert_includes Event.published.all, events(:car_show)
     assert_includes Event.published.all, events(:flower_conf)
   end
@@ -66,6 +65,9 @@ class EventTest < ActiveSupport::TestCase
     assert_equal Event.unchecked.first, events(:cebit)
   end
 
+  test "Event.counted finds all counted events" do
+    assert_equal Event.counted.size, 3
+  end
 
   test "Event knows if has been recently_created?" do
     event = Event.create!(valid_event_hash)

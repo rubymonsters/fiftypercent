@@ -13,6 +13,7 @@ class Event < ActiveRecord::Base
   scope :unchecked, -> { where('events.mod_state IS NULL') }
   scope :published, -> { where( mod_state: 'ok') }
   scope :hidden,    -> { where( mod_state: 'hidden') }
+  scope :counted,   -> { where('events.total IS NOT NULL') }
 
   def self.search(q)
     q.strip!
