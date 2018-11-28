@@ -11,7 +11,7 @@ en:
         title: 'Title of the conference'
         subtitle: 'Motto'
         description: 'Motto of the event or short description (optional)'
-        main_url: "What\'s the conferences URL?"
+        main_url: "What's the conferences URL?"
 
         date: 'Date'
         city: 'In which city will the conference take place?'
@@ -52,7 +52,7 @@ en:
         description: 1-2 sentences
         main_url: 'Link to main webpage, zB: http://www.conf.com'
 
-        date: "What\'s the first day of the event?"
+        date: "What's the first day of the event?"
         city: 'e.g.: Hamburg or London'
         country_code: 'Please select a country from the list.'
 
@@ -91,7 +91,7 @@ en:
   layout:
     header:
       title: 50 percent
-      claim: "that\'s half of it"
+      claim: "that's half of it"
     sidebar:
       add_new_event_html: 'Add new event'
       more: More
