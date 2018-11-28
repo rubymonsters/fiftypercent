@@ -82,6 +82,12 @@
         </dl>
 
       <% else %>
+          
+          <% if event.has_all_the_numbers? %>
+          <br>
+            <dt><%= t 'show.event.speaker_count' %>:</dt>
+            <dd><%= t 'show.event.speaker_count_statement', total: event.total.to_s %> <%= t 'show.event.woman', count: event.woman, women: event.woman.to_s %></dd>
+          <% end %>
 
         <% if event.organizers.present? %>
           <div class="organizers">
