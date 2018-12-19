@@ -99,7 +99,7 @@ Rails.application.configure do
     :email => {
       :email_prefix => "[FIFTY ERROR] ",
       :sender_address => %{"Team" <no-reply@fiftypercent.de>},
-      :exception_recipients => %w{team@speakerinnen.org}
+      :exception_recipients => %w{devops@speakerinnen.org}
   }  
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
