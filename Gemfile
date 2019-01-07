@@ -27,7 +27,7 @@ gem 'font-awesome-rails', '~> 4.7.0.3'
 gem 'sass-rails', '~> 5.0.6'
 gem 'morrisjs-rails'
 gem 'raphael-rails'
-gem 'country_select',    '~> 3.1.0'
+gem 'country_select',    '~> 4.0.0'
 gem 'redcarpet',         '~> 3.4.0'
 
 gem 'nokogiri'
