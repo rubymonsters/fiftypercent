@@ -21,7 +21,7 @@ gem 'kaminari'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'carrierwave',       '~> 1.3.1'
 
-gem 'bootstrap', '~> 4.2.1'
+gem 'bootstrap', '~> 4.3.1'
 gem "bootstrap_form", ">= 4.0.0.alpha1"
 gem 'font-awesome-rails', '~> 4.7.0.3'
 gem 'sass-rails', '~> 5.0.6'
