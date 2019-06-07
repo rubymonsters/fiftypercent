@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="header">
-  <div class="container px-3">
+  <div class="container">
     <a class="navbar-brand" href="<%= root_path %>/">
       <h1 class="display-3">
         <%= t 'layout.header.title' %>
@@ -13,8 +13,7 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <section id="nav-only-mobile">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <ul class="navbar-nav ml-md-auto">
           <li class="nav-item">
             <a href="#sidebar-search" class="nav-link">
               <span class="fa fa-search"></span>&nbsp;
@@ -22,19 +21,11 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#statistics" class="nav-link">
-              <span class="fa fa-adjust"></span>&nbsp;
-              <%= t 'layout.sidebar.statistics' %>
+            <a href="/p/about" class="nav-link">
+              <span class="fa fa-info"></span>&nbsp;
+              <%= t 'layout.header.about' %>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="#tags">
-              <span class="fa fa-tag"></span>&nbsp;
-              Tags
-            </a>
-          </li>
-
-          <li role="presentation" class="divider"></li>
 
           <% Page.sidebar_snippets.order(:rank).includes(:translations).all.each do |snippet| %>
             <li class="nav-item">
@@ -44,8 +35,6 @@
               </a>
             </li>
           <% end %>
-
-          <li role="presentation" class="divider"></li>
 
           <% Page.menu_pages.order(:rank).includes(:translations).all.each do |page| %>
             <li class="nav-item">
@@ -67,25 +56,9 @@
             </li>
           <% end %>
         </ul>
-      </section><!-- /.nav-only-mobile -->
     </div><!-- /.navbar-collapse -->
 
     <a onclick="topFunction()" id="btn-top" title="Go to top"><i class="fa fa-arrow-circle-up"></i></a>
-    
-    <div id="nav-only-screen">
-      <ul class="navbar-nav mr-auto">
-        <li class="language-switcher">
-          <%= language_switcher.html_safe %>
-        </li>
-        <% if current_user %>
-          <li>
-            <%= link_to admin_root_path do %>
-              <span class="fa fa-cog"></span>
-            <% end %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
   </div>
 
 </nav>

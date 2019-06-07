@@ -37,12 +37,12 @@ module ApplicationHelper
     end
     links = [:de, :en].map do |lang|
       if lang == I18n.locale
-        link_to(lang.to_s.upcase, target_url, class: 'nav-link active')
+        link_to(lang.to_s, target_url, class: 'nav-link active')
       else
-        link_to(lang.to_s.upcase, target_url.sub(/\/(de|en)\//,"/#{lang.to_s}/"))
+        link_to(lang.to_s, target_url.sub(/\/(de|en)\//,"/#{lang.to_s}/"))
       end
     end
-    links.join(' | ')
+    links.join('·')
   end
 
   def markdown(text, options={})

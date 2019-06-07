@@ -93,6 +93,7 @@ de:
     header:
       title: 50 Prozent
       claim: sind die Hälfte.
+      about: Über
     sidebar:
       add_new_event_html: 'Neue Veranstaltung <span class="d-none d-md-inline-block">eintragen</span>'
       more: Mehr
