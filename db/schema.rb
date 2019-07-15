@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2018_09_18_194314) do
     t.index ["page_id", "blog_category_id"], name: "index_blog_categories_pages_on_page_id_and_blog_category_id"
   end
 
-  create_table "blog_category_translations", id: :serial, force: :cascade do |t|
+  create_table "blog_category_translations", force: :cascade do |t|
     t.integer "blog_category_id", null: false
     t.string "locale", null: false
     t.datetime "created_at", null: false
@@ -40,29 +40,14 @@ ActiveRecord::Schema.define(version: 2018_09_18_194314) do
     t.index ["locale"], name: "index_blog_category_translations_on_locale"
   end
 
-  create_table "ckeditor_assets", id: :serial, force: :cascade do |t|
-    t.string "data_file_name", null: false
-    t.string "data_content_type"
-    t.integer "data_file_size"
-    t.integer "assetable_id"
-    t.string "assetable_type", limit: 30
-    t.string "type", limit: 30
-    t.integer "width"
-    t.integer "height"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable"
-    t.index ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type"
-  end
-
   create_table "comments", id: :serial, force: :cascade do |t|
     t.text "title"
     t.text "body"
     t.string "author"
     t.string "public_contact"
     t.string "internal_contact"
-    t.integer "commentable_id"
     t.string "commentable_type"
+    t.integer "commentable_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string "mod_state"
@@ -106,7 +91,7 @@ ActiveRecord::Schema.define(version: 2018_09_18_194314) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "page_translations", id: :serial, force: :cascade do |t|
+  create_table "page_translations", force: :cascade do |t|
     t.integer "page_id", null: false
     t.string "locale", null: false
     t.datetime "created_at", null: false
@@ -130,10 +115,10 @@ ActiveRecord::Schema.define(version: 2018_09_18_194314) do
 
   create_table "taggings", id: :serial, force: :cascade do |t|
     t.integer "tag_id"
-    t.integer "taggable_id"
     t.string "taggable_type"
-    t.integer "tagger_id"
+    t.integer "taggable_id"
     t.string "tagger_type"
+    t.integer "tagger_id"
     t.string "context", limit: 128
     t.datetime "created_at"
     t.index ["context"], name: "index_taggings_on_context"

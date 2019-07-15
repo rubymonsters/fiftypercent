@@ -99,3 +99,5 @@ category.each do | cat |
       slug:             Faker::Address.postcode
       )
 end
+
+Event.all.each{|event| event.update_attributes( {:mod_state => 'ok' } ) }
