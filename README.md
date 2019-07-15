@@ -43,14 +43,16 @@ https://50prozent.speakerinnen.org/
 
 http://localhost:3000
 
-**to see the blog**
+**to see the blog:**
 
-find your hosts file
+find your hosts file:
+
 _on a linux:_
 `sudo vim /etc/hosts`
 
 _on a mac:_
 `sudo vim /private/etc/hosts`
+
 
 here you add:
 `127.0.0.1       blog.local.test`
