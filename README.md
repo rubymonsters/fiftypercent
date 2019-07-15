@@ -2,7 +2,7 @@
 
 # Welcome to fiftypercent \o/
 
-*It is a rail application. Maintained by the rubymonstas.*
+*It is a rails application. Maintained by the rubymonstas.*
 
 Blog:
 https://blog.speakerinnen.org
@@ -19,6 +19,8 @@ https://50prozent.speakerinnen.org/
 `rake db:create`
 
 `rake db:migrate`
+
+`rake db:seed`
 
 
 **to run the tests:**
@@ -44,6 +46,4 @@ http://localhost:3000
 **to see the blog**
 
 http://blog.local.test:3000/
-
-`rake db:seed`
 
