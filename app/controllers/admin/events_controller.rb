@@ -24,7 +24,7 @@ class Admin::EventsController < Admin::BaseController
     when 'date'
       @events = @events.order(date: :desc)
     else
-      @events = @events.order(created_at: :desc)
+      @events = @events.order(date: :desc)
     end
 
     @events = @events.includes(:comments).page(params[:page]).per(40)
