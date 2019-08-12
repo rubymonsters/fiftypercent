@@ -15,10 +15,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-md-auto">
           <li class="nav-item">
-            <a href="#sidebar-search" class="nav-link">
-              <span class="fa fa-search"></span>&nbsp;
-              <%= t 'layout.sidebar.search' %>
-            </a>
+              <%= form_tag(events_path, method: 'get', class: 'form-inline search', role: 'form') do %>
+                <div class="form-group">
+                  <%= text_field_tag(:q, params[:q],  {class: 'form-control',
+                                                       placeholder: t('layout.sidebar.searchterm')
+                                                       }) %>
+                  <%= button_tag( class: "btn") do %>
+                  <span class="fa fa-search"></span>
+                </div>
+                <% end %>
+              <% end %>
           </li>
           <li class="nav-item">
             <a href="/p/about" class="nav-link">

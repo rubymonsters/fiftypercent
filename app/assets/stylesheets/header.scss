@@ -26,6 +26,21 @@
     border-bottom: 0.5px solid $white;
   }
 
+  .form-inline.search {
+    position: relative;
+    margin-right: 12px;
+
+    input {
+      padding-right: 40px;
+      text-overflow: ellipsis;
+    }
+
+    .btn {
+      position: absolute;
+      right: 0;
+    }
+  }
+
   .language-switcher {
     margin-left: 6px;
     a {
