@@ -26,6 +26,21 @@
     border-bottom: 0.5px solid $white;
   }
 
+  .form-inline.search {
+    position: relative;
+    margin-right: 12px;
+
+    input {
+      padding-right: 40px;
+      text-overflow: ellipsis;
+    }
+
+    .btn {
+      position: absolute;
+      right: 0;
+    }
+  }
+
   .language-switcher {
     margin-left: 6px;
     a {
@@ -55,17 +70,6 @@ button.navbar-toggler {
   color: $dark-grey; /* Add a dark-grey background on hover */
 }
 
-@include media-breakpoint-up(lg) {
-  #nav-only-mobile  {
-    display: none;
-  }
-}
-
-@include media-breakpoint-down(lg) {
-  #nav-only-screen  {
-    display: none;
-  }
-}
 @include media-breakpoint-down(md) {
   .display-3 {
     font-size: 3.5rem;

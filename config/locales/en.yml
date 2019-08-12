@@ -92,6 +92,7 @@ en:
     header:
       title: 50 percent
       claim: "that's half of it"
+      about: About
     sidebar:
       add_new_event_html: 'Add new event'
       more: More

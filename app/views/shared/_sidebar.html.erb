@@ -5,20 +5,6 @@
   <% end %>
 </aside>
 
-<aside class="widget" id="sidebar-search">
-  <h6><%= t 'layout.sidebar.search' %></h6>
-  <%= form_tag(events_path, method: 'get', class: 'form-inline search', role: 'form') do %>
-    <div class="form-group">
-      <%= text_field_tag(:q, params[:q],  {class: 'form-control',
-                                           placeholder: t('layout.sidebar.searchterm')
-                                           }) %>
-      <%= button_tag( class: "btn btn-primary") do %>
-      <span class="fa fa-search"></span>
-    </div>
-    <% end %>
-  <% end %>
-</aside>
-
 <aside class="widget" id="statistics">
   <h6><%= t 'layout.sidebar.statistics' %></h6>
   <p>
