@@ -1,0 +1,4 @@
+<meta property="og:url" content="<%= URI.join(request.base_url, blog_post_path(post.id)) %>">
+<meta property="og:title" content="<%= post.title %>">
+<meta property="og:description" content="<%= post.body[0..150] %>">
+<meta property="og:image" content="<%= extract_first_image_path(post) %>">

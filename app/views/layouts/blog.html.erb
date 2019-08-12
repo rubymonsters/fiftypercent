@@ -9,11 +9,14 @@
   <%= stylesheet_link_tag 'blog', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
-
+  <% if content_for?(:facebook_meta_tags) %>
+    <%= yield :facebook_meta_tags %>
+  <% else %>
+    <%= render('shared/facebook_meta_tags', post: Page.blog_posts.last) %>
+  <% end %>
 </head>
 
 <body class="blog">
-
   <%= render 'shared/blog_header' %>
   <div id="blog-content" class="container">
 
