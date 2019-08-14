@@ -33,23 +33,23 @@
             </a>
           </li>
 
-          <% Page.sidebar_snippets.order(:rank).includes(:translations).all.each do |snippet| %>
-            <li class="nav-item">
-              <a href="#<%= dom_id(snippet) %>">
+          <%# Page.sidebar_snippets.order(:rank).includes(:translations).all.each do |snippet| %>
+<!--             <li class="nav-item">
+              <a href="#<%# dom_id(snippet) %>">
                 <span class="fa fa-arrow-down"></span>&nbsp;
-                <%= snippet.title %>
+                <%# snippet.title %>
               </a>
             </li>
-          <% end %>
+ -->          <%# end %>
 
-          <% Page.menu_pages.order(:rank).includes(:translations).all.each do |page| %>
-            <li class="nav-item">
-              <%= link_to page_path(page.slug) do %>
+          <%# Page.menu_pages.order(:rank).includes(:translations).all.each do |page| %>
+<!--             <li class="nav-item">
+              <%# link_to page_path(page.slug) do %>
                 <span class="fa fa-file"></span>&nbsp;
-                <%= page.title %>
-              <% end %>
+                <%# page.title %>
+              <%# end %>
             </li>
-          <% end %>
+ -->          <%# end %>
 
           <li class="language-switcher">
             <%= language_switcher.html_safe %>
