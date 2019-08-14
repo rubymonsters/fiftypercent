@@ -101,3 +101,9 @@ category.each do | cat |
 end
 
 Event.all.each{|event| event.update_attributes( {:mod_state => 'ok' } ) }
+
+Page.create(page_type: 'menu_page', public: true, rank: 1, slug: 'imprint', title: 'Impressum & Datenschutz', body:'Diese Seite wird herausgegeben und betrieben von: Anne Roth E-Mail: annalist (at) riseup.net')
+Page.create(page_type: 'menu_page', public: true, rank: 2, slug: 'about', title: 'About', body:'"50 Prozent" dokumentiert, dass und wie sehr Frauen* als Rednerinnen bei Konferenzen, Podien, bei Talk-Shows und anderen öffentlichen Veranstaltungen unterrepräsentiert sind. Rednerinnen und Redner werden pro Veranstaltung gezählt und als Prozent-Anteil veröffentlicht.')
+Page.create(page_type: 'sidebar_snippet', public: true, rank: 2, slug: 'kontakt', title: 'Kontakt', body:'[Impressum](https://speakerinnen.org/de/impressum)')
+Page.create(page_type: 'sidebar_snippet', public: true, rank: 1, slug: 'warum', title: 'Warum', body:'50 Prozent sind die Hälfte. Frauen sind in etwa die Hälfte aller Menschen, aber selten die Hälfte auf Podien, am Mikro, bei Talk-Shows oder Konferenzen. "50 Prozent" dokumentiert, wieviele Frauen* es tatsächlich sind.')
+
