@@ -4,7 +4,7 @@
   padding: 0px;
 
   .navbar-brand {
-    font-family: 'TitilliumWeb Bold';
+    font-family: 'Montserrat Medium';
     &:hover {
       color: $very-light-grey;
     }
@@ -16,6 +16,10 @@
 
   .navbar-brand small {
     font-size: 1.3rem;
+  }
+
+  .navbar-brand img {
+    max-width: 300px;
   }
 
   a {

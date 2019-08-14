@@ -1,11 +1,19 @@
 /*fonts*/
-
 @font-face {
-  font-family: 'TitilliumWeb Bold';
-  src:font-url('TitilliumWeb-Bold.ttf') format('truetype');
-  font-weight: normal;
+  font-family: 'Montserrat Medium';
+  src:font-url('Montserrat-Medium.ttf') format('truetype');
+  font-weight: 500;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Montserrat Bold';
+  src:font-url('Montserrat-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+
 @font-face {
   font-family: 'OpenSans';
   src: font_url('OpenSans/OpenSans-Regular-webfont.eot');
