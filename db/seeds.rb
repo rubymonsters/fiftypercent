@@ -107,3 +107,5 @@ Page.create(page_type: 'menu_page', public: true, rank: 2, slug: 'about', title:
 Page.create(page_type: 'sidebar_snippet', public: true, rank: 2, slug: 'kontakt', title: 'Kontakt', body:'[Impressum](https://speakerinnen.org/de/impressum)')
 Page.create(page_type: 'sidebar_snippet', public: true, rank: 1, slug: 'warum', title: 'Warum', body:'50 Prozent sind die Hälfte. Frauen sind in etwa die Hälfte aller Menschen, aber selten die Hälfte auf Podien, am Mikro, bei Talk-Shows oder Konferenzen. "50 Prozent" dokumentiert, wieviele Frauen* es tatsächlich sind.')
 
+Page.create(slug: 'a_slug', page_type: 'blog_post', body: 'abc[---]def', title: 'BlogPost1', public: true)
+Page.create(slug: 'b_slug', page_type: 'blog_post', body: 'Frauen zählen ist nicht neu. female:pressure zählt seit einer Weile Frauen, die im Bereich elektronischer Musik und Computerkunst arbeiten: DJs, Musikerinnen und Produzentinnen, Vokalistinnen, bildende Künstlerinnen, Bookerinnen, Labelmacherinnen, Wissenschaftlerinnen und Akademikerinnen, die sich mit der Materie beschäftigen.', title: 'blogpost2', public: true)

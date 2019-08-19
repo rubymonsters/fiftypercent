@@ -14,7 +14,7 @@ class EventsController < ApplicationController
     when 'date'
       @events = @events.where.not(date: [nil,""]).order(date: :desc)
     else
-      @events = @events.order(date: :desc)
+      @events = @events.where.not(date: [nil,""]).order(date: :desc)
     end
 
     @events = @events.includes(:comments).page(params[:page])
