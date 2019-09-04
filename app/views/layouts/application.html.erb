@@ -20,14 +20,31 @@
     <% end %>
     <%= flash_messages %>
 
-    <aside class='row'>
-      <div class='col-md-6 offset-md-3 mb-3'>
-        <%= link_to new_event_path, class: 'btn btn-primary btn-block' do %>
-          <span class="fa fa-plus-circle"></span>
-          <%= t 'layout.sidebar.add_new_event_html' %>
-        <% end %>
+<!-- Possible landing page section
+    <section class="row" id="statistics">
+      <div class="col-md-12">
+        <h1 class="jumbotron-heading">Album example</h1>
+        <p class="lead text-muted">
+          <%= t 'layout.sidebar.statistics_statement_html',
+            {event_count: Event.published.counted.count,
+             total: total = Event.published.counted.pluck(:total).compact.sum,
+             women: woman = Event.published.counted.pluck(:woman).compact.sum,
+             percent: number_with_precision((woman.to_f / total.to_f) * 100, precision: 2)
+             }%>
+          <% total = Event.published.counted.pluck(:total).compact.sum %>
+          <% woman = Event.published.counted.pluck(:woman).compact.sum %>
+          <% percent_woman= number_with_precision((woman.to_f / total.to_f) * 100, precision: 2) %>
+          <%= render 'events/all_events_donut', percent: percent_woman.to_i %>
+        </p>
+        <p>
+          <%= link_to new_event_path, class: 'btn btn-primary   ' do %>
+            <span class="fa fa-plus-circle"></span>
+            <%= t 'layout.sidebar.add_new_event_html' %>
+          <% end %>
+        </p>
       </div>
-    </aside>
+    </section>
+-->
 
     <div class='row'>
       <div class='col-md-12'>

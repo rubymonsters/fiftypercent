@@ -1,5 +1,14 @@
 <%= render partial: 'tag_or_search_summery' %>
 
+<aside class='row'>
+  <div class='col-md-6 offset-md-3 mb-3'>
+    <%= link_to new_event_path, class: 'btn btn-primary btn-block' do %>
+      <span class="fa fa-plus-circle"></span>
+      <%= t 'layout.sidebar.add_new_event_html' %>
+    <% end %>
+  </div>
+</aside>
+
 <%= render @events %>
 
 <% if @events.any? %>
