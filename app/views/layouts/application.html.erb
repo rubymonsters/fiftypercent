@@ -20,19 +20,19 @@
     <% end %>
     <%= flash_messages %>
 
+    <aside class='row'>
+      <div class='col-md-6 offset-md-3 mb-3'>
+        <%= link_to new_event_path, class: 'btn btn-primary btn-block' do %>
+          <span class="fa fa-plus-circle"></span>
+          <%= t 'layout.sidebar.add_new_event_html' %>
+        <% end %>
+      </div>
+    </aside>
+
     <div class='row'>
-      <div class='col-md-12 col-lg-8'>
+      <div class='col-md-12'>
         <%= yield %>
       </div>
-      <% if layout_needs_sidebar?  %>
-        <div class='col-md-12 col-lg-4'>
-          <section id='sidebar'>
-            <%= render 'shared/sidebar' %>
-          </section>
-        </div>
-      <% else %>
-        <div class='col-md-12 col-lg-4'>&nbsp;</div>
-      <% end %>
     </div>
   </div>
 
