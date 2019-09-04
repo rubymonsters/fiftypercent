@@ -7,13 +7,14 @@
       {label: "<%= I18n.t 'show.event.donut.male' %>",
        value: <%= event.percent_male  %>},
       {label: "<%= I18n.t 'show.event.donut.female' %>",
-       value: <%= event.percent_female %>},
+       value: <%= event.percent_female %> },
     ],
+    formatter: function(y) { return y + "%"},
     backgroundColor: 'whitesmoke',
     labelColor: '#4E4E4E',
     colors: [
-      '#375E97',
-      '#c5141c'
+      '#A1D9D4',
+      '#00978b'
     ]
   });
 
