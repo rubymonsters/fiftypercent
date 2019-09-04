@@ -41,15 +41,6 @@
     <% end %>
   </ul>
 </aside>
-<hr>
-<aside class="widget" id="tags">
-  <h6>Tags</h6>
-  <div id='tag_cloud'>
-    <% tag_cloud Event.tag_counts, %w[s m l] do |tag, css_class| %>
-      <%= link_to tag.name, tag_path(tag.name), class: css_class %>
-    <% end %>
-  </div>
-</aside>
 
 <aside class="widget text-right">
   <%= link_to admin_root_path, title: "Admin" do %>
