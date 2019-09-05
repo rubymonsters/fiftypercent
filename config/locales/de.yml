@@ -124,7 +124,7 @@ de:
       website: Webseite
       speaker_list_url: Es reden
       contact_url: Kontakt
-      speaker_count: "Insgesamt sprechen:"
+      speaker_count: "Insgesamt sprechen"
       speaker_count_statement: "%{total} Personen, davon "
       woman: {
         one: 'eine Frau',

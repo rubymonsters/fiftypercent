@@ -3,7 +3,7 @@ en:
     label:
       comment:
         title: Title
-        author: 'Who are you? Name, Nickname oor Pseudonym'
+        author: 'Who are you? Name, Nickname or Pseudonym'
         public_contact: 'How can you be contacted? (optional)'
         body: 'Text of you comment'
         internal_contact: 'Internal contact info. Will not be published on the page.'
