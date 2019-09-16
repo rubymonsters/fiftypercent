@@ -1,9 +1,9 @@
 article {
   padding: 20px;
-  margin-bottom: 20px;
-  border: 1px solid $light-grey;
-  box-shadow: 0px 3px 0px $content-shadow;
-  background-color: $content-background;
+  margin-bottom: 40px;
+  border: 2px solid $light-grey;
+  border-radius: $border-radius-large;
+  background-color: $body-bg;
 
   h1 {
     font-family: 'Montserrat Bold';
