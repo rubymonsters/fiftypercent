@@ -96,11 +96,12 @@ Rails.application.configure do
   end
 
   config.middleware.use ExceptionNotification::Rack,
+    :ignore_crawlers => %w{Googlebot bingbot},
     :email => {
       :email_prefix => "[FIFTY ERROR] ",
       :sender_address => %{"Team" <no-reply@fiftypercent.de>},
       :exception_recipients => %w{devops@speakerinnen.org}
-  }  
+  }
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
