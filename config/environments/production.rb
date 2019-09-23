@@ -96,7 +96,7 @@ Rails.application.configure do
   end
 
   config.middleware.use ExceptionNotification::Rack,
-    :ignore_crawlers => %w{Googlebot bingbot},
+    :ignore_crawlers => %w{Googlebot bingbot MJ12bot},
     :email => {
       :email_prefix => "[FIFTY ERROR] ",
       :sender_address => %{"Team" <no-reply@fiftypercent.de>},
