@@ -1,21 +1,13 @@
 <article>
 
-  <h2><%= link_to event.title + ': ' , event %>
-
-    <% if event.has_all_the_numbers? %>
-      <%= link_to (t 'show.event.speaking', percent_male: event.percent_male), event,
-        class: "event__link--#{classname_for_event_title(event)}" %>
-      <%# class will be event__link--more-male or more-female %>
-    <% end %>
-
-  </h2>
-  <% if event.description.present? %>
-    <div class="description"><%= simple_format(event.description) %></div>
-  <% end %>
-
   <div class="main row">
+    <div class="col-md-4">
+      <% if event.has_all_the_numbers? %>
+        <%= render 'events/donut', event: event %>
+      <% end %>
+    </div>
     <div class="col-md-<%= event.has_all_the_numbers? ? '8' : '12' %>">
-
+      <h2><%= link_to event.title, event %></h2>
       <% unless event.date.blank? and event.city.blank? %>
         <div class="where-when">
           <span class="fa fa-calendar"></span>
@@ -25,6 +17,27 @@
           <%= event.city %>
         </div>
       <% end %>
+
+      <% if event.description.present? %>
+        <div class="description"><%= simple_format(event.description) %></div>
+      <% end %>
+
+      <% if event.tags.any? %>
+        <br>
+        <strong><%= t 'show.event.topic_tags' %>:</strong><br>
+        <% event.tags.each do |tag| %>
+          <%= link_to tag_path(tag: tag.name) do %>
+            <span class="badge"><%= tag.name %></span>
+          <% end %>
+        <% end %>
+      <% end %>
+
+    </div>
+  </div>
+  
+
+  <div class="main row">
+    <div class="col-md-<%= event.has_all_the_numbers? ? '8' : '12' %>"> 
 
       <% if is_single_view %>
         <dl class="dl-horizontal">
@@ -104,20 +117,11 @@
         </div>
       <% end %>
 
-      <% if event.tags.any? %>
-        <br>
-        <strong><%= t 'show.event.topic_tags' %>:</strong><br>
-        <% event.tags.each do |tag| %>
-          <%= link_to tag_path(tag: tag.name) do %>
-            <span class="badge"><%= tag.name %></span>
-          <% end %>
-        <% end %>
-        <br><br>
-      <% end %>
-    </div>
-    <div class="col-md-4">
       <% if event.has_all_the_numbers? %>
-          <%= render 'events/donut', event: event %>
+        <%= link_to (t 'show.event.speaking', percent_male: event.percent_male), event,
+        class: "event__link--#{classname_for_event_title(event)}" %>
+      <%# class will be event__link--more-male or more-female %>
+
       <% end %>
     </div>
 
