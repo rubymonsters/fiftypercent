@@ -28,7 +28,7 @@ gem 'sass-rails', '~> 5.0.6'
 gem 'morrisjs-rails'
 gem 'raphael-rails'
 gem 'country_select',    '~> 4.0.0'
-gem 'redcarpet',         '~> 3.4.0'
+gem 'redcarpet',         '~> 3.5.1'
 
 gem 'nokogiri'
 
