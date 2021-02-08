@@ -19,7 +19,7 @@ gem 'rails-i18n'
 gem 'globalize', git: 'https://github.com/globalize/globalize'
 gem 'kaminari'
 gem 'acts-as-taggable-on', '~> 6.0'
-gem 'carrierwave',       '~> 1.3.1'
+gem 'carrierwave',       '~> 1.3.2'
 
 gem 'bootstrap', '~> 4.3.1'
 gem "bootstrap_form", ">= 4.0.0.alpha1"
