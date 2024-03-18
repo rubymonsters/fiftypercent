@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-ruby '2.6.3'
+ruby '3.1.2'
 
-gem 'rails', '~> 5.2'
+gem 'rails', '~> 6.1.7'
 
 # used in the rail 5.2 version
 gem 'bootsnap', '~> 1.3'
@@ -16,9 +16,9 @@ gem 'mini_racer'
 
 gem 'bcrypt'
 gem 'rails-i18n'
-gem 'globalize', git: 'https://github.com/globalize/globalize'
+gem 'globalize'
 gem 'kaminari'
-gem 'acts-as-taggable-on', '~> 6.0'
+gem 'acts-as-taggable-on'
 gem 'carrierwave',       '~> 1.3.1'
 
 gem 'bootstrap', '~> 4.3.1'
@@ -34,6 +34,7 @@ gem 'nokogiri'
 
 gem 'rack-attack',       '~> 5.4.2'
 gem 'exception_notification'
+gem 'mimemagic', '~> 0.3.7'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.0'
