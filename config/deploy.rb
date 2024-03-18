@@ -1,8 +1,8 @@
 # config valid only for Capistrano 3.1
-lock '3.11.0'
+lock '3.18.0'
 
 set :application, 'fiftypercent'
-set :repo_url, 'git@git.codecoop.org:tyranja/fiftypercent.git'
+set :repo_url, 'git@github.com:rubymonsters/fiftypercent.git'
 set :stage,           :production
 set :deploy_via,      :remote_cache
 
