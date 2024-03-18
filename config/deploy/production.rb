@@ -9,14 +9,14 @@
 
 require 'net/ssh/proxy/command'
 
-server 'kvm15.so36.net',
+server 'kvm15.so36.net:1036',
   roles: %w(app web db),
   user: 'fiftypercent',
-  primary: true,
-  ssh_options: {
-    port: 1036, # This didn't honored the global ssh_options
+  primary: true
+  # ssh_options: {
+    # port: 1036, # This didn't honored the global ssh_options
     # proxy: Net::SSH::Proxy::Command.new('ssh shell -W %h:%p'),
-  }
+  # }
 
 # Extended Server Syntax
 # ======================
