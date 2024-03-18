@@ -53,7 +53,7 @@ class Admin::CommentsController < Admin::BaseController
   end
 
   def publish
-    @comment.update_attributes(mod_state: 'ok')
+    @comment.update(mod_state: 'ok')
     respond_to do |format|
       format.html {redirect_to admin_event_path(@comment), flash: {success: "Successfully <strong>published</strong> event: <strong>\"#{@comment.title}\"</strong>"}}
       format.js {}
@@ -61,7 +61,7 @@ class Admin::CommentsController < Admin::BaseController
   end
 
   def hide
-    @comment.update_attributes(mod_state: 'hidden')
+    @comment.update(mod_state: 'hidden')
     respond_to do |format|
       format.html {redirect_to admin_event_path(@comment), flash: {success: "Successfully <strong>hid</strong> event: <strong>\"#{@comment.title}\"</strong>"}}
       format.js {}
@@ -69,7 +69,7 @@ class Admin::CommentsController < Admin::BaseController
   end
 
   def uncheck
-    @comment.update_attributes(mod_state: nil)
+    @comment.update(mod_state: nil)
     respond_to do |format|
       format.html {redirect_to admin_event_path(@comment), flash: {success: "Successfully <strong>un-published</strong> event: <strong>\"#{@comment.title}\"</strong>"}}
       format.js {}

@@ -26,11 +26,10 @@
         <h1 class="jumbotron-heading">Album example</h1>
         <p class="lead text-muted">
           <%= t 'layout.sidebar.statistics_statement_html',
-            {event_count: Event.published.counted.count,
-             total: total = Event.published.counted.pluck(:total).compact.sum,
-             women: woman = Event.published.counted.pluck(:woman).compact.sum,
-             percent: number_with_precision((woman.to_f / total.to_f) * 100, precision: 2)
-             }%>
+            event_count: Event.published.counted.count,
+            total: total = Event.published.counted.pluck(:total).compact.sum,
+            women: woman = Event.published.counted.pluck(:woman).compact.sum,
+            percent: number_with_precision((woman.to_f / total.to_f) * 100, precision: 2) %>
           <% total = Event.published.counted.pluck(:total).compact.sum %>
           <% woman = Event.published.counted.pluck(:woman).compact.sum %>
           <% percent_woman= number_with_precision((woman.to_f / total.to_f) * 100, precision: 2) %>

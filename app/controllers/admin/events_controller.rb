@@ -45,7 +45,7 @@ class Admin::EventsController < Admin::BaseController
   end
 
   def publish
-    @event.update_attributes(mod_state: 'ok')
+    @event.update(mod_state: 'ok')
     respond_to do |format|
       format.html {redirect_to admin_event_path(@event), flash: {success: "Successfully <strong>published</strong> event: <strong>\"#{@event.title}\"</strong>"}}
       format.js {}
@@ -53,7 +53,7 @@ class Admin::EventsController < Admin::BaseController
   end
 
   def hide
-    @event.update_attributes(mod_state: 'hidden')
+    @event.update(mod_state: 'hidden')
     respond_to do |format|
       format.html {redirect_to admin_event_path(@event), flash: {success: "Successfully <strong>hid</strong> event: <strong>\"#{@event.title}\"</strong>"}}
       format.js {}
@@ -61,7 +61,7 @@ class Admin::EventsController < Admin::BaseController
   end
 
   def uncheck
-    @event.update_attributes(mod_state: nil)
+    @event.update(mod_state: nil)
     respond_to do |format|
       format.html {redirect_to admin_event_path(@event), flash: {success: "Successfully <strong>un-published</strong> event: <strong>\"#{@event.title}\"</strong>"}}
       format.js {}

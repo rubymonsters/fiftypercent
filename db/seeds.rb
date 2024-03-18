@@ -53,7 +53,7 @@ Event.create({
       organizers:          Faker::Company.name,
       contact_url:         Faker::Internet.url,
       speaker_list_url:    Faker::Internet.url,
-      tag_list:            Faker::Lorem.words(4),
+      tag_list:            Faker::Lorem.words(number: 4),
       woman:               percent_woman,
       total:               130,
       category:            'Konferenz',
@@ -71,7 +71,7 @@ event_count = Event.count
   event_id = Event.offset(rand(event_count)).first.id
   Comment.create({
     title:            Faker::Company.catch_phrase,
-    body:             Faker::Lorem.paragraphs(rand(6)+1).join("\n\n"),
+    body:             Faker::Lorem.paragraphs(number: rand(6)+1).join("\n\n"),
     author:           Faker::Name.name,
     public_contact:   Faker::Internet.url,
     internal_contact: Faker::Internet.email,
@@ -84,8 +84,8 @@ User.create(email: 'horst@mail.com', password:'geheim')
 
 5.times do
   Page.blog_posts.create!({
-    title:            Faker::Lorem.sentence(3, true, 4),
-    body:             Faker::Lorem.paragraphs(rand(6)+1).join("\n\n"),
+    title:            Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4),
+    body:             Faker::Lorem.paragraphs(number: rand(6)+1).join("\n\n"),
     slug:             Faker::Address.postcode
     })
 end
@@ -100,7 +100,7 @@ category.each do | cat |
       )
 end
 
-Event.all.each{|event| event.update_attributes( {:mod_state => 'ok' } ) }
+Event.all.each{|event| event.update(mod_state: 'ok') }
 
 Page.create(page_type: 'menu_page', public: true, rank: 1, slug: 'imprint', title: 'Impressum & Datenschutz', body:'Diese Seite wird herausgegeben und betrieben von: Anne Roth E-Mail: annalist (at) riseup.net')
 Page.create(page_type: 'menu_page', public: true, rank: 2, slug: 'about', title: 'About', body:'"50 Prozent" dokumentiert, dass und wie sehr Frauen* als Rednerinnen bei Konferenzen, Podien, bei Talk-Shows und anderen öffentlichen Veranstaltungen unterrepräsentiert sind. Rednerinnen und Redner werden pro Veranstaltung gezählt und als Prozent-Anteil veröffentlicht.')

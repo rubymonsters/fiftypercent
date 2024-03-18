@@ -49,7 +49,7 @@ class Admin::PagesController < Admin::BaseController
 
   def update
     @page = Page.find(params[:id])
-    if  @page.update_attributes(page_params)
+    if  @page.update(page_params)
       redirect_to admin_page_path(@page), notice: 'Text was successfully updated.'
     else
       flash[:error] = 'The text could not be saved.'

@@ -12,7 +12,7 @@ class UserTest < ActiveSupport::TestCase
   test "a users password is hashed with salt and the right format" do
     user = User.new(email: 'horst@mail.com', password: 'geheim')
     user.encrypt_password
-    assert_match /\$2a\$10\$/, user.password_salt
+    assert_match /\$2a\$12\$/, user.password_salt
     assert_match Regexp.new('^'+Regexp.quote(user.password_salt)), user.password_hash
   end
 end
