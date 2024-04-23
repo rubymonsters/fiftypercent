@@ -32,7 +32,7 @@ class EventsControllerTest < ActionController::TestCase
 
   test "show action does not show unpublished event to the author if event to old" do
     event = Event.create(valid_event_hash)
-    event.update_attributes(created_at: 2.days.ago)
+    event.update(created_at: 2.days.ago)
     get :show, params: { id: event.id }, session: { reported_events_ids: [event.id] }
     assert_redirected_to events_path
   end
@@ -73,7 +73,7 @@ class EventsControllerTest < ActionController::TestCase
 
   test 'edit action if event is frontend_editable?' do
     event = Event.create(valid_event_hash)
-    event.update_attributes created_at: 2.minutes.ago
+    event.update created_at: 2.minutes.ago
     get :edit, params: { id: event.id }, session: { reported_events_ids: [event.id] }
     assert_template :edit
     assert_template layout: "layouts/application"
